@@ -51,7 +51,7 @@ class Schuelermodell(object):
     def __init__(self, lessonliste, lessoninhalte, name):
         #print("neuer Nutzer SM: "+str(name))
         self.name = str(name)
-        self.laden()
+        #self.laden()
         existiert = False
 
         if(existiert==False):
@@ -74,7 +74,10 @@ class Schuelermodell(object):
             self.alleLT[Syntaxkonzept(syntaxkonzept).name] = [range(0,len(Syntaxkonzept(syntaxkonzept).test_lt))]
             self.alleMC[Syntaxkonzept(syntaxkonzept).name] = [range(0,len(Syntaxkonzept(syntaxkonzept).test_mc))]
             ''' 
-            
+        self.darstellungsart_effizienz['symbolisch'] = 0
+        self.darstellungsart_effizienz['ikonisch'] = 0
+        self.darstellungsart_effizienz['enaktiv'] = 0
+        self.darstellungsart_effizienz['worked_example'] = 0    
             
     def naechsteErklaerung(self, konzept):  
       for erklaerung in self.alleErklaerungen:
@@ -97,11 +100,11 @@ class Schuelermodell(object):
     def lessonAlsGelerntEintragen(self, lesson):
       if(lesson not in self.bekannteLessons):
         self.bekannteLessons.append(lesson)
-        self.speichern()
+        #self.speichern()
         
     def setName(self, Name):
       self.name = Name
-      self.laden()
+      #self.laden()
       
     def neuenNutzerEintragen(self, name): 
       print("NNE")  
@@ -178,12 +181,3 @@ class Schuelermodell(object):
       file.close()                     
       return
    
-
-sm = Schuelermodell([],{},"john")
-sm.laden()
-sm.neuenNutzerEintragen("john")
-sm.lessonAlsGelerntEintragen("basics")
-#sm.neuenNutzerEintragen("bob")
-#sm.lessonAlsGelerntEintragen("programmwawgag")
-sm.speichern()
-

@@ -23,7 +23,7 @@ class Dialogmanager(object):
 
     self.name = name
     self.gespraechsausgaben.append("begruessung")
-    self.laden_namensregister()
+    #self.laden_namensregister()
 
     if(self.name not in self.namensregister):
       self.neuernutzer = True

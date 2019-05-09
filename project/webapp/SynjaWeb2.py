@@ -291,8 +291,8 @@ class Synja(threading.Thread):
     
     
   #sichert den Stand
-  def save(self):
-    if(self.name != "NO_ACCOUNT"): self.lehrmanager.schuelermodell.speichern()
+  #def save(self):
+    #if(self.name != "NO_ACCOUNT"): self.lehrmanager.schuelermodell.speichern()
       
   #fuegt nutzereingaben die vom Dialog input kommen in queue ein      
   def addDialogNutzer(self, input):

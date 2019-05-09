@@ -48,6 +48,7 @@ synja_newusers = []
 lizas = []
 
 usergate = Usergate()
+time_user = {}
 
 logins = {} #ip -> [name, password]; None falls nicht eingeloggt
 print("webapp ready!")
@@ -112,7 +113,7 @@ def background_threadSynja():
       if(int(round(time.time())) - current >= 1):
         current = int(round(time.time()))
         for s in synjas:
-          socketio.emit('time',{},namespace='/synja', room = synja.id)
+          socketio.emit('time',{},namespace='/synja', room = s.id)
                
 
 @socketio.on('dialogeingabe', namespace='/synja')

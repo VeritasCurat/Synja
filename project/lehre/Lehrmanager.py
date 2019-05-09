@@ -168,7 +168,7 @@ class Lehrmanager:
     
     self.dialogausgaben.append("begruessung")
     self.emotion = "freude"
-    self.laden_namensregister()
+    #self.laden_namensregister()
 
     #if(self.name not in self.namensregister):
     #  self.neuernutzer = True
@@ -189,7 +189,7 @@ class Lehrmanager:
     self.lessoninhalte = lehrliste
 
     self.schuelermodell = Schuelermodell(self.lessonliste, self.lessoninhalte, self.name)  
-    self.schuelermodell.speichern()
+    #self.schuelermodell.speichern()
     return
   
   def laden_namensregister(self):
@@ -312,7 +312,7 @@ class Lehrmanager:
       self.freude_wiedersehen(intent)
       self.setLastPhrase()
     elif(self.zustand == "frage_naechsterThemenblock"): 
-      self.schuelermodell.speichern()
+      #self.schuelermodell.speichern()
       self.frage_naechsterThemenblock(intent, entity)
       self.setLastPhrase()
       
@@ -362,7 +362,7 @@ class Lehrmanager:
       
       
   def speichern(self):
-    self.schuelermodell.speichern()
+    #self.schuelermodell.speichern()
     return  
  
   def frage_beantworten(self, frage):
@@ -437,7 +437,7 @@ class Lehrmanager:
         return  
     
   def freude_wiedersehen(self):
-    self.schuelermodell.speichern()
+    #self.schuelermodell.speichern()
     self.expected_entry = "dialog"
     self.dialogausgaben.append("frage_naechsterThemenblock")
     self.emotion = "neutral"
@@ -454,7 +454,7 @@ class Lehrmanager:
     self.dialogausgaben.append("teaching")
     self.dialogausgaben.append("ui")
     self.dialogausgaben.append("dialog")
-    self.schuelermodell.speichern()
+    #self.schuelermodell.speichern()
     self.expected_entry = "dialog"
     self.dialogausgaben.append("frage_naechsterThemenblock")
     self.emotion = "neutral"
@@ -518,7 +518,7 @@ class Lehrmanager:
     elif self.lesson == "arrays": self.dialogausgaben.append("arrays")
     elif self.lesson == "classes": 
       self.dialogausgaben.append("classes")
-      self.dialogausgaben.append("oop")
+      self.dialogausgaben.append("oop_einleitung")
     else: 
       print("unbekannte Lesson!")
       exit(-1)
@@ -1005,8 +1005,8 @@ class Lehrmanager:
       #if(len(self.schuelermodell.bekannteLessons)>0):self.dialogausgaben.append(["schueler_wissen",self.enumaration(self.schuelermodell.bekannteLessons).replace('_',' ')])
       
       self.zustand = "frage_naechsterThemenblock"
-      self.schuelermodell.lessonAlsGelerntEintragen(self.lesson)
-      self.schuelermodell.speichern()
+      #self.schuelermodell.lessonAlsGelerntEintragen(self.lesson)
+      #self.schuelermodell.speichern()
       #self.lehrausgabe = None
       self.punkte_test = self.iterationen_test = 0
       return
