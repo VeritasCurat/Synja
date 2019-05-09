@@ -28,4 +28,4 @@ class Verlauf(object):
         wr = csv.writer(myfile, quoting=csv.QUOTE_ALL)
         wr.writerow([id,timestamp,aufgabenstellung,antworttext,bewertung])
         #file.write(str()+'\n')
-      
+    

@@ -274,3 +274,10 @@ What are literals?
 2. A literal is part of the program that contains only constants.
 3. A literal is the human readable part of the program
 ","1","fehlerhaft"
+"0","2019-05-09 16:59:14","Please choose the right answer(s) by typing in the number(s) of the answer(s) into user input:
+Which types of comments does Java support?
+1. One-line Comments
+2. Java-Docs
+3. Comments for Variables
+4. executable Comments
+","1","fehlerfrei"
