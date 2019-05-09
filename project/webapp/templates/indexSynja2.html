@@ -124,11 +124,7 @@ background: #7bac10;
 	<div class = "ping" style = "padding-left: 20px; float: left" >	
 		<p>  average ping: <b><span id="ping-pong"></span> ms</b></p>
 	</div>
-	<div class="logout" style = "padding-right: 20px; padding-top: 15px; float: right">	
-		<form id="logout" method="POST" action='#'>
-					<input type="submit" value="logout" id="logout"> 
-		</form>
-	</div>
+	<p id = "timer" style = "float: right">0d 0h 0m 0s</p>
 </div>
 
 <div class="wrapper">
@@ -304,6 +300,23 @@ background: #7bac10;
  				
         	});
 
+
+            socket.on('time', function(msg) {
+
+              var distance = msg.data;
+
+              // Time calculations for days, hours, minutes and seconds
+              var days = Math.floor(distance / ( 60 * 60 * 24));
+              var hours = Math.floor((distance % ( 60 * 60 * 24)) / ( 60 * 60));
+              var minutes = Math.floor((distance % ( 60 * 60)) / ( 60));
+              var seconds = Math.floor((distance % ( 60)));
+
+              // Display the result in the element with id="demo"
+
+              document.getElementById("timer").innerHTML = days + "d " + hours + "h "
+              + minutes + "m " + seconds + "s ";
+            });
+
  			socket.on('lehrEINGABE', function(msg) {
  				newtext = msg.data
  				newtext = newtext.replace(/(?:\r\n|\r|\n)/g, '<br>');
@@ -353,11 +366,7 @@ background: #7bac10;
             // Handlers for the different forms in the page.
             // These accept data from the user and send it to the server in a
             // variety of ways
-            $('form#logout').submit(function(event) {
-                socket.emit('logout');
-                return false;
-            });
-            
+                    
            
              $('form#lehre').submit(function(event) {
                 socket.emit('lehreingabe', {data: $('#emit_lehre').val()});

@@ -332,11 +332,10 @@ class Synja(threading.Thread):
 
     ausgabe = dialogausgabe
     if isinstance(dialogausgabe, Hinweis):
-      print("SW: HINWEIS 3"+dialogausgabe.fehlerart)
+      #print("SW: HINWEIS 3"+dialogausgabe.fehlerart)
       ausgabe = self.expertenmodell.zugriffHinweis(dialogausgabe.lesson, dialogausgabe.konzeptname, dialogausgabe.fehlerart)
     if(isinstance(dialogausgabe, Fehlerantwort)):
       ausgabe = dialogausgabe.beschreibung     
-    print("SW: aDS"+str(ausgabe)+"["+str(self.name)+"]")
     
     if(isinstance(ausgabe, list)):self.sendqueueDialog.put(ausgabe)
     else: self.sendqueueDialog.put(ausgabe)
@@ -352,7 +351,7 @@ class Synja(threading.Thread):
     self.highlight_input_element = ""
     phrase = phrase.replace('\\n','\n')
     self.sendqueueDialog.put([phrase,"Lehre"])
-    print("SW LEHRE: "+phrase)
+    #print("SW LEHRE: "+phrase)
      
   #hoert auf die beiden eingabequeues, wenn ausgabequeue leer sind
   def listen(self):
@@ -380,15 +379,15 @@ class Synja(threading.Thread):
       phrase = ""
       if isinstance(s, Lehrausgabe):
         if(s.darstellungsart == "coding" or s.darstellungsart == "test_lt" or s.darstellungsart == "test_mc"): 
-          print("SW: TASK: "+str(phrase))
+         # print("SW: TASK: "+str(phrase))
           phrase = [self.convertLehreSynjaText(s),"Task"]
         else: phrase = [self.convertLehreSynjaText(s),"Lehre"]
 
       elif isinstance(s, Hinweis):
-        print("SW: HINWEIS 1"+s.fehlerart)
+        #print("SW: HINWEIS 1"+s.fehlerart)
         phrase = self.expertenmodell.zugriffHinweis(s.lesson, s.konzeptname, s.fehlerart)
       elif isinstance(s, Enaktivausgabe):
-        print("SW: ENAKT ZUST: "+s.zustand)
+        #print("SW: ENAKT ZUST: "+s.zustand)
         if(s.zustand == "enaktiv_introduction_schritte"): phrase = self.nlg.generate_args("enaktiv_introduction_schritte",s.konzept)
         elif(s.zustand == "enaktiv_introduction_beispiele"): phrase = self.nlg.generate_args("enaktiv_introduction_beispiele",s.konzept)
         elif(s.zustand == "anfang"): phrase = self.nlg.generate_args("enaktiv_anfang",self.expertenmodell.zugriffEnaktiv(s.lesson, s.konzept, s.schritt))
