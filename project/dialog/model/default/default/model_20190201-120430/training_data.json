@@ -1,0 +1,397 @@
+{
+  "rasa_nlu_data": {
+    "common_examples": [
+      {
+        "intent": "bye",
+        "text": "bye"
+      },
+      {
+        "intent": "bye",
+        "text": "good bye"
+      },
+      {
+        "intent": "bye",
+        "text": "bye synja"
+      },
+      {
+        "intent": "bye",
+        "text": "lets end this session"
+      },
+      {
+        "intent": "bye",
+        "text": "lets finish tommorow"
+      },
+      {
+        "intent": "bye",
+        "text": "let us continue next week"
+      },
+      {
+        "intent": "bye",
+        "text": "i want to exit"
+      },
+      {
+        "intent": "bye",
+        "text": "i want to go now"
+      },
+      {
+        "intent": "bye",
+        "text": "this is enough lets end this"
+      },
+      {
+        "intent": "bye",
+        "text": "enough for today"
+      },
+      {
+        "intent": "understood",
+        "text": "i know"
+      },
+      {
+        "intent": "understood",
+        "text": "i get it"
+      },
+      {
+        "intent": "understood",
+        "text": "i understand"
+      },
+      {
+        "intent": "understood",
+        "text": "i get the idea"
+      },
+      {
+        "intent": "understood",
+        "text": "i understood the concept"
+      },
+      {
+        "intent": "understood",
+        "text": "sure"
+      },
+      {
+        "intent": "understood",
+        "text": "this is clear"
+      },
+      {
+        "intent": "name",
+        "text": "my name is john"
+      },
+      {
+        "intent": "name",
+        "text": "its john"
+      },
+      {
+        "intent": "name",
+        "text": "im anna"
+      },
+      {
+        "intent": "name",
+        "text": "im called mary"
+      },
+      {
+        "intent": "not_understood",
+        "text": "i don't know"
+      },
+      {
+        "intent": "not_understood",
+        "text": "i dont get it"
+      },
+      {
+        "intent": "not_understood",
+        "text": "i understood the concept"
+      },
+      {
+        "intent": "not_understood",
+        "text": "i have a problem to understand this"
+      },
+      {
+        "intent": "not_understood",
+        "text": "this confuses me"
+      },
+      {
+        "intent": "not_understood",
+        "text": "that is diffcult to grasp"
+      },
+      {
+        "intent": "not_understood",
+        "text": "what is this?"
+      },
+      {
+        "intent": "not_understood",
+        "text": "i dont know what to do"
+      },
+      {
+        "intent": "not_understood",
+        "text": "what next?"
+      },
+      {
+        "intent": "dont_know",
+        "text": "i forgot"
+      },
+      {
+        "intent": "dont_know",
+        "text": "i dont remember"
+      },
+      {
+        "intent": "dont_know",
+        "text": "i dont know"
+      },
+      {
+        "intent": "dont_know",
+        "text": "i cant remember"
+      },
+      {
+        "intent": "dont_know",
+        "text": "what is this?"
+      },
+      {
+        "intent": "dont_know",
+        "text": "what does this mean?"
+      },
+      {
+        "intent": "greet",
+        "text": "hi"
+      },
+      {
+        "intent": "greet",
+        "text": "hello"
+      },
+      {
+        "intent": "greet",
+        "text": "hey there"
+      },
+      {
+        "intent": "greet",
+        "text": "good morning"
+      },
+      {
+        "intent": "greet",
+        "text": "good evening"
+      },
+      {
+        "intent": "greet",
+        "text": "greetings"
+      },
+      {
+        "intent": "greet",
+        "text": "good day"
+      },
+      {
+        "intent": "greet",
+        "text": "good night"
+      },
+      {
+        "intent": "greet",
+        "text": "nice to meet you"
+      },
+      {
+        "intent": "greet",
+        "text": "nice to speak with you"
+      },
+      {
+        "intent": "yes",
+        "text": "yes"
+      },
+      {
+        "intent": "yes",
+        "text": "i accept"
+      },
+      {
+        "intent": "yes",
+        "text": "sure"
+      },
+      {
+        "intent": "yes",
+        "text": "go"
+      },
+      {
+        "intent": "yes",
+        "text": "thats right"
+      },
+      {
+        "intent": "yes",
+        "text": "right"
+      },
+      {
+        "intent": "yes",
+        "text": "i think so"
+      },
+      {
+        "intent": "yes",
+        "text": "definitly"
+      },
+      {
+        "intent": "yes",
+        "text": "oh yes"
+      },
+      {
+        "intent": "yes",
+        "text": "i would think so"
+      },
+      {
+        "intent": "yes",
+        "text": "that works"
+      },
+      {
+        "intent": "no",
+        "text": "no"
+      },
+      {
+        "intent": "no",
+        "text": "false"
+      },
+      {
+        "intent": "no",
+        "text": "i dont want to"
+      },
+      {
+        "intent": "no",
+        "text": "decline"
+      },
+      {
+        "intent": "no",
+        "text": "not now"
+      },
+      {
+        "intent": "no",
+        "text": "thats wrong"
+      },
+      {
+        "intent": "no",
+        "text": "wrong"
+      },
+      {
+        "intent": "no",
+        "text": "that doesnt work"
+      },
+      {
+        "intent": "no",
+        "text": "that doesnt fit"
+      },
+      {
+        "intent": "no",
+        "text": "i dont think so"
+      },
+      {
+        "intent": "Qgoal",
+        "text": "what is syntax?"
+      },
+      {
+        "intent": "Qgoal",
+        "text": "what can you teach me?"
+      },
+      {
+        "intent": "Qgoal",
+        "text": "how can you help me?"
+      },
+      {
+        "intent": "Qgoal",
+        "text": "what can i learn?"
+      },
+      {
+        "intent": "Qgoal",
+        "text": "how can you help me?"
+      },
+      {
+        "intent": "Qteaching",
+        "text": "how does the teaching work?"
+      },
+      {
+        "intent": "Qteaching",
+        "text": "how do you teach?"
+      },
+      {
+        "intent": "QUI",
+        "text": "how does the ui work?"
+      },
+      {
+        "intent": "QUI",
+        "text": "where should i type?"
+      },
+      {
+        "intent": "QUI",
+        "text": "where should i click?"
+      },
+      {
+        "intent": "QUI",
+        "text": "where is it displayed?"
+      },
+      {
+        "intent": "QUI",
+        "text": "how to answer?"
+      },
+      {
+        "intent": "QUI",
+        "text": "what did you say?"
+      },
+      {
+        "intent": "QUI",
+        "text": "how can you understand me?"
+      },
+      {
+        "intent": "QUI",
+        "text": "how do you hear me?"
+      },
+      {
+        "intent": "QUI",
+        "text": "how is this dialog possible?"
+      },
+      {
+        "intent": "QUI",
+        "text": "can you understand me?"
+      },
+      {
+        "intent": "Qdialog",
+        "text": "how can you understand me?"
+      },
+      {
+        "intent": "Qdialog",
+        "text": "how can you understand what i wrote?"
+      },
+      {
+        "intent": "Qdialog",
+        "text": "how can we write?"
+      },
+      {
+        "intent": "whole_concept",
+        "text": "i dont understand anything"
+      },
+      {
+        "intent": "whole_concept",
+        "text": "i this concept"
+      },
+      {
+        "intent": "whole_concept",
+        "text": "i dont get anything"
+      },
+      {
+        "intent": "whole_concept",
+        "text": "what is a variable?"
+      },
+      {
+        "intent": "whole_concept",
+        "text": "what is a controllstructure?"
+      },
+      {
+        "intent": "whole_concept",
+        "text": "what is syntax?"
+      },
+      {
+        "intent": "whole_concept",
+        "text": "what does syntax mean?"
+      },
+      {
+        "intent": "whole_concept",
+        "text": "what is this all about?"
+      },
+      {
+        "intent": "change_presentation",
+        "text": "please change the representation"
+      },
+      {
+        "intent": "change_presentation",
+        "text": "explain it in a different way"
+      }
+    ],
+    "regex_features": [],
+    "lookup_tables": [],
+    "entity_synonyms": []
+  }
+}
