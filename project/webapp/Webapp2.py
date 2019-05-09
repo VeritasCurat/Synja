@@ -48,7 +48,6 @@ synja_newusers = []
 lizas = []
 
 usergate = Usergate()
-time_user = {} #the time a user learned with synja
 
 logins = {} #ip -> [name, password]; None falls nicht eingeloggt
 print("webapp ready!")
@@ -109,11 +108,11 @@ def background_threadSynja():
         socketio.emit('underline_checkS', {}, namespace='/synja', room=synja.id)
 
         count += 1
-        if(int(round(time.time())) - current >= 1):
-          current = int(round(time.time()))
-          for key in time_user.keys():
-            time_user[key] += 1
-            socketio.emit('time',{'data': time_user[key]},namespace='/synja', room = synja.id)
+        
+      if(int(round(time.time())) - current >= 1):
+        current = int(round(time.time()))
+        for s in synjas:
+          socketio.emit('time',{},namespace='/synja', room = synja.id)
                
 
 @socketio.on('dialogeingabe', namespace='/synja')
@@ -211,12 +210,6 @@ def logout_synja():
 @socketio.on('connect', namespace='/synja')
 def connect_synja():
     
-    
-    if(request.remote_addr not in time_user.keys()):
-      time_user[request.remote_addr] = 0
-      return
-    
-   
     if(request.sid not in connections):
       connections.append(request.sid)
       #print("New connection: " + request.sid)
