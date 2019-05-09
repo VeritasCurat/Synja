@@ -13,7 +13,7 @@ class Verlauf(object):
     classdocs
     '''
     ep = None
-    path = os.path.realpath(__file__)
+    path = os.path.realpath(__file__)[:-10]
 
 
     def __init__(self, expertenmodell):
@@ -24,13 +24,8 @@ class Verlauf(object):
       aufgabenstellung = aufgabenstellung.replace('\\n', '\n')
       
       timestamp = strftime("%Y-%m-%d %H:%M:%S", gmtime())
-      with open("other/verlauf.csv", 'a+') as myfile:
+      with open(self.path+"other/verlauf.csv", 'a+') as myfile:
         wr = csv.writer(myfile, quoting=csv.QUOTE_ALL)
         wr.writerow([id,timestamp,aufgabenstellung,antworttext,bewertung])
         #file.write(str()+'\n')
-      
-      
-ep = Expertenmodell("en")
-verlauf = Verlauf(ep)
-verlauf.eintragen("hans", "basics", "literals", "test_mc", 0, "1", "fehlerhaft")
       

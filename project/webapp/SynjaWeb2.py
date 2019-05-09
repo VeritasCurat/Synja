@@ -121,7 +121,7 @@ class Synja(threading.Thread):
       if(art =="enaktiv"): bewertung = self.em.bewerten_enaktiv(lesson, konzeptname, self.lehrmanager.enaktiv_schritt, antworttext)
       else: 
         bewertung = self.em.bewerten(lesson, konzeptname, art, version, antworttext)
-        self.verlauf.eintragen(id, lesson, konzeptname, art, version, antworttext, bewertung)
+        #self.verlauf.eintragen(id, lesson, konzeptname, art, version, antworttext, bewertung)
       print("bewertung: "+str(bewertung))
       
       if(art == "underline_task"):
