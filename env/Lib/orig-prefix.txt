@@ -1,1 +1,1 @@
-C:\Anaconda
+c:\anaconda
