@@ -29,7 +29,6 @@ Flask-Login==0.4.0
 Flask-Session==0.3.1
 Flask-SocketIO==2.9.2
 functools32==3.2.3.post2
-future==0.16.0
 gevent==1.2.2
 greenlet==0.4.12
 html5lib==0.999
