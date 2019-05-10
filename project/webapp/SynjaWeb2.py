@@ -14,7 +14,6 @@ SynjaWeb
 from project.lehre.Lehrmanager import Lehrmanager, Fehlerantwort, Hinweis, Lehrausgabe
 from project.lehre.Expertenmodell import Expertenmodell
  
-from project.dialog.Dialogmanager import Dialogmanager
 from project.dialog.NLG import NLG
 from project.dialog.NLU import NLU
 from project.lehre.Lehrmanager import Enaktivausgabe
@@ -40,7 +39,6 @@ class Synja(threading.Thread):
   nr=0
   nlg=0
   expertenmodell=Expertenmodell("en")
-  dialogmanager=0
   lehrmanager=0
   name=""
   totalCount = 0  
@@ -122,7 +120,6 @@ class Synja(threading.Thread):
       else: 
         bewertung = self.em.bewerten(lesson, konzeptname, art, version, antworttext)
         self.verlauf.eintragen(id, lesson, konzeptname, art, version, antworttext, bewertung)
-      print("bewertung: "+str(bewertung))
       
       if(art == "underline_task"):
         if(bewertung != "fehlerfrei"):
@@ -130,9 +127,7 @@ class Synja(threading.Thread):
           bewertung = "fehlerhaft"
       elif(art == "coding"):
         if(bewertung != "fehlerfrei"):
-          print(str(bewertung))
           if(isinstance(bewertung,list) and len(bewertung)==3 and isinstance(bewertung[0],list) and len(bewertung[0])==4 and isinstance(bewertung[1],str)):
-            print(str(bewertung))
             self.lehrmanager.FK_lesson = bewertung[0][0]
             self.lehrmanager.FK_konzept = bewertung[0][1]
             self.lehrmanager.FK_reaktion_lesson = bewertung[0][2]
@@ -199,9 +194,6 @@ class Synja(threading.Thread):
       #print("SL input: "+inputDialog+" intent: "+eingabe_intent+" entity: "+entity)        
       self.lehrmanager.schritt(eingabe_intent,entity)    
 
-      if("bye" in self.lehrmanager.dialogausgaben):
-        print("VERABSCHIEDUNG")
-        exit(1)
 
       for s in self.lehrmanager.dialogausgaben: 
         phrase = ""
@@ -238,7 +230,6 @@ class Synja(threading.Thread):
       self.lehrmanager.schritt(inputLehre,"")
       for s in self.lehrmanager.dialogausgaben: 
         phrase = ""
-        print(s)
         if isinstance(s, Lehrausgabe):
           phrase = [self.convertLehreSynjaText(s),"Lehre"]
         elif isinstance(s, Hinweis):
@@ -273,7 +264,6 @@ class Synja(threading.Thread):
     self.nlg = NLG("en")
     self.nlu = NLU("en")
     self.em = Expertenmodell("en")
-    self.dialogmanager= Dialogmanager(name)
     self.lehrmanager=Lehrmanager(name, self.em.lessoninhalte, self.em.anzahl_erklaerungen, self.em.anzahlAufg, self.em.anzahlWE, self.em.anzahl_lt, self.em.anzahl_mc,self.em.en_schritt_dict,self.em.enaktiv_artdict)
     self.verlauf = Verlauf(self.em)
     if(self.name == "NO_ACCOUNT"): self.lehrmanager.neuernutzer = True
@@ -332,11 +322,9 @@ class Synja(threading.Thread):
 
     ausgabe = dialogausgabe
     if isinstance(dialogausgabe, Hinweis):
-      print("SW: HINWEIS 3"+dialogausgabe.fehlerart)
       ausgabe = self.expertenmodell.zugriffHinweis(dialogausgabe.lesson, dialogausgabe.konzeptname, dialogausgabe.fehlerart)
     if(isinstance(dialogausgabe, Fehlerantwort)):
       ausgabe = dialogausgabe.beschreibung     
-    print("SW: aDS"+str(ausgabe)+"["+str(self.name)+"]")
     
     if(isinstance(ausgabe, list)):self.sendqueueDialog.put(ausgabe)
     else: self.sendqueueDialog.put(ausgabe)
@@ -352,7 +340,6 @@ class Synja(threading.Thread):
     self.highlight_input_element = ""
     phrase = phrase.replace('\\n','\n')
     self.sendqueueDialog.put([phrase,"Lehre"])
-    print("SW LEHRE: "+phrase)
      
   #hoert auf die beiden eingabequeues, wenn ausgabequeue leer sind
   def listen(self):
@@ -380,15 +367,12 @@ class Synja(threading.Thread):
       phrase = ""
       if isinstance(s, Lehrausgabe):
         if(s.darstellungsart == "coding" or s.darstellungsart == "test_lt" or s.darstellungsart == "test_mc"): 
-          print("SW: TASK: "+str(phrase))
           phrase = [self.convertLehreSynjaText(s),"Task"]
         else: phrase = [self.convertLehreSynjaText(s),"Lehre"]
 
       elif isinstance(s, Hinweis):
-        print("SW: HINWEIS 1"+s.fehlerart)
         phrase = self.expertenmodell.zugriffHinweis(s.lesson, s.konzeptname, s.fehlerart)
       elif isinstance(s, Enaktivausgabe):
-        print("SW: ENAKT ZUST: "+s.zustand)
         if(s.zustand == "enaktiv_introduction_schritte"): phrase = self.nlg.generate_args("enaktiv_introduction_schritte",s.konzept)
         elif(s.zustand == "enaktiv_introduction_beispiele"): phrase = self.nlg.generate_args("enaktiv_introduction_beispiele",s.konzept)
         elif(s.zustand == "anfang"): phrase = self.nlg.generate_args("enaktiv_anfang",self.expertenmodell.zugriffEnaktiv(s.lesson, s.konzept, s.schritt))
@@ -402,7 +386,6 @@ class Synja(threading.Thread):
         phrase = self.nlg.generate_args(s[0], s[1])
       else:
         phrase = self.nlg.generate(s)
-      print(phrase)
       self.addDialogSynja(phrase)   
    
   #ermoeglicht reaktion auf ausbleiben von nutzerreaktion 

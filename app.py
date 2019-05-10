@@ -21,7 +21,8 @@ sys.path.append(path2)
 
 from threading import Lock
 from flask import Flask, render_template, session, request
-from project.webapp.flask_socketio import SocketIO, emit, join_room, leave_room, close_room, rooms, disconnect
+#from project.webapp.flask_socketio import SocketIO, emit, join_room, leave_room, close_room, rooms, disconnect
+from flask_socketio import SocketIO, emit, join_room, leave_room, close_room, rooms, disconnect
 from project.webapp.SynjaWeb2 import Synja
 import datetime
 
@@ -248,4 +249,4 @@ def ping_pong_synja():
         
 if __name__ == '__main__':
   #s = serve(app, host='127.0.0.1', port=80)
-  socketio.run(app, host='0.0.0.0', port=8080)
+  socketio.run(app, host='0.0.0.0', port=80)

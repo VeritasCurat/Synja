@@ -20,7 +20,10 @@ sys.path.append(path2)
 
 from threading import Lock
 from flask import Flask, render_template, session, request
-from project.webapp.flask_socketio import SocketIO, emit, join_room, leave_room, close_room, rooms, disconnect
+#from project.webapp.flask_socketio import SocketIO, emit, join_room, leave_room, close_room, rooms, disconnect
+
+from flask_socketio import SocketIO,emit, join_room, leave_room, close_room, rooms, disconnect
+
 from project.webapp.SynjaWeb2 import Synja
 import datetime
 

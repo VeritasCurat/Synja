@@ -268,7 +268,7 @@ class Lehrmanager:
     
   def schritt(self, intent,entity):
     self.reset_responseTimer()
-    print("LM zustand: "+self.zustand+"; lesson: "+self.lesson+"; intent: "+intent)
+    #print("LM zustand: "+self.zustand+"; lesson: "+self.lesson+"; intent: "+intent)
     self.dialogausgaben = []
     self.emotion = "neutral"
     
@@ -702,7 +702,7 @@ class Lehrmanager:
   def testphase_konzept(self, intent):
     #fuehrt einen Test durch, wertet diesen aus und reagiert auf Ergebnis (neu erklaeren oder naechstes Konzept)
     if(self.zustand_test == "start"):
-      print("LM TK: "+str(self.anzahl_cod[self.konzept]))
+      #print("LM TK: "+str(self.anzahl_cod[self.konzept]))
       if(self.anzahl_cod[self.konzept] > 0):
         #print("LM coding")
         self.art = "coding"
@@ -792,15 +792,15 @@ class Lehrmanager:
     #generiere drei tests
     if(self.testblockaufg == []): 
       self.gen_tb_aufg_list()
-      print(self.testblockaufgct)
-      print(self.testblockaufg)
+      #print(self.testblockaufgct)
+      #print(self.testblockaufg)
     
     if(self.iterationen_test < self.durchlaeufe_test):  
       if(self.zustand_test == "start"):
-        print(self.testblockaufgct)
+        #print(self.testblockaufgct)
         self.testblockaufgct += 1
       
-        print(self.testblockaufg[self.testblockaufgct])
+        #print(self.testblockaufg[self.testblockaufgct])
         zufallskonzept = self.testblockaufg[self.testblockaufgct][0]  
         zufallsart = self.testblockaufg[self.testblockaufgct][1]  
         
@@ -888,7 +888,7 @@ class Lehrmanager:
   def fehlerklassifizierung(self, intent):
     #pa fragt nach konzept; verwendet der schueler bestimmte schluesselworter in erklaerung, kennt er das Konzept => fluechtigkeitsfehler => test
     #sonst: Missverstaednis oder NIchtwissen (schwierig zu erkennen) => wechsel_erklaerung
-    print("LM FK: zustand: "+self.zustand_fk+", intent: "+intent+", fehlerart: "+str(self.fehlerart)+", lesson:"+str(self.FK_reaktion_lesson)+", konzept:"+str(self.FK_reaktion_konzept))
+    #print("LM FK: zustand: "+self.zustand_fk+", intent: "+intent+", fehlerart: "+str(self.fehlerart)+", lesson:"+str(self.FK_reaktion_lesson)+", konzept:"+str(self.FK_reaktion_konzept))
     if(self.zustand_fk == "anfang"):
       if(self.fehlerbeschreibung!="" and self.FK_lesson!="" and self.FK_konzept!="" and self.FK_reaktion_lesson!="" and self.FK_reaktion_konzept!=""):
         self.expected_entry = "lehre"
@@ -904,7 +904,7 @@ class Lehrmanager:
       self.FK_konzept = self.FK_reaktion_konzept
         
     elif(self.zustand_fk == "kompetenzfrage"):
-      print("FK: KF: "+intent)
+      #print("FK: KF: "+intent)
       if(intent == "weiss_nicht" or intent == "nein" or intent == "hinweis"):
         self.zustand_fk = "frage_hinweis_verstanden"
         self.expected_entry = "dialog"
@@ -995,10 +995,9 @@ class Lehrmanager:
     return ""
             
   def auswertungTest(self):
-    print("LM AUSWERTUNG")
+    #print("LM AUSWERTUNG")
     #wertet Test aus und reagiert auf Ergebnis (neu erklaeren oder naechster Themenblock)
     if(self.punkte_test >= self.min_punkte_bestehen):
-      print("Test1")
       self.dialogausgaben.append("Testergebnis_erfolgreich")
       self.dialogausgaben.append("frage_naechsterThemenblock")
       self.emotion = "freude"
