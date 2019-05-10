@@ -1,5 +1,0 @@
-"Think Java: How to Think Like a Computer Scientist":::"http://greenteapress.com/thinkjava6/thinkjava.pdf"
-"https://leanpub.com/whatsnewinjava8/read"
-"http://www.oreilly.com/programming/free/introducing-java-8.csp"
-
-"https://www.oreilly.com/programming/free/" #viele Sprachen
