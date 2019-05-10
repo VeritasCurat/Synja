@@ -21,12 +21,12 @@ sys.path.append(path2)
 
 from threading import Lock
 from flask import Flask, render_template, session, request
-from flask_socketio import SocketIO, emit, join_room, leave_room, close_room, rooms, disconnect
-from webapp.SynjaWeb2 import Synja
+from project.webapp.flask_socketio import SocketIO, emit, join_room, leave_room, close_room, rooms, disconnect
+from project.webapp.SynjaWeb2 import Synja
 import datetime
 
 
-from usergate.usergate import Usergate
+from project.webapp.usergate.usergate import Usergate
 from flask.helpers import url_for
 from builtins import isinstance
 
