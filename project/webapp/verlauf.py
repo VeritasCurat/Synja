@@ -30,7 +30,3 @@ class Verlauf(object):
         wr.writerow([id,timestamp,aufgabenstellung,antworttext,bewertung])
         #file.write(str()+'\n')
 
-
-ep = Expertenmodell("en")
-verlauf = Verlauf(ep)
-verlauf.eintragen(0, "basics", "comments", "test_mc", 0, "1", "fehlerfrei")        

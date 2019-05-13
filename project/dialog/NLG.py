@@ -15,7 +15,7 @@ class Dict_konzept_phrase:
   dict = {}
   
   def __init__(self):
-    path = os.path.realpath(__file__)[:-14]+"\\dialog\\nlg\\translation_konzept_phrase.txt"
+    path = os.path.realpath(__file__)[:-13]+"\\dialog\\nlg\\translation_konzept_phrase.txt"
     file = open(path)
     while(True):
         line = file.readline()
@@ -45,7 +45,7 @@ class Genbase:
   dict = {}
   
   def __init__(self):
-    path = os.path.realpath(__file__)[:-14]+"\\dialog\\nlg\\phrasesEN.txt"
+    path = os.path.realpath(__file__)[:-14]+"/dialog/nlg/phrasesEN.txt"
     file = open(path)
     while(True):
         line = file.readline()
@@ -116,5 +116,3 @@ class NLG(object):
     
       ausgabe = ausgabe.replace("\n",'\\n')    
       return ausgabe
-    
-    

@@ -1,0 +1,25 @@
+Allgemeiner farbcode:
+rot: typen
+blau: identifier
+grün: literale / ausdrücke
+orange: keywords 
+lila: operatoren
+green: boolean expression
+gray: codeblock,statement
+
+
+farbcode: programm structure
+main:	fett: feststehend
+	grau: kommentar
+	
+
+farbcode: methods
+green: 
+
+
+lila: indezes
+
+
+
+methoden: fett
+variablen/arrays: italic

@@ -54,7 +54,7 @@ time_user = {}
 logins = {} #ip -> [name, password]; None falls nicht eingeloggt
 print("webapp ready!")
 
-@app.route('/')
+@app.route('/synja')
 def render_indexSynja():
     return render_template('indexSynja2.html', async_mode=socketio.async_mode) 
 
