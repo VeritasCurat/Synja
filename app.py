@@ -14,7 +14,6 @@ import sys
 import time
 
 
-
 path2 = os.path.realpath(__file__)[:-26]
 print(path2)
 sys.path.append(path2)
@@ -249,4 +248,5 @@ def ping_pong_synja():
         
 if __name__ == '__main__':
   #s = serve(app, host='127.0.0.1', port=80)
-  socketio.run(app, host='127.0.0.1', port=80)
+
+  socketio.run(app, host='0.0.0.0')
