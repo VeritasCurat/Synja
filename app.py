@@ -14,6 +14,8 @@ import sys
 import time
 
 
+
+
 path2 = os.path.realpath(__file__)[:-26]
 print(path2)
 sys.path.append(path2)
@@ -24,7 +26,7 @@ from flask import Flask, render_template, session, request
 from flask_socketio import SocketIO, emit, join_room, leave_room, close_room, rooms, disconnect
 from project.webapp.SynjaWeb2 import Synja
 import datetime
-
+import gc
 
 from project.webapp.usergate.usergate import Usergate
 from flask.helpers import url_for
@@ -52,6 +54,13 @@ time_user = {}
 
 logins = {} #ip -> [name, password]; None falls nicht eingeloggt
 print("webapp ready!")
+
+from collections import Counter
+import linecache
+import os 
+import tracemalloc
+
+tracemalloc.start()
 
 @app.route('/synja')
 def render_indexSynja():
@@ -111,6 +120,10 @@ def background_threadSynja():
         count += 1
         
       if(int(round(time.time())) - current >= 1):
+        #TODO: loeschen
+        snapshot = tracemalloc.take_snapshot()
+        display_top(snapshot)
+   
         current = int(round(time.time()))
         for s in synjas:
           socketio.emit('time',{},namespace='/synja', room = s.id)
@@ -243,10 +256,44 @@ def disconnect_synja():
     
 @socketio.on('my_ping', namespace='/synja')
 def ping_pong_synja():
-    emit('my_pong')        
-        
+    emit('my_pong')     
+    
+    
+'''
+debug -> spaeter loeschen
+
+'''  
+  
+
+
+  
+def display_top(snapshot, key_type='lineno', limit=3):
+  snapshot = snapshot.filter_traces((
+      tracemalloc.Filter(False, "<frozen importlib._bootstrap>"),
+      tracemalloc.Filter(False, "<unknown>"),
+  ))
+  top_stats = snapshot.statistics(key_type)
+
+  print("Top %s lines" % limit)
+  for index, stat in enumerate(top_stats[:limit], 1):
+      frame = stat.traceback[0]
+      # replace "/path/to/module/file.py" with "module/file.py"
+      filename = os.sep.join(frame.filename.split(os.sep)[-2:])
+      print("#%s: %s:%s: %.1f KiB"
+            % (index, filename, frame.lineno, stat.size / 1024))
+      line = linecache.getline(frame.filename, frame.lineno).strip()
+      if line:
+          print('    %s' % line)
+
+  other = top_stats[limit:]
+  if other:
+      size = sum(stat.size for stat in other)
+      print("%s other: %.1f KiB" % (len(other), size / 1024))
+  total = sum(stat.size for stat in top_stats)
+  print("Total allocated size: %.1f KiB" % (total / 1024))
+
+
         
 if __name__ == '__main__':
   #s = serve(app, host='127.0.0.1', port=80)
-
-  socketio.run(app, host='0.0.0.0')
+  socketio.run(app, host='127.0.0.1', port=80)  #socketio.run(app, host='0.0.0.0') #heroku

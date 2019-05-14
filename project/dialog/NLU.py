@@ -76,7 +76,6 @@ class Dictionary():
       if(line == ""): break
       self.profanities.append(line)  
   
-  
   def profanity_check(self, word):
     #for p in self.profanities:
       #if(self.levenshtein(word, p) <= 1): return True

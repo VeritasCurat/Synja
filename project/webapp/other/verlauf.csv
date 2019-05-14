@@ -255,3 +255,4 @@ Which types of comments does Java support?
 ","1","fehlerfrei"
 "<built-in function id>","2019-05-10 09:53:31","Please write a valid comment.","//a","fehlerfrei"
 "<built-in function id>","2019-05-13 12:12:24","Please write a valid comment.","//a","fehlerfrei"
+"<built-in function id>","2019-05-13 16:53:45","Define a method.","void test(){}","fehlerfrei"
