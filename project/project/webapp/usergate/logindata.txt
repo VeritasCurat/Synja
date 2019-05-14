@@ -1,8 +1,0 @@
-john:1234
-Checkman:checkman
-bob:12345
-testus:test
-quarker:1234
-awfaw:213
-hans:123
-hansbob:12

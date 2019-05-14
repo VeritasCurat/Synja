@@ -5,12 +5,16 @@ from rasa_nlu.components import ComponentBuilder
 from rasa_nlu.model import Trainer
 from rasa_nlu import config
 from rasa_nlu.model import Metadata, Interpreter
+from project.lehre.Expertenmodell import verzeichnispfad
+import random
+from builtins import str
+
 
 class Parsing:
-  
+  verzeichnispfad
   builder = ComponentBuilder(use_cache=True) 
-  training_data = load_data('liza/rasa/training.json')
-  trainer = Trainer(config.load("liza/rasa/config_spacy.yml"), builder)
+  training_data = load_data(verzeichnispfad+'webapp/liza/rasa/training.json')
+  trainer = Trainer(config.load(verzeichnispfad+"webapp/liza/rasa/config_spacy.yml"), builder)
   trainer.train(training_data)
   interpreter = Interpreter.load(trainer.persist('model/default'))
   
