@@ -451,4 +451,4 @@ def disconnect_liza():
   
 if __name__ == '__main__':
   #s = serve(app, host='127.0.0.1', port=80)
-  socketio.run(app, host='0.0.0.0', port=82)
+  socketio.run(app, host='0.0.0.0', port=80)

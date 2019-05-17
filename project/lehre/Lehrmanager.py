@@ -135,7 +135,8 @@ class Lehrmanager:
   
   zustand_nK=""
   verstandeneKonzepteLesson = 0
-  testblockaufg = [] #speichert aufgaben damit diese nicht wiederholt werden
+  testblockaufglist = [] #speichert aufgaben damit diese nicht wiederholt werden
+  testblockaufgabe = None
   testblockaufgct = 0 
   
   enaktiv_schritt = 0 #zaehler, bei welchem schritt, beispiel ist enaktiv
@@ -554,7 +555,7 @@ class Lehrmanager:
       self.dialogausgaben.append("testphase_themenblock")
       #self.emotion = "neutral"
       self.zustand = "testphase_block"
-      self.testblockaufg = []
+      self.testblockaufglist = []
       self.testblockaufgct = 0 
       self.testphase_block("")
     return 
@@ -775,42 +776,41 @@ class Lehrmanager:
         self.dialogausgaben.append("richtigeAntwort")
         self.emotion = "neutral"
  
-  def gen_tb_aufg_list(self):
-    self.testblockaufg = []
-    self.testblockaufgct = -1 
+  def gen_next_tb_aufg(self):
     
     #fuehrt drei Tests durch
     #print("TB: "+str(self.iterationen_test)+" von "+str(self.durchlaeufe_test))
     #print("TB: "+self.zustand_test)
-    for i in range(3): #@Unusedvariable
-      while(True):
-        zufallsart = secure_rand_gen.randint(1, 2)  
-        zufallskonzept = self.lessoninhalte[self.lesson][secure_rand_gen.randint(0,len(self.lessoninhalte[self.lesson])-1)]
-        neu = True
-        for aufg in self.testblockaufg:
-          if(zufallskonzept == aufg[0] and zufallsart == aufg[1]):
-            neu = False
-            break
-        if(neu == True):break
+    if(len(self.testblockaufglist)-1 >= 2*len(self.lessoninhalte[self.lesson])):
+      self.testblockaufglist = []
       
-      self.testblockaufg.append([zufallskonzept,zufallsart])
+    while(True):
+      zufallsart = secure_rand_gen.randint(1, 2)  
+      zufallskonzept = self.lessoninhalte[self.lesson][secure_rand_gen.randint(0,len(self.lessoninhalte[self.lesson])-1)]
+      neu = True
+      for aufg in self.testblockaufglist:
+        if(zufallskonzept == aufg[0] and zufallsart == aufg[1]):
+          neu = False
+          break
+      if(neu == True):break
     
+    self.testblockaufglist.append([zufallskonzept,zufallsart])
+    self.testblockaufgabe = [zufallskonzept,zufallsart]
    
   def testphase_block(self, intent):
     #generiere drei tests
-    if(self.testblockaufg == []): 
-      self.gen_tb_aufg_list()
+    self.gen_next_tb_aufg()
       #print(self.testblockaufgct)
-      #print(self.testblockaufg)
+      #print(self.testblockaufglist)
     
-    if(self.iterationen_test < self.durchlaeufe_test):  
+    if(self.punkte_test < 3):  
       if(self.zustand_test == "start"):
         #print(self.testblockaufgct)
         self.testblockaufgct += 1
       
-        #print(self.testblockaufg[self.testblockaufgct])
-        zufallskonzept = self.testblockaufg[self.testblockaufgct][0]  
-        zufallsart = self.testblockaufg[self.testblockaufgct][1]  
+        #print(self.testblockaufglist[self.testblockaufgct])
+        zufallskonzept = self.self.testblockaufgabe[0]  
+        zufallsart = self.testblockaufgabe[1]  
         
         self.konzept = zufallskonzept
                  
@@ -881,8 +881,9 @@ class Lehrmanager:
           self.dialogausgaben.append(Lehrausgabe(self.lesson, self.konzept, "test_mc", self.version))
           self.emotion = "neutral"
           return
-    elif(self.iterationen_test >= self.durchlaeufe_test):
-      self.testblockaufg = []
+    elif(self.punkte_test >= 3):
+      self.testblockaufglist = []
+      self.testblockaufgabe = None
       self.expected_entry = "dialog"
       self.dialogausgaben.append("auswertungTest")
       self.emotion = "neutral"

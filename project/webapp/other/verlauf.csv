@@ -461,3 +461,48 @@ Which types of comments does Java support?
 3. Comments for Variables
 4. executable Comments
 ","1","fehlerfrei"
+"0","2019-05-17 12:35:44","Please choose the right answer(s) by typing in the number(s) of the answer(s) into user input:
+Which types of comments does Java support?
+1. One-line Comments
+2. Java-Docs
+3. Comments for Variables
+4. executable Comments
+","1","fehlerfrei"
+"<built-in function id>","2019-05-17 12:36:52","Please write a valid main-method.","public static void main(String a[]){}","fehlerfrei"
+"<built-in function id>","2019-05-17 12:37:18","Please write a valid import.","import a","[['programm_structure', 'programm_structure_import', 'programm_structure', 'programm_structure_import'], 'This does not end with a semicolon: <b>import a</b>.', 'import_wrong_semicolon']"
+"<built-in function id>","2019-05-17 12:37:30","Please write a valid import.","import a;","fehlerfrei"
+"<built-in function id>","2019-05-17 12:38:21","Please write a valid import.","import a;","fehlerfrei"
+"<built-in function id>","2019-05-17 12:39:39","Please write a valid package declaration.","package src;","fehlerfrei"
+"<built-in function id>","2019-05-17 12:40:08","What does an import declaration do?
+Please fill the gap by typing the answer in Teaching Input:
+It maps a path to a simple ___ so import objects can be used by it.","1","fehlerhaft"
+"<built-in function id>","2019-05-17 12:40:50","Please choose the right answer(s) by typing in the number(s) of the answer(s) into user input:
+Where are imports written?
+1. At the top.
+2. At the bottom.
+3. One line before the first use.
+4. They can be written anywhere.
+","1","fehlerfrei"
+"<built-in function id>","2019-05-17 12:40:56","Please choose the right answer(s) by typing in the number(s) of the answer(s) into user input:
+What does a package declaration look like?
+1. package applicationname,libraryname
+2. package libraryname.applicationname
+3. package applicationname.libraryname
+4. PACKAGE applicationname.libraryname
+","2","fehlerfrei"
+"<built-in function id>","2019-05-17 12:43:24","Please write a valid main-method.","public static void main(String[] a){}","fehlerfrei"
+"<built-in function id>","2019-05-17 12:43:40","Please write a valid import.","import a;","fehlerfrei"
+"<built-in function id>","2019-05-17 12:43:53","Please write a valid package declaration.","package b;","fehlerfrei"
+"<built-in function id>","2019-05-17 12:44:11","What does an import declaration do?
+Please fill the gap by typing the answer in Teaching Input:
+It maps a path to a simple ___ so import objects can be used by it.","namea","fehlerhaft"
+"<built-in function id>","2019-05-17 12:44:44","Please choose the right answer(s) by typing in the number(s) of the answer(s) into user input:
+What does a package declaration look like?
+1. package applicationname,libraryname
+2. package libraryname.applicationname
+3. package applicationname.libraryname
+4. PACKAGE applicationname.libraryname
+","4","fehlerhaft"
+"<built-in function id>","2019-05-17 12:44:54","Complete this package declaration.
+Please fill the gap by typing the answer in Teaching Input:
+package myapplication___mylibrary;",",","fehlerhaft"
