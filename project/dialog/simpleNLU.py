@@ -4,7 +4,7 @@ Created on 17.05.2019
 @author: Johannes
 Problem: RASA NLU kann teilweise sogar nicht trainingsdaten zu intents parsen (>40%)
          Beispiel: 'intent': {'name': 'gruss', 'confidence': 0.344466498747804}, 'entities': [], 'text': 'hi'}
-Bildet die trainingsdaten auf intents ab.
+Bildet die trainingsdaten auf intents ab. Als sicherung das einfachste Eingaben richtig erkannt werden.
 '''
 import os
 import io
@@ -32,7 +32,7 @@ class simpleNLU(object):
     
     def laden(self):
       path = os.path.join(os.path.dirname(verzeichnispfad), 'nlu', 'training.json')
-      with open(path) as f:
+      with io.open(path) as f:
         data = json.load(f)['rasa_nlu_data']['common_examples']
         for l in data:
           self.intentreg[self.toleranz(l['text'])] = l['intent']

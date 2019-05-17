@@ -156,7 +156,6 @@ class NLU(object):
     try:
       intent =""    
       parse = self.interpreter.parse((eingabe))
-      print("TEST: "+str(parse))
       intent = parse['intent']['name']
       confidence = str(parse['intent']['confidence'])
       #print("nlu: eingabe: \""+eingabe+"\", intent: \"" + intent + "\", with confidence " + str(float(confidence)))
@@ -189,8 +188,3 @@ class NLU(object):
  
  
  
- 
-
-
-nlu = NLU("en")
-print(nlu.parse('hi  '))

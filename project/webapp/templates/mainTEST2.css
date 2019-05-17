@@ -1,0 +1,86 @@
+@import "bourbon";
+
+$color: #e2cef9;
+
+@mixin MQ {
+	@media only screen and (min-width: 700px) { @content; }
+}
+
+* {
+	@include box-sizing(border-box);
+}
+
+.container {
+	margin: 3em auto;
+	width: 90%;
+	max-width: 1100px;
+}
+
+h2 {
+	position: relative;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1em;
+	font-weight: 400;
+	text-transform: uppercase;
+	color: #959595;
+	&:after {
+		content: "";
+		position: absolute;
+		left: 0; right: 0;
+		bottom: -10px;
+		border-bottom: 3px solid $color;
+		width: 30px;
+	}
+}
+
+ul {
+	list-style: none;
+	margin: 4em 0 0;
+	padding: 0;
+	@include clearfix;
+
+	li {
+		margin-bottom: 2em;
+		@include MQ {
+			float: left;
+			width: 47.5%;
+			margin-right: 5%;
+			&:nth-child(2n) {
+				margin-right: 0;
+			}	
+		}
+
+		h3 {
+			position: relative;
+			z-index: 1;			
+			margin: 0;
+			font-family: 'Ubuntu', sans-serif;
+			font-size: 1.25em;
+			line-height: 2.5em;
+			font-weight: 300;
+			letter-spacing: 1px;
+			&:before {
+				content: "";
+				position: absolute;
+				z-index: -1;
+				background-color: $color;
+				width: 2.5em;
+				height: 2.5em;
+				border-radius: 50%;					
+			}
+
+			span {
+				padding-left: 15px;
+			}		
+		}
+
+		p {
+			padding-left: 15px;
+			font-family: 'Open Sans', sans-serif;
+			font-size: 1.1em;
+			line-height: em(27);
+			font-weight: 400;
+			color: #959595;
+		}
+	}
+}

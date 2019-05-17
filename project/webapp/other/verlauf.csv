@@ -212,3 +212,35 @@ Which types of comments does Java support?
 3. Comments for Variables
 4. executable Comments
 ","1","fehlerfrei"
+"0","2019-05-17 09:31:01","Please choose the right answer(s) by typing in the number(s) of the answer(s) into user input:
+Which types of comments does Java support?
+1. One-line Comments
+2. Java-Docs
+3. Comments for Variables
+4. executable Comments
+","1","fehlerfrei"
+"0","2019-05-17 09:31:32","Please choose the right answer(s) by typing in the number(s) of the answer(s) into user input:
+Which types of comments does Java support?
+1. One-line Comments
+2. Java-Docs
+3. Comments for Variables
+4. executable Comments
+","1","fehlerfrei"
+"<built-in function id>","2019-05-17 09:32:33","Please write a valid comment.","//a","fehlerfrei"
+"<built-in function id>","2019-05-17 09:33:27","Please write a literal.","2.","[['basics', 'literals', 'basics', 'literals'], 'This is not a literal: <b>2.</b>', 'literal_non']"
+"<built-in function id>","2019-05-17 09:34:10","Please write a literal.","2","fehlerfrei"
+"<built-in function id>","2019-05-17 09:34:26","Please write a literal.","2","fehlerfrei"
+"0","2019-05-17 10:25:35","Please choose the right answer(s) by typing in the number(s) of the answer(s) into user input:
+Which types of comments does Java support?
+1. One-line Comments
+2. Java-Docs
+3. Comments for Variables
+4. executable Comments
+","1","fehlerfrei"
+"0","2019-05-17 10:26:19","Please choose the right answer(s) by typing in the number(s) of the answer(s) into user input:
+Which types of comments does Java support?
+1. One-line Comments
+2. Java-Docs
+3. Comments for Variables
+4. executable Comments
+","1","fehlerfrei"

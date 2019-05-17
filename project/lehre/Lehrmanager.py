@@ -526,7 +526,7 @@ class Lehrmanager:
     self.emotion = "neutral"
     self.initialisieren_naechstesKonzept("")
         
-  def initialisieren_naechstesKonzept(self):
+  def initialisieren_naechstesKonzept(self,intent):
     self.expected_entry = "dialog"
     #print("init Konzept")
     self.art_counter = 0
@@ -572,7 +572,6 @@ class Lehrmanager:
   def konzeptbeschreibung(self):
     self.expected_entry = "dialog"
     self.dialogausgaben.append(["frage_verstanden",self.konzept])
-    print(str(self.dialogausgaben))
     #self.emotion = "neutral"
     self.zustand = "frage_Konzeptverstanden"
     self.lastPhrase = "frage_verstanden"
