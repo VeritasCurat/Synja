@@ -8,7 +8,7 @@ import os
 
 sys.path.append(os.path.abspath('.'))
 
-from javaparsing.parser import *
+from javaparsing.parser import * #@Unresolvedimport
 
 class Enaktiv(object):
   

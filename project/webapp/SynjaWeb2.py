@@ -16,14 +16,14 @@ sys.path.append(os.path.abspath('../dialog'))
 sys.path.append(os.path.abspath('../webapp'))
 
 
-from Lehrmanager import Lehrmanager, Fehlerantwort, Hinweis, Lehrausgabe
-from Expertenmodell import Expertenmodell
+from Lehrmanager import Lehrmanager, Fehlerantwort, Hinweis, Lehrausgabe #@Unresolvedimport
+from Expertenmodell import Expertenmodell #@Unresolvedimport
  
-from NLG import NLG
-from NLU import NLU
-from Lehrmanager import Enaktivausgabe
+from NLG import NLG #@Unresolvedimport
+from NLU import NLU #@Unresolvedimport
+from Lehrmanager import Enaktivausgabe #@Unresolvedimport
 
-from verlauf import Verlauf
+from verlauf import Verlauf #@Unresolvedimport
 
 import threading
 import warnings

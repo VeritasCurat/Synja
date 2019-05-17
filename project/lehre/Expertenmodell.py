@@ -12,14 +12,14 @@ import sys
 import io
 sys.path.append(os.path.abspath('../lehre'))
 
-from Syntaxkonzept import Syntaxkonzept
-from Lueckentext import Lueckentext
-from MultipleChoice import MultipleChoice
-from Aufgabe import Aufgabe
-from Enaktiv import Enaktiv
-from javaparsing.parser import parse
-from javaparsing.parser import allreturns
-from Example import Example
+from Syntaxkonzept import Syntaxkonzept  #@Unresolvedimport
+from Lueckentext import Lueckentext #@Unresolvedimport
+from MultipleChoice import MultipleChoice #@Unresolvedimport
+from Aufgabe import Aufgabe #@Unresolvedimport
+from Enaktiv import Enaktiv #@Unresolvedimport
+from javaparsing.parser import parse #@Unresolvedimport
+from javaparsing.parser import allreturns  #@Unresolvedimport
+from Example import Example #@Unresolvedimport
 
 import re
 
@@ -633,11 +633,11 @@ class Expertenmodell(object):
 
 
 
+'''
 
 ep = Expertenmodell("en")
 print(str(ep.lessoninhalte.keys()))
 print(ep.zugriffEnaktiv("basics", "literals", 0))
-'''
 print(ep.bewerten_enaktiv("basics", "literals", 0, "test"))
 print(ep.zugriffEnaktiv("programm_structure", "programm_structure_main", 0))
 print(ep.zugriffEnaktiv("programm_structure", "programm_structure_main", 2))
@@ -656,13 +656,13 @@ print(ep.zugriffEnaktiv("programm_structure", "programm_structure_main", 10))
 #print(ep.zugriffLehreinheit("controll_structures", "for", "test_mc", 0))
 #print(ep.antworten_anzeigen("controll_structures", "for", "test_mc", 0))
 #print(ep.bewerten("controll_structures", "for", "test_mc", 0, "2,3"))
+'''
 
 print(ep.zugriffLehreinheit("controll_structures", "if", "worked_example", 0))
 print(str(ep.lessoninhalte["methods"]))
 
 print(ep.bewerten("methods", "method_access", "coding", 0, "void test(){} test();"))
 
-'''
 print(ep.bewerten("operators", "bitwise_operators", "coding", 0, "int a; a<<2"))
 print(ep.zugriffLehreinheit("controll_structures", "for", "test_mc", 0))
 print(ep.antworten_anzeigen("controll_structures", "for", "test_mc", 0))

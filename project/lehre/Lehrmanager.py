@@ -3,16 +3,13 @@ Wie Modell
 
 
 '''
-import random
 import os
 import sys
 
 sys.path.append(os.path.abspath('../lehre'))
 
 from random import SystemRandom
-from Schuelermodell import Schuelermodell
-from Expertenmodell import Expertenmodell
-from numpy import sort
+from Schuelermodell import Schuelermodell #@Unresolvedimport
 
 secure_rand_gen = SystemRandom()
 verzeichnispfad = os.path.realpath(__file__)
@@ -207,14 +204,14 @@ class Lehrmanager:
       self.namensregister.append(name)
     #print(self.namensregister)
 
-  def enumaration(self, list):
+  def enumaration(self, List):
     phrase =""
-    if(len(list) == 0): return ""
-    elif(len(list) == 1): return list[0]
+    if(len(List) == 0): return ""
+    elif(len(List) == 1): return List[0]
     else: 
-      for ind in range(len(list)-2):
-        phrase += list[ind]+", "
-      phrase += list[-2]+" and "+list[-1]
+      for ind in range(len(List)-2):
+        phrase += List[ind]+", "
+      phrase += List[-2]+" and "+List[-1]
       return phrase
 
   #def getLehrAusgaben(self):
@@ -529,7 +526,7 @@ class Lehrmanager:
     self.emotion = "neutral"
     self.initialisieren_naechstesKonzept("")
         
-  def initialisieren_naechstesKonzept(self,intent):
+  def initialisieren_naechstesKonzept(self):
     self.expected_entry = "dialog"
     #print("init Konzept")
     self.art_counter = 0
@@ -575,8 +572,10 @@ class Lehrmanager:
   def konzeptbeschreibung(self):
     self.expected_entry = "dialog"
     self.dialogausgaben.append(["frage_verstanden",self.konzept])
+    print(str(self.dialogausgaben))
     #self.emotion = "neutral"
     self.zustand = "frage_Konzeptverstanden"
+    self.lastPhrase = "frage_verstanden"
     return
     
   def konzeptbeschreibung_enaktiv(self, intent):
@@ -712,6 +711,7 @@ class Lehrmanager:
         self.art = "coding"
         self.expected_entry = "lehre"
         self.dialogausgaben.append(Lehrausgabe(self.lesson, self.konzept, self.art, self.version))
+        self.dialogausgaben.append(["kompetenzfrage",self.konzept])
         #self.emotion = "neutral"
       else:
         print("LM kein Coding TEST fuer: "+self.konzept)
@@ -719,6 +719,11 @@ class Lehrmanager:
       self.zustand_test = "loesung"
       return
     if(self.zustand_test == "loesung"):
+      if(intent == "nein"):
+        self.zustand_test = "start"
+        self.zustand = "wechsel_erklaerung"
+        self.wechsel_erklaerung()
+        return
       bewertung = intent
       if(bewertung == "fehlerfrei"):
         self.zustand_test = "start"
@@ -778,7 +783,7 @@ class Lehrmanager:
     #fuehrt drei Tests durch
     #print("TB: "+str(self.iterationen_test)+" von "+str(self.durchlaeufe_test))
     #print("TB: "+self.zustand_test)
-    for i in range(3):
+    for i in range(3): #@Unusedvariable
       while(True):
         zufallsart = secure_rand_gen.randint(1, 2)  
         zufallskonzept = self.lessoninhalte[self.lesson][secure_rand_gen.randint(0,len(self.lessoninhalte[self.lesson])-1)]

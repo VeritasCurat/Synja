@@ -12,6 +12,11 @@ import importlib
 package='sklearn'
 importlib.import_module(package)
 '''
+import os
+import sys
+
+sys.path.append(os.path.abspath('..'))
+from simpleNLU import simpleNLU #@Unresolvedimport
 
 from rasa_nlu.training_data import load_data
 from rasa_nlu.components import ComponentBuilder
@@ -29,7 +34,6 @@ from rasa_nlu.model import Interpreter
 
 import re
 
-import os
 verzeichnispfad = os.path.realpath(__file__)
 
 trainingdataEN = os.path.join(os.path.dirname(verzeichnispfad),'nlu','training.json')
@@ -100,7 +104,7 @@ class NLU(object):
   confidence = 0
   
   dictionary = Dictionary()
-  
+  sNLU = simpleNLU()
   
   
   def __init__(self, sprache):
@@ -132,6 +136,8 @@ class NLU(object):
     eingabe = eingabe.replace(";", "")
     eingabe = eingabe.replace("!", "")
     eingabe = eingabe.replace("?", "")
+    
+    if(self.sNLU.toleranzpruefung(Eingabe) != ""): return self.sNLU.toleranzpruefung(Eingabe)
 
 
     while "  " in eingabe:
@@ -150,7 +156,7 @@ class NLU(object):
     try:
       intent =""    
       parse = self.interpreter.parse((eingabe))
-      #print("TEST: "+str(parse))
+      print("TEST: "+str(parse))
       intent = parse['intent']['name']
       confidence = str(parse['intent']['confidence'])
       #print("nlu: eingabe: \""+eingabe+"\", intent: \"" + intent + "\", with confidence " + str(float(confidence)))
@@ -185,11 +191,6 @@ class NLU(object):
  
  
 
-#nlu = NLU("en")    
-#print(nlu.parse("yes"))
-#print(nlu.parse("no"))
-#print(nlu.parse("bye"))
 
-#nlu.test_nlu(nlu)
-
-
+nlu = NLU("en")
+print(nlu.parse('hi  '))

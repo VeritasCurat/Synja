@@ -97,6 +97,7 @@
       {  "text": "what can i do", "intent": "unschluessig", "entities": [] },
 
 
+
             
       {  "text": "bye", "intent": "verabschiedung", "entities": [] },
       {  "text": "bye-bye", "intent": "verabschiedung", "entities": [] },
@@ -237,7 +238,15 @@
       {  "text": "i dont think so", "intent": "nein", "entities": [] },
       {  "text": "i want to reject that", "intent": "nein", "entities": [] },
       {  "text": "i would like to reject that", "intent": "nein", "entities": [] },
-      
+      {  "text": "i cant", "intent": "no", "entities": [] },
+      {  "text": "i cant, synja", "intent": "no", "entities": [] },
+      {  "text": "i cant do this", "intent": "no", "entities": [] },
+      {  "text": "i cant solve this", "intent": "no", "entities": [] },
+      {  "text": "i cant solve this tas", "intent": "no", "entities": [] },
+      {  "text": "i can not write a solution", "intent": "no", "entities": [] },
+ 
+
+
      
       {  "text": "what is syntax?", "intent": "QTeaching", "entities": [] },
       {  "text": "what is a pedagogical agent?", "intent": "QTeaching", "entities": [] },

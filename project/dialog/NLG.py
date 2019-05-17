@@ -8,7 +8,7 @@ import sys
 sys.path.append(os.path.abspath('../lehre'))
 
 
-from Expertenmodell import Expertenmodell
+from Expertenmodell import Expertenmodell #@Unresolvedimport
 
 source = "rasa\phrasesEN.json"
 import random
@@ -59,13 +59,12 @@ class Genbase:
         if(line==""):break
         #neuer Eintrag
         if("=" in line):            
-          pattern = r"="
+          pattern = r"= \""
           data = re.split(pattern, line)
           if(data[0] != None):
             name = data[0]
             while(name.startswith(' ') or name.startswith('\"')): name = name[1:]
             while(name.endswith(' ') or name.endswith('\"')): name = name[:-1]
-
           if(data[1] != None):
             phrase = data[1][:-1]
             while(phrase.startswith(' ') or phrase.startswith('\"')): phrase = phrase[1:]
@@ -130,4 +129,4 @@ class NLG(object):
     
       ausgabe = ausgabe.replace("\n",'\\n')    
       return ausgabe
-    
+
