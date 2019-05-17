@@ -59,9 +59,8 @@ def render_indexEditor():
 
 @app.route('/synja')
 def render_indexSynja():
-    #
-    if(request.remote_addr not in logins.keys()):
-      return render_template('indexGate.html', async_mode=socketio.async_mode) 
+    #if(request.remote_addr not in logins.keys()):
+    #  return render_template('indexGate.html', async_mode=socketio.async_mode) 
     return render_template('indexSynja2.html', async_mode=socketio.async_mode) 
     
 @app.route('/liza')
@@ -242,9 +241,9 @@ def logout_synja():
 
 @socketio.on('connect', namespace='/synja')
 def connect_synja():
-    if(request.remote_addr not in logins.keys()):
-      emit('redirect', {'url': url_for('render_indexGate')})
-      return
+    #if(request.remote_addr not in logins.keys()):
+    #  emit('redirect', {'url': url_for('render_indexGate')})
+    #  return
      
     if(request.sid not in connections):
       connections.append(request.sid)
@@ -452,4 +451,4 @@ def disconnect_liza():
   
 if __name__ == '__main__':
   #s = serve(app, host='127.0.0.1', port=80)
-  socketio.run(app, host='0.0.0.0', port=81)
+  socketio.run(app, host='0.0.0.0', port=82)

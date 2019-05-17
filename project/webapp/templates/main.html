@@ -38,10 +38,13 @@ $color: #e2cef9;
 	max-width: 1100px;
 }
 
-
+.outer {
+	height: 700px;
+    width: 100%;
+}
 
 .inner{
-  position: relative;
+	height: 400px;
 }
 
 
@@ -51,39 +54,41 @@ $color: #e2cef9;
 <body>
 <div class="header">
 <p style="padding: 30px">
-Kontakt:<br>Dr. Nguyen-Thinh Le (<a href="mailto:lenguyen@hu-berlin.de">lenguyen@hu-berlin.de</a>)<br>Johannes Grobelski (<a href="grobelsj@informatik.hu-berlin.de">grobelsj@informatik.hu-berlin.de</a>)
+contact details:<br>Dr. Nguyen-Thinh Le (<a href="mailto:lenguyen@hu-berlin.de">lenguyen@hu-berlin.de</a>)<br>Johannes Grobelski (<a href="grobelsj@informatik.hu-berlin.de">grobelsj@informatik.hu-berlin.de</a>)
 </p>
 </div>
 
 <img src="/static/logo.jpg" style="float: right;" />
 
-<div>
-	<div class="inner">
+<div class="outer">
+	<h1 style="padding-top: 100px; color:red">ATTENTION THIS PAGE IS STILL UNDER CONSTRUCTION! <br> EXPECTED COMPLETION: Tonight, 17.05.19</h1>
+	<div>
 		<h3><a href="/how-to-use">How to use</a></h3>
 		<p>A Tutorial how to use Synja.</p>
 	</div>
 	<div class="inner">
 		<h3><a>Synja Pedagogical Agent</a></h3>
-		<p>A pedagogical agent for learning the syntax of java. Developed by Johannes Grobelski.</p>
-		<a href = "/synja">
-			<img src="/static/preview_synja.png" style="float: left;" alt="Example" width="400" border ="2"/>
-		</a>
+		<p>
+			<p>A pedagogical agent for learning the syntax of java. Developed by Johannes Grobelski.</p>
+			<a href = "/synja"><img src="/static/preview_synja.png" style="float: left;" alt="Example" width="400" border ="2"/></a>
+		</p>
+		
 	</div>
 	<div class="inner">
 		<h3><a>Liza Chatbot</a></h3>
-		<p>A convertational agent for learning human reasoning skills. Developed by Laura Wartschinski.</p>
 		<p>
-		<a href = "/liza">
-			<img src="/static/preview_liza.png" style="float: left;" alt="Example" width="400" border ="2"/>
-		</a>
+			<p>A convertational agent for learning human reasoning skills. Developed by Laura Wartschinski.</p>
+			<a href = "/liza"><img src="/static/preview_liza.png" style="float: left;" alt="Example" width="400" border ="2"/></a>
+		</p>
+	</div>
+
+
+	<div class="footer">
+	<a href="https://www.hu-berlin.de/de/hu/impressum">Legal Notice</a>
 	</div>
 </div>
 
-<h1 style="padding-top: 100px; color:red">ACHTUNG DIESE SEITE IST NOCH IM AUFBAU! <br> ES KANN DAHER ZU AUSF&Auml;LLEN KOMMEN. <br> VORAUSICHTLICHE FERTIGSTELLUNG: Heute Abend, 17.05.19</h1>
 
-<div class="footer">
-<a href="https://www.hu-berlin.de/de/hu/impressum">Impressum</a>
-</div>
 
 </body>
 </html> 
