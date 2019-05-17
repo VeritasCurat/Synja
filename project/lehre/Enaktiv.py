@@ -3,7 +3,12 @@ Created on 13.03.2019
 
 @author: Johannes
 '''
-from project.lehre.javaparsing.parser import *
+import sys
+import os
+
+sys.path.append(os.path.abspath('.'))
+
+from javaparsing.parser import *
 
 class Enaktiv(object):
   

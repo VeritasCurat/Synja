@@ -74,7 +74,7 @@ class Phrasebase:
       choice =  random.choice(self.waiting)
       
       if "waiting" in self.lastchoice:
-        last = self.lastchoice.pop()
+        last = self.lastchoice.pop("waiting")
         self.waiting.append(last)
         
       self.lastchoice["waiting"] = choice

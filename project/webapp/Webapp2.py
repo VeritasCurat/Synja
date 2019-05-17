@@ -12,6 +12,8 @@ Webapp fuer Synja und Liza
 '''
 import os
 import sys
+#import gevent
+#from engineio.async_drivers import eventlet
 
 
 path2 = os.path.realpath(__file__)[:-26]
@@ -20,26 +22,21 @@ sys.path.append(path2)
 
 from threading import Lock
 from flask import Flask, render_template, session, request
-#from project.webapp.flask_socketio import SocketIO, emit, join_room, leave_room, close_room, rooms, disconnect
-
-from flask_socketio import SocketIO,emit, join_room, leave_room, close_room, rooms, disconnect
-
+from project.webapp.flask_socketio import SocketIO, emit, join_room, leave_room, close_room, rooms, disconnect
 from project.webapp.SynjaWeb2 import Synja
 import datetime
 
-from project.webapp.liza import *
 from project.webapp.liza.l import L
 
 from project.webapp.usergate.usergate import Usergate
 from flask.helpers import url_for
 from builtins import isinstance
 
-
 async_mode = None
 
 app = Flask(__name__, static_url_path="/static")
 app.config['SECRET_KEY'] = 'asde24oyx58ci6ad3skgr91ua2wp3oasd'
-socketio = SocketIO(app, async_mode=async_mode)
+socketio = SocketIO(app, async_mode=async_mode) #, async_mode=async_mode
 
 thread = None
 thread_lock = Lock()
@@ -62,8 +59,9 @@ def render_indexEditor():
 
 @app.route('/synja')
 def render_indexSynja():
-    #if(request.remote_addr not in logins.keys()):
-    #  return render_template('indexGate.html', async_mode=socketio.async_mode) 
+    #
+    if(request.remote_addr not in logins.keys()):
+      return render_template('indexGate.html', async_mode=socketio.async_mode) 
     return render_template('indexSynja2.html', async_mode=socketio.async_mode) 
     
 @app.route('/liza')
@@ -244,9 +242,9 @@ def logout_synja():
 
 @socketio.on('connect', namespace='/synja')
 def connect_synja():
-    #if(request.remote_addr not in logins.keys()):
-    #  emit('redirect', {'url': url_for('render_indexGate')})
-    #  return
+    if(request.remote_addr not in logins.keys()):
+      emit('redirect', {'url': url_for('render_indexGate')})
+      return
      
     if(request.sid not in connections):
       connections.append(request.sid)
@@ -454,4 +452,4 @@ def disconnect_liza():
   
 if __name__ == '__main__':
   #s = serve(app, host='127.0.0.1', port=80)
-  socketio.run(app, host='127.0.0.1', port=8080)
+  socketio.run(app, host='0.0.0.0', port=80)

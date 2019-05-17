@@ -1971,6 +1971,7 @@ def parse(eingabe, parsecommand):
     return a
   
 def parse_wre(eingabe, typ):
+  typ = typ.replace('\r','')
   while("  " in eingabe):eingabe = eingabe.replace('  ',' ')
   eingabe = eingabe.replace('\n',' ')
      
@@ -2052,6 +2053,9 @@ def parse_wre(eingabe, typ):
 
   else: 
     print("Command \""+str(typ)+"\" cannot be parsed!")
+    print(str(typ)=="method_access")
+    print(repr(typ)+"!="+"method_access")
+    print(str(typ)==str("method_access"))
     exit(-1)
     
     

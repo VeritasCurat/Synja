@@ -6,9 +6,15 @@ Created on 22.01.2019
 - Speichert darstellungsarten und testarten als eine Einheit
 - Bewertet lehreingaben von Nutzer mit gewisser toleranz
 '''
-from project.webapp.Nutzer import Nutzer
-from project.lehre.Lueckentext import Lueckentext
-from project.lehre.javaparsing.parser import parse
+import sys
+import os
+
+sys.path.append(os.path.abspath('../webapp'))
+sys.path.append(os.path.abspath('../lehre'))
+
+from Nutzer import Nutzer
+from Lueckentext import Lueckentext
+from javaparsing.parser import parse
 
 class Syntaxkonzept(object):
     name = ""

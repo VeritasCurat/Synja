@@ -5,16 +5,13 @@ from rasa_nlu.components import ComponentBuilder
 from rasa_nlu.model import Trainer
 from rasa_nlu import config
 from rasa_nlu.model import Metadata, Interpreter
-from project.lehre.Expertenmodell import verzeichnispfad
 import random
-from builtins import str
-
 
 class Parsing:
-  verzeichnispfad
+  
   builder = ComponentBuilder(use_cache=True) 
-  training_data = load_data(verzeichnispfad+'webapp/liza/rasa/training.json')
-  trainer = Trainer(config.load(verzeichnispfad+"webapp/liza/rasa/config_spacy.yml"), builder)
+  training_data = load_data('liza/rasa/training.json')
+  trainer = Trainer(config.load("liza/rasa/config_spacy.yml"), builder)
   trainer.train(training_data)
   interpreter = Interpreter.load(trainer.persist('model/default'))
   
@@ -34,7 +31,7 @@ class Parsing:
     
   
   def getAnswer(self):
-      return random.choice(["yes","no"])
+    return random.choice(["yes","no"])
     
   def askAgain(self):
     self.ui.tell("Sorry, I didn't get that. Can you rephrase?")
@@ -121,7 +118,7 @@ class Parsing:
       String = String.replace("!","")
       String = String.lower()
       #print(String + " is being parsed")
-      parse = self.interpreter.parse(unicode(String))
+      parse = self.interpreter.parse((String))
       print("  rasa nlu   " + parse['intent']['name'] + ", with confidence " + str(parse['intent']['confidence']))
       if parse['intent']['confidence'] < 0.4:
         parse = self.askAgain()

@@ -8,10 +8,10 @@ Created on 14.01.2019
 - nlu bildet nutzereingabe(string) auf intents mithilfe der Trainingsdaten ab parse(...)
   davor wird der string auf rechtschreibung untersucht
 - nlu kann beleidigungen/ausdruecke erkennen
-'''
 import importlib
 package='sklearn'
 importlib.import_module(package)
+'''
 
 from rasa_nlu.training_data import load_data
 from rasa_nlu.components import ComponentBuilder
@@ -19,7 +19,7 @@ from rasa_nlu.model import Trainer
 from rasa_nlu import config
 from rasa_nlu.model import Interpreter
 
-import tensorflow
+#import tensorflow
 
 #from project.dialog.NER import NER
 
@@ -30,13 +30,12 @@ import tensorflow
 import re
 
 import os
-from project.lehre.Expertenmodell import verzeichnispfad
-path = os.path.realpath(__file__)[:-14]+"/dialog/nlu/"
-trainingdataEN = path+"training.json"
-configfileEN = path+"config_spacy.yml"
+verzeichnispfad = os.path.realpath(__file__)
 
-alternativconfig = path+"config_spacy.yml"
-alternativtraining = path+"training.json"
+trainingdataEN = os.path.join(os.path.dirname(verzeichnispfad),'nlu','training.json')
+"/dialog/nlu/"
+configfileEN = os.path.join(os.path.dirname(verzeichnispfad),'nlu','config_spacy.yml')
+
 
 def levenshtein(s, t):
   #source: https://en.wikibooks.org/wiki/Algorithm_Implementation/Strings/Levenshtein_distance
@@ -64,17 +63,20 @@ class Dictionary():
   
   
   def __init__(self):
-    file = open(path+"words.txt", 'r')
+    wordsdata = os.path.join(os.path.dirname(verzeichnispfad),'nlu','words.txt')
+    file = open(wordsdata, 'r')
     while(True):
       line = file.readline().lower().replace('\n','')
       if(line == ""): break
       self.words.append(line)
-      
-    file = open(path+"profanities.txt", 'r')
+    
+    profanitydata = os.path.join(os.path.dirname(verzeichnispfad),'nlu','profanities.txt')
+    file = open(profanitydata, 'r')  
     while(True):
       line = file.readline().lower().replace('\n','')
       if(line == ""): break
       self.profanities.append(line)  
+  
   
   def profanity_check(self, word):
     #for p in self.profanities:
@@ -183,7 +185,6 @@ class NLU(object):
  
  
 
-    
 #nlu = NLU("en")    
 #print(nlu.parse("yes"))
 #print(nlu.parse("no"))

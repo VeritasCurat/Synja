@@ -3,13 +3,20 @@ Created on 22.01.2019
 
 @author: Johannes
 '''
-from project.webapp.Nutzer import Nutzer
-from project.lehre.Syntaxkonzept import Syntaxkonzept
+
 import os
-from project.lehre.Expertenmodell import Expertenmodell
+import sys
+
+sys.path.append(os.path.abspath('../lehre'))
+sys.path.append(os.path.abspath('../webapp'))
+
+
+from Nutzer import Nutzer
+from Syntaxkonzept import Syntaxkonzept
+from Expertenmodell import Expertenmodell
 
 class Schuelermodell(object):
-    verzeichnispfad = os.path.realpath(__file__)[:-23]
+    verzeichnispfad = os.path.realpath(__file__)
     '''
     Beschreibt, was der Schueler schon gesehen hat.
     '''
@@ -105,10 +112,14 @@ class Schuelermodell(object):
       
     def neuenNutzerEintragen(self, name): 
       print("NNE")  
-      with open(self.verzeichnispfad+"lehre\\nutzerdaten\\bekannteLessons.txt", 'a') as file:  
-        file.write('\n'+name+": []")  
-      with open(self.verzeichnispfad+"lehre\\nutzerdaten\\darstellungart_effizenz.txt", 'a') as file:  
-        file.write('\n'+name+": {}")  
+      path = os.path.join(os.path.dirname(self.verzeichnispfad),'nutzerdaten','bekannteLessons.txt')
+      file1 = open(path,'w') 
+      #with open(self.verzeichnispfad+"lehre\\nutzerdaten\\bekannteLessons.txt", 'a') as file:  
+      file1.write('\n'+name+": []")  
+      #with open(self.verzeichnispfad+"lehre\\nutzerdaten\\darstellungart_effizenz.txt", 'a') as file:  
+      path = os.path.join(os.path.dirname(self.verzeichnispfad), 'nutzerdaten','darstellungart_effizenz.txt')
+      file2 = open(path,'w') 
+      file2.write('\n'+name+": {}")  
 
     def speichern(self): 
       for lesson in self.bekannteLessons: 
@@ -117,8 +128,8 @@ class Schuelermodell(object):
           #print("Could not save state of user: "+self.name)
           return
       
-      path = os.path.join(os.path.abspath(self.verzeichnispfad), 'lehre','nutzerdaten','bekannteLessons.txt')
-      file = open(path)  
+      path = os.path.join(os.path.dirname(self.verzeichnispfad), 'nutzerdaten','bekannteLessons.txt')
+      file = open(path,'r')  
       data = ""
       line = ""
       while(True):
@@ -132,7 +143,7 @@ class Schuelermodell(object):
       with open(path,'w') as file:
         file.write(data)
         
-      path = os.path.join(os.path.abspath(self.verzeichnispfad), 'lehre','nutzerdaten','darstellungart_effizienz.txt')
+      path = os.path.join(os.path.dirname(self.verzeichnispfad), 'nutzerdaten','darstellungart_effizienz.txt')
       file = open(path)  
       data = ""
       line = ""
@@ -150,7 +161,7 @@ class Schuelermodell(object):
     
     def laden(self): 
       #print("lade schuelermodell")
-      path = os.path.join(os.path.abspath(self.verzeichnispfad), 'lehre','nutzerdaten','bekannteLessons.txt')
+      path = os.path.join(os.path.dirname(self.verzeichnispfad), 'nutzerdaten','bekannteLessons.txt')
       file = open(path)  
       line = ""
       neuernutzer = True

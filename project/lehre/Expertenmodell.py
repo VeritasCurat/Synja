@@ -7,18 +7,23 @@ Created on 22.01.2019
   erlaubt umwandlung und formatierung von darstellungsarten, testaufgaben, und fehlerbeschreibungen, -hinweise in Strings mit zugriff_...
   Aufgabenloesungen werden bewerten_... bewertet (Aufgabe an Syntaxkonzept weitergereicht)
 '''
-from project.lehre.Syntaxkonzept import Syntaxkonzept
-from project.lehre.Lueckentext import Lueckentext
-from project.lehre.MultipleChoice import MultipleChoice
-from project.lehre.Aufgabe import Aufgabe
-from project.lehre.Enaktiv import Enaktiv
-from project.lehre.javaparsing.parser import parse
-from project.lehre.javaparsing.parser import allreturns
-from project.lehre.Example import Example
 import os
+import sys
+import io
+sys.path.append(os.path.abspath('../lehre'))
+
+from Syntaxkonzept import Syntaxkonzept
+from Lueckentext import Lueckentext
+from MultipleChoice import MultipleChoice
+from Aufgabe import Aufgabe
+from Enaktiv import Enaktiv
+from javaparsing.parser import parse
+from javaparsing.parser import allreturns
+from Example import Example
+
 import re
 
-verzeichnispfad = os.path.realpath(__file__)[:-23]
+verzeichnispfad = os.path.realpath(__file__)
 
 class Themenblock(object):
   #Ein Themenblock ist eine Sammlung zusammengehoeriger Syntaxkonzepte
@@ -121,8 +126,8 @@ class Expertenmodell(object):
         
         
     def parsen_sym(self, language):  
-      path = os.path.join(os.path.abspath(verzeichnispfad), 'lehre','quellen', 'symbolisch_en.txt')
-      if(language == "en"):file = open(path)#, encoding ='ISO-8859-1'
+      path = os.path.join(os.path.dirname(verzeichnispfad), 'quellen', 'symbolisch_en.txt')
+      if(language == "en"):file = io.open(path,'r',encoding='utf-8')#, encoding ='ISO-8859-1'
       tb_name = ""
       while(True):
         line = file.readline()
@@ -150,7 +155,8 @@ class Expertenmodell(object):
             self.anzahl_erklaerungen[matchname] += 1     
         else: 
           split = re.split(":", line)
-          tb_name = split[1][1:-1]      
+          tb_name = split[1][1:-1]   
+          tb_name = tb_name.replace('\r', '')   
           if(tb_name not in [self.lessons.keys()]):
             self.lessons[tb_name] = Themenblock(str(tb_name))  
             self.lessoninhalte[tb_name] = []       
@@ -160,8 +166,8 @@ class Expertenmodell(object):
     
     def parsen_example(self, language): 
       if(language == "en"):
-        path = os.path.join(os.path.abspath(verzeichnispfad), 'lehre','quellen', 'example.txt')
-        file = open(path)
+        path = os.path.join(os.path.dirname(verzeichnispfad), 'quellen', 'example.txt')
+        file = io.open(path,'r',encoding='utf-8')
         tb_name = ""
         while(True):
           line = file.readline()
@@ -185,6 +191,7 @@ class Expertenmodell(object):
           else: 
             split = re.split(":", line)
             tb_name = split[1][1:-1]
+            tb_name = tb_name.replace('\r', '')  
             if(tb_name not in self.lessons.keys()):
               print("unbekannter Themenblock ex: "+tb_name+"!")
               print(str(self.lessons.keys()))
@@ -196,8 +203,8 @@ class Expertenmodell(object):
         
     def parsen_lt(self, language): 
       
-      path = os.path.join(os.path.abspath(verzeichnispfad), 'lehre','quellen', 'lt_en.txt')
-      file = open(path)
+      path = os.path.join(os.path.dirname(verzeichnispfad), 'quellen', 'lt_en.txt')
+      file = io.open(path,'r',encoding='utf-8')
 
       tb_name = ""
       while(True):
@@ -232,6 +239,7 @@ class Expertenmodell(object):
         else: 
           split = re.split(":", line)
           tb_name = split[1][1:-1]
+          tb_name = tb_name.replace('\r', '')  
           if(tb_name not in self.lessons.keys()):
             print("unbekannter Themenblock lt: "+tb_name+"!")
             print(str(self.lessons.keys()))
@@ -242,8 +250,8 @@ class Expertenmodell(object):
       return 
     
     def parsen_mc(self, language): 
-      path = os.path.join(os.path.abspath(verzeichnispfad), 'lehre','quellen', 'mc_en.txt')
-      file = open(path)     
+      path = os.path.join(os.path.dirname(verzeichnispfad), 'quellen', 'mc_en.txt')
+      file = io.open(path,'r',encoding='utf-8')     
       tb_name = ""
       while(True):
         line = file.readline()
@@ -268,6 +276,7 @@ class Expertenmodell(object):
         else: 
           split = re.split(":", line)
           tb_name = split[1][1:-1]
+          tb_name = tb_name.replace('\r', '')  
           if(tb_name not in self.lessons.keys()):
             print("unbekannter Themenblock mc: "+tb_name+"!")
             print(str(self.lessons.keys()))
@@ -277,8 +286,8 @@ class Expertenmodell(object):
       return 
     
     def parsen_aufg(self, data): 
-      path = os.path.join(os.path.abspath(verzeichnispfad), 'lehre','quellen', 'aufgaben.txt')
-      file = open(path)
+      path = os.path.join(os.path.dirname(verzeichnispfad), 'quellen', 'aufgaben.txt')
+      file = io.open(path,'r',encoding='utf-8')   
       tb_name = ""
       while(True):
         line = file.readline()
@@ -319,6 +328,7 @@ class Expertenmodell(object):
         else: 
           split = re.split(":", line)
           tb_name = split[1][1:-1]
+          tb_name = tb_name.replace('\r', '')  
           if(tb_name not in self.lessons.keys()):
             print("unbekannter Themenblock mc: "+tb_name+"!")
             print(str(self.lessons.keys()))
@@ -328,8 +338,8 @@ class Expertenmodell(object):
       return 
     
     def parsen_enaktiv(self, data): 
-      path = os.path.join(os.path.abspath(verzeichnispfad), 'lehre','quellen', 'enaktiv.txt')
-      file = open(path)      
+      path = os.path.join(os.path.dirname(verzeichnispfad), 'quellen', 'enaktiv.txt')
+      file = io.open(path,'r',encoding='utf-8')         
       tb_name = ""
       while(True):
         line = file.readline()
@@ -368,6 +378,7 @@ class Expertenmodell(object):
         else: 
           split = re.split(":", line)
           tb_name = split[1][1:-1]
+          tb_name = tb_name.replace('\r', '')  
           if(tb_name not in self.lessons.keys()):
             print("unbekannter Themenblock mc: "+tb_name+"!")
             print(str(self.lessons.keys()))
@@ -377,8 +388,8 @@ class Expertenmodell(object):
       return 
     
     def parsen_fehlerbeschreibung(self):
-      path = os.path.join(os.path.abspath(verzeichnispfad), 'lehre','quellen', 'fehlerklassifizierung','fehlerbeschreibungen.txt')
-      file = open(path)      
+      path = os.path.join(os.path.dirname(verzeichnispfad), 'quellen', 'fehlerklassifizierung','fehlerbeschreibungen.txt')
+      file = io.open(path,'r',encoding='utf-8')         
       tb_name = ""
       while(True):
         line = file.readline()
@@ -395,6 +406,7 @@ class Expertenmodell(object):
         else:
           split = re.split(":", line)
           tb_name = split[1][1:-1]
+          tb_name = tb_name.replace('\r', '')  
           if(tb_name not in self.lessons.keys()):
             print("unbekannter Themenblock fehlerbeschr: "+tb_name+"!")
             print(str(self.lessons.keys()))
@@ -404,8 +416,8 @@ class Expertenmodell(object):
       return
     
     def parsen_fehlerhinweise(self):
-      path = os.path.join(os.path.abspath(verzeichnispfad), 'lehre','quellen', 'fehlerklassifizierung','fehlerhinweise.txt')
-      file = open(path)       
+      path = os.path.join(os.path.dirname(verzeichnispfad), 'quellen', 'fehlerklassifizierung','fehlerhinweise.txt')
+      file = io.open(path,'r',encoding='utf-8')          
       tb_name = ""
       while(True):
         line = file.readline()
@@ -422,6 +434,7 @@ class Expertenmodell(object):
         else:
           split = re.split(":", line)
           tb_name = split[1][1:-1]
+          tb_name = tb_name.replace('\r', '')  
           if(tb_name not in self.lessons.keys()):
             print("unbekannter Themenblock fehlerbeschr: "+tb_name+"!")
             print(str(self.lessons.keys()))
@@ -431,8 +444,8 @@ class Expertenmodell(object):
       return
 
     def parsen_fehlerreaktion(self):
-      path = os.path.join(os.path.abspath(verzeichnispfad), 'lehre','quellen', 'fehlerklassifizierung','fehlerreaktionen.txt')
-      file = open(path)       
+      path = os.path.join(os.path.dirname(verzeichnispfad), 'quellen', 'fehlerklassifizierung','fehlerreaktionen.txt')
+      file = io.open(path,'r',encoding='utf-8')          
       tb_name = ""
       while(True):
         line = file.readline()
@@ -449,6 +462,7 @@ class Expertenmodell(object):
         else:
           split = re.split(":", line)
           tb_name = split[1][1:-1]
+          tb_name = tb_name.replace('\r', '')  
           if(tb_name not in self.lessons.keys()):
             print("unbekannter Themenblock fehlerreak: "+tb_name+"!")
             print(str(self.lessons.keys()))
@@ -459,7 +473,7 @@ class Expertenmodell(object):
    
     def init_eng(self):
         #einlesen symbolisch_eng.json
-        data =  open('quellen/symbolisch_eng.txt', 'r')
+        data =  io.open('quellen/symbolisch_eng.txt', 'r')
         while(True):
           s = data.readline()
           
@@ -524,7 +538,7 @@ class Expertenmodell(object):
       elif(art == "underline_task_answer"):
         ausgabetext = self.antworten_anzeigen(lesson, konzept, "underline_task", version)
       else: 
-        print("EM: zugriffLehreinheit: unbekannte Format!")
+        print("EM: zugriffLehreinheit: unbekannte Format: "+str(art))
         print(art)
         exit(-1)
         
@@ -620,9 +634,10 @@ class Expertenmodell(object):
 
 
 
-'''
 ep = Expertenmodell("en")
+print(str(ep.lessoninhalte.keys()))
 print(ep.zugriffEnaktiv("basics", "literals", 0))
+'''
 print(ep.bewerten_enaktiv("basics", "literals", 0, "test"))
 print(ep.zugriffEnaktiv("programm_structure", "programm_structure_main", 0))
 print(ep.zugriffEnaktiv("programm_structure", "programm_structure_main", 2))
@@ -641,15 +656,19 @@ print(ep.zugriffEnaktiv("programm_structure", "programm_structure_main", 10))
 #print(ep.zugriffLehreinheit("controll_structures", "for", "test_mc", 0))
 #print(ep.antworten_anzeigen("controll_structures", "for", "test_mc", 0))
 #print(ep.bewerten("controll_structures", "for", "test_mc", 0, "2,3"))
+
+print(ep.zugriffLehreinheit("controll_structures", "if", "worked_example", 0))
+print(str(ep.lessoninhalte["methods"]))
+
+print(ep.bewerten("methods", "method_access", "coding", 0, "void test(){} test();"))
+
 '''
-print(ep.zugriffLehreinheit("programm_structure", "programm_structure_main", "underline_task", 0))
+print(ep.bewerten("operators", "bitwise_operators", "coding", 0, "int a; a<<2"))
+print(ep.zugriffLehreinheit("controll_structures", "for", "test_mc", 0))
+print(ep.antworten_anzeigen("controll_structures", "for", "test_mc", 0))
+print(ep.bewerten("controll_structures", "for", "test_mc", 0, "2,3"))
+print(ep.zugriffLehreinheit("controll_structures", "if", "worked_example", 0))
 
-print(ep.lessons["programm_structure"].syntaxkonzepte["programm_structure_main"].underline_aufgaben[0].loesungen)
 
-print(ep.zugriffLehreinheit("controll structure", "if", "worked", 0))
-text = ep.lessons["programm structure"].syntaxkonzepte["programm structure_intro"].examples[0].loesung
-newtext = ""
-text = text.replace('\\n', '\n')
-print(text)
 '''
 

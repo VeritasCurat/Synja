@@ -3,7 +3,11 @@ Created on 13.03.2019
 
 @author: Johannes
 '''
-from project.lehre.javaparsing.parser import *
+import os
+import sys
+
+sys.path.append(os.path.abspath('.'))
+from javaparsing.parser import *
 
 class Underline_Task(object):
     konzept = ""

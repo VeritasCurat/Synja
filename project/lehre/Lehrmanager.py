@@ -5,13 +5,17 @@ Wie Modell
 '''
 import random
 import os
+import sys
+
+sys.path.append(os.path.abspath('../lehre'))
 
 from random import SystemRandom
-from project.lehre.Schuelermodell import Schuelermodell
-from project.lehre.Expertenmodell import Expertenmodell
+from Schuelermodell import Schuelermodell
+from Expertenmodell import Expertenmodell
 from numpy import sort
 
 secure_rand_gen = SystemRandom()
+verzeichnispfad = os.path.realpath(__file__)
 
 '''
 Anmerkung1: Unterschied zum Modell (Syntaxkonzept) ikonische Erklaerung usw. sind keine echten Zustaende, sondern werden mit der Variable art und wenigen Anpassungen im Code simuliert, um denCode nicht noch laenger zu machen.
@@ -159,7 +163,7 @@ class Lehrmanager:
         self.emotion = "neutral"
         self.dialogausgaben.append(self.lastPhrase)
     else: 
-      print("TEST: "+str(self.responseTimer))
+      #print("TEST: "+str(self.responseTimer))
       self.responseTimer += 1
 
   def __init__(self, name, lehrliste, anzahlerklaerungen, anzahlAufg, anzahlWE, anzahl_lt, anzahl_mc, en_schritt_dict, enaktiv_artdict):
@@ -193,9 +197,9 @@ class Lehrmanager:
     return
   
   def laden_namensregister(self):
-    path = os.path.realpath(__file__)[:-20]
-    source = "lehre\\nutzerdaten\\bekannteLessons.txt"
-    file = open(path+source,'r')
+    path = os.path.join(os.path.dirname(verzeichnispfad),'nutzerdaten','bekannteLessons.txt')
+    file = open(path,'r')
+
     eintraege = file.read().split('\n')
     file.close()
     for line in eintraege: 
@@ -252,7 +256,7 @@ class Lehrmanager:
     else: return[]
   
   def handle_noreaction(self):
-    print(self.expected_entry)
+    #print(self.expected_entry)
     if(secure_rand_gen.randint(1, 3) == 1): self.dialogausgaben.append("joke")
     if(self.lastPhrase == "keine_eingabe_lehre" or self.lastPhrase == "keine_eingabe_dialog"):
       self.lastPhrase = ""
@@ -263,7 +267,7 @@ class Lehrmanager:
     elif(self.expected_entry == "dialog"): 
       self.dialogausgaben.append("keine_eingabe_dialog")
     if(self.lastPhrase != ""): self.dialogausgaben.append(self.lastPhrase) 
-    print(len(self.dialogausgaben))
+    #print(len(self.dialogausgaben))
     self.emotion = "neutral"
     
   def schritt(self, intent,entity):
@@ -518,7 +522,7 @@ class Lehrmanager:
     elif self.lesson == "arrays": self.dialogausgaben.append("arrays")
     elif self.lesson == "classes": 
       self.dialogausgaben.append("classes")
-      self.dialogausgaben.append("oop")
+      self.dialogausgaben.append("oop_einleitung")
     else: 
       print("unbekannte Lesson!")
       exit(-1)
@@ -998,6 +1002,7 @@ class Lehrmanager:
     #print("LM AUSWERTUNG")
     #wertet Test aus und reagiert auf Ergebnis (neu erklaeren oder naechster Themenblock)
     if(self.punkte_test >= self.min_punkte_bestehen):
+      #print("Test1")
       self.dialogausgaben.append("Testergebnis_erfolgreich")
       self.dialogausgaben.append("frage_naechsterThemenblock")
       self.emotion = "freude"

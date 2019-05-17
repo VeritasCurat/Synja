@@ -7,14 +7,14 @@ lesson: basics
 "literals":::"Let's write some valid literals.":::{""test""::""name""::""var""}
 "integer_literals":::"Let's write some valid integer literals.":::{"0b0101"::"12"::"032532"::"0xAA"}
 "floating-point_literals":::"Let's write some valid floating-point literals.":::{"1.0F"::"1.0D"::".1"}
-"character_literals":::"Let's write some valid character literal.":::{"'c'"::"'1'"::"'\n'"}
+"character_literals":::"Let's write some valid character literals.”:::{“’c’”::”’1’”::”’\n’”}
 "string_literals":::"Let's write some valid String literals.":::{""String""::"12A"::"happy"}
 "boolean_literals":::"Let's write some valid boolean literals.":::{"true"::"false"}
 "null_literal":::"Let's write a valid empty value.":::{"null"}
-"keywords":::"Let's write a valid keywords.":::{"char"::"for"::"abstract"::"static"::"return"}
-"identifiers":::"Let's write a some valid identifiers.":::{""id""::"_var"::"id1"}
-"types":::"Let's write a some valid identifiers.":::{"float"::"int"::"String"::"boolean"}
-"variable_definition":::"Let's create an String variable with the name y by adding the keyword String.":::"String y;":::{"String"::"y"::";"}
+"keywords":::"Let's write some valid keywords.”:::{“char"::"for"::"abstract"::"static"::"return"}
+"identifiers":::"Let's write some valid identifiers.":::{""id""::"_var"::"id1"}
+"types":::"Let's write some valid identifiers.":::{"float"::"int"::"String"::"boolean"}
+"variable_definition":::"Let's create a String variable with the name y by adding the keyword String.":::"String y;":::{"String"::"y"::";"}
 "variable_definition_initialization":::"Let's create an int variable with the name y and assign the value 3 to it.":::"int y = 3;":::{"int"::" y"::"="::"3"::";"}
 "variable_access":::"Let's access the variable s by adding its name.":::"System.out.println(s);":::{"s"}
 "variable_reassignment":::"Let's redefine the float variable f to 3.14.":::"f = 3.14;":::{"f"::"="::"3.14"::";"}
@@ -25,21 +25,21 @@ lesson: arrays
 "array_access":::"Let's access the array a on position 0.":::"System.out.println(a[0]);":::{"a"::"["::"0"::"]"}
 "array_reassignment":::"Let's reassign the first element of the array test with a 3.":::"array[0] = 3;":::{"array"::"[0]"::"="::"3"::";"}
 "multidim_array_definition":::"Let's define a two-dimensional String array.":::"String a[][];":::{"String"::" a"::"[]"::"[]"::";"}
-"multidim_array_declaration":::"Let's define and declare a twodimensional array. The first dimension should have 5 elements, the second 10.":::"int a[][] = new int[5][10];":::{"int"::" a"::"[]"::"[]"::"="::"new"::" int"::"[5]"::"[10]"}
-"multidim_array_access":::"Let's access the first element of a twodimensional array.":::"System.out.println(a[0][0]);":::{"a"::"[0]"::"[0]"}
+"multidim_array_declaration":::"Let's define and declare a two-dimensional array. The first dimension should have 5 elements, the second 10.":::"int a[][] = new int[5][10];":::{"int"::" a"::"[]"::"[]"::"="::"new"::" int"::"[5]"::"[10]"}
+"multidim_array_access":::"Let's access the first element of a two-dimensional array.":::"System.out.println(a[0][0]);":::{"a"::"[0]"::"[0]"}
 "multidim_array_reassignment":::"Let's reassign the third element of a two-dimensional array.":::"a[1][0] = 3;":::{"a"::"[1]"::"[0]"::"="::"3"::";"}
 lesson: operators
-"arithmetic_operators":::"Let's sum 3 and 5 by using the + operator.":::"3 + 5":::{"3"::"+"::"5"}
-"operators_prefix":::"Let's add increment the int variable b by using a prefix operator.":::"++b;":::{"++"::"b"::";"}
+"arithmetic_operators":::"Let's add 3 and 5 by using the + operator.":::"3 + 5":::{"3"::"+"::"5"}
+"operators_prefix":::"Let's increment the int variable b by using a prefix operator.":::"++b;":::{"++"::"b"::";"}
 "operators_postfix":::"Let's decrement the int variable q by using a postfix operator.":::"q--;":::{"q"::"--"::";"}
 "comparison_operators":::"Let's compare 6 and 9 by using the < operator.":::"6 < 9":::{"6"::"<"::"9"}
-"logic_operators":::"Let's write us use the || operator.":::"true || false":::{"true"::" || "::"false"}
+"logic_operators":::"Let's use the || operator.":::"true || false":::{"true"::" || "::"false"}
 "bitwise_operators":::"Let's use the bitshift operator << to left shift the variable var.":::"var=var<<1;":::{"var"::"="::"var"::"<<"::"1"::";"}
-"assignment_operators":::"Let's concatenate ", World!" to a= "Hello" by using the += operator.":::"a+=", World!";":::{"a"::"+="::"", World!""::";"}
+"assignment_operators":::"Let's concatenate ", World!" to a "Hello" by using the += operator.":::"a+=", World!";":::{"a"::"+="::"", World!""::";"}
 lesson: statements
-"expressions":::"Let's develope an expression that multiplies the variable var by 2 by bitshifting it one position to the left (<<1). Then add 3.":::"(var<<1) + 3":::{"("::"var"::"<<"::"1"::")"::"+"::"3"}
+"expressions":::"Let's develop an expression that multiplies the variable var by 2 by bitshifting it one position to the left (<<1). Then add 3.":::"(var<<1) + 3":::{"("::"var"::"<<"::"1"::")"::"+"::"3"}
 "statements":::"Let's write a variable declaration.":::"int a = ++b;":::{"int"::" a"::"="++"::"b"::";"}
-"code_blocks":::"Let's write an empty codeblock.":::"{}":::{"{"::"}"}
+"code_blocks":::"Let's write an empty code block.":::"{}":::{"{"::"}"}
 lesson: controll_structures
 "boolean_expression":::"Let's write a boolean expression that is true.":::"1 < 3":::{"1"::"<"::"3"}
 "if":::"Let's write an if-statement.":::"if(true);"}:::{"if"::"("::"true"::")"::";"}
@@ -53,7 +53,7 @@ lesson: controll_structures
 lesson: methods
 "method_definition":::"Let's define a method.":::"void cube(int a){return a*a*a;}":::{"void"::"cube"::"("::"int a":")"::"{"::"return"::"a*a*a"::";"::"}"}
 "method_modifiers":::"Let's define a static method that generates an abbreviation.":::"public static String abbreviation(String[] words){String abr = ""; for(String w: words){abr+=w.toCharArray()[0]+".";} return abr;}":::{"public"::"static"::"String"::"abbreviation"::"("::"String[] words"::")"::"{"::"String abr="";"::"for(String w: words){abr+=w.toCharArray()[0]+".";}::"return abr;"+"}"}
-"method_access":::"Let's define a public static method that turns a word.":::"public static String turn(String word) {String ret = ""; for(char w: word.toCharArray()){ret=w+ret;} return ret;}":::{"public"::"static"::"String"::"turn"::"("::"String word"::")"::{"::"String ret = "";"::"for(char w: word.toCharArray()){ret=w+ret;}"::"return ret;"::"}"}
+"method_access":::"Let's define a public static method that returns a word.":::"public static String turn(String word) {String ret = ""; for(char w: word.toCharArray()){ret=w+ret;} return ret;}":::{"public"::"static"::"String"::"turn"::"("::"String word"::")"::{"::"String ret = "";"::"for(char w: word.toCharArray()){ret=w+ret;}"::"return ret;"::"}"}
 lesson: classes
 "class_definition":::"Let's define a class.":::"class B{}:::{"class"::"B"::"{"::"}"}
 "inheritance":::"Let's define the class B as the child of A.":::"class B extends A{}":::{"class"::" B "::"extends"::" A "::"{"::"}"}

@@ -3,8 +3,15 @@ Created on 09.04.2019
 
 @author: Johannes
 '''
+
+
 import os
-from project.lehre.Expertenmodell import Expertenmodell
+import sys
+
+sys.path.append(os.path.abspath('../lehre'))
+
+
+from Expertenmodell import Expertenmodell
 from project.lehre.javaparsing.parser import allreturns
 from project.lehre.javaparsing.parser import parse
 import unittest

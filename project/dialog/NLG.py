@@ -3,7 +3,12 @@ Created on 21.01.2019
 
 @author: Johannes
 '''
-from project.lehre.Expertenmodell import Expertenmodell
+import os
+import sys
+sys.path.append(os.path.abspath('../lehre'))
+
+
+from Expertenmodell import Expertenmodell
 
 source = "rasa\phrasesEN.json"
 import random
@@ -15,8 +20,9 @@ class Dict_konzept_phrase:
   dict = {}
   
   def __init__(self):
-    path = os.path.realpath(__file__)[:-13]+"\\dialog\\nlg\\translation_konzept_phrase.txt"
-    file = open(path)
+    verzeichnispfad = os.path.realpath(__file__)
+    path = os.path.join(os.path.dirname(verzeichnispfad),'nlg','translation_konzept_phrase.txt')
+    file = open(path,'r')
     while(True):
         line = file.readline()
         if(line==""):break
@@ -45,8 +51,9 @@ class Genbase:
   dict = {}
   
   def __init__(self):
-    path = os.path.realpath(__file__)[:-14]+"/dialog/nlg/phrasesEN.txt"
-    file = open(path)
+    verzeichnispfad = os.path.realpath(__file__)
+    path = os.path.join(os.path.dirname(verzeichnispfad),'nlg','phrasesEN.txt')
+    file = open(path,'r')
     while(True):
         line = file.readline()
         if(line==""):break
@@ -92,15 +99,22 @@ class NLG(object):
           if arg in self.dict_konzept_phrase.dict.keys():
             ph = self.dict_konzept_phrase.dict[arg]
             phrase = phrase.replace("$", ph,1)
-            return phrase
+            
           else: phrase = phrase.replace("$", arg,1)
           if(": <b>$</b>" in phrase): phrase = phrase.replace(": <b>$</b>",".")
         
         else: 
           print("phrase: \""+phrase+"\" nicht in nlg vorhanden!")
           exit(-1)
-    
-      phrase = phrase.replace("\n",'\\n')
+
+      #fix python2
+      phrase = repr(phrase)
+      while("\\\"\\r" in phrase): phrase = phrase.replace("\\\"\\r",'')
+      while("\"" in phrase): phrase = phrase.replace("\"",'')
+      while("\\r" in phrase): phrase = phrase.replace("\\r",'')
+      while("\\'" in phrase): phrase = phrase.replace("\\'",'')
+      while("\'" in phrase): phrase = phrase.replace("\'",'')     
+
       return phrase
     
     def generate(self, phrase):
@@ -116,3 +130,4 @@ class NLG(object):
     
       ausgabe = ausgabe.replace("\n",'\\n')    
       return ausgabe
+    

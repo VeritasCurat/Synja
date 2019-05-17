@@ -1,10 +1,10 @@
-#every answer need to be put in quotations
+#every answer needs to be put in quotations
 lesson: programm_structure
 "programm_structure_main":::"What is the return value of the main method?":::"public static ___ main(String a[]){}":::{"void"}
 "programm_structure_main":::"":::"Every ___ must have a main method.":::{"java application"::"java app"::"java programm"::"programm"::"application"}
-"programm_structure_import":::"What does a import declaration do?":::"It maps a path to a simple ___ so imports object can be used by that.":::{"name"::"reference"}
+"programm_structure_import":::"What does an import declaration do?":::"It maps a path to a simple ___ so import objects can be used by it.”:::{“name"::"reference"}
 "programm_structure_import":::"Where are imports defined?":::"Import declarations must be placed at the ___ of a java file behind the package declaration.":::{"top"::"beginning"::"start"::"head"}
-"programm_structure_import":::"Complete this import (something is missing at the end, that must be there in every import declaration)":::"import java.util.Random___":::{";"}
+"programm_structure_import":::"Complete this import (something is missing at the end that must be there in every import declaration)":::"import java.util.Random___":::{";"}
 "programm_structure_packages":::"Complete this package declaration.":::"package myapplication___mylibrary;":::{"."}
 lesson: basics
 "comments":::"Make this code-snippet syntactically legal.":::"/___**/*/":::{"/"}
@@ -12,7 +12,7 @@ lesson: basics
 "literals":::"Write a suitable literal.":::"int a = ___;":::{"%INTEGER%""}
 "literals":::"Assign a float literal to b.":::"b = 9___2;":::{"."}
 "integer_literals":::"Assign a binary integer literal.":::"int a = ___1010":::{"0b"}
-"integer_literals":::"Assign a integer literal with a right type.":::"___ a = 5":::{"byte"::"short"::"int"::"long"::"char"}
+"integer_literals":::"Assign an integer literal with the correct type.":::"___ a = 5":::{"byte"::"short"::"int"::"long"::"char"}
 "integer_literals":::"Create variable with the binary value 10.":::"int a = ___":::{"0b10;"}
 "floating-point_literals":::"Assign the float value 9.8":::"int b = ___":::{"9.8F;"}
 "floating-point_literals":::"Assign the double value 9.8":::"int b = ___":::{"9.8D;"}
@@ -32,20 +32,20 @@ lesson: basics
 "variable_reassignment":::"Redefine the String variable "name" with the value "anna".":::"String name = "lisa"; \nname = "___";":::{""anna""}
 lesson: arrays
 "array_definition":::"Define a String array with 5 elements.":::"String a___":::{"[5];"}
-"array_declaration":::Define and declare a int array with 10 elements.":::"int a___;":::{"[]=new int[10];"}
-"array_definition_initialization":::"Define a int array with the numbers 1,2 and 3 (in this order).":::"int a[] = ___":::{"{1,2,3};"}
-"array_definition_initialization":::"Define a string array with the names "bob" and "tom".":::"int a[] = {"bob",___};":::{""tom""}
-"array_access":::"Access the first place of the array b.":::"int b[] = {1,2,3}; b___;":::{"[0]"}
-"array_access":::"Print out "Hello Arrayworld!" by accessing all elements of b and concancatenating them with + (e.g. a[1]+a[0] for the string array a).":::"int b[] = {"Hello", " Arrayworld", "!"}; System.out.println(___);":::{"b[0]+b[1]+b[2]"}
-"array_reassignment":::"Reassign the third place of a to the value 3.":::"int a[] = new int[5]; a___ = 3;":::{"[2]"}
-"array_reassignment":::"Reassign the first place of c to the value "hey".":::"int c[] = new String[2]; c___ = "hey";":::{"[0]"}
+"array_declaration":::Define and declare an int array with 10 elements.":::"int a___;":::{"[]=new int[10];"}
+"array_definition_initialization":::"Define an int array with the numbers 1,2 and 3 (in this order).":::"int a[] = ___":::{"{1,2,3};"}
+"array_definition_initialization":::"Define a String array with the names "bob" and "tom".":::"int a[] = {"bob",___};":::{""tom""}
+"array_access":::"Access the first position of the array b.":::"int b[] = {1,2,3}; b___;":::{"[0]"}
+"array_access":::"Print out "Hello Arrayworld!" by accessing all elements of b and concatenating them with + (e.g. a[1]+a[0] for the string array a).":::"int b[] = {"Hello", " Arrayworld", "!"}; System.out.println(___);":::{"b[0]+b[1]+b[2]"}
+"array_reassignment":::"Reassign the third position of a to the value 3.":::"int a[] = new int[5]; a___ = 3;":::{"[2]"}
+"array_reassignment":::"Reassign the first position of c to the value "hey".":::"int c[] = new String[2]; c___ = "hey";":::{"[0]"}
 "multidim_array_definition":::"Define a three-dimensional char array":::"char a___;":::{"[][][]"}
 "multidim_array_declaration":::"Define and declare a two-dimensional array with 20 elements.":::"int array[][] = new int[10]___;":::{"[2]"}
-"multidim_array_access":::"Access a second place of the array.":::"int array[][] = new int[10][3]; array___":::{"[0][1];"}
-"multidim_array_reassignment":::"Reassign the third place of the 2x2 int array intarr.":::"intarr___ = 3;":::{"[1][0]"}
+"multidim_array_access":::"Access the second position of the array.":::"int array[][] = new int[10][3]; array___":::{"[0][1];"}
+"multidim_array_reassignment":::"Reassign the third position of the 2x2 int array intarr.":::"intarr___ = 3;":::{"[1][0]"}
 lesson: operators
-"arithmetic_operators":::"Use the correct operator, so that the variable c is equal to "wooden table".":::"String a="wooden"; String b=" table"; String c = a ___ b;":::{"+"}
-"arithmetic_operators":::"Multiply 3 and 4.":::"3___4":::{"*"}
+"arithmetic_operators":::"Use the correct operator so that the variable c is equal to "wooden table".":::"String a="wooden"; String b=" table"; String c = a ___ b;":::{"+"}
+"arithmetic_operators":::"Multiply 3 by 4.":::"3___4":::{"*"}
 "arithmetic_operators":::"What is the value of this expression?":::"3+4*5":::{"23"}
 "operators_prefix":::"Add 1 to a and assign this value to a with one operation. Then print the new value out.":::"System.out.println(___);":::{"++a"}
 "operators_postfix":::"Print out 0, but use the ++ operator and the variable a.":::"int a=0; System.out.println(___);":::{"a++"}
@@ -53,12 +53,12 @@ lesson: operators
 "logic_operators":::"Write a boolean expression that is true.":::"1 < 3 ___ 3 < 1":::{"||"}
 "logic_operators":::"":::"true ___ false == false":::{"&&"}
 "bitwise_operators":::"Use a bitwise operator.":::"System.out.println(3___4);":::{"|"::"&"::"<<"::">>"::">>>"}
-"assignment_operators":::"Assign the value 3 to a by multiplying it with 3.":::"int a=1; a___;":::{"*=3"}
+"assignment_operators":::"Assign the value 3 to a by multiplying it by 3.":::"int a=1; a___;":::{"*=3"}
 "assignment_operators":::"Assign the value 1 to a.":::"int a=3; a%=___;":::{"2"}
 lesson: statements
 "expressions":::"Add a literal to make this arithmetic expression valid.":::"(3 + ___ * 2) == 7":::{"2"}
-"statements":::"Add a assignment operator to make this statement legal.":::"int f ___ 3.0;":::{"="::"+="::"-="::"*="::"/="::"%="}
-"code_blocks":::"Add something to make this code snipped legal.":::"{___}}":::{"{"}
+"statements":::"Add an assignment operator to make this statement legal.":::"int f ___ 3.0;":::{"="::"+="::"-="::"*="::"/="::"%="}
+"code_blocks":::"Add something to make this code-snippet legal.":::"{___}}":::{"{"}
 "code_blocks":::"":::"A code block is a sequence of statements wrapped with ___.":::{"{ and }"::"{,}"}
 lesson: controll_structures
 "boolean_expression":::"Create a boolean expression.":::"0 < 1 ___ 1 < 2":::{"||"::"&&"}
@@ -74,7 +74,7 @@ lesson: controll_structures
 "extended_for":::"Iterate through the array a.":::"String a[] = {"Bob", "Anna", "Tom"}; for(String b ___ a);":::{":"}
 "extended_for":::"Print out 1,2 and 3 (in this order).":::"___; for(String b: c){System.out.println(b);}":::{"int c={1,2,3};"::"char c={1,2,3};"::"byte c={1,2,3};"::"short c={1,2,3};"::"long c={1,2,3};"::"double c={1,2,3};"::"float c={1,2,3};"}
 "break":::"Print out all number from 1 to 5.":::"for(int i=1; i<10; i++) {if(i>5)___; System.out.println(i);}:::{"break"}
-"continue":::"Print out all odd numbers in the range from 1 to 10.":::"for(int i=1; i<=10; i++) {if(i%2==0)___; System.out.println(i);}:::{"continue"}
+"continue":::"Print out all odd numbers in the range of 1 to 10.":::"for(int i=1; i<=10; i++) {if(i%2==0)___; System.out.println(i);}:::{"continue"}
 lesson: methods
 "method_definition":::"Define a method with the return type void and access modifier public.":::"___ method{}":::{"public void"}
 "method_definition":::"Define the method "add" that takes one parameter (int a) and returns the remainder of the division by 2. The method shall be public and static.":::"___ (int a){return a%2;}":::{"public static int add"}
