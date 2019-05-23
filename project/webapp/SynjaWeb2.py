@@ -10,17 +10,22 @@ SynjaWeb
 '''
 import os
 import sys
+#from project.webapp.alt import SynjaWeb
 
 sys.path.append(os.path.abspath('../lehre'))
 sys.path.append(os.path.abspath('../dialog'))
+sys.path.append(os.path.abspath('../dialog/en'))
+sys.path.append(os.path.abspath('../dialog/de'))
 sys.path.append(os.path.abspath('../webapp'))
 
 
 from Lehrmanager import Lehrmanager, Fehlerantwort, Hinweis, Lehrausgabe #@Unresolvedimport
 from Expertenmodell import Expertenmodell #@Unresolvedimport
  
-from NLG import NLG #@Unresolvedimport
-from NLU import NLU #@Unresolvedimport
+from NLG_DE import NLG_DE #@Unresolvedimport
+from NLG_EN import NLG_EN #@Unresolvedimport
+from NLU_EN import NLU_EN #@Unresolvedimport
+from NLU_DE import NLU_DE #@Unresolvedimport
 from Lehrmanager import Enaktivausgabe #@Unresolvedimport
 
 from verlauf import Verlauf #@Unresolvedimport
@@ -44,7 +49,8 @@ class Synja(threading.Thread):
   
   id=0 #used to identify which messages  
   nr=0
-  nlg=0
+  nlg_en=0
+  nlg_de=0
   expertenmodell=Expertenmodell("en")
   dialogmanager=0
   lehrmanager=0
@@ -52,6 +58,7 @@ class Synja(threading.Thread):
   totalCount = 0  
   outputDialog = []
   outputLehre = None
+  sprache = "de"
   
   sendqueueDialog = None
   sendqueueDialogZeichen = None
@@ -74,7 +81,9 @@ class Synja(threading.Thread):
   def run(self):
     warnings.filterwarnings(module='sklearn*', action='ignore', category=DeprecationWarning)
 
-    begruessung = self.nlg.generate("begruessung")
+    if(self.sprache == "en"):begruessung = self.nlg_en.generate("begruessung")
+    elif(self.sprache == "de"):begruessung = self.nlg_de.generate("begruessung")
+
     self.addDialogSynja(begruessung) 
     self.text+=begruessung+'\n'      
   
@@ -130,21 +139,23 @@ class Synja(threading.Thread):
         self.verlauf.eintragen(id, lesson, konzeptname, art, version, antworttext, bewertung)
       #print("bewertung: "+str(bewertung))
       
-      if(art == "underline_task"):
+
+      if(art == "coding"):
         if(bewertung != "fehlerfrei"):
-          self.lehrmanager.fehlerbeschreibung = bewertung
-          bewertung = "fehlerhaft"
-      elif(art == "coding"):
-        if(bewertung != "fehlerfrei"):
-          #print(str(bewertung))
-          if(isinstance(bewertung,list) and len(bewertung)==3 and isinstance(bewertung[0],list) and len(bewertung[0])==4 and isinstance(bewertung[1],str)):
-            #print(str(bewertung))
+          print(str(bewertung))
+          if (sys.version_info > (3, 0)):
+            b = isinstance(bewertung,list) and len(bewertung)==3 and isinstance(bewertung[0],list) and len(bewertung[0])==4 and (isinstance(bewertung[1],str))
+          else:
+            b = isinstance(bewertung,list) and len(bewertung)==3 and isinstance(bewertung[0],list) and len(bewertung[0])==4 and (isinstance(bewertung[1], basestring)) #@Undefinedvariable
+          if(b == True):
+            print(str(bewertung))
             self.lehrmanager.FK_lesson = bewertung[0][0]
             self.lehrmanager.FK_konzept = bewertung[0][1]
             self.lehrmanager.FK_reaktion_lesson = bewertung[0][2]
             self.lehrmanager.FK_reaktion_konzept = bewertung[0][3]
             self.lehrmanager.fehlerbeschreibung = bewertung[1]
             self.lehrmanager.fehlerart = bewertung[2]
+            
           bewertung = "fehlerhaft"
          
       self.schritt("",bewertung)
@@ -196,10 +207,14 @@ class Synja(threading.Thread):
   #uebersetzt intents mit nlg, lehrausgabeobjekte mit expertenmodell
   def schritt(self, inputDialog, inputLehre):
     if(inputDialog != ""):
-      eingabe_intent = self.nlu.parse(inputDialog)
-      entity = self.nlu.parseName(inputDialog)     
+      if(self.sprache == "de"): eingabe_intent = self.nlu_de.parse(inputDialog)
+      if(self.sprache == "en"): eingabe_intent = self.nlu_en.parse(inputDialog)
+      
+      if(self.sprache == "de"): entity = self.nlu_de.parseName(inputDialog)   
+      if(self.sprache == "en"): entity = self.nlu_en.parseName(inputDialog)   
       if(eingabe_intent!="name"): 
-        entity = self.nlu.parse_thema(inputDialog)
+        if(self.sprache == "de"): entity = self.nlu_de.parse_thema(inputDialog)   
+        if(self.sprache == "en"): entity = self.nlu_en.parse_thema(inputDialog)  
         if(entity != ""): eingabe_intent="naechsterThemenblock"
         
       #print("SL input: "+inputDialog+" intent: "+eingabe_intent+" entity: "+entity)        
@@ -215,6 +230,7 @@ class Synja(threading.Thread):
           if(s.darstellungsart == "coding" or s.darstellungsart == "test_lt" or s.darstellungsart == "test_mc"): 
             #print("SW: TASK: "+str(phrase))
             phrase = [self.convertLehreSynjaText(s),"Task"]
+            phrase[0] = '\n'+phrase[0]
           else: phrase = [self.convertLehreSynjaText(s),"Lehre"]
 
         elif isinstance(s, Hinweis):
@@ -222,20 +238,30 @@ class Synja(threading.Thread):
           phrase = self.expertenmodell.zugriffHinweis(s.lesson, s.konzeptname, s.fehlerart)
         elif isinstance(s, Enaktivausgabe):
           #print("SW: ENAKT ZUST: "+s.zustand)
-          if(s.zustand == "enaktiv_introduction_schritte"): phrase = self.nlg.generate_args("enaktiv_introduction_schritte",s.konzept)
-          elif(s.zustand == "enaktiv_introduction_beispiele"): phrase = self.nlg.generate_args("enaktiv_introduction_beispiele",s.konzept)
-          elif(s.zustand == "anfang"): phrase = self.nlg.generate_args("enaktiv_anfang",self.expertenmodell.zugriffEnaktiv(s.lesson, s.konzept, s.schritt))
-          elif(s.zustand == "schritt"): phrase = self.nlg.generate_args("enaktiv_schritt",self.expertenmodell.zugriffEnaktiv(s.lesson, s.konzept, s.schritt))
-          elif(s.zustand == "beispiel"): phrase = self.nlg.generate_args("enaktiv_beispiel",self.expertenmodell.zugriffEnaktiv(s.lesson, s.konzept, s.schritt))
-          elif(s.zustand == "erweiterung"): phrase = self.nlg.generate_args("enaktiv_erweiterung",self.expertenmodell.zugriffEnaktiv_erweiterung(s.lesson, s.konzept, s.schritt))
-          elif(s.zustand == "ende"): phrase = self.nlg.generate_args("enaktiv_ende",s.konzept)
- 
+          if(self.sprache == "en"):
+            if(s.zustand == "enaktiv_introduction_schritte"): phrase = self.nlg_en.generate_args("enaktiv_introduction_schritte",s.konzept)
+            elif(s.zustand == "enaktiv_introduction_beispiele"): phrase = self.nlg_en.generate_args("enaktiv_introduction_beispiele",s.konzept)
+            elif(s.zustand == "anfang"): phrase = self.nlg_en.generate_args("enaktiv_anfang",self.expertenmodell.zugriffEnaktiv(s.lesson, s.konzept, s.schritt))
+            elif(s.zustand == "schritt"): phrase = self.nlg_en.generate_args("enaktiv_schritt",self.expertenmodell.zugriffEnaktiv(s.lesson, s.konzept, s.schritt))
+            elif(s.zustand == "beispiel"): phrase = self.nlg_en.generate_args("enaktiv_beispiel",self.expertenmodell.zugriffEnaktiv(s.lesson, s.konzept, s.schritt))
+            elif(s.zustand == "erweiterung"): phrase = self.nlg_en.generate_args("enaktiv_erweiterung",self.expertenmodell.zugriffEnaktiv_erweiterung(s.lesson, s.konzept, s.schritt))
+            elif(s.zustand == "ende"): phrase = self.nlg_en.generate_args("enaktiv_ende",s.konzept)
+          elif(self.sprache == "de"):
+            if(s.zustand == "enaktiv_introduction_schritte"): phrase = self.nlg_de.generate_args("enaktiv_introduction_schritte",s.konzept)
+            elif(s.zustand == "enaktiv_introduction_beispiele"): phrase = self.nlg_de.generate_args("enaktiv_introduction_beispiele",s.konzept)
+            elif(s.zustand == "anfang"): phrase = self.nlg_de.generate_args("enaktiv_anfang",self.expertenmodell.zugriffEnaktiv(s.lesson, s.konzept, s.schritt))
+            elif(s.zustand == "schritt"): phrase = self.nlg_de.generate_args("enaktiv_schritt",self.expertenmodell.zugriffEnaktiv(s.lesson, s.konzept, s.schritt))
+            elif(s.zustand == "beispiel"): phrase = self.nlg_de.generate_args("enaktiv_beispiel",self.expertenmodell.zugriffEnaktiv(s.lesson, s.konzept, s.schritt))
+            elif(s.zustand == "erweiterung"): phrase = self.nlg_de.generate_args("enaktiv_erweiterung",self.expertenmodell.zugriffEnaktiv_erweiterung(s.lesson, s.konzept, s.schritt))
+            elif(s.zustand == "ende"): phrase = self.nlg_de.generate_args("enaktiv_ende",s.konzept)
         elif isinstance(s, Fehlerantwort):
           phrase = s.beschreibung
         elif isinstance(s, list) and len(s)==2:
-          phrase = self.nlg.generate_args(s[0], s[1])
+          if(self.sprache == "en"):phrase = self.nlg_en.generate_args(s[0], s[1])
+          elif(self.sprache == "de"):phrase = self.nlg_de.generate_args(s[0], s[1])
         else:
-          phrase = self.nlg.generate(s)
+          if(self.sprache == "en"):phrase = self.nlg_en.generate(s)
+          elif(self.sprache == "de"):phrase = self.nlg_de.generate(s)
         self.outputDialog.append(phrase)  
           
       #self.outputLehre = self.lehrmanager.getLehrAusgaben()   
@@ -251,21 +277,31 @@ class Synja(threading.Thread):
           phrase = self.expertenmodell.zugriffHinweis(s.lesson, s.konzeptname, s.fehlerart)
         elif isinstance(s, Enaktivausgabe):
           #print("SW: ENAKT ZUST: "+s.zustand)
-          if(s.zustand == "enaktiv_introduction_schritte"): phrase = self.nlg.generate_args("enaktiv_introduction_schritte",s.konzept)
-          elif(s.zustand == "enaktiv_introduction_beispiele"): phrase = self.nlg.generate_args("enaktiv_introduction_beispiele",s.konzept)
-          elif(s.zustand == "anfang"): phrase = self.nlg.generate_args("enaktiv_anfang",self.expertenmodell.zugriffEnaktiv(s.lesson, s.konzept, s.schritt))
-          elif(s.zustand == "schritt"): phrase = self.nlg.generate_args("enaktiv_schritt",self.expertenmodell.zugriffEnaktiv(s.lesson, s.konzept, s.schritt))
-          elif(s.zustand == "beispiel"): phrase = self.nlg.generate_args("enaktiv_beispiel",self.expertenmodell.zugriffEnaktiv(s.lesson, s.konzept, s.schritt))
-          elif(s.zustand == "erweiterung"): phrase = self.nlg.generate_args("enaktiv_erweiterung",self.expertenmodell.zugriffEnaktiv_erweiterung(s.lesson, s.konzept, s.schritt))
-          elif(s.zustand == "ende"): phrase = self.nlg.generate_args("enaktiv_ende",s.konzept)
-  
+          if(self.sprache == "en"):
+            if(s.zustand == "enaktiv_introduction_schritte"): phrase = self.nlg_en.generate_args("enaktiv_introduction_schritte",s.konzept)
+            elif(s.zustand == "enaktiv_introduction_beispiele"): phrase = self.nlg_en.generate_args("enaktiv_introduction_beispiele",s.konzept)
+            elif(s.zustand == "anfang"): phrase = self.nlg_en.generate_args("enaktiv_anfang",self.expertenmodell.zugriffEnaktiv(s.lesson, s.konzept, s.schritt))
+            elif(s.zustand == "schritt"): phrase = self.nlg_en.generate_args("enaktiv_schritt",self.expertenmodell.zugriffEnaktiv(s.lesson, s.konzept, s.schritt))
+            elif(s.zustand == "beispiel"): phrase = self.nlg_en.generate_args("enaktiv_beispiel",self.expertenmodell.zugriffEnaktiv(s.lesson, s.konzept, s.schritt))
+            elif(s.zustand == "erweiterung"): phrase = self.nlg_en.generate_args("enaktiv_erweiterung",self.expertenmodell.zugriffEnaktiv_erweiterung(s.lesson, s.konzept, s.schritt))
+            elif(s.zustand == "ende"): phrase = self.nlg_en.generate_args("enaktiv_ende",s.konzept)
+          elif(self.sprache == "de"):
+            if(s.zustand == "enaktiv_introduction_schritte"): phrase = self.nlg_de.generate_args("enaktiv_introduction_schritte",s.konzept)
+            elif(s.zustand == "enaktiv_introduction_beispiele"): phrase = self.nlg_de.generate_args("enaktiv_introduction_beispiele",s.konzept)
+            elif(s.zustand == "anfang"): phrase = self.nlg_de.generate_args("enaktiv_anfang",self.expertenmodell.zugriffEnaktiv(s.lesson, s.konzept, s.schritt))
+            elif(s.zustand == "schritt"): phrase = self.nlg_de.generate_args("enaktiv_schritt",self.expertenmodell.zugriffEnaktiv(s.lesson, s.konzept, s.schritt))
+            elif(s.zustand == "beispiel"): phrase = self.nlg_de.generate_args("enaktiv_beispiel",self.expertenmodell.zugriffEnaktiv(s.lesson, s.konzept, s.schritt))
+            elif(s.zustand == "erweiterung"): phrase = self.nlg_de.generate_args("enaktiv_erweiterung",self.expertenmodell.zugriffEnaktiv_erweiterung(s.lesson, s.konzept, s.schritt))
+            elif(s.zustand == "ende"): phrase = self.nlg_de.generate_args("enaktiv_ende",s.konzept)
         elif isinstance(s, Fehlerantwort):
           phrase = s.beschreibung
           #print("SW schritt: "+phrase)
         elif isinstance(s, list) and len(s)==2:
-          phrase = self.nlg.generate_args(s[0], s[1])
+          if(self.sprache == "de"):phrase = self.nlg_de.generate_args(s[0], s[1])
+          elif(self.sprache == "en"):phrase = self.nlg_en.generate_args(s[0], s[1])
         else:
-          phrase = self.nlg.generate(s)
+          if(self.sprache == "de"):phrase = self.nlg_de.generate(s)
+          elif(self.sprache == "en"):phrase = self.nlg_en.generate(s)
         self.outputDialog.append(phrase)     
 
       #self.outputLehre = self.lehrmanager.getLehrAusgaben()   
@@ -275,8 +311,10 @@ class Synja(threading.Thread):
     self.name = name
     self.id = id
     self.nr = nr
-    self.nlg = NLG("en")
-    self.nlu = NLU("en")
+    self.nlg_en = NLG_EN()
+    self.nlg_de = NLG_DE()
+    self.nlu_en = NLU_EN()
+    self.nlu_de = NLU_DE()
     self.em = Expertenmodell("en")
     self.lehrmanager=Lehrmanager(name, self.em.lessoninhalte, self.em.anzahl_erklaerungen, self.em.anzahlAufg, self.em.anzahlWE, self.em.anzahl_lt, self.em.anzahl_mc,self.em.en_schritt_dict,self.em.enaktiv_artdict)
     self.verlauf = Verlauf(self.em)
@@ -305,7 +343,10 @@ class Synja(threading.Thread):
     self.lastmessagetime = int(round(time.time()))
     
     if(self.lehrmanager.expected_entry == "lehre"):
-      if(self.nlu.parse(input) == ""):
+      eingabe_intent = ""
+      if(self.sprache == "de"): eingabe_intent = self.nlu_de.parse(input)
+      if(self.sprache == "en"): eingabe_intent = self.nlu_en.parse(input)
+      if(eingabe_intent == ""):
         self.lehrmanager.handle_noreaction()
         self.highlight_input_element = self.lehrmanager.expected_entry
         self.reaction_without_input()
@@ -399,19 +440,31 @@ class Synja(threading.Thread):
         phrase = self.expertenmodell.zugriffHinweis(s.lesson, s.konzeptname, s.fehlerart)
       elif isinstance(s, Enaktivausgabe):
         #print("SW: ENAKT ZUST: "+s.zustand)
-        if(s.zustand == "enaktiv_introduction_schritte"): phrase = self.nlg.generate_args("enaktiv_introduction_schritte",s.konzept)
-        elif(s.zustand == "enaktiv_introduction_beispiele"): phrase = self.nlg.generate_args("enaktiv_introduction_beispiele",s.konzept)
-        elif(s.zustand == "anfang"): phrase = self.nlg.generate_args("enaktiv_anfang",self.expertenmodell.zugriffEnaktiv(s.lesson, s.konzept, s.schritt))
-        elif(s.zustand == "schritt"): phrase = self.nlg.generate_args("enaktiv_schritt",self.expertenmodell.zugriffEnaktiv(s.lesson, s.konzept, s.schritt))
-        elif(s.zustand == "beispiel"): phrase = self.nlg.generate_args("enaktiv_beispiel",self.expertenmodell.zugriffEnaktiv(s.lesson, s.konzept, s.schritt))
-        elif(s.zustand == "erweiterung"): phrase = self.nlg.generate_args("enaktiv_erweiterung",self.expertenmodell.zugriffEnaktiv_erweiterung(s.lesson, s.konzept, s.schritt))
-        elif(s.zustand == "ende"): phrase = self.nlg.generate_args("enaktiv_ende",s.konzept)
+        if(self.sprache == "en"):
+          if(s.zustand == "enaktiv_introduction_schritte"): phrase = self.nlg_en.generate_args("enaktiv_introduction_schritte",s.konzept)
+          elif(s.zustand == "enaktiv_introduction_beispiele"): phrase = self.nlg_en.generate_args("enaktiv_introduction_beispiele",s.konzept)
+          elif(s.zustand == "anfang"): phrase = self.nlg_en.generate_args("enaktiv_anfang",self.expertenmodell.zugriffEnaktiv(s.lesson, s.konzept, s.schritt))
+          elif(s.zustand == "schritt"): phrase = self.nlg_en.generate_args("enaktiv_schritt",self.expertenmodell.zugriffEnaktiv(s.lesson, s.konzept, s.schritt))
+          elif(s.zustand == "beispiel"): phrase = self.nlg_en.generate_args("enaktiv_beispiel",self.expertenmodell.zugriffEnaktiv(s.lesson, s.konzept, s.schritt))
+          elif(s.zustand == "erweiterung"): phrase = self.nlg_en.generate_args("enaktiv_erweiterung",self.expertenmodell.zugriffEnaktiv_erweiterung(s.lesson, s.konzept, s.schritt))
+          elif(s.zustand == "ende"): phrase = self.nlg_en.generate_args("enaktiv_ende",s.konzept)
+        elif(self.sprache == "de"):
+          if(s.zustand == "enaktiv_introduction_schritte"): phrase = self.nlg_de.generate_args("enaktiv_introduction_schritte",s.konzept)
+          elif(s.zustand == "enaktiv_introduction_beispiele"): phrase = self.nlg_de.generate_args("enaktiv_introduction_beispiele",s.konzept)
+          elif(s.zustand == "anfang"): phrase = self.nlg_de.generate_args("enaktiv_anfang",self.expertenmodell.zugriffEnaktiv(s.lesson, s.konzept, s.schritt))
+          elif(s.zustand == "schritt"): phrase = self.nlg_de.generate_args("enaktiv_schritt",self.expertenmodell.zugriffEnaktiv(s.lesson, s.konzept, s.schritt))
+          elif(s.zustand == "beispiel"): phrase = self.nlg_de.generate_args("enaktiv_beispiel",self.expertenmodell.zugriffEnaktiv(s.lesson, s.konzept, s.schritt))
+          elif(s.zustand == "erweiterung"): phrase = self.nlg_de.generate_args("enaktiv_erweiterung",self.expertenmodell.zugriffEnaktiv_erweiterung(s.lesson, s.konzept, s.schritt))
+          elif(s.zustand == "ende"): phrase = self.nlg_de.generate_args("enaktiv_ende",s.konzept)
       elif isinstance(s, Fehlerantwort):
         phrase = s.beschreibung
       elif isinstance(s, list) and len(s)==2:
-        phrase = self.nlg.generate_args(s[0], s[1])
+        if(self.sprache == "de"):phrase = self.nlg_de.generate_args(s[0], s[1])
+        elif(self.sprache == "en"):phrase = self.nlg_en.generate_args(s[0], s[1])
       else:
-        phrase = self.nlg.generate(s)
+        if(self.sprache == "de"):phrase = self.nlg_de.generate(s)
+        elif(self.sprache == "en"):phrase = self.nlg_en.generate(s)
+        
       print(phrase)
       self.addDialogSynja(phrase)   
    
@@ -434,3 +487,13 @@ class Synja(threading.Thread):
       self.reaction_without_input()
       self.lastmessagetime = current
       self.no_resp_time = 10000000 #kein weiterer Hinweis          
+      
+      
+sw = Synja(0,0,"john")
+sw.lehrmanager.lesson = "basics"
+sw.lehrmanager.konzept = "comments"
+sw.lehrmanager.art = "coding"
+sw.lehrmanager.version = 0
+sw.lehrmanager.zustand = "testphase_konzept"
+sw.lehreingabe("/a")
+print("TEST777: "+sw.lehrmanager.fehlerbeschreibung)

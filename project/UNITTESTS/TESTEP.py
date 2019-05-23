@@ -7,15 +7,16 @@ Created on 09.04.2019
 
 import os
 import sys
+import io
 
 sys.path.append(os.path.abspath('../lehre'))
 
 
-from Expertenmodell import Expertenmodell
-from project.lehre.javaparsing.parser import allreturns
-from project.lehre.javaparsing.parser import parse
+from Expertenmodell import Expertenmodell #@Unresolvedimport
+from javaparsing.parser import allreturns,parse #@Unresolvedimport
 import unittest
 
+verzeichnispfad = os.path.dirname(__file__)
 
 
 '''    
@@ -69,8 +70,9 @@ class Test(unittest.TestCase):
     for lesson in self.ep.lessons:
       for konzept in self.ep.lessoninhalte[lesson]:    
         try:
-          fh = open(self.verzeichnispfad+'project//webapp//static//'+lesson+"//"+konzept+".svg", 'r')
-          fh.close()
+          path = os.path.join(os.path.dirname(verzeichnispfad), 'webapp','static',lesson,konzept+".svg")
+          file = io.open(path,'r')#, encoding ='ISO-8859-1'
+          file.close()
         except FileNotFoundError:
           complete = False
           print("No picture for: "+konzept)

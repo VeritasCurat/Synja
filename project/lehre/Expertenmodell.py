@@ -633,9 +633,12 @@ class Expertenmodell(object):
 
 
 
-'''
 
+
+'''
 ep = Expertenmodell("en")
+print(ep.bewerten("basics", "comments", "coding", 0, "/a"))
+print(ep.zugriffHinweis("basics", "comments", "wrong_structure"))
 print(str(ep.lessoninhalte.keys()))
 print(ep.zugriffEnaktiv("basics", "literals", 0))
 print(ep.bewerten_enaktiv("basics", "literals", 0, "test"))

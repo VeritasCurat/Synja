@@ -12,9 +12,9 @@ import os
 sys.path.append(os.path.abspath('../webapp'))
 sys.path.append(os.path.abspath('../lehre'))
 
-from Nutzer import Nutzer
-from Lueckentext import Lueckentext
-from javaparsing.parser import parse
+from Nutzer import Nutzer #@Unresolvedimport
+from Lueckentext import Lueckentext #@Unresolvedimport
+from javaparsing.parser import parse #@Unresolvedimport
 
 class Syntaxkonzept(object):
     name = ""
@@ -101,7 +101,7 @@ class Syntaxkonzept(object):
         loesungencpy = self.test_mc[version].loesungen
         nutzerantwort =[]
         for zeichen in antworttext:
-          if(zeichen.isdecimal()==True):
+          if(zeichen.isdigit()==True):
             nutzerantwort.append(zeichen)   
         if(len(nutzerantwort) != len(loesungencpy)):return False
         for loesung in nutzerantwort:

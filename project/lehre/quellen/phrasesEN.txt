@@ -1,4 +1,4 @@
-#emotionsreaktion
+﻿#emotionsreaktion
   dank = "Oh thank you!"
   dank = "Thank you so much!"
   dank = "Oh wow, thank you!"
@@ -71,7 +71,7 @@
   einleitung = "Let me teach you Java Syntax"
   
   
-  frage_naechsterThemenblock = "Please choose the next lesson. You can choose between: "programm structure", "basics", "arrays", "operators", "statements", "controll structures", "methods" and "classes"."
+  frage_naechsterThemenblock = "Please choose the next lesson. You can choose between: "programm structure", "basics", "arrays", "operators", "statements", "controll structures", "methods" and "classes""."
   schueler_wissen = "You already know $"
   lehrinhalt = "Now I would like to explain $."
   lehrinhalt = "Let me explain the concept $."
@@ -95,7 +95,7 @@
   joke = "Let me tell you a joke: "Q: Why did the programmer quit his job? \n A: Because he didn't get arrays (a raise)." :D"
   
 #einleitung  
- 
+  introduction_syn = "I was programmed to help you understand the syntax of Java. Please let me be your personal tutor :)."
   why_java2 = "2. It runs on a java runtime environment (JRE); that's why you have to "download java". That means you can run your programs on every device that can run java (windows, linux, android ...)."
   why_java3 = "3. There are a lot of libraries (set of classes) out there that are really powerful. Java API are libraries that are included in the basic java installation. java.awt will give you tools for Graphical User Interfaces, but there are also a lot of external libraries from excel reading to cryptography."
   why_synja = "A lot of beginners have problems with the syntax of a language and a lot of people begin their programming journey by learning Java. My Developer may have had similar experiences: you compile a program (translate it into commands that the CPU can execute) and the compiler shows dozens of syntax errors. You solve them, try again ... and new mistakes emerge. This can be avoided if you understand the syntax from the very beginning."

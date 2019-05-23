@@ -96,15 +96,16 @@
   
 #einleitung  
  
+  introduction_syn = "I was programmed to help you understand the syntax of Java. Please let me be your personal tutor :)."
   why_java2 = "2. It runs on a java runtime enviroment (JRE); that's why you have to "download java". That means you can run your programms on every device that can run java (windows, linux, android ...)."
   why_java3 = "3. There are a lot of libraries (set of classes) out there that are really powerful. Java API are libraries that are included in the basic java instalation. java.awt will give you tools for Graphical User interfaces. But there are also a lot of external libraries from excel reading to cryptography."
   why_synja = "A lot of beginners have problems with the syntax of a language and a lot of people begin their programming journey with learning java. My Developer may have had similar Experiences: you compile a program (translate it into commands that the CPU can execute) and the compiler shows dozens of syntax errors. You solve them, try again ... and new mistakes emerge. This can be avoided if you understand the syntax from the very beginning."
   
   
-  teaching = "This is how i want to teach you: the course is divided into lessons which are devived into small units. I will explain one, after another and test your knowledge. If you don't understand my explanation, i can express myself in a different way. At the end of a lesson is a bigger test (3 tasks)."
+  teaching = "This is how I intend to teach you: The course is divided into lessons which are subdivided into smaller units. I will explain one concept after another and test your knowledge. If you don't understand my explanation, I can express myself in a different way. At the end of the lesson is a larger test consisting of three tasks.""
   teaching = "This is how i want to teach you: i explain a concept and then i test your knowledge. I can explain every subject in different ways, so if you don't understand an explanation just ask for another explanation."
-  ui = "The UI consists of three parts: the pedagogical agent layer, the input layer, and the teaching layer. At the dialog level our conversation is displayed. At the input layer you can answer related to the dialog (left) or related to a task (right). At the pedagogical agent level (on the right) you can see me ... "
-  ui = "The GUI (what is displayed on the monitor) is divided into three parts. The first part is where our dialog is displayed (top-left). Under that you can send me a message by typing it in in the textbox and hitting the submit Button."
+  ui = "The UI consists of three parts: the pedagogical agent layer, the input layer, and the teaching layer. At the dialogue level our conversation is displayed. At the input layer you can answer related to the dialogue (left) or related to a task (right). At the pedagogical agent level (on the right) you can see me ... "
+  ui = "The GUI (what is displayed on the monitor) is divided into three parts. The first part is where our dialogue is displayed (top-left). Under that you can send me a message by typing it in in the textbox and hitting the submit Button."
   dialog = "I can understand simple sentences which relate to the subject and i can answer simple questions about the program. "
   dialog = "I can only understand simple sentences."
 

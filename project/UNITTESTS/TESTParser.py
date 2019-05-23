@@ -10,7 +10,11 @@ Created on 26.03.2019
 
 @author: johan
 '''
-from project.lehre.javaparsing.parser import *
+
+import os
+import sys
+sys.path.append(os.path.abspath('../lehre'))
+from javaparsing.parser import parse,multiparse #@Unresolvedimport
 
 class Test(unittest.TestCase):
     
@@ -40,61 +44,7 @@ class Test(unittest.TestCase):
     '''
     pass
     
-  def testandereTest(self):
-    codeblock("    { int k; }   ") 
-    statement("int k;")
-    if_statements("if(true);")
-    parse("System.out.println(a[0][0]);", "multidim_array_access")
-    arops("1+2+2", False)
-    multisplit(['+',' '], "2 + 2 2")   
-    parse("int a[];","array_definition")
-    statement("if(true);")
-    bitop("1 << 2", False)    
-    variable_reassignment("")
-    parse("","variable_reassignment")
-    methodmoddef("public static void main(String[] a){}")
-    gettype("2.0")
-    parse("\"a","character_literals")
-    parse_wre("public int add(int a, int b){raise AssertionError("")+b;}","method_definition")
-    codeblock("{ }")
-    parse("boolean b[] = null;", "array_definition_initialization")
-    parse("a[0][0]","multidim_array_access")
-    methoddefinition("void test(int a){}")
-    classdefinition("class A{int a; public A(){}}")
-    variable_definition("int a;",True)
-    for_statement("for(int i=0;i<9;i++){++a;}")
-    assignops("a=a+1;",False)
-    imports("import java.awt.*;")
-    main("public static void main(String a[]){}")
-    variable_definition_initialization("int AA = 9;",True)
-    parse("{int a;int b;do{a++;b++;}while(true);}", "code_blocks")
-    methoddefinition("public static int add(int a, int b) { }")
-    methodaccess("add(9,2);",False)
-    variable_definition_initialization("A test = new A();",True)
-    membervariable_access("test.a;")   
-    variable_definition_initialization("A g = new A();",True)
-    arraydefinition("int b[];")
-    arraydefinitialisation("int C[] = {1,23,3};")
-    arraydefinitialisation("boolean B[] = {true,false};")   
-    arrayreassignment("C[0] = 12;")
-    arrayaccess("C[0];", False)
-    arrayreassignment("C[1] = 12;")
-    arrayaccess("C[1];", False)    
-    multidim_array_declaration("int x[][] = new int[5][5];")
-    multidim_array_declaration("int[][] y = new int[5][5];")
-    multidim_array_reassignment("x[0][2] = 1;")
-    multidim_arrayaccess("y[0][2];",False)  
-    for_statement("for(int i=0;i<9;i++){++a;}")
-    for_statement("for(int i=0;i<9;i++){++i;i=i+1;}")
-    parse("while(!false && false){}","while")
-    logicops("2 == 2 && 2 > 2", False)
-    arops("2 + 2 % 3", False)
-    bitop("3|4|5", False)
-    booleanexpression("1<3")
-    classdefinition("public class A{int c;}")
-    variable_definition_initialization("A a = new A();",True)
-    parse("{for(int i=0;i<10;i++){}}","code_blocks")  
-    pass   
+
     
   def testcorrect_ws(self):
     a=""

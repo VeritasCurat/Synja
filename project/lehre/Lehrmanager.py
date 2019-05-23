@@ -453,6 +453,7 @@ class Lehrmanager:
     #self.dialogausgaben.append("why_java3")
     #self.dialogausgaben.append("why_synja")
     #self.dialogausgaben.append("goal")
+    self.dialogausgaben.append("introduction_syn")
     self.dialogausgaben.append("teaching")
     self.dialogausgaben.append("ui")
     self.dialogausgaben.append("dialog")

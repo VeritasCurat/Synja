@@ -118,7 +118,7 @@ def background_threadSynjaLiza():
           #print("WA EMIT: "+output+" from ["+synja.name+"]")
           if(not isinstance(output,list)):   
             zeitpunkt = datetime.datetime.now().strftime('%H:%M:%S')         
-            socketio.emit('dialogEINGABE',{'data':  '<p align="left"><b>Synja</b> ('+zeitpunkt+'): \n'+output+'</p>', 'count': count},namespace='/synja', room = synja.id)
+            socketio.emit('dialogEINGABE',{'data':  '<p align="left"><b>Synja</b>: \n'+output+'</p>', 'count': count},namespace='/synja', room = synja.id)
             emotion = synja.lehrmanager.emotion
             socketio.emit('change_synja',{'data': emotion, 'count': count},namespace='/synja', room = synja.id)
            
@@ -155,7 +155,7 @@ def dialogeingabe_synja(message):
     for synja in synjas:
         if synja.id == request.sid:
           if(synja.name != "NO_ACCOUNT"): name = synja.name
-    emit('dialogEINGABE',{'data': '<b>'+name+'</b> ('+zeitpunkt+'): \n'+message['data'], 'count': session['receive_count']})
+    emit('dialogEINGABE',{'data': '<b>'+name+'</b>: \n'+message['data'], 'count': session['receive_count']})
     #print("You: "+message['data'])
     #print("received \""  + message['data'] + "\" from " + request.sid)
     if (len(message['data']) > 0):
@@ -451,4 +451,4 @@ def disconnect_liza():
   
 if __name__ == '__main__':
   #s = serve(app, host='127.0.0.1', port=80)
-  socketio.run(app, host='0.0.0.0', port=80)
+  socketio.run(app, host='0.0.0.0', port=82)
