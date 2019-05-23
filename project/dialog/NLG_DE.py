@@ -83,28 +83,26 @@ class NLG_DE(object):
     dict_konzept_phrase = object #main -> the main method 
     
     
-    def __init__(self,sprache):
-      self.sprache = sprache
+    def __init__(self):
       self.genbase = Genbase()
       self.dict_konzept_phrase = Dict_konzept_phrase()
       return
     
     def generate_args(self, phrase, arg):
-      if(self.sprache == "en"):
-        if(phrase in  self.genbase.dict.keys()):
-          phrase = random.choice( self.genbase.dict[phrase])
-                   
-          
-          if arg in self.dict_konzept_phrase.dict.keys():
-            ph = self.dict_konzept_phrase.dict[arg]
-            phrase = phrase.replace("$", ph,1)
-            
-          else: phrase = phrase.replace("$", arg,1)
-          if(": <b>$</b>" in phrase): phrase = phrase.replace(": <b>$</b>",".")
+      if(phrase in  self.genbase.dict.keys()):
+        phrase = random.choice( self.genbase.dict[phrase])
+                 
         
-        else: 
-          print("phrase: \""+phrase+"\" nicht in nlg vorhanden!")
-          exit(-1)
+        if arg in self.dict_konzept_phrase.dict.keys():
+          ph = self.dict_konzept_phrase.dict[arg]
+          phrase = phrase.replace("$", ph,1)
+          
+        else: phrase = phrase.replace("$", arg,1)
+        if(": <b>$</b>" in phrase): phrase = phrase.replace(": <b>$</b>",".")
+      
+      else: 
+        print("phrase: \""+phrase+"\" nicht in nlg vorhanden!")
+        exit(-1)
 
       #fix python2
       phrase = repr(phrase)
@@ -118,14 +116,13 @@ class NLG_DE(object):
     
     def generate(self, phrase):
       ausgabe = ""
-      if(self.sprache == "en"):
-        if(phrase in  self.genbase.dict.keys()):
-          
-          ausgabe = random.choice( self.genbase.dict[phrase])
+      if(phrase in  self.genbase.dict.keys()):
         
-        else: 
-          print("phrase: \""+phrase+"\" nicht in nlg vorhanden!")
-          exit(-1)
+        ausgabe = random.choice( self.genbase.dict[phrase])
+      
+      else: 
+        print("phrase: \""+phrase+"\" nicht in nlg vorhanden!")
+        exit(-1)
     
       ausgabe = ausgabe.replace("\n",'\\n')    
       return ausgabe

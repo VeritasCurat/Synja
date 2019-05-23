@@ -135,7 +135,23 @@ background-color: grey;
 	<div class = "ping" style = "padding-left: 20px; float: left" >	
 		<p>  average ping: <b><span id="ping-pong"></span> ms</b></p>
 	</div>
+    <div>
+        <div class="btn_en" style = "padding-top: 15px;padding-right: 10px;float: right"> 
+            <form id="btn_en" method="POST" action='#'>
+                        <input type="submit" value="english" id="btn_de"> 
+            </form>
+        </div>
+
+         <div class="btn_de" style = "padding-top: 15px;padding-right: 10px;float: right"> 
+            <form id="btn_de" method="POST" action='#'>
+                        <input type="submit" value="deutsch" id="btn_de"> 
+            </form>
+        </div>
 </div>
+    </div>
+</div>
+      
+        
 
 <div class="wrapper">
 	<div style="width: 300px; float:right; height:0px; margin:10px">
@@ -365,6 +381,17 @@ background-color: grey;
             // variety of ways
             $('form#logout').submit(function(event) {
                 socket.emit('logout');
+                return false;
+            });
+
+            $('form#btn_de').submit(function(event) {
+                alert("deutsch")
+                socket.emit('btn_de');
+                return false;
+            });
+
+            $('form#btn_en').submit(function(event) {
+                socket.emit('btn_de');
                 return false;
             });
             
