@@ -11,9 +11,11 @@ sys.path.append(os.path.abspath('../lehre'))
 sys.path.append(os.path.abspath('../webapp'))
 
 
+
+
 from Nutzer import Nutzer #@Unresolvedimport
 from Syntaxkonzept import Syntaxkonzept #@Unresolvedimport
-from Expertenmodell import Expertenmodell #@Unresolvedimport
+
 
 class Schuelermodell(object):
     verzeichnispfad = os.path.realpath(__file__)

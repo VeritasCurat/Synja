@@ -19,15 +19,14 @@ sys.path.append(os.path.abspath('../dialog/de'))
 sys.path.append(os.path.abspath('../webapp'))
 
 
-from Lehrmanager import Lehrmanager, Fehlerantwort, Hinweis, Lehrausgabe #@Unresolvedimport
-from Expertenmodell import Expertenmodell #@Unresolvedimport
+from Lehrmanager import Lehrmanager, Fehlerantwort, Hinweis, Lehrausgabe, Enaktivausgabe #@Unresolvedimport
+from ExpertenmodellEN import ExpertenmodellEN #@Unresolvedimport
+from ExpertenmodellDE import ExpertenmodellDE #@Unresolvedimport
  
 from NLG_DE import NLG_DE #@Unresolvedimport
 from NLG_EN import NLG_EN #@Unresolvedimport
 from NLU_EN import NLU_EN #@Unresolvedimport
 from NLU_DE import NLU_DE #@Unresolvedimport
-from Lehrmanager import Enaktivausgabe #@Unresolvedimport
-
 from verlauf import Verlauf #@Unresolvedimport
 
 import threading
@@ -51,7 +50,8 @@ class Synja(threading.Thread):
   nr=0
   nlg_en=0
   nlg_de=0
-  expertenmodell=Expertenmodell("en")
+  expertenmodell_en=ExpertenmodellEN()
+  expertenmodell_de=ExpertenmodellDE()
   dialogmanager=0
   lehrmanager=0
   name=""
@@ -133,10 +133,13 @@ class Synja(threading.Thread):
         konzeptname = self.lehrmanager.konzept  
       art = self.lehrmanager.art
       version = self.lehrmanager.version
-      if(art =="enaktiv"): bewertung = self.em.bewerten_enaktiv(lesson, konzeptname, self.lehrmanager.enaktiv_schritt, antworttext)
+      if(art =="enaktiv"): 
+        if(self.sprache == "en"):bewertung = self.expertenmodell_en.bewerten_enaktiv(lesson, konzeptname, self.lehrmanager.enaktiv_schritt, antworttext)
+        elif(self.sprache == "de"):bewertung = self.expertenmodell_de.bewerten_enaktiv(lesson, konzeptname, self.lehrmanager.enaktiv_schritt, antworttext)
       else: 
-        bewertung = self.em.bewerten(lesson, konzeptname, art, version, antworttext)
-        self.verlauf.eintragen(id, lesson, konzeptname, art, version, antworttext, bewertung)
+        if(self.sprache == "en"):bewertung = self.expertenmodell_en.bewerten(lesson, konzeptname, art, version, antworttext)
+        elif(self.sprache == "de"):bewertung = self.expertenmodell_de.bewerten(lesson, konzeptname, art, version, antworttext)
+        self.verlauf.eintragen(self.sprache, id, lesson, konzeptname, art, version, antworttext, bewertung)
       #print("bewertung: "+str(bewertung))
       
 
@@ -185,8 +188,9 @@ class Synja(threading.Thread):
 
   def convertLehreSynjaText(self, lehrausgabe):
     #konzeptname, darstellungsart, version, nameid
-    ausgabe = self.em.zugriffLehreinheit(lehrausgabe.lesson, lehrausgabe.konzeptname, lehrausgabe.darstellungsart, lehrausgabe.version)
-  
+    if(self.sprache == "en"): ausgabe = self.expertenmodell_en.zugriffLehreinheit(lehrausgabe.lesson, lehrausgabe.konzeptname, lehrausgabe.darstellungsart, lehrausgabe.version)
+    elif(self.sprache == "de"): ausgabe = self.expertenmodell_de.zugriffLehreinheit(lehrausgabe.lesson, lehrausgabe.konzeptname, lehrausgabe.darstellungsart, lehrausgabe.version)
+    
     ausgabetext = ausgabe
     ausgabetext = ausgabetext.replace('\\n', '\n')
     #print("AUSGABETEXT: "+ausgabetext)
@@ -315,9 +319,11 @@ class Synja(threading.Thread):
     self.nlg_de = NLG_DE()
     self.nlu_en = NLU_EN()
     self.nlu_de = NLU_DE()
-    self.em = Expertenmodell("en")
-    self.lehrmanager=Lehrmanager(name, self.em.lessoninhalte, self.em.anzahl_erklaerungen, self.em.anzahlAufg, self.em.anzahlWE, self.em.anzahl_lt, self.em.anzahl_mc,self.em.en_schritt_dict,self.em.enaktiv_artdict)
-    self.verlauf = Verlauf(self.em)
+    self.expertenmodell_en = ExpertenmodellEN()
+    self.expertenmodell_de = ExpertenmodellDE()
+    if(self.sprache == "en"):self.lehrmanager=Lehrmanager(name, self.expertenmodell_en.lessoninhalte, self.expertenmodell_en.anzahl_erklaerungen, self.expertenmodell_en.anzahlAufg, self.expertenmodell_en.anzahlWE, self.expertenmodell_en.anzahl_lt, self.expertenmodell_en.anzahl_mc,self.expertenmodell_en.en_schritt_dict,self.expertenmodell_en.enaktiv_artdict)
+    elif(self.sprache == "de"):self.lehrmanager=Lehrmanager(name, self.expertenmodell_de.lessoninhalte, self.expertenmodell_de.anzahl_erklaerungen, self.expertenmodell_de.anzahlAufg, self.expertenmodell_de.anzahlWE, self.expertenmodell_de.anzahl_lt, self.expertenmodell_de.anzahl_mc,self.expertenmodell_de.en_schritt_dict,self.expertenmodell_de.enaktiv_artdict)
+    self.verlauf = Verlauf(self.expertenmodell_en,self.expertenmodell_de)
     if(self.name == "NO_ACCOUNT"): self.lehrmanager.neuernutzer = True
      
     #Teil der fuer app und ui gebraucht wird

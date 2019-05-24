@@ -719,3 +719,43 @@ Which types of comments does Java support?
 4. executable Comments
 ","1","fehlerfrei"
 "<built-in function id>","2019-05-23 21:11:10","Please write a valid comment.","/a","[['basics', 'comments', 'basics', 'comments'], 'This is not a valid comment. This does not contain /**/ or //: <b>/a</b>', 'comments_non']"
+"0","2019-05-23 21:12:10","Please choose the right answer(s) by typing in the number(s) of the answer(s) into user input:
+Which types of comments does Java support?
+1. One-line Comments
+2. Java-Docs
+3. Comments for Variables
+4. executable Comments
+","1","fehlerfrei"
+"<built-in function id>","2019-05-23 21:12:10","Please write a valid comment.","/a","[['basics', 'comments', 'basics', 'comments'], 'This is not a valid comment. This does not contain /**/ or //: <b>/a</b>', 'comments_non']"
+"0","2019-05-23 21:45:43","Please choose the right answer(s) by typing in the number(s) of the answer(s) into user input:
+Which types of comments does Java support?
+1. One-line Comments
+2. Java-Docs
+3. Comments for Variables
+4. executable Comments
+","1","fehlerfrei"
+"<built-in function id>","2019-05-23 21:45:43","Please write a valid comment.","/a","[['basics', 'comments', 'basics', 'comments'], 'This is not a valid comment. This does not contain /**/ or //: <b>/a</b>', 'comments_non']"
+"0","2019-05-23 21:47:04","Please choose the right answer(s) by typing in the number(s) of the answer(s) into user input:
+Which types of comments does Java support?
+1. One-line Comments
+2. Java-Docs
+3. Comments for Variables
+4. executable Comments
+","1","fehlerfrei"
+"<built-in function id>","2019-05-23 21:47:04","Please write a valid comment.","/a","[['basics', 'comments', 'basics', 'comments'], 'This is not a valid comment. This does not contain /**/ or //: <b>/a</b>', 'comments_non']"
+"0","2019-05-23 21:48:41","Please choose the right answer(s) by typing in the number(s) of the answer(s) into user input:
+Which types of comments does Java support?
+1. One-line Comments
+2. Java-Docs
+3. Comments for Variables
+4. executable Comments
+","1","fehlerfrei"
+"<built-in function id>","2019-05-23 21:48:41","Please write a valid comment.","/a","[['basics', 'comments', 'basics', 'comments'], 'This is not a valid comment. This does not contain /**/ or //: <b>/a</b>', 'comments_non']"
+"0","2019-05-24 14:55:56","Please choose the right answer(s) by typing in the number(s) of the answer(s) into user input:
+Which types of comments does Java support?
+1. One-line Comments
+2. Java-Docs
+3. Comments for Variables
+4. executable Comments
+","1","fehlerfrei"
+"<built-in function id>","2019-05-24 14:55:56","Please write a valid comment.","/a","[['basics', 'comments', 'basics', 'comments'], 'This is not a valid comment. This does not contain /**/ or //: <b>/a</b>', 'comments_non']"

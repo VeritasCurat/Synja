@@ -8,7 +8,8 @@ import sys
 sys.path.append(os.path.abspath('../lehre'))
 
 
-from Expertenmodell import Expertenmodell
+from ExpertenmodellEN import ExpertenmodellEN  #@Unresolvedimport
+from ExpertenmodellDE import ExpertenmodellDE  #@Unresolvedimport
 import os
 import csv
 from time import gmtime, strftime
@@ -23,11 +24,13 @@ class Verlauf(object):
 
 
 
-    def __init__(self, expertenmodell):
-      self.ep = expertenmodell
-      
-    def eintragen(self, id, lesson, konzeptname, art, version, antworttext, bewertung):
-      aufgabenstellung = self.ep.zugriffLehreinheit(lesson, konzeptname, art, version)
+    def __init__(self, expertenmodellEN, expertenmodellDE):
+      self.ep_en = expertenmodellEN
+      self.ep_de = expertenmodellDE
+
+    def eintragen(self, sprache, id, lesson, konzeptname, art, version, antworttext, bewertung):
+      if(sprache == "en"):aufgabenstellung = self.ep_en.zugriffLehreinheit(lesson, konzeptname, art, version)
+      elif(sprache == "de"):aufgabenstellung = self.ep_de.zugriffLehreinheit(lesson, konzeptname, art, version)
       aufgabenstellung = aufgabenstellung.replace('\\n', '\n')
       
       timestamp = strftime("%Y-%m-%d %H:%M:%S", gmtime())
@@ -40,6 +43,8 @@ class Verlauf(object):
         #file.write(str()+'\n')
 
 
-ep = Expertenmodell("en")
-verlauf = Verlauf(ep)
-verlauf.eintragen(0, "basics", "comments", "test_mc", 0, "1", "fehlerfrei")        
+ep_en = ExpertenmodellEN()
+ep_de = ExpertenmodellEN()
+
+verlauf = Verlauf(ep_en,ep_de)
+verlauf.eintragen("en",0, "basics", "comments", "test_mc", 0, "1", "fehlerfrei")        

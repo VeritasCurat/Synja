@@ -238,7 +238,21 @@ def logout_synja():
       for synja in synjas:
         if synja.id == request.sid:
           synja.save()
-
+          
+@socketio.on('btn_de', namespace='/synja')
+def change_lang_de_synja():
+  for synja in synjas:
+    if synja.id == request.sid:
+      #print("WA de: "+message['data']+" from ["+str(synja.name)+"]")
+      synja.sprache = "de"
+      
+@socketio.on('btn_en', namespace='/synja')
+def change_lang_en_synja():
+  for synja in synjas:
+    if synja.id == request.sid:
+      #print("WA de: "+message['data']+" from ["+str(synja.name)+"]")
+      synja.sprache = "en"
+      
 @socketio.on('connect', namespace='/synja')
 def connect_synja():
     #if(request.remote_addr not in logins.keys()):

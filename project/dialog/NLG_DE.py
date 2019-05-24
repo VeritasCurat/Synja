@@ -7,9 +7,6 @@ import os
 import sys
 sys.path.append(os.path.abspath('../lehre'))
 
-
-from Expertenmodell import Expertenmodell #@Unresolvedimport
-
 source = "rasa\phrasesDE.json"
 import random
 import os
