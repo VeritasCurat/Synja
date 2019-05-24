@@ -48,8 +48,8 @@ class Synja(threading.Thread):
   
   id=0 #used to identify which messages  
   nr=0
-  nlg_en=0
-  nlg_de=0
+  nlg_en=NLG_EN()
+  nlg_de=NLG_DE()
   expertenmodell_en=ExpertenmodellEN()
   expertenmodell_de=ExpertenmodellDE()
   dialogmanager=0
@@ -80,7 +80,7 @@ class Synja(threading.Thread):
   #hauptmethode: hier wird auf die queues gelisten und dann darauf reagiert (lehrmanager)
   def run(self):
     warnings.filterwarnings(module='sklearn*', action='ignore', category=DeprecationWarning)
-
+    print(self.sprache)
     if(self.sprache == "en"):begruessung = self.nlg_en.generate("begruessung")
     elif(self.sprache == "de"):begruessung = self.nlg_de.generate("begruessung")
 
@@ -239,7 +239,8 @@ class Synja(threading.Thread):
 
         elif isinstance(s, Hinweis):
           #print("SW: HINWEIS 1"+s.fehlerart)
-          phrase = self.expertenmodell.zugriffHinweis(s.lesson, s.konzeptname, s.fehlerart)
+          if(self.sprache == "en"): phrase = self.expertenmodell_en.zugriffHinweis(s.lesson, s.konzeptname, s.fehlerart)
+          elif(self.sprache == "de"): phrase = self.expertenmodell_de.zugriffHinweis(s.lesson, s.konzeptname, s.fehlerart)
         elif isinstance(s, Enaktivausgabe):
           #print("SW: ENAKT ZUST: "+s.zustand)
           if(self.sprache == "en"):
@@ -312,6 +313,7 @@ class Synja(threading.Thread):
       
                
   def __init__(self,id,nr,name):  
+    self.sprache = "de"
     self.name = name
     self.id = id
     self.nr = nr

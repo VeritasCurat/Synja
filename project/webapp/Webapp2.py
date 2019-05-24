@@ -244,6 +244,7 @@ def change_lang_de_synja():
   for synja in synjas:
     if synja.id == request.sid:
       #print("WA de: "+message['data']+" from ["+str(synja.name)+"]")
+      print("SPRACHE DEUTSCH")
       synja.sprache = "de"
       
 @socketio.on('btn_en', namespace='/synja')
@@ -251,6 +252,7 @@ def change_lang_en_synja():
   for synja in synjas:
     if synja.id == request.sid:
       #print("WA de: "+message['data']+" from ["+str(synja.name)+"]")
+      print("SPRACHE ENGLISCH")
       synja.sprache = "en"
       
 @socketio.on('connect', namespace='/synja')
@@ -465,4 +467,4 @@ def disconnect_liza():
   
 if __name__ == '__main__':
   #s = serve(app, host='127.0.0.1', port=80)
-  socketio.run(app, host='0.0.0.0', port=82)
+  socketio.run(app, host='0.0.0.0', port=80)

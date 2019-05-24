@@ -1,4 +1,4 @@
-#Beschreibt den Fehler den ein Nutzer gemacht hat.
+#Explains an error that the user made
 lesson: programm_structure
 "programm_structure_main":::"main_wrong":::"This does not match with the structure of a main method: <b>$</b>."
 "programm_structure_import":::"import_no_keyword":::"This does not contain the keyword "import": <b>$</b>."

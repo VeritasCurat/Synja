@@ -1,81 +1,81 @@
 lesson: programm_structure
-"programm_structure_main":::"Where is the entry point in a java app?":::{"At the line 1."::"At the main method."::"At the class declaration."::"At the entry method."}:::{2}
-"programm_structure_import":::"Where are imports written?":::{"At the top."::"At the bottom."::"One line before the first use."::"They can be written anywhere."}:::{1}
-"programm_structure_packages”:::”What does a package declaration look like?":::{"package applicationname,libraryname"::"package libraryname.applicationname"::"package applicationname.libraryname"::"PACKAGE applicationname.libraryname"}:::{2}
-"programm_structure_packages":::"How many package declarations can there be in any syntactically legal java file?":::{"No package declaration"::"One package declaration"::"Two package declarations"::"more that two package declarations"}:::{1;2}
+"programm_structure_main":::"Wo befindet sich der Einstiegspunkt in einer Java-App?":::{"In Zeile 1."::"In der Hauptmethode."::"In der Klassendeklaration."::" Bei der Eingabemethode. "}:::{2}
+"programm_structure_import":::"Wo werden Importe geschrieben?":::{"Oben."::"Unten."::"Eine Zeile vor der ersten Verwendung."::"Sie können überall geschrieben werden . "}:::{1}
+"programm_structure_packages":::"Wie sieht eine Paketdeklaration aus?":::{"Paketanwendungsname, Bibliotheksname"::"Paketbibliotheksname.Anwendungsname"::"Paketanwendungsname.Bibliotheksname"::"PACKAGE anwendungsname.Bibliotheksname" }:::{2}
+"programm_structure_packages":::"Wie viele Paketdeklarationen kann eine syntaktisch zulässige Java-Datei enthalten?":::{"Keine Paketdeklaration"::"Eine Paketdeklaration"::"Zwei Paketdeklarationen"::"Mehr als das zwei Paketdeklarationen "}:::{1; 2}
 lesson: basics
-"comments":::"Which types of comments does Java support?":::{"One-line Comments"::"Java-Docs"::"Comments for Variables"::"executable Comments"}:::{1;2}
-"comments":::"Which of these comments is syntactically legal?":::{"// //this is a one liner"::"/* /* */ */"::"//comment/**/"}:::{1;3}
-"comments":::"Which of these are legal comments?":::{"/*hello**/"::"/**hello\n**/"::"//**hello*/"::"/*hello\n/"}:::{1;2;3}
-"keywords":::"Which is a keyword?":::{"int a;"::"String"::"&"::"half"}:::{2}
-"keywords":::"Which contains a keyword?":::{"int a = 0;"::"class a {}"::"a = 1+1;"}:::{1;2}
-"keywords":::"What are keywords?":::{"A keyword is a reserved string and has a language-defined semantic."::"Keywords are particularly important for the user and used by them as keys for encrypted data.”::”They are words in a programming language and have a special meaning. They can be redefined by the user."}:::{1}
-"literals":::"What are literals?":::{"A literal is the source code representation of a value of a primitive type or the null type (empty value)."::"A literal is part of the program that contains only constants."::"A literal is the human readable part of the program"}:::{1}
-"literals":::"Which are not literals?":::{"-200"::""anna""::""2a""::"1,245"}:::{4}
-"literals":::"Which are neither integer literals nor floating point literals?":::{"-200"::"18,2"::"2"::"1.245"}:::{1}
-"integer_literals":::"Which option assigns a binary number to b?":::{"b = 01;"::"0bb = 10;"::"b = 0b0"::"b = 0b2;"}:::{3}
-"integer_literals":::"Which is not a valid integer literal?":::{"1"::"-10E10"::"0"::"null"}:::{2;4}
-"floating-point_literals":::"Which is not a valid floating-point literal?":::{".0"::"0."::"9,1"::"4"}:::{2;3}
-"character_literals":::"Which is a character literal?":::{"'a'"::""a""::"'0'"::"'/n'"}:::{1;3;4}
-"string_literals":::"Which is a String literal?":::{"'hello'"::""abc""::""\t""::"'/t'"}:::{2;3}
-"boolean_literals":::"Which is a boolean literal?":::{"true"::"True"::"FALSE"::"false"}:::{1;4}
-"boolean_literals":::"Which type of variable can be assigned with the value true?":::{"bool"::"boolean"::"int"::"none"}:::{2}
-"null_literal":::"How is an empty value represented?":::{"null"::"NULL"::"None"::"noValue"}:::{1}
-"null_literal":::"What happens: a = null; b = a;":::{"b is null"::"error at first statement"::"error at second statement"}:::{3}
-"identifiers":::"What are identifiers?":::{"Properties that specify the author of a program."::"Elements that give certain structures (variables, functions, classes) a name in the program."}:::{2}
-"identifiers":::"Which is not a valid identifier?":::{"a"::"_a"::"9a"::"new"}:::{3;4}
-"identifiers":::"Is there a problem with the following code?: \nString a; int a;":::{"Yes, there are two identifiers with the same name"::"No, there is no problem. They are of different type."}:::{1}
-"types":::"Choose the best matching type for the literal 'a'":::{"int"::"char"::"double"::"float"}:::{2}
-"variable_definition":::"Which is NOT a valid variable definition?":::"{"int a"::"String a;"::"char a;"}:::{1}
-"variable_definition":::"Which is not a valid variable name?":::{"a"::"_"::"9"::"int"}:::{3;4}
-"variable_definition_initialization":::"Which of these is not syntactically valid?":::{"int a = 9"::"char a ='a';"::"String a = "9";"}:::{1}
-"variable_access":::"Which is not a valid access of the variable test?":::{"System.out.print("test");"::"System.out.println(test);"::"name;"}:::{1;3}
-"variable_reassignment":::"Which is not a valid reassignment of the String variable A?":::{"String A = "9";"::"A="9";"::"A <- "9";"}:::{1;3}
+"comments":::"Welche Arten von Kommentaren unterstützt Java?":::{"Einzeilige Kommentare"::"Java-Docs"::"Kommentare für Variablen"::"ausführbare Kommentare"}:::{1; 2}
+"comments":::"Welcher dieser Kommentare ist syntaktisch zulässig?":::{"// // Dies ist ein Einzeiler"::"/ * / * * / * /"::"// comment / ** / "}:::{1; 3}
+"comments":::"Welche dieser Kommentare sind legal?":::{"/ * hallo ** /"::"/ ** hallo \ n ** /"::"// ** hallo * / "::" / * hallo \ n / "}:::{1; 2; 3}
+"keywords":::"Welches ist ein Schlüsselwort?":::{"int a;"::"String"::"&"::"half"}:::{2}
+"keywords":::"Welches enthält ein Schlüsselwort?":::{"int a = 0;"::"class a {}"::"a = 1 + 1;"}:::{1; 2 }
+"keywords":::"Was sind Schlüsselwörter?":::{"Ein Schlüsselwort ist eine reservierte Zeichenfolge und hat eine sprachdefinierte Semantik."::"Schlüsselwörter sind für den Benutzer besonders wichtig und werden von ihm als Schlüssel für die Verschlüsselung verwendet data. ”::” Dies sind Wörter in einer Programmiersprache, die eine besondere Bedeutung haben. Sie können vom Benutzer neu definiert werden. "}:::{1}
+"literals":::"Was sind Literale?":::{"Ein Literal ist die Quellcodedarstellung eines Wertes eines primitiven Typs oder des Nulltyps (leerer Wert)."::"Ein Literal ist Teil des Programm, das nur Konstanten enthält. "::" Ein Literal ist der lesbare Teil des Programms. "}:::{1}
+"literals":::"Welche sind keine Literale?":::{"- 200"::"" anna "::" 2a "::" 1,245 "}:::{4}
+"literals":::"Welche sind weder Integer-Literale noch Gleitkomma-Literale?":::{"- 200"::"18,2"::"2"::"1.245"}:::{1}
+"integer_literals":::"Welche Option weist b eine Binärzahl zu?":::{"b = 01;"::"0bb = 10;"::"b = 0b0"::"b = 0b2;" }:::{3}
+"integer_literals":::"Welches ist kein gültiges Integer-Literal?":::{"1"::"- 10E10"::"0"::"null"}:::{2; 4}
+"floating-point_literals":::"Welches ist kein gültiges Gleitkomma-Literal?":::{". 0"::"0."::"9,1"::"4"}:::{2; 3}
+"character_literals":::"Was ist ein Zeichenliteral?":::{"'a'"::"" a ""::"'0'"::"'/ n'"}:::{ 1, 3, 4}
+"string_literals":::"Was ist ein String-Literal?":::{"'hallo'"::"" abc ""::"" \ t ""::"'/ t'"}:::{2; 3}
+"boolean_literals":::"Was ist ein bool'sches Literal?":::{"true"::"True"::"FALSE"::"false"}:::{1; 4}
+"boolean_literals":::"Welchem ​​Variablentyp kann der Wert true zugewiesen werden?":::{"bool"::"boolean"::"int"::"none"}:::{2}
+"null_literal":::"Wie wird ein leerer Wert dargestellt?":::{"null"::"NULL"::"None"::"noValue"}:::{1}
+"null_literal":::"Was passiert: a = null; b = a;":::{"b ist null"::"Fehler bei der ersten Anweisung"::"Fehler bei der zweiten Anweisung"}:::{3 }
+"identifiers":::"Was sind Bezeichner?":::{"Eigenschaften, die den Autor eines Programms angeben."::"Elemente, die bestimmten Strukturen (Variablen, Funktionen, Klassen) im Programm einen Namen geben."}:::{2}
+"identifiers":::"Was ist kein gültiger Bezeichner?":::{"a"::"_ a"::"9a"::"neu"}:::{3; 4}
+"identifiers":::"Gibt es ein Problem mit dem folgenden Code ?: \ nString a; int a;":::{"Ja, es gibt zwei Bezeichner mit demselben Namen"::"Nein, es gibt kein Problem Sie sind von unterschiedlichem Typ. "}:::{1}
+"types":::"Wählen Sie den am besten passenden Typ für das Literal 'a'":::{"int"::"char"::"double"::"float"}:::{2}
+"variable_definition":::"Was ist KEINE gültige Variablendefinition?":::"{" int a "::" String a; "::" char a; "}:::{1}
+"variable_definition":::"Welcher Variablenname ist nicht gültig?":::{"a"::"_"::"9"::"int"}:::{3; 4}
+"variable_definition_initialization":::"Welche davon ist syntaktisch nicht gültig?":::{"int a = 9"::"char a = 'a';"::"String a =" 9 ";"}:::{1}
+"variable_access":::"Welcher ist kein gültiger Zugriff auf den Variablentest?":::{"System.out.print (" test ");"::"System.out.println (test);": : "name;"}:::{1; 3}
+"variable_reassignment":::"Welches ist keine gültige Neuzuweisung der String-Variablen A?":::{"String A =" 9 ";"::"A =" 9 ";"::"A <-" 9 ";"}:::{1; 3}
 lesson: arrays
-"array_definition":::"Which is a valid array definition?":::{"int a[];"::"int[] a;"::"int a; a[];"}:::{1;2}
-"array_declaration":::"Which of these is not a valid array declaration?":::{"int a[2];"::"int[] a;"::"int[2] a;"::"int a[] = new int[2]"}:::{1;2;3}
-"array_definition_initialization":::"Which of these is a valid array definition and initialization?":::{"int a = [{0,1}];"::"int a[] = {2,3};"::"int a[]; a = {1,2};"}:::{2}
-"array_access":::"How is the second element of this array accessed?: int a[] = {0,1,2}":::{"a(1);"::"a[1]"::"a[2];"::"a[1];"}:::{2}
-"array_reassignment":::"Which of these is a valid array reassignment?: int a[] = {1,2}":::{"a[0] = 1;"::"a[2] = 2;"::"a(1) = 1;"::"a = {1,2};"}:::{1}
-"multidim_array_definition":::"How many "[]" does a valid definition of a three dimensional array have?":::{"One"::"Two"::"Three"::"Four"}:::{3}
-"multidim_array_declaration":::"Which of these is a valid declaration of an array with 20 places?":::{"int a[][] = new int[4][5];"::"int a[] = new int[20];"::"int a[4][5] = new int[4][5];"::"int a[][] = {0,1,2,3,4,5,6,7,8,9,10,11,13,14,15,16,17,18,19};"}:::{1;2}
-"multidim_array_access":::"How is the sixth position of a 3x3 array accessed?”:::{“[2][0][0]”::”[0][6]::”[0][5]”::”[2][0]”::”[1][2]”}:::{5}
-"multidim_array_reassignment":::"How is the third position of the 6x2 double array d reassigned?”:::{“d[3][0] = 1.0;"::"d[1][3] = 1.0;"::"d[2][2] = 1.0;"::"d[1][0] = 1.0;"}:::{4}
+"array_definition":::"Was ist eine gültige Array-Definition?":::{"int a [];"::"int [] a;"::"int a; a [];"}:::{1; 2}
+"array_declaration":::"Welche dieser Angaben ist keine gültige Array-Deklaration?":::{"int a [2];"::"int [] a;"::"int [2] a;": : "int a [] = new int [2]"}:::{1; 2; 3}
+"array_definition_initialization":::"Welche von diesen ist eine gültige Array-Definition und -Initialisierung?":::{"int a = [{0,1}];"::"int a [] = {2,3}; "::" int a []; a = {1,2}; "}:::{2}
+"array_access":::"Wie wird auf das zweite Element dieses Arrays zugegriffen ?: int a [] = {0,1,2}":::{"a (1);"::"a [1]"::"a [2];"::"a [1];"}:::{2}
+"array_reassignment":::"Welche davon ist eine gültige Neuzuweisung von Arrays ?: int a [] = {1,2}":::{"a [0] = 1;"::"a [2] = 2 ; "::" a (1) = 1; "::" a = {1,2}; "}:::{1}
+"multidim_array_definition":::"Wie viele" [] "hat eine gültige Definition eines dreidimensionalen Arrays?":::{"One"::"Two"::"Three"::"Four"}:::{3}
+"multidim_array_declaration":::"Welche von diesen ist eine gültige Deklaration eines Arrays mit 20 Stellen?":::{"int a [] [] = new int [4] [5];"::"int a [ ] = neues int [20]; "::" int a [4] [5] = neues int [4] [5]; "::" int a [] [] = {0,1,2,3, 4,5,6,7,8,9,10,11,13,14,15,16,17,18,19}; "}:::{1; 2}
+"multidim_array_access":::"Wie wird auf die sechste Position eines 3x3-Arrays zugegriffen?":::{"[2] [0] [0]"::"[0] [6] ::" [0] [ 5] ”::” [2] [0] ”::” [1] [2] ”}:::{5}
+"multidim_array_reassignment":::"Wie wird die dritte Position des 6x2-Doppelarrays d neu zugewiesen?":::{"d [3] [0] = 1,0;"::"d [1] [3] = 1,0; "::" d [2] [2] = 1,0; "::" d [1] [0] = 1,0; "}:::{4}
 lesson: operators
-"arithmetic_operators":::"Which operator is used to calculate the remainder of a division operation?”:::{“rem"::"%"::"floor"}:::{2}
-"operators_prefix":::"How can you express this differently: a = a + 1?":::{"a--"::"++a"::"+a+"::"a++1"}:::{2}
-"operators_postfix":::"If a is equal to 2, what is printed out? System.out.println(a++);":::{"2"::"3"}:::{1}
-"comparison_operators":::"Which is not a comparison operator?":::{"<"::"!="::"="::"<="}:::{3}
-"logic_operators":::"Which is the operator for the logical OR-operation?":::{"||"::"|"::"OR"::"or"}:::{1}
-"bitwise_operators":::"Which is a bitwise operator?":::{">"::">>"::">>>"}:::{2;3}
-"assignment_operators":::"What is equal to a+=1":::{"a++"::"++a"::"a=a+1"}:::{2;3}
-lesson: statements
-"expressions":::"A is a boolean array. Which is a valid expression?":::{"A[0] = true"::"A[0] == true"::"A[0] = 3+2"::"A[0] == A[1]"}:::{1;2;4}
-"statements":::"Which assignment operator can make this statement legal: int k ___ 3;":::{"="::"+="::"&="::"<<="}:::{1;2;3;4}
-"code_blocks":::"What does a code block contain?":::{"A sequence of statements or / and a code block."::"A lot of instructions, surrounded by [ and ]. "::"A sequence of instructions, surrounded by { and }."::"A method declaration or / and a sequence of statements."}:::{1}
-"code_blocks":::"Which contains a valid code block?":::{"if(true){}"::"class a {}"::"do{}while(true);"::"int a {};"}:::{1;2;3}
-"code_blocks":::"How many code blocks are there {{}}?":::{"None, it is syntactically false"::"One, this just counts as one code block"::"Two, one outer and one inner code block"}:::{3}
-lesson: controll_structures
-"boolean_expression":::"Which is not a valid boolean expression?":::{"true"::"1 | 3"::"true || (false)"::"1 != "a""}:::{2;4}
-"if":::"What is a valid construction of an if statement?":::{"if(boolean expression){/*code block*/};"::"if(boolean expression){/*code block*/}"::"if[Boolean expression]{/*code block*/}"::"IF(Boolean Expression){/*code block*/}"}:::{2}
-"switch":::"How is a case in a switch statement declared?”:::{“case value:{//statements}"::"case value {//statements}"::"CASE value:{//statements}"}:::{1}
-"switch":::"Which types can be used as variables in a switch statement?":::{"byte"::"long"::"short"::"char"}:::{1;3;4}
-"while”:::”How is a while statement constructed?”:::{“while boolean expression {//statement block}"::"WHILE(boolean expression){//statement block}"::"while(boolean expression) do {//statement block}"::"while(boolean expression){//statement block}":::{4}
-"do_while":::"What can be written into the code block of do{} while(true);":::{""::";"::"1<23"::"true"}:::{1;2}
-"for":::"What is a correct definition of a for loop?":::{"for()"::"for(;;){}"::"for(;;);"::"for{}"}:::{2;3}
-"extended_for":::"What is the correct syntax for an extended for loop?":::{"for(type name: array){}"::"for(type name(array)){}"::"for(array){}"}:::{1}
-"break":::"How often is "hello" printed?: for(int i=0; i<10; i++){System.out.println("hello");if(i%2==1)break;}":::{"9"::"1"::"0"::"2"}:::{4}
-"continue":::"How often is "hello" printed?: for(int i=0; i<10; i++){if(i%2==1)continue;System.out.println("hello");}":::{"9"::"5"::"1"::"2"}:::{2}
+"arithmetic_operators":::"Mit welchem ​​Operator wird der Rest einer Divisionsoperation berechnet?":::{"rem"::"%"::"floor"}:::{2}
+"operators_prefix":::"Wie können Sie dies anders ausdrücken: a = a + 1?":::{"a -"::"++ a"::"+ a +"::"a ++ 1 "}:::{2}
+"operators_postfix":::"Wenn a gleich 2 ist, was wird ausgegeben? System.out.println (a ++);":::{"2"::"3"}:::{1}
+"comparison_operators":::"Was ist kein Vergleichsoperator?":::{"<"::"! ="::"="::"<="}:::{3}
+"logic_operators":::"Welcher Operator ist die logische ODER-Verknüpfung?":::{"||"::"|"::"OR"::"oder"}:::{1}
+"bitwise_operators":::"Was ist ein bitweiser Operator?":::{">"::">>"::">>>"}:::{2; 3}
+"assignment_operators":::"Was ist gleich a + = 1":::{"a ++"::"++ a"::"a = a + 1"}:::{2; 3}
+lektion: statements
+"expressions":::"A ist ein bool'sches Array. Was ist ein gültiger Ausdruck?":::{"A [0] = true"::"A [0] == true"::"A [0] = 3 + 2 "::" A [0] == A [1] "}:::{1; 2; 4}
+"statements":::"Welcher Zuweisungsoperator kann diese Anweisung legal machen: int k ___ 3;":::{"="::"+ ="::"& ="::"<< ="}:::{1; 2; 3; 4}
+"code_blocks":::"Was enthält ein Codeblock?":::{"Eine Folge von Anweisungen oder / und ein Codeblock."::"Viele Anweisungen, umgeben von [und]."::" Eine Folge von Anweisungen, umgeben von {und}. "::" Eine Methodendeklaration oder / und eine Folge von Anweisungen. "}:::{1}
+"code_blocks":::"Welche enthält einen gültigen Codeblock?":::{"if (true) {}"::"class a {}"::"do {} while (true);"::" int a {}; "}:::{1; 2; 3}
+"code_blocks":::"Wie viele Codeblöcke gibt es {{}}?":::{"Keine, es ist syntaktisch falsch"::"Eins, dies zählt nur als ein Codeblock"::"Zwei, eins äußerer und ein innerer Codeblock "}:::{3}
+lektion: controll_structures
+"boolean_expression":::"Welcher ist kein gültiger boolescher Ausdruck?":::{"true"::"1 | 3"::"true || (false)"::"1! =" a "" }:::{2; 4}
+"if":::"Was ist eine gültige Konstruktion einer if-Anweisung?":::{"if (Boolescher Ausdruck) {/ * Codeblock * /};"::"if (Boolescher Ausdruck) {/ * Code block * /} "::" if [Boolescher Ausdruck] {/ * Codeblock * /} "::" IF (Boolescher Ausdruck) {/ * Codeblock * /} "}:::{2}
+"switch":::"Wie wird ein Fall in einer switch-Anweisung deklariert?":::{"case value: {// statements}"::"case value {// statements}"::"CASE value: { // Anweisungen} "}:::{1}
+"switch":::"Welche Typen können als Variablen in einer switch-Anweisung verwendet werden?":::{"byte"::"long"::"short"::"char"}:::{1; 3 ; 4}
+"while":::"Wie wird eine while-Anweisung aufgebaut?":::{"while-Boolescher Ausdruck {// Anweisungsblock}"::"WHILE (Boolescher Ausdruck) {// Anweisungsblock}"::"while ( Boolescher Ausdruck) {// Anweisungsblock} "::" ausführen, während (Boolescher Ausdruck) {// Anweisungsblock} "::: {4}
+"do_while":::"Was kann in den Codeblock von do {} while (true) geschrieben werden?":::{"::"; "::" 1 <23 "::" true "}:::{1; 2}
+"for":::"Was ist eine korrekte Definition einer for-Schleife?":::{"for ()"::"for (;;) {}"::"for (;;);"::"für {}"}:::{2; 3}
+"extended_for":::"Wie lautet die korrekte Syntax für eine erweiterte for-Schleife?":::{"für (Typname: Array) {}"::"für (Typname (Array)) {}"::"for (array) {}"}:::{1}
+"break":::"Wie oft wird" hello "gedruckt ?: for (int i = 0; i <10; i ++) {System.out.println (" hello "); if (i% 2 == 1) break;} "::: {" 9 "::" 1 "::" 0 "::" 2 "}:::{4}
+"continue":::"Wie oft wird" hello "gedruckt ?: for (int i = 0; i <10; i ++) {if (i% 2 == 1) continue; System.out.println (" hello ") );} ":::"{" 9 "::" 5 "::" 1 "::" 2 "}:::{2}
 lesson: methods
-"method_definition":::"Which can be written into the code block of this method?":::{"void testmethod(){}"::"void testmethod(){;;;;;;;;;;;;}"::"void testmethod(){return;}"::"void testmethod(){return a;}"}:::{1;2;3}
-"method_modifiers":::"Which of these modifiers is syntactically legal?":::{"static"::"public"::"protected"::"void"}:::{1;2;3}
-"method_access":::"Which is a valid access of: public static double add2(double a){return a+=2;}.":::{"add2(3,2);"::"add2(.1D);"::"add2(3.2);"::"add2("a");}:::{2;3}
+"method_definition":::"Was kann in den Codeblock dieser Methode geschrieben werden?":::{"void testmethod () {}"::"void testmethod () {;;;;;;;;;; ;;} "::" void testmethod () {return;} "::" void testmethod () {return a;} "}:::{1; 2; 3}
+"method_modifiers":::"Welcher dieser Modifikatoren ist syntaktisch zulässig?":::{"static"::"public"::"protected"::"void"}:::{1; 2; 3}
+"method_access":::"Dies ist ein gültiger Zugriff von: public static double add2 (double a) {return a + = 2;}.":::{"add2 (3,2);"::"add2 (. 1D); "::" add2 (3.2); "::" add2 ("a");}:::{2; 3}
 lesson: classes
-"class_definition":::"Where is the error in this class definition?: "class a {}"":::{"There must be a constructor."::"There are no errors."::"class a must explicitly extend the class Object"::"Something else is missing."}:::{2}
-"inheritance":::"How many children can a class have?":::{"None"::"One"::"Ten"::"Infinite"}:::{4}
-"class_modifiers":::"Which is a valid class definition":::{"public class a {}"::"static class a {}"::"abstract class a{}"::"public static class a {}"}:::{1;2;3}
-"access_modifiers":::"Which is not an access modifier?":::{"public"::"private"::"class"}:::{3}
-"object_declaration":::"A object declaration is classified as ...?":::{"An expression"::"A statement"::"A control structure"}:::{2}
-"class_fields":::"Which of these is a valid class member?":::{"int a;"::"static class a{}"::"public class a{}"}:::{1}
-"member_access_variables":::"The member variable var of type int is a public variable of the class Test. What is a valid way to print it out?":::{"System.out.println(Test.var);"::"System.out.println(var);"::"Test testobject = new Test(); System.out.println(testobject.var);"}:::{1;2}
-"member_access_methods":::"The method "int get_var_square(int var){return var*var;}" is a public method of the class Test. What is a valid way to access the method?":::{"Test p = new Test(); p.get_var_square(3);"::"Test p = new Test(); System.out.println(p.get_var_square(3););"::"Test.get_var_square(3);"}:::{1;2}
+"class_definition":::"Wo liegt der Fehler in dieser Klassendefinition ?:" class a {} "":::{"Es muss einen Konstruktor geben."::"Es gibt keine Fehler."::"class a muss die Klasse Object "::" explizit erweitern. Es fehlt noch etwas. "}:::{2}
+"inheritance":::"Wie viele Kinder kann eine Klasse haben?":::{"Keine"::"Eine"::"Zehn"::"Unendlich"}:::{4}
+"class_modifiers":::"Dies ist eine gültige Klassendefinition.":::{"public class a {}"::"static class a {}"::"abstract class a {}"::"public static class a {} "}:::{1; 2; 3}
+"access_modifiers":::"Welches ist kein Zugriffsmodifier?":::{"public"::"private"::"class"}:::{3}
+"object_declaration":::"Eine Objektdeklaration wird klassifiziert als ...?":::{"Ein Ausdruck"::"Eine Anweisung"::"Eine Kontrollstruktur"}:::{2}
+"class_fields":::"Welches davon ist ein gültiges Klassenmitglied?":::{"int a;"::"static class a {}"::"public class a {}"}:::{1 }
+"member_access_variables":::"Die Membervariable var vom Typ int ist eine öffentliche Variable der Klasse Test. Wie kann sie ausgegeben werden?":::{"System.out.println (Test.var); "::" System.out.println (var); "::" Test testobject = new Test (); System.out.println (testobject.var); "}:::{1; 2}
+"member_access_methods":::"Die Methode" int get_var_square (int var) {return var * var;} "ist eine öffentliche Methode der Klasse Test. Wie kann auf die Methode zugegriffen werden?":::{"Test p = neuer Test (); p.get_var_square (3); "::" Test p = neuer Test (); System.out.println (p.get_var_square (3);); "::" Test.get_var_square (3) ); "}:::{1; 2}

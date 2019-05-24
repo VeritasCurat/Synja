@@ -49,7 +49,7 @@ class Genbase:
   
   def __init__(self):
     verzeichnispfad = os.path.realpath(__file__)
-    path = os.path.join(os.path.dirname(verzeichnispfad),'nlg','phrasesEN.txt')
+    path = os.path.join(os.path.dirname(verzeichnispfad),'nlg','phrasesDE.txt')
     file = open(path,'r')
     while(True):
         line = file.readline()

@@ -434,7 +434,7 @@ class ExpertenmodellEN(object):
           tb_name = split[1][1:-1]
           tb_name = tb_name.replace('\r', '')  
           if(tb_name not in self.lessons.keys()):
-            print("unbekannter Themenblock fehlerbeschr: "+tb_name+"!")
+            print("unbekannter Themenblock fehlerhinweise: "+tb_name+"!")
             print(str(self.lessons.keys()))
             file.close()                     
             exit(-1)
@@ -462,7 +462,7 @@ class ExpertenmodellEN(object):
           tb_name = split[1][1:-1]
           tb_name = tb_name.replace('\r', '')  
           if(tb_name not in self.lessons.keys()):
-            print("unbekannter Themenblock fehlerreak: "+tb_name+"!")
+            print("unbekannter Themenblock fehlerreaktion: "+tb_name+"!")
             print(str(self.lessons.keys()))
             file.close()                     
             exit(-1)

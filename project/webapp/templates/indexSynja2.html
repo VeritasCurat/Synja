@@ -138,7 +138,7 @@ background-color: grey;
     <div>
         <div class="btn_en" style = "padding-top: 15px;padding-right: 10px;float: right"> 
             <form id="btn_en" method="POST" action='#'>
-                        <input type="submit" value="english" id="btn_de"> 
+                        <input type="submit" value="english" id="btn_en"> 
             </form>
         </div>
 
@@ -390,7 +390,7 @@ background-color: grey;
             });
 
             $('form#btn_en').submit(function(event) {
-                socket.emit('btn_de');
+                socket.emit('btn_en');
                 return false;
             });
             

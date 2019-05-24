@@ -73,8 +73,8 @@ class Woerterbuch():
       if(line == ""): break
       self.words_en.append(line)
     
-    profanitydata_en = os.path.join(os.path.dirname(verzeichnispfad),'nlu','de','beleidigungen.txt')
-    file = open(profanitydata_en, 'r')  
+    profanitydata_de = os.path.join(os.path.dirname(verzeichnispfad),'nlu','de','beleidigungen.txt')
+    file = open(profanitydata_de, 'r')  
     while(True):
       line = file.readline().lower().replace('\n','')
       if(line == ""): break
@@ -114,17 +114,16 @@ class NLU_DE(object):
     String = ""
     parsetext = eingabe.split(' ')
     for word in parsetext: 
-      String = word
-      if(levenshtein(String, "basics") <= 2):return "basics"
-      elif(levenshtein(String, "arrays") <= 2):return "arrays"
-      elif(levenshtein(String, "operators") <= 2):return "operators"
-      elif(levenshtein(String, "statements") <= 2):return "statements"
-      elif(levenshtein(String, "methods") <= 2):return "methods"
-      elif(levenshtein(String, "classes") <= 2):return "classes"
-    for i in range(len(parsetext)-1):
-      String = str(parsetext[i])+" "+str(parsetext[i+1]) 
-      if(levenshtein(String, "controll structures") <= 2):return "controll structures"
-      elif(levenshtein(String, "programm structure") <= 2):return "programm structure"
+      String = word     
+      if(levenshtein(String, "Kontrollstrukturen") <= 2):return "controll structures"
+      elif(levenshtein(String, "Programmstruktur") <= 2):return "programm structure"
+      elif(levenshtein(String, "Grundlagen") <= 2):return "basics"
+      elif(levenshtein(String, "Arrays") <= 2):return "arrays"
+      elif(levenshtein(String, "Operatoren") <= 2):return "operators"
+      elif(levenshtein(String, "Anweisungen") <= 2):return "statements"
+      elif(levenshtein(String, "Methoden") <= 2):return "methods"
+      elif(levenshtein(String, "Klassen") <= 2):return "classes"
+
     return ""
       
   def parse(self,Eingabe): 
