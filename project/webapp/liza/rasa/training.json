@@ -17,9 +17,6 @@
       {  "text": "i need a hint", "intent": "explain", "entities": [] }, 
     
     
-      
-    
-    
       {  "text": "my name is ", "intent": "greet", "entities": [] }, 
       {  "text": "hi there", "intent": "greet", "entities": [] }, 
       {  "text": "hello liza", "intent": "greet", "entities": [] },  

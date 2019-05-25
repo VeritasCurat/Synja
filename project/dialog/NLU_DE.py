@@ -60,36 +60,38 @@ def levenshtein(s, t):
   return v1[len(t)]
       
 class Woerterbuch():
-  words_en = []
-  profanities_en = []
+  woerter = []
+  beleidigungen = []
   
   
   
   def __init__(self):
-    wordsdata = os.path.join(os.path.dirname(verzeichnispfad),'nlu','de','woerter.txt')
-    file = open(wordsdata, 'r')
+    path = os.path.join(os.path.dirname(verzeichnispfad),'nlu','de','woerter.txt')
+    if (sys.version_info > (3, 0)): file = open(path,'r',encoding="iso-8859-1")
+    else: file = open(path,'r')
     while(True):
       line = file.readline().lower().replace('\n','')
       if(line == ""): break
-      self.words_en.append(line)
+      self.woerter.append(line)
     
-    profanitydata_de = os.path.join(os.path.dirname(verzeichnispfad),'nlu','de','beleidigungen.txt')
-    file = open(profanitydata_de, 'r')  
+    path2 = os.path.join(os.path.dirname(verzeichnispfad),'nlu','de','beleidigungen.txt')
+    if (sys.version_info > (3, 0)): file2 = open(path2,'r',encoding="iso-8859-1")
+    else: file2 = open(path2,'r')  
     while(True):
-      line = file.readline().lower().replace('\n','')
-      if(line == ""): break
-      self.profanities_en.append(line)  
+      line2 = file2.readline().lower().replace('\n','')
+      if(line2 == ""): break
+      self.beleidigungen.append(line2)  
   
   
   def profanity_check(self, word):
     #for p in self.profanities:
       #if(self.levenshtein(word, p) <= 1): return True
-    if(word in self.profanities_en): return True
+    if(word in self.beleidigungen): return True
     else: return False    
   
   
   def spellcheck(self, word):
-    if(word in self.words_en): return True
+    if(word in self.woerter): return True
     else: return False
 
 class NLU_DE(object):
@@ -189,5 +191,4 @@ class NLU_DE(object):
  
  
 nlu = NLU_DE()
-nlu.parse("das verstehe ich nicht wirklich")
-nlu.parse("auf wiedersehen")
+print(nlu.parse("hinweis"))

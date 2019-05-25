@@ -97,32 +97,6 @@
       {  "text": "what can i do", "intent": "unschluessig", "entities": [] },
 
 
-
-            
-      {  "text": "bye", "intent": "verabschiedung", "entities": [] },
-      {  "text": "bye-bye", "intent": "verabschiedung", "entities": [] },
-      {  "text": "see you later", "intent": "verabschiedung", "entities": [] },
-      {  "text": "thats it, bye", "intent": "verabschiedung", "entities": [] },
-      {  "text": "adios", "intent": "verabschiedung", "entities": [] },
-      {  "text": "so long, synja", "intent": "verabschiedung", "entities": [] },
-      {  "text": "good day", "intent": "verabschiedung", "entities": [] },
-      {  "text": "good day, i want to end this", "intent": "verabschiedung", "entities": [] },
-      {  "text": "sayonara", "intent": "verabschiedung", "entities": [] },
-      {  "text": "good bye", "intent": "verabschiedung", "entities": [] },
-      {  "text": "bye synja", "intent": "verabschiedung", "entities": [] },
-      {  "text": "lets end this session", "intent": "verabschiedung", "entities": [] },
-      {  "text": "lets finish tommorow", "intent": "verabschiedung", "entities": [] },
-      {  "text": "bye-bye, let us continue next week", "intent": "verabschiedung", "entities": [] },
-      {  "text": "i want to exit", "intent": "verabschiedung", "entities": [] },
-      {  "text": "bye, i want to exit", "intent": "verabschiedung", "entities": [] },
-      {  "text": "i want to go now", "intent": "verabschiedung", "entities": [] },
-      {  "text": "this is enough lets end this", "intent": "verabschiedung", "entities": [] },
-      {  "text": "enough for today", "intent": "verabschiedung", "entities": [] },
-      {  "text": "bye, enough for today", "intent": "verabschiedung", "entities": [] },
-      {  "text": "lets quit this", "intent": "verabschiedung", "entities": [] },   
-      {  "text": "bye-bye, lets end this session", "intent": "verabschiedung", "entities": [] },
-      {  "text": "so long, lets quit this", "intent": "verabschiedung", "entities": [] },   
-       
       
       {  "text": "i know", "intent": "verstanden", "entities": [] },   
       {  "text": "i get it", "intent": "verstanden", "entities": [] },       

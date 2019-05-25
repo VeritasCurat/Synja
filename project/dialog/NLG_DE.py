@@ -19,7 +19,8 @@ class Dict_konzept_phrase:
   def __init__(self):
     verzeichnispfad = os.path.realpath(__file__)
     path = os.path.join(os.path.dirname(verzeichnispfad),'nlg','translation_konzept_phrase_de.txt')
-    file = open(path,'r')
+    if (sys.version_info > (3, 0)): file = open(path,'r',encoding="iso-8859-1")
+    else: file = open(path,'r')
     while(True):
         line = file.readline()
         if(line==""):break
@@ -50,7 +51,8 @@ class Genbase:
   def __init__(self):
     verzeichnispfad = os.path.realpath(__file__)
     path = os.path.join(os.path.dirname(verzeichnispfad),'nlg','phrasesDE.txt')
-    file = open(path,'r')
+    if (sys.version_info > (3, 0)): file = open(path,'r',encoding="iso-8859-1")
+    else: file = open(path,'r')
     while(True):
         line = file.readline()
         if(line==""):break

@@ -1,5 +1,5 @@
 #lesson: programm_structure
-programm_structure_main="Main-methode"
+programm_structure_main="Main-methoden"
 programm_structure_import="Importdeklarationen"
 programm_structure_packages="Paketdeklarationen"
 #lesson: basics
@@ -7,7 +7,7 @@ code_blocks="Codeblöcke"
 identifiers="Bezeichner"
 keywords="Schlüsselwörter"
 types="Typen"
-variable_definition="Variablendefinitionen"
+variable_definition="Definition von Variablen"
 variable_definition_initialization="Definition und Initialisierung von Variablen"
 variable_access="Zugriff auf Variablen"
 variable_redefinition="Redefinition von Variablen"
@@ -19,9 +19,9 @@ floating-point_literals="Gleitkommazahlenliterale"
 character_literals="Characterliterale"
 string_literals="Stringliterale"
 boolean_literals="bool'sche Literale"
-null_literal="null literal"
+null_literal="null Literale"
 comments="Kommentare"
-#lesson: comments
+#lesson: operators
 arithmetic_operators="arithmetische Operatoren"
 operators_prefix="Präfixoperatoren"
 operators_postfix="Postfixoperatoren"
@@ -29,12 +29,12 @@ comparison_operators="Vergleichsoperatoren"
 logic_operators="logische Operatoren"
 bitwise_operators="bitweise Operatoren"
 assignment_operators="Zuweisungsoperatoren"
-lesson: statements
+#lesson: statements
 expressions = "Ausdrücke"
 statements = "Anweisungen"
 code_blocks = "Codeblöcke"
 #lesson: controll_structures
-boolean_expression="bool'sche Ausdrücke"
+boolean_expression="boolesche Ausdrücke"
 if="if-ausdrücke"
 switch="switch-ausdrücke"
 while="while-schleife"

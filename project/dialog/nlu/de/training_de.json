@@ -93,32 +93,6 @@
       {  "text": "was soll ich jetzt machen", "intent": "unschluessig", "entities": [] },
       {  "text": "was soll ich machen", "intent": "unschluessig", "entities": [] },
       {  "text": "was kann ich tun", "intent": "unschluessig", "entities": [] },
-
-
-            
-      {  "text": "tschüss", "intent": "verabschiedung", "entities": [] },
-      {  "text": "wiedersehen", "intent": "verabschiedung", "entities": [] },
-      {  "text": "das wars, tschüss", "intent": "verabschiedung", "entities": [] },
-      {  "text": "adios", "intent": "verabschiedung", "entities": [] },
-      {  "text": "bis dann, synja", "intent": "verabschiedung", "entities": [] },
-      {  "text": "schönen tag", "intent": "verabschiedung", "entities": [] },
-      {  "text": "schönen tag, ich möchte aufhören", "intent": "verabschiedung", "entities": [] },
-      {  "text": "sayonara", "intent": "verabschiedung", "entities": [] },
-      {  "text": "auf wiedersehen", "intent": "verabschiedung", "entities": [] },
-      {  "text": "tschüss synja", "intent": "verabschiedung", "entities": [] },
-      {  "text": "lass uns aufhören", "intent": "verabschiedung", "entities": [] },
-      {  "text": "lass uns später weiermachen", "intent": "verabschiedung", "entities": [] },
-      {  "text": "synja, lass uns morgen weiermachen", "intent": "verabschiedung", "entities": [] },
-      {  "text": "auf wiedersehen, lass uns nächste woche weitermachen", "intent": "verabschiedung", "entities": [] },
-      {  "text": "ich möchte raus", "intent": "verabschiedung", "entities": [] },
-      {  "text": "tschüss, ich will aufhören", "intent": "verabschiedung", "entities": [] },
-      {  "text": "ich will jetzt gehen", "intent": "verabschiedung", "entities": [] },
-      {  "text": "das reicht jetzt", "intent": "verabschiedung", "entities": [] },
-      {  "text": "genug für heute", "intent": "verabschiedung", "entities": [] },
-      {  "text": "tschüss, genug für heute", "intent": "verabschiedung", "entities": [] },
-      {  "text": "lass uns aufhören", "intent": "verabschiedung", "entities": [] },   
-      {  "text": "tschüss, lass uns das jetzt beenden", "intent": "verabschiedung", "entities": [] },
-      {  "text": "bis dann, lass uns aufhören", "intent": "verabschiedung", "entities": [] },   
        
       
       {  "text": "ich weiß", "intent": "verstanden", "entities": [] },   
