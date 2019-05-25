@@ -954,3 +954,28 @@ Which types of comments does Java support?
 "<built-in function id>","2019-05-24 19:21:26","Bitte schreibe einen richtigen Kommentar.","/a","[['basics', 'comments', 'basics', 'comments'], 'Dies ist kein gültiger Kommentar. Dieser enthält nicht / ** / oder //: <b>/a</b>.', 'comments_non']"
 "<built-in function id>","2019-05-24 19:22:16","Bitte schreibe eine richtige Main-Methode.","public static void main(String a[])","[['programm_structure', 'programm_structure_main', 'programm_structure', 'programm_structure_main'], 'Das ist nicht die Struktur einer Main-Methode: <b>public static void main(String a[])</b>""', 'main_wrong']"
 "<built-in function id>","2019-05-24 19:22:51","Bitte schreibe eine richtige Main-Methode.","public static void main(String a[]){}","fehlerfrei"
+"0","2019-05-24 21:39:30","Please choose the right answer(s) by typing in the number(s) of the answer(s) into user input:
+Which types of comments does Java support?
+1. One-line Comments
+2. Java-Docs
+3. Comments for Variables
+4. executable Comments
+","1","fehlerfrei"
+"<built-in function id>","2019-05-24 21:39:30","Bitte schreibe einen richtigen Kommentar.","/a","[['basics', 'comments', 'basics', 'comments'], 'Dies ist kein gültiger Kommentar. Dieser enthält nicht / ** / oder //: <b>/a</b>.', 'comments_non']"
+"0","2019-05-24 21:40:59","Please choose the right answer(s) by typing in the number(s) of the answer(s) into user input:
+Which types of comments does Java support?
+1. One-line Comments
+2. Java-Docs
+3. Comments for Variables
+4. executable Comments
+","1","fehlerfrei"
+"<built-in function id>","2019-05-24 21:40:59","Bitte schreibe einen richtigen Kommentar.","/a","[['basics', 'comments', 'basics', 'comments'], 'Dies ist kein gültiger Kommentar. Dieser enthält nicht / ** / oder //: <b>/a</b>.', 'comments_non']"
+"<built-in function id>","2019-05-24 21:42:08","Bitte schreibe eine richtige Main-Methode.","public static void main(String a[]){}","fehlerfrei"
+"0","2019-05-24 21:53:53","Please choose the right answer(s) by typing in the number(s) of the answer(s) into user input:
+Which types of comments does Java support?
+1. One-line Comments
+2. Java-Docs
+3. Comments for Variables
+4. executable Comments
+","1","fehlerfrei"
+"<built-in function id>","2019-05-24 21:53:53","Bitte schreibe einen richtigen Kommentar.","/a","[['basics', 'comments', 'basics', 'comments'], 'Dies ist kein gültiger Kommentar. Dieser enthält nicht / ** / oder //: <b>/a</b>.', 'comments_non']"
