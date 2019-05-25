@@ -1037,3 +1037,145 @@ Which types of comments does Java support?
 4. executable Comments
 ","1","fehlerfrei"
 "<built-in function id>","2019-05-25 13:15:40","Bitte schreibe einen richtigen Kommentar.","/a","[['basics', 'comments', 'basics', 'comments'], 'Dies ist kein gültiger Kommentar. Dieser enthält nicht / ** / oder //: <b>/a</b>.', 'comments_non']"
+"0","2019-05-25 13:34:46","Please choose the right answer(s) by typing in the number(s) of the answer(s) into user input:
+Which types of comments does Java support?
+1. One-line Comments
+2. Java-Docs
+3. Comments for Variables
+4. executable Comments
+","1","fehlerfrei"
+"<built-in function id>","2019-05-25 13:34:46","Bitte schreibe einen richtigen Kommentar.","/a","[['basics', 'comments', 'basics', 'comments'], 'Dies ist kein gültiger Kommentar. Dieser enthält nicht / ** / oder //: <b>/a</b>.', 'comments_non']"
+"<built-in function id>","2019-05-25 13:35:26","Bitte schreibe eine richtige Main-Methode.","public static void main(String a[]){}","fehlerfrei"
+"<built-in function id>","2019-05-25 13:35:34","Bitte schreibe einen richtige Importdeklaration.","import a;","fehlerfrei"
+"<built-in function id>","2019-05-25 13:35:45","Bitte schreibe eine richtige Paketdeklaration.","package 1","[['programm_structure', 'programm_structure_packages', 'programm_structure', 'programm_structure_packages'], 'Diese Package-Deklaration endet nicht mit einem Semikolon: <b>package 1</b>', 'package_wrong_semicolon']"
+"<built-in function id>","2019-05-25 13:36:35","Bitte schreibe eine richtige Paketdeklaration.","package a;","fehlerfrei"
+"<built-in function id>","2019-05-25 13:37:08","Bitte schreibe eine richtige Paketdeklaration.","package a;","fehlerfrei"
+"0","2019-05-25 13:37:53","Please choose the right answer(s) by typing in the number(s) of the answer(s) into user input:
+Which types of comments does Java support?
+1. One-line Comments
+2. Java-Docs
+3. Comments for Variables
+4. executable Comments
+","1","fehlerfrei"
+"<built-in function id>","2019-05-25 13:37:53","Bitte schreibe einen richtigen Kommentar.","/a","[['basics', 'comments', 'basics', 'comments'], 'Dies ist kein gültiger Kommentar. Dieser enthält nicht / ** / oder //: <b>/a</b>.', 'comments_non']"
+"<built-in function id>","2019-05-25 13:38:14","Bitte schreibe eine richtige Main-Methode.","public static void main(String a[]){}","fehlerfrei"
+"<built-in function id>","2019-05-25 13:38:39","Bitte schreibe einen richtige Importdeklaration.","import a;","fehlerfrei"
+"<built-in function id>","2019-05-25 13:38:57","Bitte schreibe eine richtige Paketdeklaration.","package a;","fehlerfrei"
+"<built-in function id>","2019-05-25 13:39:03","Please choose the right answer(s) by typing in the number(s) of the answer(s) into user input:
+Wo befindet sich der Einstiegspunkt in einer Java-App?
+1. In Zeile 1.
+2. In der Hauptmethode.
+3. In der Klassendeklaration.
+4.  Bei der Eingabemethode. 
+","2","fehlerfrei"
+"<built-in function id>","2019-05-25 13:39:14","Please choose the right answer(s) by typing in the number(s) of the answer(s) into user input:
+Wo werden Importe geschrieben?
+1. Oben.
+2. Unten.
+3. Eine Zeile vor der ersten Verwendung.
+4. Sie können überall geschrieben werden . 
+","1","fehlerfrei"
+"<built-in function id>","2019-05-25 13:39:23","Was bewirkt eine Importdeklaration?
+Please fill the gap by typing the answer in Teaching Input:
+Sie ordnet einen Pfad einem einfachen ___ zu, damit Importobjekte von ihm verwendet werden können.","name","fehlerhaft"
+"0","2019-05-25 13:42:40","Please choose the right answer(s) by typing in the number(s) of the answer(s) into user input:
+Which types of comments does Java support?
+1. One-line Comments
+2. Java-Docs
+3. Comments for Variables
+4. executable Comments
+","1","fehlerfrei"
+"<built-in function id>","2019-05-25 13:42:40","Bitte schreibe einen richtigen Kommentar.","/a","[['basics', 'comments', 'basics', 'comments'], 'Dies ist kein gültiger Kommentar. Dieser enthält nicht / ** / oder //: <b>/a</b>.', 'comments_non']"
+"<built-in function id>","2019-05-25 13:44:10","Bitte schreibe eine richtige Main-Methode.","public static void main(String a[]){}","fehlerfrei"
+"<built-in function id>","2019-05-25 13:44:19","Bitte schreibe einen richtige Importdeklaration.","im","[['programm_structure', 'programm_structure_import', 'programm_structure', 'programm_structure_import'], 'Das enthält nicht das Schlüsselwort \'import\' "": <b>im</b>.', 'import_no_keyword']"
+"<built-in function id>","2019-05-25 13:44:25","Bitte schreibe einen richtige Importdeklaration.","import java.*;","fehlerfrei"
+"<built-in function id>","2019-05-25 13:47:13","Was bewirkt eine Importdeklaration?
+Please fill the gap by typing the answer in Teaching Input:
+Sie ordnet einen Pfad einem einfachen ___ zu, damit Importobjekte von ihm verwendet werden können.","name","fehlerhaft"
+"<built-in function id>","2019-05-25 13:47:22","Please choose the right answer(s) by typing in the number(s) of the answer(s) into user input:
+Wo werden Importe geschrieben?
+1. Oben.
+2. Unten.
+3. Eine Zeile vor der ersten Verwendung.
+4. Sie können überall geschrieben werden . 
+","1","fehlerfrei"
+"<built-in function id>","2019-05-25 13:47:27","Was ist der Rückgabewert der main-Methode?
+Please fill the gap by typing the answer in Teaching Input:
+public static ___ main (String a []) {}","static","fehlerhaft"
+"0","2019-05-25 13:55:35","Please choose the right answer(s) by typing in the number(s) of the answer(s) into user input:
+Which types of comments does Java support?
+1. One-line Comments
+2. Java-Docs
+3. Comments for Variables
+4. executable Comments
+","1","fehlerfrei"
+"<built-in function id>","2019-05-25 13:55:35","Bitte schreibe einen richtigen Kommentar.","/a","[['basics', 'comments', 'basics', 'comments'], 'Dies ist kein gültiger Kommentar. Dieser enthält nicht / ** / oder //: <b>/a</b>.', 'comments_non']"
+"<built-in function id>","2019-05-25 13:57:32","Please choose the right answer(s) by typing in the number(s) of the answer(s) into user input:
+Wie sieht eine Paketdeklaration aus?
+1. Paketanwendungsname, Bibliotheksname
+2. Paketbibliotheksname.Anwendungsname
+3. Paketanwendungsname.Bibliotheksname
+4. PACKAGE anwendungsname.Bibliotheksname""
+","2","fehlerfrei"
+"<built-in function id>","2019-05-25 13:59:06","Was bewirkt eine Importdeklaration?
+Please fill the gap by typing the answer in Teaching Input:
+Sie ordnet einen Pfad einem einfachen ___ zu, damit Importobjekte von ihm verwendet werden können.","name","fehlerhaft"
+"<built-in function id>","2019-05-25 13:59:26","Was bewirkt eine Importdeklaration?
+Please fill the gap by typing the answer in Teaching Input:
+Sie ordnet einen Pfad einem einfachen ___ zu, damit Importobjekte von ihm verwendet werden können.","name","fehlerhaft"
+"<built-in function id>","2019-05-25 13:59:33","Please choose the right answer(s) by typing in the number(s) of the answer(s) into user input:
+Wo werden Importe geschrieben?
+1. Oben.
+2. Unten.
+3. Eine Zeile vor der ersten Verwendung.
+4. Sie können überall geschrieben werden . 
+","1","fehlerfrei"
+"0","2019-05-25 14:03:39","Please choose the right answer(s) by typing in the number(s) of the answer(s) into user input:
+Which types of comments does Java support?
+1. One-line Comments
+2. Java-Docs
+3. Comments for Variables
+4. executable Comments
+","1","fehlerfrei"
+"<built-in function id>","2019-05-25 14:03:39","Bitte schreibe einen richtigen Kommentar.","/a","[['basics', 'comments', 'basics', 'comments'], 'Dies ist kein gültiger Kommentar. Dieser enthält nicht / ** / oder //: <b>/a</b>.', 'comments_non']"
+"<built-in function id>","2019-05-25 14:05:10","Was bewirkt eine Importdeklaration?
+Please fill the gap by typing the answer in Teaching Input:
+Sie ordnet einen Pfad einem einfachen ___ zu, damit Importobjekte von ihm verwendet werden können.","name","fehlerhaft"
+"<built-in function id>","2019-05-25 14:05:19","Please choose the right answer(s) by typing in the number(s) of the answer(s) into user input:
+Wo werden Importe geschrieben?
+1. Oben.
+2. Unten.
+3. Eine Zeile vor der ersten Verwendung.
+4. Sie können überall geschrieben werden . 
+","1","fehlerfrei"
+"<built-in function id>","2019-05-25 14:05:35","Vervollständige diese Paketdeklaration.
+Please fill the gap by typing the answer in Teaching Input:
+package myapplication ___ mylibrary;",".","fehlerfrei"
+"<built-in function id>","2019-05-25 14:05:40","Please choose the right answer(s) by typing in the number(s) of the answer(s) into user input:
+Wo befindet sich der Einstiegspunkt in einer Java-App?
+1. In Zeile 1.
+2. In der Hauptmethode.
+3. In der Klassendeklaration.
+4.  Bei der Eingabemethode. 
+","2","fehlerfrei"
+"0","2019-05-25 14:23:08","Please choose the right answer(s) by typing in the number(s) of the answer(s) into user input:
+Which types of comments does Java support?
+1. One-line Comments
+2. Java-Docs
+3. Comments for Variables
+4. executable Comments
+","1","fehlerfrei"
+"<built-in function id>","2019-05-25 14:23:08","Bitte schreibe einen richtigen Kommentar.","/a","[['basics', 'comments', 'basics', 'comments'], 'Dies ist kein gültiger Kommentar. Dieser enthält nicht / ** / oder //: <b>/a</b>.', 'comments_non']"
+"<built-in function id>","2019-05-25 14:23:50","Vervollständige diese Paketdeklaration.
+Please fill the gap by typing the answer in Teaching Input:
+package myapplication ___ mylibrary;",".","fehlerfrei"
+"<built-in function id>","2019-05-25 14:23:54","Was ist der Rückgabewert der main-Methode?
+Please fill the gap by typing the answer in Teaching Input:
+public static ___ main (String a []) {}","void","fehlerfrei"
+"<built-in function id>","2019-05-25 14:23:57","Please choose the right answer(s) by typing in the number(s) of the answer(s) into user input:
+Wo werden Importe geschrieben?
+1. Oben.
+2. Unten.
+3. Eine Zeile vor der ersten Verwendung.
+4. Sie können überall geschrieben werden . 
+","1","fehlerfrei"

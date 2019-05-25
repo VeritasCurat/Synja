@@ -32,10 +32,20 @@ class Test(unittest.TestCase):
     lm.testphase_block("")
     pass
 
+  @staticmethod
+  def testLM_TB(self):
+    from ExpertenmodellEN import ExpertenmodellEN #@Unresolvedimport
+    from ExpertenmodellDE import ExpertenmodellDE #@Unresolvedimport#TODO: loeschen
+
+    expertenmodell_en = ExpertenmodellEN()  
+    lehrmanager=Lehrmanager("bob", expertenmodell_en.lessoninhalte, expertenmodell_en.anzahl_erklaerungen, expertenmodell_en.anzahlAufg, expertenmodell_en.anzahlWE, expertenmodell_en.anzahl_lt, expertenmodell_en.anzahl_mc,expertenmodell_en.en_schritt_dict,expertenmodell_en.enaktiv_artdict)
+    lehrmanager.lesson = "programm_structure"
     
+    for i in range(1000):
+        lehrmanager.gen_next_tb_aufg()  
     
   @staticmethod
-  def gescheiterterBlock():
+  def testgescheiterterBlock():
     em = Expertenmodell("en")
     lm=Lehrmanager("john", em.lessoninhalte, em.anzahl_erklaerungen, em.anzahlAufg, em.anzahlWE, em.anzahl_lt, em.anzahl_mc)
     lm.zustand_test = "start"

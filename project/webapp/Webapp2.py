@@ -34,7 +34,7 @@ from builtins import isinstance
 
 async_mode = None
 
-app = Flask(__name__, static_url_path="/static")
+app = Flask(__name__) #, static_url_path="/static"
 app.config['SECRET_KEY'] = 'asde24oyx58ci6ad3skgr91ua2wp3oasd'
 socketio = SocketIO(app, async_mode=async_mode) #, async_mode=async_mode
 

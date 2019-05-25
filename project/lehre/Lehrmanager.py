@@ -6,6 +6,8 @@ Wie Modell
 import os
 import sys
 
+
+
 sys.path.append(os.path.abspath('../lehre'))
 
 from random import SystemRandom
@@ -776,13 +778,15 @@ class Lehrmanager:
       else:
         self.dialogausgaben.append("richtigeAntwort")
         self.emotion = "neutral"
- 
+  
+  #generiert naechste aufgabe im test fuer themenblock
   def gen_next_tb_aufg(self):
     
     #fuehrt drei Tests durch
     #print("TB: "+str(self.iterationen_test)+" von "+str(self.durchlaeufe_test))
     #print("TB: "+self.zustand_test)
-    if(len(self.testblockaufglist)-1 >= 2*len(self.lessoninhalte[self.lesson])):
+
+    if(len(self.testblockaufglist) >= 2*len(self.lessoninhalte[self.lesson])):
       self.testblockaufglist = []
       
     while(True):
@@ -797,20 +801,24 @@ class Lehrmanager:
     
     self.testblockaufglist.append([zufallskonzept,zufallsart])
     self.testblockaufgabe = [zufallskonzept,zufallsart]
+    #print("test777 testblocklist: "+str(self.testblockaufglist))
+    #print("test777 testblockaufgabe: "+str(self.testblockaufgabe))
+    #print("test777 testblockaufglist: "+str(len(self.testblockaufglist)))
    
   def testphase_block(self, intent):
     #generiere drei tests
-    self.gen_next_tb_aufg()
       #print(self.testblockaufgct)
       #print(self.testblockaufglist)
     
     if(self.punkte_test < 3):  
+      print("test777: "+str(self.punkte_test))
       if(self.zustand_test == "start"):
         #print(self.testblockaufgct)
+        self.gen_next_tb_aufg()
         self.testblockaufgct += 1
       
         #print(self.testblockaufglist[self.testblockaufgct])
-        zufallskonzept = self.self.testblockaufgabe[0]  
+        zufallskonzept = self.testblockaufgabe[0]  
         zufallsart = self.testblockaufgabe[1]  
         
         self.konzept = zufallskonzept
@@ -883,6 +891,7 @@ class Lehrmanager:
           self.emotion = "neutral"
           return
     elif(self.punkte_test >= 3):
+      print("ENDE")
       self.testblockaufglist = []
       self.testblockaufgabe = None
       self.expected_entry = "dialog"
@@ -1029,4 +1038,5 @@ class Lehrmanager:
       self.punkte_test = self.iterationen_test = 0
       self.schritt("","")
       return
-    
+
+

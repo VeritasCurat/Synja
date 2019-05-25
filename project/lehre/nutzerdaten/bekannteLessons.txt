@@ -1,2 +1,2 @@
 
-NO_ACCOUNT: []
+NO_ACCOUNT: [programm_structure]
