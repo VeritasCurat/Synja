@@ -1,21 +1,21 @@
 lesson: programm_structure
-"programm_structure_main":::"Lass uns eine Main-Methode schreiben.":::"static void main(String  a[]){}":::{"public"::" static"::" void"::" main"::"("::"String[]"::" a"::")"::"{}"}
-"programm_structure_import":::"Lass uns eine richtige Importdeklaration schreiben.":::"import java.*;":::{import"::" java"::"."::"*"::";"}
-"programm_structure_packages":::"Lass uns eine richtige Paketdeklaration schreiben.":::"package src;":::{"package"::" src"::";"}
+"programm_structure_main":::"Lass uns eine Main-Methode schreiben.":::"static void main(String a[]){}":::{"public"::"static"::"void"::" main"::"("::"String[]"::" a"::")"::"{}"}
+"programm_structure_import":::"Lass uns eine richtige Importdeklaration schreiben.":::"import java.*;":::{import"::"java"::"."::"*"::";"}
+"programm_structure_packages":::"Lass uns eine richtige Paketdeklaration schreiben.":::"package src;":::{"package"::"src"::";"}
 lesson: basics
 "comments":::"Lass uns einen einzeiligen Kommentar schreiben.":::"//COMMENTS":::{"//"::"COMMENTS"}
 "literals":::"Lass uns ein paar richtige Literale schreiben.":::{""test""::""name""::""var""}
 "integer_literals":::"Lass uns ein paar richtige Integerliterale schreiben.":::{"0b0101"::"12"::"032532"::"0xAA"}
-"floating-point_literals":::"Lass uns ein paar richtige floating-point-Literale. schreiben.":::{"1.0F"::"1.0D"::".1"}
+"floating-point_literals":::"Lass uns ein paar richtige Gleitkommazahlliterale schreiben.":::{"1.0F"::"1.0D"::".1"}
 "character_literals":::"Lass uns ein paar richtige character-Literale schreiben.”:::{“’c’”::”’1’”::”’\n’”}
-"string_literals":::"Lass uns ein paar richtige String-literale schreiben.":::{""String""::"12A"::"happy"}
+"string_literals":::"Lass uns ein paar richtige Stringliterale schreiben.":::{""String""::"12A"::"happy"}
 "boolean_literals":::"Lass uns ein paar richtige bool'sche Literale schreiben.":::{"true"::"false"}
 "null_literal":::"Lass uns den richtigen leeren Wert schreiben.":::{"null"}
 "keywords":::"Lass uns ein paar richtige Schlüsselwörter schreiben.”:::{“char"::"for"::"abstract"::"static"::"return"}
 "identifiers":::"Lass uns ein paar richtige Bezeichner schreiben.":::{""id""::"_var"::"id1"}
 "types":::"Lass uns ein paar richtige Typen schreiben.":::{"float"::"int"::"String"::"boolean"}
 "variable_definition":::"Lass uns eine Stringvariable mit dem Namen y erstellen.":::"String y;":::{"String"::"y"::";"}
-"variable_definition_initialization":::"Lass uns eine Stringvariable mit dem Namen y erstellen und ihr den Wert 3 zuweisen.":::"int y = 3;":::{"int"::" y"::"="::"3"::";"}
+"variable_definition_initialization":::"Lass uns eine Stringvariable mit dem Namen y erstellen und ihr den Wert 3 zuweisen.":::"int y = 3;":::{"int"::"y"::"="::"3"::";"}
 "variable_access":::"Lass uns auf die Variable s zugreifen, indem wir ihren Namen ausschreiben.":::"System.out.println(s);":::{"s"}
 "variable_reassignment":::"Lass uns der Floatvariable den Wert 3.14 zuweisen.":::"f = 3.14;":::{"f"::"="::"3.14"::";"}
 lesson: arrays

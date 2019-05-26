@@ -1,97 +1,96 @@
 #every answer needs to be put in quotations
 lesson: programm_structure
-"programm_structure_main":::"Was ist der Rückgabewert der main-Methode?":::"public static ___ main (String a []) {}":::{"void"}
-"programm_structure_main":::"":::"Jedes ___ muss eine Hauptmethode haben.":::{"java application" :: "java app" :: "java programm" :: "programm" :: "application "}
-"programm_structure_import":::"Was bewirkt eine Importdeklaration?":::"Sie ordnet einen Pfad einem einfachen ___ zu, damit Importobjekte von ihm verwendet werden können.":::{"name" :: "reference"}
-"programm_structure_import":::"Wo sind Importe definiert?":::"Importdeklarationen müssen am ___ einer Java-Datei hinter der Paketdeklaration platziert werden.":::{"top" :: "begin" :: " starte "::" head "}
-"programm_structure_import":::"Schließen Sie diesen Import ab (am Ende fehlt etwas, das in jeder Importdeklaration enthalten sein muss)":::"import java.util.Random ___":::{";"}
-"programm_structure_packages":::"Vervollständige diese Paketdeklaration.":::"package myapplication ___ mylibrary;":::{"."}
+"programm_structure_main":::"Was ist der Rückgabewert der main-Methode?":::"public static___ main (String a []) {}":::{"void"}
+"programm_structure_main":::"":::"Jede___ muss eine Hauptmethode haben.":::{"java-Anwendung"::"java-Datei"::"Datei"::"java-app"::"java-Programm"::"Programm"::"Anwendung"}
+"programm_structure_import":::"Was bewirkt eine Importdeklaration?":::"Sie ordnet einen Pfad einen einfachen___ zu, damit Importobjekte von ihm verwendet werden können.":::{"Namen"::"Referenz"}
+"programm_structure_import":::"Wo sind Imports definiert?":::"Importdeklarationen müssen am___ einer Java-Datei hinter der Paketdeklaration platziert werden.":::{"Anfang"::"Beginn"::"Start"::"Kopf"}
+"programm_structure_import":::"Vervollständige diesen Import (am Ende fehlt etwas, das in jeder Importdeklaration enthalten sein muss)":::"import java.util.Rundom___":::{";"}
+"programm_structure_packages":::"Vervollständige diese Paketdeklaration.":::"package myapplication___mylibrary;":::{"."}
 lesson: basics
-"comments":::"Mache diesen Codeausschnitt syntaktisch legal.":::"/ ___ ** / * /":::{"/"}
-"keywords":::"Vervollständige dieses Schlüsselwort.":::"floa ___":::{"float"}
-"literals":::"Schreiben Sie ein geeignetes Literal.":::"int a = ___;":::{"% INTEGER%" "}
-"literals":::"Weisen Sie b ein Float-Literal zu.":::"b = 9 ___ 2;":::{"."}
-"integer_literals":::"Weisen Sie ein binäres Integer-Literal zu.":::"int a = ___ 1010":::{"0b"}
-"integer_literals":::"Weisen Sie ein Integer-Literal mit dem richtigen Typ zu.":::"___ a = 5":::{"byte" :: "short" :: "int" :: "long" :: "verkohlen"}
-"integer_literals":::"Erstellt eine Variable mit dem Binärwert 10.":::"int a = ___":::{"0b10;"}
-"floating-point_literals":::"Weisen Sie den Gleitkommawert 9.8 zu":::"int b = ___":::{"9.8F;"}
-"floating-point_literals":::"Weisen Sie den doppelten Wert 9.8":::"int b = ___":::{"9.8D;"} zu.
-"character_literals":::"Weisen Sie das Zeichenliteral 'b' zu.":::"char b = ___;":::{"'b'"}
-"string_literals":::"Weisen Sie das String-Literal" a "zu.":::"String a = ___;":::{"" a ""}
-"string_literals":::"Erstelle das Wort" treehouse "":::"a = ___; b =" house "; c = a + b;":::{"" tree ""}
-"boolean_literals":::"Was ist der Wert von a? (== ist der Gleichheitsoperator)":::"boolean a = 3 + 5 == 4; a == ___":::{"false"}
-"boolean_literals":::"Was ist der Wert dieses Ausdrucks? (== ist der Gleichheitsoperator)":::"(3 * 3 <9) == ___":::{"false"}
+"comments":::"Mache diesen Codeausschnitt syntaktisch legal.":::"/___ ** / * /":::{"/"}
+"keywords":::"Vervollständige dieses Schlüsselwort.":::"floa___":::{"float"}
+"literals":::"Schreibe ein geeignetes Literal.":::"int a =___;":::{"%INTEGER%"}
+"literals":::"Weise b ein Float-Literal zu.":::"b = 9___2;":::{"."}
+"integer_literals":::"Weise ein binäres Integer-Literal zu.":::"int a =___1010":::{"0b"}
+"integer_literals":::"Weise ein Integer-Literal mit dem richtigen Typ zu.":::"___a = 5":::{"byte"::"short"::"int"::"long"::"verkohlen"}
+"integer_literals":::"Erstelle eine Variable mit dem Binärwert 10.":::"int a =___":::{"0b10;"}
+"floating-point_literals":::"Weise den float-Literal 9.8 zu.":::"float b =___":::{"9.8F;"}
+"floating-point_literals":::"Weise das double-literal 9.8 zu.":::"double b =___":::{"9.8D;"} zu.
+"character_literals":::"Weise das Zeichenliteral 'b' zu.":::"char b =___;":::{"'b'"}
+"string_literals":::"Weise das String-Literal "a" zu.":::"String a =___;":::{""a""}
+"string_literals":::"Erstelle eine Variable mit dem Wort "treehouse"":::"a =___; b = "house"; c = a + b;":::{""tree""}
+"boolean_literals":::"Was ist der Wert von a? (== ist der Gleichheitsoperator)":::"boolean a = 3 + 5 == 4; a ==___":::{"false"}
+"boolean_literals":::"Was ist der Wert dieses Ausdrucks? (== ist der Gleichheitsoperator)":::"(3 * 3 <9) ==___":::{"false"}
 "null_literal":::"Welchen Wert hat dieser Ausdruck?":::"null == null":::{"true"}
-"null_literal":::"Weisen Sie den leeren Wert a zu.":::"a = ___;":::{"null"}
-"identifiers":::"Deklarieren Sie eine int-Variable mit dem Namen a und initialisieren Sie sie mit dem Wert 9.":::"int ___ = 9;":::{"a"}
-"types":::"":::"Nicht ganze Zahlen werden durch die folgenden Typen dargestellt: ___":::{"float and double" :: "double and float" :: "float, double": : "double, float" :: "float, double" :: "double, float"}
-"types":::"":::"Das Literal true kann in einer Variablen vom Typ ___ gespeichert werden.":::{"boolean"}
-"variable_definition":::"Erstelle eine doppelte Variable mit dem Namen a.":::"___;":::{"double a"}
-"variable_definition_initialization":::"Erstelle einen String mit dem Wert" jerry ".":::"String name = ___;":::{"" jerry ""}
-"variable_access":::"Greifen Sie auf die Variable var.":::"s == ___":::{"var"} zu
-"variable_reassignment":::"Definiere die String-Variable" name "mit dem Wert" anna "neu.":::"String name =" lisa "; \ nname =" ___ ";":::{"" anna "" }
+"null_literal":::"Weise a den leeren Wert zu.":::"a =___;":::{"null"}
+"identifiers":::"Deklariere eine int-Variable mit dem Namen a und initialisiere sie mit dem Wert 9.":::"int___ = 9;":::{"a"}
+"types":::"":::"Nicht ganze Zahlen werden durch die folgenden Typen dargestellt:___":::{"float und double"::"double und float"::"float, double": :"double, float"::"float, double"::"double, float"}
+"types":::"":::"Das Literal true kann in einer Variablen vom Typ___ gespeichert werden.":::{"boolean"}
+"variable_definition":::"Erstelle eine double Variable mit dem Namen a.":::"___;":::{"double a"}
+"variable_definition_initialization":::"Erstelle einen String mit dem Wert "jerry".":::"String name =___;":::{""jerry""}
+"variable_access":::"Greife auf die Variable var zu.":::"s ==___":::{"var"} zu
+"variable_reassignment":::"Definiere die String-Variable name mit dem Wert "anna" neu.":::"String name = "lisa"; \nname = "___";":::{""anna""}
 lesson: arrays
-"array_definition":::"Definiere ein String-Array mit 5 Elementen.":::"String a ___":::{"[5];"}
-"array_declaration":::"Definiere und deklariere ein int-Array mit 10 Elementen. ":::" int a ___; "::: {" [] = new int [10]; "}
-"array_definition_initialization":::"Definiere ein int-Array mit den Zahlen 1,2 und 3 (in dieser Reihenfolge).":::"int a [] = ___":::{"{1,2,3}; "}
-"array_definition_initialization":::"Definiere ein String-Array mit den Namen" bob "und" tom ".":::"int a [] = {" bob ", ___};":::{"tom" " }
-"array_access":::"Greifen Sie auf die erste Position des Arrays b zu.":::"int b [] = {1,2,3}; b ___;":::{"[0]"}
-"array_access":::"Drucken Sie" Hello Arrayworld! "aus, indem Sie auf alle Elemente von b zugreifen und sie mit + verketten (z. B. a [1] + a [0] für das Zeichenfolgenarray a).":::"int b [] = {"Hallo", "Arrayworld", "!"}; System.out.println (___); "::: {" b [0] + b [1] + b [2] "}
-"array_reassignment":::"Ordnen Sie die dritte Position von a dem Wert 3 zu.":::"int a [] = new int [5]; a___ = 3;":::{"[2]"}
-"array_reassignment":::"Ordne die erste Position von c dem Wert" hey "zu.":::"int c [] = neuer String [2]; c___ =" hey ";":::{"[0 ] "}
-"multidim_array_definition":::"Definiere ein dreidimensionales Zeichen-Array":::"char a ___;":::{"[] [] []"}
-"multidim_array_declaration":::"Definiere und deklariere ein zweidimensionales Array mit 20 Elementen.":::"int array [] [] = new int [10] ___;":::{"[2]"}
-"multidim_array_access":::"Greifen Sie auf die zweite Position des Arrays zu.":::"int array [] [] = new int [10] [3]; array ___":::{"[0] [1]; "}
-"multidim_array_reassignment":::"Ordne die dritte Position des 2x2 int-Arrays intarr neu zu.":::"intarr___ = 3;":::{"[1] [0]"}
+"array_definition":::"Definiere ein String-Array mit 5 Elementen.":::"String a___":::{"[5];"}
+"array_declaration":::"Definiere und deklariere ein int-Array mit 10 Elementen.":::"int a___;"::: {"[] = new int [10];"}
+"array_definition_initialization":::"Definiere ein int-Array mit den Zahlen 1,2 und 3 (in dieser Reihenfolge).":::"int a [] = ___":::{"{1,2,3};"}
+"array_definition_initialization":::"Definiere ein String-Array mit den Namen "bob" und "tom".":::"int a [] = {"bob",___};":::{"tom""}
+"array_access":::"Greife auf die erste Position des Arrays b zu.":::"int b [] = {1,2,3}; b___;":::{"[0]"}
+"array_access":::"Drucke "Hello Arrayworld!" aus, indem du auf alle Elemente von b zugreifst und sie mit + verkettest (z.B. a[1] + a[0] für den stringarray a).":::"int b [] = {"Hallo"," Arrayworld","!"}; System.out.println (___);"::: {"b[0] + b[1] + b[2]"}
+"array_reassignment":::"Ordne dem dritten Element von a den Wert 3 zu.":::"int a [] = new int [5]; a___ = 3;":::{"[2]"}
+"array_reassignment":::"Ordne dem ersten Element von c den Wert "hey" zu.":::"int c [] = neuer String [2]; c___ = "hey";":::{"[0]"}
+"multidim_array_definition":::"Definiere ein dreidimensionales Character-Array":::"char a___;":::{"[][][]"}
+"multidim_array_declaration":::"Definiere und deklariere ein zweidimensionales Array mit 20 Elementen.":::"int array [][] = new int [10]___;":::{"[2]"}
+"multidim_array_access":::"Greife auf das dritte Element des Arrays zu.":::"int array [][] = new int [10][3]; array___":::{"[0][1];"}
+"multidim_array_reassignment":::"Ordne dem dritten Element des 2x2 int-Arrays den Wert 3 zu.":::"intarr___ = 3;":::{"[1][0]"}
 lesson: operators
-"arithmetic_operators":::"Verwenden Sie den richtigen Operator, damit die Variable c gleich" wooden table "ist.":::"String a =" wooden "; String b =" table "; String c = a ___ b; "::: {" + "}
-"arithmetic_operators":::"Multiplizieren Sie 3 mit 4.":::"3 ___ 4":::{"*"}
+"arithmetic_operators":::"Verwende den richtigen Operator, damit die Variable c gleich "wooden table" ist.":::"String a = "wooden "; String b = "table"; String c = a ___ b;"::: {"+"}
+"arithmetic_operators":::"Multipliziere 3 mit 4.":::"3 ___ 4":::{"*"}
 "arithmetic_operators":::"Was ist der Wert dieses Ausdrucks?":::"3 + 4 * 5":::{"23"}
-"operators_prefix":::"Addiere 1 zu a und ordne diesen Wert mit einer Operation einem zu. Dann drucke den neuen Wert aus.":::"System.out.println (___);":::{"++ ein"}
-"operators_postfix":::"0 ausgeben, aber den ++ - Operator und die Variable a verwenden.":::"int a = 0; System.out.println (___);":::{"a ++"}
-"comparison_operators":::"Drucken Sie true aus, indem Sie 1 und 3 vergleichen":::"System.out.println (1 ___ 3);":::{"<" :: "! ="}
-"logic_operators":::"Schreibe einen booleschen Ausdruck, der wahr ist.":::"1 <3 ___ 3 <1":::{"||"}
+"operators_prefix":::"Addiere 1 zu a und ordne diesen Wert mit einer Operation a zu. Dann gebe den neuen Wert aus.":::"System.out.println (___);":::{"++a"}
+"operators_postfix":::"Gebe 0 aus, aber verwende trotzdem den ++ Operator und die Variable a.":::"int a = 0; System.out.println(___);":::{"a++"}
+"comparison_operators":::"Drucke true aus, indem du 1 und 3 vergleichst":::"System.out.println (1 ___ 3);":::{"<"::"!="}
+"logic_operators":::"Schreibe einen booleschen Ausdruck, der wahr ist.":::"1 < 3 ___ 3 <1":::{"||"}
 "logic_operators":::"":::"true ___ false == false":::{"&&"}
-"bitwise_operators":::"Verwenden Sie einen bitweisen Operator.":::"System.out.println (3 ___ 4);":::{"|" :: "&" :: "<<" :: ">> "::" >>> "}
-"assignment_operators":::"Weisen Sie a den Wert 3 zu, indem Sie ihn mit 3 multiplizieren.":::"int a = 1; a ___;":::{"* = 3"}
-"assignment_operators":::"Weisen Sie a den Wert 1 zu.":::"int a = 3; a% = ___;":::{"2"}
+"bitwise_operators":::"Verwende einen bitweisen Operator.":::"System.out.println (3 ___ 4);":::{"|"::"&"::"<<"::">>"::">>>"}
+"assignment_operators":::"Weise a den Wert 3 zu, indem du a mit 3 multiplizierst.":::"int a = 1; a___;":::{"*=3"}
+"assignment_operators":::"Weise a den Wert 1 zu.":::"int a = 3; a% = ___;":::{"2"}
 lesson: statements
-"expressions":::"Fügen Sie ein Literal hinzu, um diesen arithmetischen Ausdruck gültig zu machen.":::"(3 + ___ * 2) == 7":::{"2"}
-"statements":::"Fügen Sie einen Zuweisungsoperator hinzu, um diese Anweisung legal zu machen.":::"int f ___ 3.0;":::{"=" :: "+ =" :: "-" = "::" * = "::" / = "::"% = "}
-"code_blocks":::"Fügen Sie etwas hinzu, um dieses Code-Snippet legal zu machen.":::"{___}}":::{"{"}
-"code_blocks":::"":::"Ein Codeblock ist eine Folge von Anweisungen, die mit ___ umbrochen sind.":::{"{und}" :: "{,}"}
+"expressions":::"Füge ein Literal hinzu, um diesen arithmetischen Ausdruck gültig zu machen.":::"(3 + ___ * 2) == 7":::{"2"}
+"statements":::"Füge einen Zuweisungsoperator hinzu, um diese Anweisung legal zu machen.":::"int f___ 3.0;":::{"="::"+="::"-="::"*="::"/="::"%="}
+"code_blocks":::"Füge etwas hinzu, um dieses Codeschnipsel legal zu machen.":::"{___}}":::{"{"}
+"code_blocks":::"":::"Ein Codeblock ist eine Folge von Anweisungen, die mit ___ umbrochen sind.":::{"{ und }"::"{,}"}
 lesson: controll_structures
-"boolean_expression":::"Erstellt einen booleschen Ausdruck.":::"0 <1 ___ 1 <2":::{"||" :: "&&"}
-"if":::"Fügen Sie eine if-Anweisung ein, damit die Ganzzahl x nicht negativ ist.":::"x = xy; ___ {x * = -1;}"} ::: {"if (x <0 ) "::" if (! (x> 0 || x == 0)) "}
-"if"::: Schreibe eine geschachtelte if-Anweisung, die gleich ist mit if (p% 2 == 0 && p> 0) {} ":::" if (p> 0) {___} "::: {" if (p% 2 == 0) {} "}
-"switch":::"Schreibe eine gültige switch-Anweisung.":::"___ a; switch (a) {}":::{"byte" :: "int" :: "short" :: "char" }
-"while":::"Vervollständigen Sie die while-Anweisung, sodass die Ganzzahl x größer als 10 ist.":::"___ {x = x + 1;}":::{"while (x <10)" :: "while (! (x == 10))" :: "while (x! = 10)"}
-"while":::"Schreiben Sie eine Endlosschleife, indem Sie ein Literal hinzufügen.":::"while (___);":::{"true"}
-"do_while":::"Iteriere die Variable i von 1 bis 10.":::"int i = 1; ___ {++ i;} while (i <10);":::{"do"}
-"do_while":::"Drucke 8 aus.":::"int a = 0; ___ while (a <8); if (a == 8) {System.out.println (" Eight ");}":::{"do {++ a;}"}
-"for":::"Iteriere die Variable i von 0 bis 10.":::"for (int i = 0; ___; i ++)":::{"i <= 10::"i<11"::"i! = 10"}
-"for":::"Schreiben Sie eine verschachtelte for-Schleife mit den Variablen b und c, um c hundertmal zu iterieren.":::"für (b = 0; b <10; b ++) {für (___);} "::: {" c = 0; c <10; c ++ "}
-"extended_for":::"Durchlaufen Sie das Array a.":::"String a [] = {" Bob "," Anna "," Tom "}; for (String b___a);":::{ ":"}
-"extended_for":::"Gib 1,2 und 3 aus (in dieser Reihenfolge).":::"___; for (String b: c) {System.out.println (b);}":::{ "int c = {1,2,3};" :: "char c = {1,2,3};" :: "byte c = {1,2,3};" :: "short c = { 1,2,3}; "::" long c = {1,2,3}; "::" double c = {1,2,3}; "::" float c = {1,2,3 }; "}
-"break":::"Gibt alle Zahlen von 1 bis 5 aus.":::"für (int i = 1; i <10; i ++) {if (i> 5) ___; System.out.println (i );}:::{"brechen"}
-"continue":::"Alle ungeraden Zahlen im Bereich von 1 bis 10 ausgeben.":::"für (int i = 1; i <= 10; i ++) {if (i% 2 == 0) ___ ; System.out.println (i);} ::: {"continue"}
+"boolean_expression":::"Erstellt einen booleschen Ausdruck.":::"0 < 1 ___ 1 < 2":::{"||"::"&&"}
+"if":::"Füge eine if-Anweisung ein, damit die Ganzzahl x nicht negativ ist.":::"x = xy; ___ {x *= -1;}"} ::: {"if(x<0)"::"if (!(x>0||x==0))"}
+"if"::: Schreibe eine geschachtelte if-Anweisung, die gleich äquivalent zu if(p%2 == 0 && p>0){} ist.":::"if(p>0){___}"::: {"if(p%2==0){}"}
+"switch":::"Schreibe eine gültige switch-Anweisung.":::"___ a; switch(a){}":::{"byte"::"int"::"short"::"char"}
+"while":::"Vervollständige die while-Schleige, sodass die Ganzzahl x größer als 10 ist.":::"___ {x = x + 1;}":::{"while(x<10)"::"while(!(x==10))"::"while(x!=10)"}
+"while":::"Schreibe eine Endlosschleife, indem du ein Literal hinzufügen.":::"while(___);":::{"true"}
+"do_while":::"Iteriere die Variable i von 1 bis 10.":::"int i = 1;___ {++ i;} while (i <10);":::{"do"}
+"do_while":::"Gebe 8 aus.":::"int a = 0;___ while (a<8); if (a == 8) {System.out.println ("Eight");}":::{"do{++a;}"}
+"for":::"Iteriere die Variable i von 0 bis 10.":::"for(int i = 0;___; i ++)":::{"i<=10::"i<11"::"i!=10"}
+"for":::"Schreibe eine verschachtelte for-Schleife mit den Variablen b und c, um c hundertmal zu iterieren.":::"for(b = 0; b <10; b++) {for(___);}"::: {"c=0;c<10;c++"}
+"extended_for":::"Durchlaufe das Array a.":::"String a [] = {"Bob","Anna","Tom"}; for(String b___a);":::{":"}
+"extended_for":::"Gib 1,2 und 3 aus (in dieser Reihenfolge).":::"___; for (String b: c) {System.out.println (b);}":::{"int c={1,2,3};"::"char c= {1,2,3};"::"byte c={1,2,3};"::"short c={1,2,3};"::"long c={1,2,3};"::"double c={1,2,3};"::"float c={1,2,3};"}
+"break":::"Gibt alle Zahlen von 1 bis 5 aus.":::"for(int i=1; i<10; i++) {if(i>5)___; System.out.println(i);}:::{"break"}
+"continue":::"Gebe alle ungeraden Zahlen im Bereich von 1 bis 10 aus.":::"for(int i=1; i <= 10; i++) {if(i%2==0)___; System.out.println(i);}::: {"continue"}
 lesson: methods
-"method_definition":::"Definieren Sie eine Methode mit dem Rückgabetyp void und dem Zugriffsmodifikator public.":::"___ method {}":::{"public void"}
-"method_definition":::"Definieren Sie die Methode" add ", die einen Parameter (int a) verwendet und den Rest der Division durch 2 zurückgibt. Die Methode muss öffentlich und statisch sein.":::"___ (int a) { gib% 2 zurück;} "::: {" public static int add "}
-"method_modifiers":::"Deklariert eine Methode, auf die nur über einen Klassennamen zugegriffen werden kann.":::"___ void method () {}":::{"static"}
+"method_definition":::"Definiere eine Methode mit dem Rückgabetyp void und dem Zugriffsmodifikator public.":::"___ method {}":::{"public void"}
+"method_definition":::"Definiere die Methode "add", die einen Parameter (int a) verwendet und den Rest der Division durch 2 zurückgibt. Die Methode muss public und static sein.":::"___(int a){return a%2;}"::: {"public static int add"}
+"method_modifiers":::"Definiere eine Methode, auf die nur über einen Klassennamen zugegriffen werden kann.":::"___ void method(){}":::{"static"}
 "method_modifiers":::"Mit welchem ​​Modifier kann überall auf diese Methode zugegriffen werden?":::"___ static void m () {}":::{"public"}
-"method_access":::"Greifen Sie auf die statische Methode random () der Math-Klasse zu.":::"double a = ___;":::{"Math.random ()"}
-"method_access":::"Verwenden Sie die Methode addfive und drucken Sie bis 8. \ npublic static int addfive (int a) {return a + = 5;} \ npublic static void print (int a) {System.out.println (a) ;} ":::" ___ "::: {" print (addfive (3)); "}
+"method_access":::"Greife auf die statische Methode random() der Math-Klasse zu.":::"double a =___;":::{"Math.random()"}
 lesson: classes
-"class_definition":::"Definiere die Klasse A.":::"class ___":::{"A {}" :: "A {}" :: "A {}" :: "A {}" }
-"class_definition":::"Definieren Sie die Klasse B mit einem Konstruktor, der" created! "ausgibt.":::"static class B {___} ::: {" public B () {System.out.println (" erstellt! ");}"}
+"class_definition":::"Definiere die Klasse A.":::"class ___":::{"A{}"::"A{}"::"A{}"::"A{}"}
+"class_definition":::"Definiere die Klasse B mit einem Konstruktor, der "erstellt!" ausgibt.":::"static class B{___}:::{"public B() {System.out.println("erstellt!");}"}
 "inheritance":::"Wie kann B von A erben?":::"class A ___ B {}":::{"extend"}
 "class_modifiers":::"Definiere eine Klasse C, die nur als Basisklasse dienen kann":::"___ class C {}":::{"abstract"}
 "class_modifiers":::"Definiere eine Klasse G, die nicht durch eine Unterklasse erweitert werden kann.":::"___ class G {}":::{"final"}
 "access_modifiers":::"Definiere eine Klasse, auf die jedes Objekt einer Klasse zugreifen kann.":::"___ class C {}":::{"public"}
-"access_modifiers":::"Definieren Sie einen Klassentest, der nur von test1 verwendet werden kann.":::"public class test1 {___}":::{"private class test {}"}
-"object_declaration":::"Was muss hinzugefügt werden, um diese Objektdeklaration gültig zu machen?":::"Word w = new ___ ();":::{"Word"}
-"class_fields":::"Definiere eine Klasse" Number "mit einer int-Variablen" value "als Member-Variable (ohne Modifikatoren).":::"class Number {___}":::{"int value;": : "int value =% INTEGER%;"}
-"class_fields":::"Definiere eine Klasse mit einer Mitgliedsvariablen" name "vom Typ String (ohne Modifikatoren).":::"class V {___}":::{"String name;"}
-"member_access_variables":::"Weist die variable Breite des Objektregals neu zu.":::"shelf___ = 0;":::{". width"}
-"member_access_methods":::"Greifen Sie auf die Methode get_width () des Objektregals zu.":::"shelf .___;":::{"get_width ()"}
+"access_modifiers":::"Definiere die Klasse test, der nur von test1 verwendet werden kann.":::"public class test1{___}":::{"private class test{}"}
+"object_declaration":::"Was muss hinzugefügt werden, um diese Objektdeklaration gültig zu machen?":::"Word w = new___();":::{"Word"}
+"class_fields":::"Definiere eine Klasse "Number" mit einer int-Variable "value" als Member-Variable(ohne Modifikatoren).":::"class Number {___}":::{"int value;"::"int value=%INTEGER%;"}
+"class_fields":::"Definiere eine Klasse mit einer member-variable "name" vom Typ String (ohne Modifikatoren).":::"class V {___}":::{"String name;"}
+"member_access_variables":::"Weise der Variable width des Objekts shelf einen neuen Wert zu.":::"shelf___ = 0;":::{".width"}
+"member_access_methods":::"Greife auf die Methode get_width() des Objekts shelf zu.":::"shelf.___;":::{"get_width()"}

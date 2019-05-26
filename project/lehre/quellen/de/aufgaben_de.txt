@@ -22,11 +22,11 @@ lessons: arrays
 "array_definition":::"Bitte definiere ein Array.":::"$parse array_definition"
 "array_declaration":::"Bitte definiere und deklariere ein Array.":::"$parse array_declaration"
 "array_definition_initialization":::"Bitte definiere ein Array und initialisiere es in einem Schritt.":::"$parse array_definition_initialization"
-"array_access":::"Bitte definiere und deklariere ein Array und gib es mit  System.out.println(); aus.":::"$multiparse array_declaration array_access"
+"array_access":::"Bitte definiere und deklariere ein Array und gib es mit System.out.println(); aus.":::"$multiparse array_declaration array_access"
 "array_reassignment":::"Bitte definiere und deklariere ein Array und weise diesem einen neuen Wert zu.":::"$multiparse array_declaration array_reassignment"
 "multidim_array_definition":::"Bitte definiere ein mehrdimensionales Array.":::"$parse multidim_array_definition"
 "multidim_array_declaration":::"Bitte definiere und deklariere ein multidimensional array.":::"$parse multidim_array_declaration"
-"multidim_array_access":::"Bitte definiere ein mehrdimensionales Array und gebe es mit  System.out.println(); aus.":::"$multiparse multidim_array_declaration multidim_array_access"
+"multidim_array_access":::"Bitte definiere ein mehrdimensionales Array und gebe es mit System.out.println(); aus.":::"$multiparse multidim_array_declaration multidim_array_access"
 "multidim_array_reassignment":::"Bitte definiere ein mehrdimensionales Array und weise einem Element aus diesem einen neuen Wert zu.":::"$multiparse multidim_array_declaration multidim_array_reassignment"
 lesson: operators
 "arithmetic_operators":::"Nutze einen arithmetischen Operator.":::"$parse arithmetic_operators"

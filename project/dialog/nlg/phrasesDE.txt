@@ -17,7 +17,7 @@
   aufhoeren_beleidigung = "Schluss damit! Lass uns weiter lernen!"
   aufhoeren_beleidigung = "Ich habe das verstanden, hör auf damit!"
   aufhoeren_beleidigung = "Hey, lass uns mit den Beleidigungen aufhören!"
-  aufhoeren_beleidigung = "Lass uns nicht streiten"
+  aufhoeren_beleidigung = "Lass uns nicht streiten!"
 
 #keine Reaktion
   keine_eingabe_dialog = "Bitte gib deine Antwort in das Textfeld unten ein. Es ist gelb markiert."
@@ -38,11 +38,11 @@
   ikonisch = "Sieh dir dieses Bild an. Das Konzept $ ist hervorgehoben."
   ikonisch = "Hier ist ein Bild, um es dir zu erklären."
   ikonisch = "Sieh dir diese Darstellung an, die das Konzept hervorhebt."
-  ikonisch = "Hier ist ein Bild, das das Konzept $ hervorhebt."
+  ikonisch = "Hier ist ein Bild, welches das Konzept $ hervorhebt."
   ikonisch = "Hier ist eine Beschreibung des Konzepts $."
   nicht_verstanden = "Entschuldigung, das habe ich nicht verstanden. Bitte schreibe in einer einfachen Sprache."
   nicht_verstanden = "Was hast du gesagt?"
-  nicht_verstanden = "Hmm ich verstehe nicht ..."
+  nicht_verstanden = "Hmm, ich verstehe nicht ..."
   nicht_verstanden = "Ich verstehe nicht, was du sagst."
   nicht_verstanden = "Hmm, was war das?"
   nicht_verstanden = "Das verstehe ich nicht, bitte formuliere das um."
@@ -61,7 +61,7 @@
   frage_Name = "Wie heißt du?"
   frage_Name = "Wie ist dein Name?"
   frage_Name = "Wie soll ich dich nennen?"
-  freude_wiedersehen = "Ich freue mich, Sie wiederzusehen, $."
+  freude_wiedersehen = "Ich freue mich, dich wiederzusehen, $."
   freude_wiedersehen = "Es ist schön, dich wiederzusehen, $."
   freude_wiedersehen = "Willkommen zurück, $!"
   einleitung = "Ich bin hier, um dir die Syntax von Java beizubringen."
@@ -83,7 +83,7 @@
   bekannte_themen = "Du weißt schon: $"
   verabschiedung = "Ciao"
   verabschiedung = "Auf Wiedersehen"
-  verabschiedung = "Tschüss"
+  verabschiedung = "Tschüss" 
   
   joke = "Hier ist ein Witz." F: Was ist der beliebteste Treffpunkt eines Programmierers? \n A: Die Foo Bar. ":)"
   joke = "Lass mich einen Witz erzählen." F: Was ist der objektorientierte Weg, um reich zu werden? \n A: Vererbung. ": D"
@@ -95,28 +95,30 @@
   why_java2 = "2. Java läuft auf einer Java-Laufzeitumgebung (JRE). Deshalb musst du Java 'herunterladen'. Das bedeutet, dass du deine Programme auf jedem Gerät ausführen können, auf dem Java ausgeführt werden kann (PC, Handy, etc. ...). . "
   why_java3 = "3. Es gibt eine Menge mächtiger Bibliotheken (Klassen). Die Java API sind Bibliotheken, die in der grundlegenden Java-Installation enthalten sind. Mit java.awt erhälst du beispielsweise Werkzeuge für grafische Benutzeroberflächen."
   why_synja = "Viele Anfänger haben Probleme mit der Syntax einer Sprache und viele Leute beginnen ihre Reise zum Erlernen einer Programmiersprache mit dem Erlernen von Java. Mein Entwickler hat möglicherweise ähnliche Erfahrungen gemacht: Du  kompilierst ein Programm (übersetzt es in Befehle, die die CPU ausführen kann ) und der Compiler zeigt dutzende von Syntaxfehlern an. Du lösts sie, versuchst es erneut ... und es treten neue Fehler auf. Dies kann vermieden werden, wenn du die Syntax von Anfang an verstehst."
-  teaching = "So möchte ich dich unterrichten: Der Kurs ist in Lektionen unterteilt, welche wiederum in kleinere Einheiten - Syntaxkonzepte - unterteilt sind. Ich werde eine nach der anderen erklären und dein Wissen testen. Wenn du meine Erklärung nicht verstehst, kann ich mich auf eine andere Art ausdrücken. Am Ende einer Lektion steht ein größerer Test an (3 Aufgaben)."
+  teaching = "So möchte ich dich unterrichten: Der Kurs ist in Themenblöcke unterteilt, welche wiederum in kleinere Einheiten - Syntaxkonzepte - unterteilt sind. Ich werde eins nach dem anderen erklären und dann dein Wissen testen. Wenn du meine Erklärung nicht verstehst, kann ich mich auf eine andere Art ausdrücken. Am Ende einer Lektion steht ein Test an (3 Aufgaben)."
   teaching = "So möchte ich dich lehren: Ich erkläre ein Konzept und teste dann dein Wissen. Ich kann jedes Thema auf unterschiedliche Weise erklären. Wenn du also eine Erklärung nicht verstehst, frage einfach nach einer anderen Erklärung."
-  ui = "Die Benutzeroberfläche besteht aus drei Teilen: der Ebene zur Darstellung des pädagogischen Agenten (rechts, mitte), der Eingabeebene und der Dialogebene. Auf der Dialogebene wird unsere Konversation angezeigt. Auf der Eingabeebene kannst du in Bezug auf den Dialog (links) oder in Bezug auf eine Aufgabenstellung antworten (rechts). Auf der Ebene des pädagogischen Agenten (rechts, mitte) kannst du mich sehen ... "
-  ui = "Die Benutzeroberfläche (was auf dem Monitor angezeigt wird) ist in drei Teile unterteilt. Im ersten Teil wird unser Dialog angezeigt (oben links). Darunter kannst du mir eine Nachricht senden, indem du in das Textfeld etwas eingibst und auf den Submit-Button drückst."
+  ui = "Die Benutzeroberfläche besteht aus drei Teilen: der Ebene zur Darstellung des pädagogischen Agenten (rechts, mitte), der Eingabeebene und der Dialogebene. Auf der Dialogebene wird unsere Konversation angezeigt. Auf der Eingabeebene(unten) kannst du in Bezug auf den Dialog (links) oder in Bezug auf eine Aufgabenstellung antworten (rechts). Auf der Ebene des pädagogischen Agenten (rechts, mitte) kannst du mich sehen ... . Wenn du zwischen Englisch und Deutsch wechseln willst, kannst du das tun, indem du auf den Knopf oben rechts drückst."
+  ui = "Die Benutzeroberfläche (was auf dem Monitor angezeigt wird) ist in drei Teile unterteilt. Im ersten Teil wird unser Dialog angezeigt (oben links). Darunter kannst du mir eine Nachricht senden, indem du in das Textfeld etwas eingibst und auf den Submit-Button drückst. Wenn du zwischen Englisch und Deutsch wechseln willst, kannst du das tun, indem du auf den Knopf oben rechts drückst."
   dialog = "Ich kann einfache Sätze verstehen, die sich auf das Thema beziehen, und einfache Fragen zum Programm beantworten."
   dialog = "Ich kann nur einfache Sätze verstehen."
 
 #intro themenbloecke
   programm_structure = "Die Struktur eines Java-Programms folgt einigen Grundregeln. Sie enthält eine Paketdeklaration, Imports und eine Klasse mit demselben Namen wie die Java-Datei. In der Klasse befindet sich eine sogenannte Main-methode, die den Code enthält, den du ausführen möchtest."
-  basics = "In einer einfachen Sichtweise besteht das Java-Programm aus Daten, die in Behältern gespeichert sind, welche als Variablen bezeichnet werden (z. B. eine Zeichenfolge zum Speichern eines Namens), und Anweisungen, die bestimmte Aufgaben ausführen (z.B. zwei Zeichenfolgen verbinden).
-  Diese Daten können im Verlauf eines Programms manipuliert werden, beispielsweise können mit einem Programm die Stationen der Berliner S-Bahn (deren Namen (Strings) und Standort) gespeichert und der kürzeste Weg berechnet werden von A nach B."
-  operator = "Ein Operator verbindet einen oder mehrere Operanden eines Typs und ordnet in einer Operation einem Wert Operanden zu. In diesem Kapitel werden dir Präfix und Postfix Operatoren, logische Operatoren, arithmetische Operatoren, bitweise Operatoren und Zuweisungsoperatoren zeigen."
-  statements = "Operatoren können zum Erstellen von Ausdrücken verwendet werden, die Werte berechnen. Ausdrücke sind die Kernkomponenten von Anweisungen. Anweisungen werden zum Manipulieren von Daten und Steuern des Programmflusses verwendet."
-  controll_structures = "Die meisten Kontrollstruktur entscheiden anhand eines boolesches Wertes, ob und wie oft ein Codeblock ausgeführt wird."
+  basics = "In einer einfachen Sichtweise besteht das Java-Programm aus Daten, die in Behältern gespeichert sind, welche als Variablen bezeichnet werden (z.B. eine Zeichenfolge zum Speichern eines Namens), und Anweisungen, die bestimmte Aufgaben ausführen (z.B. zwei Zeichenfolgen verbinden).
+  Diese Daten können im Verlauf eines Programms manipuliert werden, beispielsweise können mit einem Programm die Stationen der Berliner S-Bahn (deren Namen (Strings) und Standort) gespeichert und der kürzeste Weg von A nach B berechnet werden."
+  operator = "Ein Operator verbindet einen oder mehrere Operanden eines Typs und ordnet in einer Operation einem Wert Operanden zu. In diesem Kapitel werden ich dir Präfix und Postfix Operatoren, logische Operatoren, arithmetische Operatoren, bitweise Operatoren und Zuweisungsoperatoren zeigen."
+  statements = "Operationen können zum Erstellen von Ausdrücken verwendet werden, die Werte berechnen. Ausdrücke sind die Kernkomponenten von Anweisungen. Anweisungen werden zum Manipulieren von Daten und Steuern des Programmflusses verwendet."
+  controll_structures = "Die meisten Kontrollstrukturen entscheiden anhand eines boolesches Wertes, ob und wie oft ein Codeblock ausgeführt wird."
   methods = "Methoden stellen einen Teil eines Programms (einen Anweisungsblock) als Einheit dar und führen ihn beim Aufruf aus."
   arrays = "Arrays sind Felder mit Variablen desselben Typs. Die Größe steht nach der Erstellung fest, der Inhalt ist weiterhin variabel. Die einzelnen Elemente werden per Index addressiert."
-  classes = "Eine Klasse beschreibt einen neuen Typ mit einem Namen, einem Zustand (Klassenvariablen) und einem Verhalten (Klassenmethoden). Klassen sind Grundlagen einer objektorientierten Sprache wie Java. Sie enthalten Elemente, die Daten speichern und bearbeiten. Klassen sind unterteilt in atomare und verschachtelte Klassen. Beispiel: Klasse a {// oberste Klasse \n Klasse b {// innere Klasse}}. "
+  classes = "Eine Klasse beschreibt einen neuen Typ mit einem Namen, einem Zustand (Klassenvariablen) und einem Verhalten (Klassenmethoden). Klassen sind Grundlagen einer objektorientierten Sprache wie Java. Sie enthalten Elemente, die Daten speichern und bearbeiten."
 
 #test  
   test = "Jetzt kannst du mir beweisen, dass du das Konzept verstanden haben. Bitte löse den folgenden Test."
+  test = "Bitte löse diesen Test."
+  test = "Ich denke es ist Zeit dein Wissen zu testen."
   freude_antwort = "Großartig, du hast es verstanden."
-  freude_antwort = "Cool, du hast es gelöst :)."
+  freude_antwort = "Super, du hast es gelöst :)."
   freude_antwort = "Sehr schön, du hast es gelöst :)."
   freude_antwort = "Hey, das ist großartig, du hast es verstanden."
   freude_antwort = "Sehr schön, du hast es geschafft :)."
@@ -130,7 +132,8 @@
   testphase_konzept = "Löse jetzt diese Aufgabe."
   testphase_konzept = "Bitte versuchen diese Aufgabe zu lösen."
   testphase_konzept = "Gut. Versuche, die Aufgabe zu lösen."
-  testphase_themenblock = "Bitte beantworte die folgenden 3 Fragen."
+  testphase_themenblock = "Bitte beantworte die folgenden Fragen."
+  testphase_themenblock = "Ich stelle dir jetzt ein paar Aufgaben."
   nextTask = "Hier kommt die nächste Aufgabe."
   nextTask = "Schauen wir uns die nächste Aufgabe an."
   nextTask = "Bitte löse diese Aufgabe."
@@ -146,7 +149,7 @@
   Testergebnis_erfolgreich = "Glückwunsch, du hast den Test bestanden!
   Testergebnis_erfolgreich = "Ja, du hast es geschafft. Du hast den Test bestanden!"
   Testergebnis_erfolgreich = "Gute Arbeit, du warst erfolgreich!"
-  richtigeAntwort = "Das ist die richtige Antwort. Bestätigen, ob du es gelesen hast."
+  richtigeAntwort = "Das ist die richtige Antwort. Bitte bestätige, wenn du es gelesen hast."
   richtigeAntwort = "Schauen wir uns die richtige Antwort an. Wenn du das gelesen hast, bestätigen es bitte."
   richtigeAntwort = "Hier ist die Lösung. Lassen es mich wissen, wenn du es gesehen hast."
   richtigeAntwort = "Schauen wir uns die Lösung an. Wenn du es gelesen hast, bestätige das bitte."
@@ -157,13 +160,13 @@
   enaktiv_introduction_schritte = "Ok. Versuchen wir folgendes: wir schreiben Stück für Stück ein $."
   enaktiv_introduction_beispiele = "Ok. Schauen wir uns einige Beispiele für $ an."
   enaktiv_anfang = "$"
-  enaktiv_schritt = "Bitte gib bitte " $ " ein."
-  enaktiv_schritt = "Bitte in Teaching Input hinzufügen:" $ "."
-  enaktiv_schritt = "Erweitere dies nun in Teaching Input:" $ "."
-  enaktiv_beispiel = "Hier ist ein Beispiel. Bitte schreibe es in Teaching Input:" $ "."
-  enaktiv_beispiel = "Schauen dir dieses Beispiel an. Schreiben es in Teaching Input:" $ "."
-  enaktiv_erweiterung = "Zusammengesetzt sieht es so aus: <b> $ </ b>"
-  enaktiv_erweiterung = "So sieht es aus: <b> $ </ b>"
+  enaktiv_schritt = "Bitte gib  '$' ein."
+  enaktiv_schritt = "Bitte in Teaching Input hinzufügen: <b>$</b>".
+  enaktiv_schritt = "Erweitere dies nun in Teaching Input: <b>$</b>".
+  enaktiv_beispiel = "Hier ist ein Beispiel. Bitte schreibe es in Teaching Input: <b>$</b>".
+  enaktiv_beispiel = "Schauen dir dieses Beispiel an. Schreiben es in Teaching Input: <b>$</b>".
+  enaktiv_erweiterung = "Zusammengesetzt sieht es so aus: <b>$</b>".
+  enaktiv_erweiterung = "So sieht es aus: <b>$</b>".
   enaktiv_ende = "Schön, das war's. Du hast ein $ geschrieben."
   enaktiv_ende = "Cool, du hast ein $ geschrieben."
 
@@ -182,7 +185,7 @@
   freude_verstanden = "Ich bin froh, dass du das Konzept verstanden hast."
 
   aufforderung_schreiben_codeschnipsel = "Kannst du ein gültiges $ schreiben?"
-  aufforderung_schreiben_codeschnipsel = "Kannst du ein $ schreiben? Wenn ja, bitte."
+  aufforderung_schreiben_codeschnipsel = "Kannst du ein $ schreiben? Wenn ja, bitte tue es."
   aufforderung_schreiben_codeschnipsel = "Kannst du ein Beispiel für $ schreiben?"
 
   frage_hinweis_verstanden = "Verstehst du das?"
@@ -201,13 +204,13 @@
   kompetenzfrage = "Kannst du diese Aufgabe lösen?"
   kompetenzfrage = "Kannst du eine Lösung für diese Aufgabe finden?"
   kompetenzfrage_mithinweis = "Kannst du das lösen? Sonst kann ich dir einen Tipp geben."
-  kompetenzfrage_mithinweis = "Es wäre schön, wenn du das lösen könntest. Aber wenn du möchtest, kann ich dir einen Hinweis geben."
+  kompetenzfrage_mithinweis = "Es wäre schön, wenn du das lösen könntest. Wenn du möchtest, kann ich dir einen Hinweis geben."
   hinweis_anbieten = "Wenn du es nicht lösen kannst, kann ich dir einen Hinweis geben :)."
   hinweis_anbieten = "Wenn du willst, kann ich dir einen Tipp geben :)."
   hinweis_anbieten = "Benötigst du einen Hinweis?"
 #reaktion auf unschluessig
   todo_testphasekonzept_loesung = "Versuche, die Aufgabe zu lösen. Antworte, indem du etwas in das gelb markierte Textfeld eingibst."
-  todo_testphasekonzept_berichtigung = "Versuche, die Korrektur zu verstehen. Antworte, indem du das gelb hervorgehobene Textfeld eingeben."
+  todo_testphasekonzept_berichtigung = "Versuche, die Korrektur zu verstehen. Antworte, indem du das gelb hervorgehobene Textfeld zur Eingabe nutzt."
   todo_fehlerklassifikation_kompetenzfrage = "Du solltest versuchen, die Aufgabe zu lösen. Wenn du es nicht schaffst, kann ich dir einen Hinweis geben. Antworte, indem du in das gelb markierte Textfeld eingibst."
 #verabschiedung
   verabschiedungs_frage = "Möchtest du das Lernprogramm wirklich beenden?"
@@ -215,6 +218,6 @@
   verabschiedungs_abbruch = "Das freut mich zu hören. Fahren wir fort!"
   verabschiedungs_abbruch = "Okay, dann lass uns weitermachen!"
 #andere
-  oop_einleitung = "Bevor ich dir erkläre, was Klassen sind, möchte ich dir erklären, was objektorientierte Programmierung ist. Java ist eine mächtige Sprache. Dafür gibt es viele Gründe. Aber eine der wichtigsten ist, dass es eine objektorientierte Sprache. Objekte sind Strukturen in einem Programm, die von realen Entitäten oder Ihren Ideen abgeleitet sind. Objekte haben einen Zustand, der durch Daten beschrieben wird, und sie haben ein Verhalten, das durch Methoden beschrieben wird, welche den Zustand des Objekts ändern können. Eine Menge von Objekten wird durch eine Klasse beschrieben. Zum Beispiel kann eine Klasse eine Person beschreiben, und die Daten Vorname, Nachname und Lieblingsfarbe enthalten. Sie kann die Methode get_full_name() haben, die den Vornamen und Nachnamen zurückgibt. Ein Objekt könnte Tom sein. Tom hat den Vornamen "Tom" und den Nachnamen "Müller"; seine Lieblingsfarbe ist blau. Keine Sorge, ich werde dir das alles im Detail erklären. Die Mächtigkeit der objektorientierten Programmierung (OOP) besteht darin, dass Objekte andere Objekte enthalten können. Ein Telefonbuch könnte eine Telefonnummber für jedes Personenobjekt speichern."
-  bases_einleitung = "Bevor ich die Grundlagen der Java-Syntax erkläre, möchte ich erklären, was Basen sind. Sogenannte Integer, die ganze Zahlen sind, können auf verschiedene Arten dargestellt werden. Im täglichen Leben verwenden wir Dezimalzahlen (12,89,2 ..). Sie sind wie folgt aufgebaut: 100 * 1 + 10 * 2 + 1 * 3 = 123 = 10 ^ 2 * 1 + 10 ^ 1 * 2 + 10 ^ 0 * 3 ^ ist der Potenzoperator; 56: 10 ^ 1 * 5 + 10 ^ 0 * 6 = 56. 10 ist die Basis des Dezimalsystems, daher kannst du die Ziffern 0-9 verwenden. Zahlen können jedoch auch in anderen Basen angezeigt werden. 2 (binär), 8 (oktal), 16 (hexadezimal) werden von Java verwendet. Eine Binärzahl kann folgendermaßen aussehen: 10: 2 ^ 1 * 1 + 2 ^ 0 * 0 = 2 + 0 = 2 als Dezimalzahl oder 111: 2 ^ 2 * 1 + 2 ^ 1 * 1 + 2 ^ 1 * 1 = 4 + 2 + 1 = 7. Binärzahlen können nur die Ziffern 0 und 1 enthalten, da sie die Basis 2 haben. Die Oktalzahl kann die Ziffern von 0-7 enthalten (z. B. 11: 8 * 1 + 1 * 1 = 9 dezimal) ). Hexadezimalzahlen haben 16 verschiedene Ziffern: 0,1,2,3,4,5,6,7,8,9, A, B, C, D, E, F. A-F sind gleich 10-15. Also ist AA: 16 * 15 + 1 * 15 = 256 als Dezimalzahl."
+  oop_einleitung = "Bevor ich dir erkläre, was Klassen sind, möchte ich dir erklären, was objektorientierte Programmierung ist. Java ist eine mächtige Sprache. Dafür gibt es viele Gründe. Aber eine der wichtigsten ist, dass es eine objektorientierte Sprache. Objekte sind Strukturen in einem Programm, die von realen Entitäten oder ihren Ideen abgeleitet sind. Objekte haben einen Zustand, der durch Daten beschrieben wird, und sie haben ein Verhalten, das durch Methoden beschrieben wird, welche den Zustand des Objekts ändern können. Eine Menge von Objekten wird durch eine Klasse beschrieben. Zum Beispiel kann eine Klasse eine Person beschreiben, und die Daten Vorname, Nachname und Lieblingsfarbe enthalten. Sie kann die Methode get_full_name() haben, die den Vornamen und Nachnamen zurückgibt. Ein Objekt der Klasse Person könnte den Vornamen "Tom" und den Nachnamen "Müller" haben; die Lieblingsfarbe könnte blau sein. Keine Sorge, ich werde dir das alles im Detail erklären. Die Mächtigkeit der objektorientierten Programmierung (OOP) besteht darin, dass Objekte andere Objekte enthalten können. Ein Telefonbuch könnte eine Telefonnummer für jedes Personenobjekt speichern."
+  bases_einleitung = "Bevor ich die Grundlagen der Java-Syntax erkläre, möchte ich erklären, was Basen sind. Sogenannte Integer, die ganze Zahlen sind, können auf verschiedene Arten dargestellt werden. Im täglichen Leben verwenden wir Dezimalzahlen (12,89,2 u.s.w.). Sie sind wie folgt aufgebaut: 100 * 1 + 10 * 2 + 1 * 3 = 123 = 10 ^ 2 * 1 + 10 ^ 1 * 2 + 10 ^ 0 * 3 (^ ist der Potenzoperator) oder 56: 10 ^ 1 * 5 + 10 ^ 0 * 6 = 56. 10 ist die Basis des Dezimalsystems, daher kannst du die Ziffern 0-9 verwenden. Zahlen können jedoch auch in anderen Basen dargestellt werden. 2 (binär), 8 (oktal), 16 (hexadezimal) werden von Java verwendet. Eine Binärzahl kann folgendermaßen aussehen: 10: 2 ^ 1 * 1 + 2 ^ 0 * 0 = 2 + 0 = 2 als Dezimalzahl oder 111: 2 ^ 2 * 1 + 2 ^ 1 * 1 + 2 ^ 1 * 1 = 4 + 2 + 1 = 7. Binärzahlen können nur die Ziffern 0 und 1 enthalten, da sie die Basis 2 haben. Die Oktalzahl kann die Ziffern von 0-7 enthalten (z. B. 11: 8 * 1 + 1 * 1 = 9 dezimal) ). Hexadezimalzahlen haben 16 verschiedene Ziffern: 0,1,2,3,4,5,6,7,8,9,A,B,C,D,E und F. A-F sind gleich 10-15. Also ist FF: 16 * 15 + 1 * 15 = 256 als Dezimalzahl."
 

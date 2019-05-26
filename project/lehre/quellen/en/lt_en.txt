@@ -14,8 +14,8 @@ lesson: basics
 "integer_literals":::"Assign a binary integer literal.":::"int a = ___1010":::{"0b"}
 "integer_literals":::"Assign an integer literal with the correct type.":::"___ a = 5":::{"byte"::"short"::"int"::"long"::"char"}
 "integer_literals":::"Create variable with the binary value 10.":::"int a = ___":::{"0b10;"}
-"floating-point_literals":::"Assign the float value 9.8":::"int b = ___":::{"9.8F;"}
-"floating-point_literals":::"Assign the double value 9.8":::"int b = ___":::{"9.8D;"}
+"floating-point_literals":::"Assign the float value 9.8":::"float b = ___":::{"9.8F;"}
+"floating-point_literals":::"Assign the double value 9.8":::"double b = ___":::{"9.8D;"}
 "character_literals":::"Assign the character literal 'b'.":::"char b = ___;":::{"'b'"}
 "string_literals":::"Assign the String literal "a".":::"String a = ___;":::{""a""}
 "string_literals":::"Create the word "treehouse"":::"a = ___; b = "house"; c = a + b;":::{""tree""}

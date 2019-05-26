@@ -32,7 +32,6 @@ import threading
 import warnings
 import time
 import queue
-from builtins import isinstance
 
 
 
@@ -80,7 +79,27 @@ class Synja(threading.Thread):
   no_resp_time = 20
   
   verlauf = None
+  timeout = None
   
+  '''
+  class TIMEOUT(threading.Thread): 
+    i=0
+        
+    def run(self):
+      self.i=0
+      time.sleep(10)
+      self.i+=100
+    
+  def start_timer(self):
+    self.timeout = self.TIMEOUT()
+    self.timeout.start() 
+    
+  def stop_timer(self):
+    if(self.timeout.i>=100):raise AssertionError("TIMEOUT")
+    self.timeout = self.TIMEOUT()
+  '''  
+    
+    
   #hauptmethode: hier wird auf die queues gelisten und dann darauf reagiert (lehrmanager)
   def run(self):
     warnings.filterwarnings(module='sklearn*', action='ignore', category=DeprecationWarning)

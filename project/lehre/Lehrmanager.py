@@ -6,7 +6,7 @@ Wie Modell
 import os
 import sys
 
-
+import time
 
 sys.path.append(os.path.abspath('../lehre'))
 
@@ -450,6 +450,7 @@ class Lehrmanager:
     return
   
   def einleitung(self):
+    
     #self.dialogausgaben.append("why_java1")
     #self.dialogausgaben.append("why_java2")
     #self.dialogausgaben.append("why_java3")
@@ -636,6 +637,7 @@ class Lehrmanager:
       return
                    
   def frage_Konzeptverstanden(self, intent):  
+         
     #abfrage ob das Konzept verstanden wurde; wenn ja: test, wenn nein: wechsel der Erklaerung
     if(intent == "ja" or intent=="verstanden"):
       self.emotion = "freude"

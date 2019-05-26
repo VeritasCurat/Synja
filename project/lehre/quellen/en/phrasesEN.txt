@@ -116,7 +116,7 @@
   controll_structures = "A control structure decides, based on boolean value, if and how often a block of code is executed."
   methods = "Methods represent a part of a program (a block of statements) as a unit and execute it when called. "
   arrays = "Arrays are fields of variables of the same type. Array length is defined at creation and cannot be changed."
-  classes = "A class describes a new type with a name, a state (class variables) and behaviour (class methods). Classes are fundamentals of an object-oriented language such as Java. They contain members that store and manipulate data. Classes are divided into top-level and nested. For example: class a {//top-level class \n class b{ //inner class}}."
+  classes = "A class describes a new type with a name, a state (class variables) and behaviour (class methods). Classes are fundamentals of an object-oriented language such as Java. They contain members that store and manipulate data."
 #test  
   test = "Now you can prove to me that you understood the concept. Please solve the following test above."
   freude_antwort = "Great, you got it."
@@ -134,7 +134,7 @@
   testphase_konzept = "Now solve this task."
   testphase_konzept = "Please try to solve this task."
   testphase_konzept = "Good. Try to solve the task."
-  testphase_themenblock = "Please answer the following 3 questions."
+  testphase_themenblock = "Please answer the following questions."
   nextTask = "Here comes the next task."
   nextTask = "Let's take a look at the next task."
   nextTask = "Please solve this task."
@@ -224,4 +224,4 @@
   verabschiedungs_abbruch = "Ok, then let us continue!"
 #andere
   oop_einleitung = "Before I explain what classes are, I would like to explain what object-oriented programming is. Java is a powerful language. There many reasons for that, but one of the most important is that it is an object-oriented language. Objects are structures in a program that are derived from real world entities or your ideas. Objects have a state, described by data, and they have a behaviour described by methods that change their data. A set of objects is described by a class. For example, there could be a class Person which has the data firstname, lastname and favorite_color. It may have the method get_full_name() which returns the first name, last name and favorite color. An object could be Tom. Tom has the first name "Tom" and the last name "Doe" his favorite color is blue. Don't worry, I will explain this all in detail to you. The REAL power of object oriented programming (OOP) is that objects can contain other objects. A phonebook could save a phone number for every Person object."
-  bases_einleitung = "Before I explain the basics of Java syntax, I would like to explain what bases are. Integers, i.e. whole numbers, can be represented in different ways. In day to day life we use decimal numbers (12,89,2 ...). They are constructed like this: 100 * 1 + 10 * 2 + 1 * 3 = 123 = 10^2 * 1 + 10^1 * 2 + 10^0 * 3. ^ is the exponent operator. Another example is 56: 10^1 * 5 + 10^0 * 6 = 56. 10 is the base of the decimal system, thus you can use the digits 0-9. \nHowever, numbers can be displayed in other bases as well; 2 (binary), 8 (octal), 16 (hexadecimal) are used by Java. A binary number can look like this: 10: 2^1 * 1 + 2^0 * 0 = 2+0 = 2 in decimal or 111: 2^2 * 1 + 2^1 * 1 + 2^1 * 1 = 4+2+1 = 7. Binary numbers can only contain the digits 0 and 1 because they have the base 2. Octal number can contain the digits from 0-7 (e.g. 11: 8*1 + 1*1 = 9 in decimal). Hexadecimal numbers have 16 different digits: 0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F. A-F are equal to 10-15. Thus AA: 16*15 + 1*15 = 256 in decimal."
+  bases_einleitung = "Before I explain the basics of Java syntax, I would like to explain what bases are. Integers, i.e. whole numbers, can be represented in different ways. In day to day life we use decimal numbers (12,89,2 ...). They are constructed like this: 100 * 1 + 10 * 2 + 1 * 3 = 123 = 10^2 * 1 + 10^1 * 2 + 10^0 * 3. ^ is the exponent operator. Another example is 56: 10^1 * 5 + 10^0 * 6 = 56. 10 is the base of the decimal system, thus you can use the digits 0-9. \nHowever, numbers can be displayed in other bases as well; 2 (binary), 8 (octal), 16 (hexadecimal) are used by Java. A binary number can look like this: 10: 2^1 * 1 + 2^0 * 0 = 2+0 = 2 in decimal or 111: 2^2 * 1 + 2^1 * 1 + 2^1 * 1 = 4+2+1 = 7. Binary numbers can only contain the digits 0 and 1 because they have the base 2. Octal number can contain the digits from 0-7 (e.g. 11: 8*1 + 1*1 = 9 in decimal). Hexadecimal numbers have 16 different digits: 0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F. A-F are equal to 10-15. Thus FF: 16*15 + 1*15 = 256 in decimal."

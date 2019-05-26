@@ -1,7 +1,7 @@
 lesson: programm_structure
 "programm_structure_main":::"Where is the entry point in a java app?":::{"At the line 1."::"At the main method."::"At the class declaration."::"At the entry method."}:::{2}
 "programm_structure_import":::"Where are imports written?":::{"At the top."::"At the bottom."::"One line before the first use."::"They can be written anywhere."}:::{1}
-"programm_structure_packages”:::”What does a package declaration look like?":::{"package applicationname,libraryname"::"package libraryname.applicationname"::"package applicationname.libraryname"::"PACKAGE applicationname.libraryname"}:::{2}
+"programm_structure_packages":::"What does a package declaration look like?":::{"package applicationname,libraryname"::"package libraryname.applicationname"::"package applicationname.libraryname"::"PACKAGE applicationname.libraryname"}:::{2}
 "programm_structure_packages":::"How many package declarations can there be in any syntactically legal java file?":::{"No package declaration"::"One package declaration"::"Two package declarations"::"more that two package declarations"}:::{1;2}
 lesson: basics
 "comments":::"Which types of comments does Java support?":::{"One-line Comments"::"Java-Docs"::"Comments for Variables"::"executable Comments"}:::{1;2}
@@ -9,10 +9,10 @@ lesson: basics
 "comments":::"Which of these are legal comments?":::{"/*hello**/"::"/**hello\n**/"::"//**hello*/"::"/*hello\n/"}:::{1;2;3}
 "keywords":::"Which is a keyword?":::{"int a;"::"String"::"&"::"half"}:::{2}
 "keywords":::"Which contains a keyword?":::{"int a = 0;"::"class a {}"::"a = 1+1;"}:::{1;2}
-"keywords":::"What are keywords?":::{"A keyword is a reserved string and has a language-defined semantic."::"Keywords are particularly important for the user and used by them as keys for encrypted data.”::”They are words in a programming language and have a special meaning. They can be redefined by the user."}:::{1}
+"keywords":::"What are keywords?":::{"A keyword is a reserved string and has a language-defined semantic."::"Keywords are particularly important for the user and used by them as keys for encrypted data"::"They are words in a programming language and have a special meaning. They can be redefined by the user."}:::{1}
 "literals":::"What are literals?":::{"A literal is the source code representation of a value of a primitive type or the null type (empty value)."::"A literal is part of the program that contains only constants."::"A literal is the human readable part of the program"}:::{1}
 "literals":::"Which are not literals?":::{"-200"::""anna""::""2a""::"1,245"}:::{4}
-"literals":::"Which are neither integer literals nor floating point literals?":::{"-200"::"18,2"::"2"::"1.245"}:::{1}
+"literals":::"Which are neither integer literals nor floating point literals?":::{"-200"::"18,2"::"2"::"1.245"}:::{2}
 "integer_literals":::"Which option assigns a binary number to b?":::{"b = 01;"::"0bb = 10;"::"b = 0b0"::"b = 0b2;"}:::{3}
 "integer_literals":::"Which is not a valid integer literal?":::{"1"::"-10E10"::"0"::"null"}:::{2;4}
 "floating-point_literals":::"Which is not a valid floating-point literal?":::{".0"::"0."::"9,1"::"4"}:::{2;3}
@@ -39,10 +39,10 @@ lesson: arrays
 "array_reassignment":::"Which of these is a valid array reassignment?: int a[] = {1,2}":::{"a[0] = 1;"::"a[2] = 2;"::"a(1) = 1;"::"a = {1,2};"}:::{1}
 "multidim_array_definition":::"How many "[]" does a valid definition of a three dimensional array have?":::{"One"::"Two"::"Three"::"Four"}:::{3}
 "multidim_array_declaration":::"Which of these is a valid declaration of an array with 20 places?":::{"int a[][] = new int[4][5];"::"int a[] = new int[20];"::"int a[4][5] = new int[4][5];"::"int a[][] = {0,1,2,3,4,5,6,7,8,9,10,11,13,14,15,16,17,18,19};"}:::{1;2}
-"multidim_array_access":::"How is the sixth position of a 3x3 array accessed?”:::{“[2][0][0]”::”[0][6]::”[0][5]”::”[2][0]”::”[1][2]”}:::{5}
-"multidim_array_reassignment":::"How is the third position of the 6x2 double array d reassigned?”:::{“d[3][0] = 1.0;"::"d[1][3] = 1.0;"::"d[2][2] = 1.0;"::"d[1][0] = 1.0;"}:::{4}
+"multidim_array_access":::"How is the sixth position of a 3x3 array accessed?":::{“[2][0][0]"::"[0][6]::"[0][5]"::"[2][0]"::"[1][2]"}:::{5}
+"multidim_array_reassignment":::"How is the third position of the 6x2 double array d reassigned?":::{“d[3][0] = 1.0;"::"d[1][3] = 1.0;"::"d[2][2] = 1.0;"::"d[1][0] = 1.0;"}:::{4}
 lesson: operators
-"arithmetic_operators":::"Which operator is used to calculate the remainder of a division operation?”:::{“rem"::"%"::"floor"}:::{2}
+"arithmetic_operators":::"Which operator is used to calculate the remainder of a division operation?":::{“rem"::"%"::"floor"}:::{2}
 "operators_prefix":::"How can you express this differently: a = a + 1?":::{"a--"::"++a"::"+a+"::"a++1"}:::{2}
 "operators_postfix":::"If a is equal to 2, what is printed out? System.out.println(a++);":::{"2"::"3"}:::{1}
 "comparison_operators":::"Which is not a comparison operator?":::{"<"::"!="::"="::"<="}:::{3}
@@ -58,9 +58,9 @@ lesson: statements
 lesson: controll_structures
 "boolean_expression":::"Which is not a valid boolean expression?":::{"true"::"1 | 3"::"true || (false)"::"1 != "a""}:::{2;4}
 "if":::"What is a valid construction of an if statement?":::{"if(boolean expression){/*code block*/};"::"if(boolean expression){/*code block*/}"::"if[Boolean expression]{/*code block*/}"::"IF(Boolean Expression){/*code block*/}"}:::{2}
-"switch":::"How is a case in a switch statement declared?”:::{“case value:{//statements}"::"case value {//statements}"::"CASE value:{//statements}"}:::{1}
+"switch":::"How is a case in a switch statement declared?":::{“case value:{//statements}"::"case value {//statements}"::"CASE value:{//statements}"}:::{1}
 "switch":::"Which types can be used as variables in a switch statement?":::{"byte"::"long"::"short"::"char"}:::{1;3;4}
-"while”:::”How is a while statement constructed?”:::{“while boolean expression {//statement block}"::"WHILE(boolean expression){//statement block}"::"while(boolean expression) do {//statement block}"::"while(boolean expression){//statement block}":::{4}
+"while":::"How is a while statement constructed?":::{“while boolean expression {//statement block}"::"WHILE(boolean expression){//statement block}"::"while(boolean expression) do {//statement block}"::"while(boolean expression){//statement block}":::{4}
 "do_while":::"What can be written into the code block of do{} while(true);":::{""::";"::"1<23"::"true"}:::{1;2}
 "for":::"What is a correct definition of a for loop?":::{"for()"::"for(;;){}"::"for(;;);"::"for{}"}:::{2;3}
 "extended_for":::"What is the correct syntax for an extended for loop?":::{"for(type name: array){}"::"for(type name(array)){}"::"for(array){}"}:::{1}

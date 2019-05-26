@@ -12,6 +12,9 @@ Webapp fuer Synja und Liza
 '''
 import os
 import sys
+
+import threading
+import time
 #import gevent
 #from engineio.async_drivers import eventlet
 
@@ -103,42 +106,55 @@ def background_threadSynjaLiza():
       #              {'data': 'Server generated event', 'count': count},
       #              namespace='/synja', room = connections[0])
       socketio.sleep(0.01)
-      for synja in synjas:
-        synja.nutzer_auf_inputfeld_hinweisen()
-        #if(count%100==0):
-        #  print(str(count/100))
-        #  synja.lehrmanager.inc_responseTimer()
-        if(synja.highlight_input_element == "lehre"): socketio.emit('highlight_lehre_input',namespace='/synja', room = synja.id)
-        elif(synja.highlight_input_element == "dialog"): socketio.emit('highlight_dialog_input',namespace='/synja', room = synja.id)
-        else: socketio.emit('highlight_no_input',namespace='/synja', room = synja.id)
+      for synja in synjas:       
+        #
+        try:    
+          #synja.start_timer()
+            
+          synja.nutzer_auf_inputfeld_hinweisen()
+          #if(count%100==0):
+          #  print(str(count/100))
+          #  synja.lehrmanager.inc_responseTimer()
+          if(synja.highlight_input_element == "lehre"): socketio.emit('highlight_lehre_input',namespace='/synja', room = synja.id)
+          elif(synja.highlight_input_element == "dialog"): socketio.emit('highlight_dialog_input',namespace='/synja', room = synja.id)
+          else: socketio.emit('highlight_no_input',namespace='/synja', room = synja.id)
+            
+          if(not synja.sendqueueDialog.empty()):
+            output = synja.getDialogSynja()
+            #print("Synja: "+str(output))
+            #print("WA EMIT: "+output+" from ["+synja.name+"]")
+            if(not isinstance(output,list)):   
+              zeitpunkt = datetime.datetime.now().strftime('%H:%M:%S')         
+              socketio.emit('dialogEINGABE',{'data':  '<p align="left"><b>Synja</b>: \n'+output+'</p>', 'count': count},namespace='/synja', room = synja.id)
+              emotion = synja.lehrmanager.emotion
+              socketio.emit('change_synja',{'data': emotion, 'count': count},namespace='/synja', room = synja.id)
+             
+            else:
+              lehre = output[0]
+                        
+              #print("sending something out")
+              #output = synja.sendqueueLehre.get()
+              #print("WA: ART"+output[1])
+              zeitpunkt = datetime.datetime.now().strftime('%H:%M:%S')         
+              if(output[1] == "Task"): socketio.emit('lehrTASK',{'data': lehre, 'count': count},namespace='/synja', room = synja.id)
+              elif(output[1] == "Lehre"): 
+                if(lehre.endswith(".svg")):
+                  socketio.emit('lehrEINGABE_BILD',{'data': lehre, 'count': count, 'lang': synja.sprache},namespace='/synja', room = synja.id)
+                else: socketio.emit('lehrEINGABE',{'data': lehre, 'count': count},namespace='/synja', room = synja.id)
+          #check if user has underlined text
+          socketio.emit('underline_checkS', {}, namespace='/synja', room=synja.id)
           
-        if(not synja.sendqueueDialog.empty()):
-          output = synja.getDialogSynja()
-          #print("Synja: "+str(output))
-          #print("WA EMIT: "+output+" from ["+synja.name+"]")
-          if(not isinstance(output,list)):   
-            zeitpunkt = datetime.datetime.now().strftime('%H:%M:%S')         
-            socketio.emit('dialogEINGABE',{'data':  '<p align="left"><b>Synja</b>: \n'+output+'</p>', 'count': count},namespace='/synja', room = synja.id)
-            emotion = synja.lehrmanager.emotion
-            socketio.emit('change_synja',{'data': emotion, 'count': count},namespace='/synja', room = synja.id)
-           
-          else:
-            lehre = output[0]
-                      
-            #print("sending something out")
-            #output = synja.sendqueueLehre.get()
-            #print("WA: ART"+output[1])
-            zeitpunkt = datetime.datetime.now().strftime('%H:%M:%S')         
-            if(output[1] == "Task"): socketio.emit('lehrTASK',{'data': lehre, 'count': count},namespace='/synja', room = synja.id)
-            elif(output[1] == "Lehre"): 
-              if(lehre.endswith(".svg")):
-                socketio.emit('lehrEINGABE_BILD',{'data': lehre, 'count': count},namespace='/synja', room = synja.id)
-              else: socketio.emit('lehrEINGABE',{'data': lehre, 'count': count},namespace='/synja', room = synja.id)
-        #check if user has underlined text
-        socketio.emit('underline_checkS', {}, namespace='/synja', room=synja.id)
+          count += 1
+          
+          #synja.stop_timer()
 
-        count += 1
-      
+          
+        except:
+          print("Synja error: "+synja.id)
+          synjas.remove(synja)
+          synja = None
+          
+          
       for l in lizas:
         if(not l.getUI().sendqueue.empty()):
           #print("sending something out")

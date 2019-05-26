@@ -104,8 +104,8 @@
   
   teaching = "This is how I intend to teach you: The course is divided into lessons which are subdivided into smaller units. I will explain one concept after another and test your knowledge. If you don't understand my explanation, I can express myself in a different way. At the end of the lesson is a larger test consisting of three tasks.""
   teaching = "This is how i want to teach you: i explain a concept and then i test your knowledge. I can explain every subject in different ways, so if you don't understand an explanation just ask for another explanation."
-  ui = "The UI consists of three parts: the pedagogical agent layer, the input layer, and the teaching layer. At the dialogue level our conversation is displayed. At the input layer you can answer related to the dialogue (left) or related to a task (right). At the pedagogical agent level (on the right) you can see me ... "
-  ui = "The GUI (what is displayed on the monitor) is divided into three parts. The first part is where our dialogue is displayed (top-left). Under that you can send me a message by typing it in in the textbox and hitting the submit Button."
+  ui = "The UI consists of three parts: the pedagogical agent layer, the input layer, and the teaching layer. At the dialogue level our conversation is displayed. At the input layer you can answer related to the dialogue (left) or related to a task (right). At the pedagogical agent level (on the right) you can see me ... . If you want to switch between english and german, you can do that by pressing the button in the upper right corner."
+  ui = "The GUI (what is displayed on the monitor) is divided into three parts. The first part is where our dialogue is displayed (top-left). Under that you can send me a message by typing it in in the textbox and hitting the submit Button. If you want to switch between english and german, you can do that by pressing the button in the upper right corner."
   dialog = "I can understand simple sentences which relate to the subject and i can answer simple questions about the program. "
   dialog = "I can only understand simple sentences."
 
@@ -135,7 +135,7 @@
   testphase_konzept = "Now solve this task."
   testphase_konzept = "Please try to solve this task."
   testphase_konzept = "Good. Try to solve the task."
-  testphase_themenblock = "Please answer the following 3 questions."
+  testphase_themenblock = "Please answer the following questions."
   nextTask = "Here comes the next task."
   nextTask = "Let's take a look at the next task."
   nextTask = "Please solve this task."
