@@ -316,9 +316,7 @@ background-color: grey;
  			   
  				var image = document.createElement("img");
 				image.src = "static/"+msg.data;
-
-                imgname = "static/"+msg.lang+msg.data;
- 				
+                imgname = "static/"+msg.lang+"/"+msg.data;
                 var testDiv = document.getElementById("dialoglog");
 
                 imgtag = "<img src=\""+imgname+"\" width=\"600px\">"

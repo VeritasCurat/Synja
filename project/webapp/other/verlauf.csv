@@ -1452,3 +1452,35 @@ Which types of comments does Java support?
 ","1","fehlerfrei"
 "<built-in function id>","2019-05-26 23:48:20","Bitte schreibe einen richtigen Kommentar.","/a","[['basics', 'comments', 'basics', 'comments'], 'Dies ist kein gültiger Kommentar. Dieser enthält nicht / ** / oder //: <b>/a</b>.', 'comments_non']"
 "<built-in function id>","2019-05-26 23:48:55","Please write a valid main-method.","public static void main(String a[]){}","fehlerfrei"
+"0","2019-05-26 23:52:32","Please choose the right answer(s) by typing in the number(s) of the answer(s) into user input:
+Which types of comments does Java support?
+1. One-line Comments
+2. Java-Docs
+3. Comments for Variables
+4. executable Comments
+","1","fehlerfrei"
+"<built-in function id>","2019-05-26 23:52:32","Bitte schreibe einen richtigen Kommentar.","/a","[['basics', 'comments', 'basics', 'comments'], 'Dies ist kein gültiger Kommentar. Dieser enthält nicht / ** / oder //: <b>/a</b>.', 'comments_non']"
+"0","2019-05-26 23:55:22","Please choose the right answer(s) by typing in the number(s) of the answer(s) into user input:
+Which types of comments does Java support?
+1. One-line Comments
+2. Java-Docs
+3. Comments for Variables
+4. executable Comments
+","1","fehlerfrei"
+"<built-in function id>","2019-05-26 23:55:22","Bitte schreibe einen richtigen Kommentar.","/a","[['basics', 'comments', 'basics', 'comments'], 'Dies ist kein gültiger Kommentar. Dieser enthält nicht / ** / oder //: <b>/a</b>.', 'comments_non']"
+"0","2019-05-26 23:57:01","Please choose the right answer(s) by typing in the number(s) of the answer(s) into user input:
+Which types of comments does Java support?
+1. One-line Comments
+2. Java-Docs
+3. Comments for Variables
+4. executable Comments
+","1","fehlerfrei"
+"<built-in function id>","2019-05-26 23:57:01","Bitte schreibe einen richtigen Kommentar.","/a","[['basics', 'comments', 'basics', 'comments'], 'Dies ist kein gültiger Kommentar. Dieser enthält nicht / ** / oder //: <b>/a</b>.', 'comments_non']"
+"0","2019-05-26 23:58:30","Please choose the right answer(s) by typing in the number(s) of the answer(s) into user input:
+Which types of comments does Java support?
+1. One-line Comments
+2. Java-Docs
+3. Comments for Variables
+4. executable Comments
+","1","fehlerfrei"
+"<built-in function id>","2019-05-26 23:58:30","Bitte schreibe einen richtigen Kommentar.","/a","[['basics', 'comments', 'basics', 'comments'], 'Dies ist kein gültiger Kommentar. Dieser enthält nicht / ** / oder //: <b>/a</b>.', 'comments_non']"
