@@ -1,0 +1,238 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>User Gate to Synja Pedagogical Agent</title>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.5/socket.io.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+        $(document).ready(function() {
+            // Use a "/test" namespace.
+            // An application can open a connection on multiple namespaces, and
+            // Socket.IO will multiplex all those connections on a single
+            // physical channel. If you don't care about multiple channels, you
+            // can set the namespace to an empty string.
+            namespace = '/usergate';
+
+            // Connect to the Socket.IO server.
+            // The connection URL has the following format:
+            //     http[s]://<domain>:<port>[/<namespace>]
+            var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port + namespace);
+
+            //var clientIP = socket.handshake.headers.host;
+
+            // Event handler for new connections.
+            // The callback function is invoked when a connection with the
+            // server is established.
+            socket.on('connect', function() {
+            	//var clientIp = socket.request.connection.remoteAddress;
+			    //socket.emit('my_ip',{data : clientIp}); //emit it back to client
+            });
+            
+            //Redirects to this site
+            socket.on('redirect', function (data) {
+    			window.location = data.url;
+			});
+			
+            //send ip
+			socket.on("connection", function (socket) {
+			    //var clientIp = socket.request.connection.remoteAddress;
+			    //socket.emit('my_ip',{data : clientIp}); //emit it back to client
+			});
+
+            // Event handler for server sent data.
+            // The callback function is invoked whenever the server emits data
+            // to the client. The data is then displayed in the "Received"
+            // section of the page.
+
+            
+            socket.on('login_nachricht', function(msg) {
+                $('#nachricht').append('<br>' + $('<div/>').text(msg.data).html());
+            });
+            
+            socket.on('create_nachricht', function(msg) {
+                $('#nachricht').append('<br>' + $('<div/>').text(msg.data).html());
+            });
+
+            socket.on('enter_nachricht', function(msg) {
+                $('#nachricht').append('<br>' + $('<div/>').text(msg.data).html());
+            });
+
+
+
+            // Handlers for the different forms in the page.
+            // These accept data from the user and send it to the server in a
+            // variety of ways
+            $('form#login').submit(function(event) {
+
+                var btnSubscribe = document.getElementById("btnSubmitSubscribe");
+
+
+                
+            	socket.emit('login', {name: $('#login_username').val(), password:$('#login_password').val()});
+                $('form#login').trigger("reset");
+                return false;
+            });
+            
+                 
+            $('form#create').submit(function(event) {
+                socket.emit('create', {name: $('#create_username').val(), password:$('#create_password').val()});
+                $('form#create').trigger("reset");
+                return false;
+            });
+
+            $('form#enter').submit(function(event) {
+                socket.emit('enter_withoutlogin', {name: ""});
+                return false;
+            });
+
+            
+          
+         	// Interval function that tests message latency by sending a "ping"
+            // message. The server then responds with a "pong" message and the
+            // round trip time is measured.
+            var ping_pong_times = [];
+            var start_time;
+            window.setInterval(function() {
+                start_time = (new Date).getTime();
+                socket.emit('my_ping');
+            }, 1000);
+
+            // Handler for the "pong" message. When the pong is received, the
+            // time from the ping is stored, and the average of the last 30
+            // samples is average and displayed.
+            socket.on('my_pong', function() {
+                var latency = (new Date).getTime() - start_time;
+                ping_pong_times.push(latency);
+                ping_pong_times = ping_pong_times.slice(-30); // keep last 30 samples
+                var sum = 0;
+                for (var i = 0; i < ping_pong_times.length; i++)
+                    sum += ping_pong_times[i];
+                $('#ping-pong').text(Math.round(10 * sum / ping_pong_times.length) / 10);
+            });
+            
+            
+          
+            $('form#join').submit(function(event) {
+                socket.emit('join', {room: $('#join_room').val()});
+                return false;
+            });
+            $('form#leave').submit(function(event) {
+                socket.emit('leave', {room: $('#leave_room').val()});
+                return false;
+            });
+            $('form#close').submit(function(event) {
+                socket.emit('close_room', {room: $('#close_room').val()});
+                return false;
+            });
+            $('form#disconnect').submit(function(event) {
+                socket.emit('disconnect_request');
+                return false;
+            });
+        });
+    </script>
+
+
+<style>
+body {
+    font-family: sans-serif;
+
+}
+h1, h2, h3, h4 {
+    color: #001056;
+}
+
+.container {
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.header {
+  background-color: lightgrey;
+    height: 100px; 
+    width:100%;
+}    
+
+.nachrichtentext {
+    height: 200px;
+    width: 400px;
+    overflow-y: auto;
+    border: 2px solid black;
+    padding: 5px;
+    display: flex; 
+    flex-direction: column-reverse;
+    overflow-y: auto;
+    
+}
+
+.footer{
+	background-color: grey;
+    height: 20px; 
+    width:100%;
+     position : fixed;
+     bottom : 0;
+}
+
+
+</style>
+</head>
+
+
+<body>
+<div class="header">
+<p style="padding: 30px">
+contact details:<br>Dr. Nguyen-Thinh Le (<a href="mailto:lenguyen@hu-berlin.de">lenguyen@hu-berlin.de</a>)<br>Johannes Grobelski (<a href="grobelsj@informatik.hu-berlin.de">grobelsj@informatik.hu-berlin.de</a>)
+</p>
+</div>
+
+
+<img src="/static/logo.jpg" style="float: right;" />
+
+<div class="container">
+<h1 style="padding-top: 100px;">Login to Synja Pedagogical Agent</h1>
+<p>Please log in to access Synja. Just use your Username and Password. <br> Or create a new account by setting your username, password and emailadress.</p>
+<font color="red">
+<div style="width: 100%; margin-left:auto; margin-right:auto; overflow-y: auto;">
+	<p><b>Please consider participating in my experiment for my Bachelor thesis. It only takes a few minutes.<br>More Information (link) TODO</b></p>
+</div>
+</font>
+
+<!---    <p>Async mode is: <b>{{ async_mode }}</b></p>-->
+   
+    <h2>Login:</h2>
+    <form id="login" method="POST" action='#'>
+        <input type="text" name="login_username" id="login_username" placeholder="username">
+        <input type="text" name="login_password" id="login_password" placeholder="password">
+        <input type="submit" value="login" id="login">        
+    </form>
+    
+    <h2>Create a new account</h2>
+    <form id="create" method="POST" action='#'>
+        <input type="text" name="create_username" id="create_username" placeholder="username">
+        <input type="text" name="create_password" id="create_password" placeholder="password">
+        <input type="submit" value="create Acount" id="create Acount"> 
+	</form>
+
+    <h2>Enter without account</h2>
+    <form id="enter" method="POST" action='#'>
+        <input type="submit" value="Enter without login" id="Enter without login"> 
+        <p>(This means your progress is not saved and you can not enjoy the full user experience!)</p>
+    </form>
+
+	<h1 style="padding-top: 0px;"></h1>
+	<!---    <p>Async mode is: <b>{{ async_mode }}</b></p>-->
+    <div class="nachrichtentext">
+   	 <div id="nachricht"></div>
+    </div>
+<p>Average ping/pong latency: <b><span id="ping-pong"></span>ms</b></p>
+
+</div>
+
+<div class="footer">
+<a href="http://141.20.25.58/">Back to Mainpage</a>
+</div>
+
+
+</body>
+</html>

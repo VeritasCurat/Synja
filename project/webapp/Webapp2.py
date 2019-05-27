@@ -54,6 +54,7 @@ lizas = []
 usergate = Usergate()
 
 logins = {} #ip -> [name, password]; None falls nicht eingeloggt
+sprache = {} #ip -> sprache e ["de","en"]
 print("webapp ready!")
 
 @app.route('/editor')

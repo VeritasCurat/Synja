@@ -1,0 +1,95 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<title>Synja & Liza</title>
+</head>
+
+<style>
+.header {
+  background-color: lightgrey;
+    height: 100px; 
+    width:100%;
+}    
+
+
+.footer{
+	background-color: grey;
+    height: 20px; 
+    width:100%;
+     position : fixed;
+     bottom : 0;
+}
+
+@import "bourbon";
+
+$color: #e2cef9;
+
+@mixin MQ {
+	@media only screen and (min-width: 700px) { @content; }
+}
+
+* {
+	@include box-sizing(border-box);
+}
+
+.container {
+	margin: 3em auto;
+	width: 90%;
+	max-width: 1100px;
+}
+
+.outer {
+	height: 700px;
+    width: 100%;
+}
+
+.inner{
+	height: 400px;
+}
+
+
+
+</style>
+
+<body>
+<div class="header">
+<p style="padding: 30px">
+Kontakte:<br>Dr. Nguyen-Thinh Le (<a href="mailto:lenguyen@hu-berlin.de">lenguyen@hu-berlin.de</a>)<br>Johannes Grobelski (<a href="grobelsj@informatik.hu-berlin.de">grobelsj@informatik.hu-berlin.de</a>)
+</p>
+</div>
+
+<img src="/static/logo.jpg" style="float: right;" />
+
+<div class="outer">
+	<div>
+		<h3><a href="/how-to-use">Tutorial</a></h3>
+		<p>Eine Einführung für Synja.</p>
+	</div>
+	<div class="inner">
+		<h3><a>Synja Pedagogical Agent</a></h3>
+		<p>
+			<p>Ein Pädagogischer Agent um die Syntax von Java zu lernen. Entwickelt von Johannes Grobelski.</p>
+			<a href = "/synja"><img src="/static/preview_synja.png" style="float: left;" alt="Example" width="400" border ="2"/></a>
+		</p>
+		
+	</div>
+	<div class="inner">
+		<h3><a>Liza Chatbot</a></h3>
+		<p>
+			<p>Ein Chatbot um Fähigkeiten für menschlichen Vernunft weiterzuentwickeln. Entwickelt von Laura Wartschinski.</p>
+			<a href = "/liza"><img src="/static/preview_liza.png" style="float: left;" alt="Example" width="400" border ="2"/></a>
+		</p>
+	</div>
+
+
+	<div class="footer">
+	<a href="https://www.hu-berlin.de/de/hu/impressum">Impressum</a>
+    <a href="http://141.20.25.58">Host1: 141.20.25.58</a>
+    <a href="http://141.20.25.57">Host2: 141.20.25.57</a>
+	</div>
+</div>
+
+
+
+</body>
+</html> 
