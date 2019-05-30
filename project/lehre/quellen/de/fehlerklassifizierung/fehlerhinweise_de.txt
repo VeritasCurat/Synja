@@ -116,7 +116,7 @@ lesson: controll_structures
 "while":::"while_wrong_structure":::"Die while-Anweisung besteht aus dem ersten: dem Schlüsselwort while, dem zweiten: einem booleschen Ausdruck in runder Klammer und dem dritten: einer letzten Anweisung oder einem Codeblock."
 "while":::"while_break":::"Die break-Anweisung kann nur einmal verwendet werden. Zum Beispiel: while (true) break;"
 "while":::"while_continue":::"Die continue-Anweisung kann nur einmal verwendet werden: while (true) {if (a == 0) continue;}"
-"do_while":::"do_while_wrong_semicolon":::"Verwenden Sie ein; nach dem booleschen Ausdruck, um die Schleife abzuschließen. Zum Beispiel: do {} while (true);"
+"do_while":::"do_while_wrong_semicolon":::"Verwenden Sie ein ; nach dem booleschen Ausdruck, um die Schleife abzuschließen. Zum Beispiel: do {} while (true);"
 "do_while":::"do_while_no_keyword":::"Jede do while-Schleife muss die Schlüsselwörter do und while enthalten."
 "do_while":::"do_while_round_brackets_not_matching":::"Einer schließenden runden Klammer muss irgendwann eine öffnende runde Klammer folgen. Zum Beispiel: do {} while ((((false)));"
 "do_while":::"do_while_curly_brackets_not_matching":::"Einer schließenden geschweiften Klammer muss an einem bestimmten Punkt in einer öffnenden geschweiften Klammer gefolgt werden. Zum Beispiel: do {{}} while (false);" "

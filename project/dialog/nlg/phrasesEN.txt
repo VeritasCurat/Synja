@@ -108,6 +108,7 @@
   ui = "The GUI (what is displayed on the monitor) is divided into three parts. The first part is where our dialogue is displayed (top-left). Under that you can send me a message by typing it in in the textbox and hitting the submit Button. If you want to switch between english and german, you can do that by pressing the button in the upper right corner."
   dialog = "I can understand simple sentences which relate to the subject and i can answer simple questions about the program. "
   dialog = "I can only understand simple sentences."
+  empfehlung_naechsterThemenblock = "I have evaluated the results from the Pretest. I would ask you to learn the following Lessons in this order: <b>$</b>."
 
 #intro themenbloecke
   programm_structure = "The structure of a java program follows some basic rules. It contains a package declaration, imports and a class with the same name as the java file. In the class is a main method that contains the code you want to run."

@@ -86,10 +86,34 @@ class NLG_EN(object):
       self.dict_konzept_phrase = Dict_konzept_phrase()
       return
     
-    def generate_args(self, phrase, arg):
+    def uebersetzung_thema(self,e):
+      if(e == "programm_structure"):return "program structure"
+      if(e == "basics"):return "basics"
+      if(e == "arrays"):return "arrays"
+      if(e == "operators"):return "operators"
+      if(e == "statements"):return "statements"
+      if(e == "controll_structures"):return "control structures"
+      if(e == "methods"):return "methods"
+      if(e == "classes"):return "classes"
+    
+    def generate_args(self, phrase, arg): 
+      p = phrase
+
       if(phrase in  self.genbase.dict.keys()):
         phrase = random.choice( self.genbase.dict[phrase])
-                 
+        
+        if isinstance(arg,list):
+          if(p == "empfehlung_naechsterThemenblock"):
+            subsen = ""
+            if(len(arg)>2):
+              for i in range(len(arg)-2):
+                subsen += self.uebersetzung_thema(arg[i])+", "
+              subsen+= self.uebersetzung_thema(arg[len(arg)-2])+" and "+self.uebersetzung_thema(arg[len(arg)-1])
+            elif(len(arg)==2):
+              subsen+= self.uebersetzung_thema(arg[len(arg)-2])+" and "+self.uebersetzung_thema(arg[len(arg)-1])
+            elif(len(arg)==1):
+              subsen+= self.uebersetzung_thema(arg[len(arg)-1])
+            return phrase.replace("$",subsen)         
         
         if arg in self.dict_konzept_phrase.dict.keys():
           ph = self.dict_konzept_phrase.dict[arg]
@@ -124,4 +148,3 @@ class NLG_EN(object):
     
       ausgabe = ausgabe.replace("\n",'\\n')    
       return ausgabe
-

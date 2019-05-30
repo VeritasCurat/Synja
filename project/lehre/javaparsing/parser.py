@@ -1974,7 +1974,7 @@ def parse_wre(eingabe, typ):
   typ = typ.replace('\r','')
   while("  " in eingabe):eingabe = eingabe.replace('  ',' ')
   eingabe = eingabe.replace('\n',' ')
-     
+  print(typ)
   #programm structure
   if(typ == "programm_structure_main"): return main(eingabe)
   elif(typ == "programm_structure_import"): return imports(eingabe)
@@ -2061,6 +2061,7 @@ def parse_wre(eingabe, typ):
     
 def multiparse(eingabe, befehle):
   #print("test"+eingabe)
+  if(eingabe == ""): return [False,befehle]
   rennew()
   #befehle = befehle.split(' ')
   if(len(befehle) < 2):
@@ -2082,4 +2083,3 @@ def multiparse(eingabe, befehle):
   if(wort != ""):
     return parse_wre(wort, befehle[inc])
   else: return [True, eingabe] 
-

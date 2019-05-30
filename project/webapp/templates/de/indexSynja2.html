@@ -146,6 +146,16 @@ background-color: grey;
                         <input type="submit" value="deutsch" id="btn_de"> 
             </form>
         </div>
+        <div class="logout" style = "padding-top: 15px;padding-right: 10px;float: right"> 
+            <form id="logout" method="POST" action='#'>
+                        <input type="submit" value="logout" id="logout"> 
+            </form>
+        </div>
+        <div class="posttest" style = "padding-top: 15px;padding-right: 50px;float: right"> 
+            <form id="posttest" method="POST" action='#'>
+                        <input type="submit" value="posttest" id="posttest"> 
+            </form>
+        </div>
     </div>
     </div>
 </div>
@@ -378,6 +388,11 @@ background-color: grey;
             // variety of ways
             $('form#logout').submit(function(event) {
                 socket.emit('logout');
+                return false;
+            });
+            
+            $('form#posttest').submit(function(event) {
+                socket.emit('posttest');
                 return false;
             });
 

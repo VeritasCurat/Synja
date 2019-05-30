@@ -296,7 +296,6 @@ class ExpertenmodellDE(object):
           data = re.split(pattern, line)  
           if(data[0]!=None):konzeptname = data[0][1:-1]
           if(data[1]!=None):aufgstellung = data[1][1:-1]
-          
           patternbefehl1 = r"\$parse .+"
           patternbefehl2 = r"\$multiparse .+"
           patternloesung = r".+"
@@ -624,9 +623,11 @@ class ExpertenmodellDE(object):
 
 
 
-ep = ExpertenmodellDE()
 '''
-print(ep.bewerten("basics", "comments", "coding", 0, "/a"))
+ep = ExpertenmodellDE()
+print(ep.bewerten("arrays", "array_reassignment", "coding", 0, "int array[] = new int[3]; array[0] = \"test\";"))
+#print(ep.bewerten("basics", "variable_definition", "coding", 0, "int 1a;"))
+print("TEST")
 print(ep.zugriffHinweis("basics", "comments", "wrong_structure"))
 print(str(ep.lessoninhalte.keys()))
 print(ep.zugriffEnaktiv("basics", "literals", 0))

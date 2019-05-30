@@ -117,6 +117,7 @@ class Syntaxkonzept(object):
             return True
         else: return False
       elif(art == "coding"):
+        print(self.aufgaben[0].parsing_befehl)
         value = parse(antworttext, self.aufgaben[0].parsing_befehl)
         return value
       elif(art == "underline_task"):

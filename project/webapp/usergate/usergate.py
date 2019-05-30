@@ -28,13 +28,15 @@ class Usergate():
   
 
   def saveUsrLogin(self):
-    logindata = open(self.verzeichnispfad+"webapp\\usergate\\logindata.txt", 'w')
+    path = os.path.join(os.path.abspath(self.verzeichnispfad),'usergate','logindata.txt')
+    logindata = open(path, 'w')    
     for user in self.usrdata.keys():
       print(user)
       logindata.write(str(user+":"+str(self.usrdata[user]))+'\n')
         
   def saveUserProgress(self):
-    progressdata = open(self.verzeichnispfad+"webapp\\usergate\\bekannteLessons.txt", 'w')
+    path = os.path.join(os.path.abspath(self.verzeichnispfad),'usergate','usrprogress.csv')
+    progressdata = open(path, 'w')
     for user in self.usrProgress.keys():
       print(user)
       progressdata.write(str(user+": "+str(self.usrProgress[user]))+'\n')
@@ -74,6 +76,3 @@ class Usergate():
     self.saveUserProgress()
    
 
-ug = Usergate()
-print(ug.checkLogin("john", "12345"))
-print(ug.checkLogin("bob", "1234"))

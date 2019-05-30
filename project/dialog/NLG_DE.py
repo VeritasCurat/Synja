@@ -5,6 +5,8 @@ Created on 21.01.2019
 '''
 import os
 import sys
+from builtins import isinstance
+
 sys.path.append(os.path.abspath('../lehre'))
 
 source = "rasa\phrasesDE.json"
@@ -87,11 +89,37 @@ class NLG_DE(object):
       self.dict_konzept_phrase = Dict_konzept_phrase()
       return
     
+    def uebersetzung_thema(self,e):
+      if(e == "programm_structure"):return "Programmstruktur"
+      if(e == "basics"):return "Grundlagen"
+      if(e == "arrays"):return "Arrays"
+      if(e == "operators"):return "Operatoren"
+      if(e == "statements"):return "Anweisungen"
+      if(e == "controll_structures"):return "Kontrollstrukturen"
+      if(e == "methods"):return "Methoden"
+      if(e == "classes"):return "Klassen"
+
+    
     def generate_args(self, phrase, arg):
+      p = phrase
+      print(phrase+" "+str(arg))
+
       if(phrase in  self.genbase.dict.keys()):
         phrase = random.choice( self.genbase.dict[phrase])
                  
-        
+        if isinstance(arg,list):
+          if(p == "empfehlung_naechsterThemenblock"):
+            subsen = ""
+            if(len(arg)>2):
+              for i in range(len(arg)-2):
+                subsen += self.uebersetzung_thema(str(arg[i]))+", "
+              subsen+= self.uebersetzung_thema(arg[len(arg)-2])+" und "+self.uebersetzung_thema(arg[len(arg)-1])
+            elif(len(arg)==2):
+              subsen+= self.uebersetzung_thema(arg[len(arg)-2])+" und "+self.uebersetzung_thema(arg[len(arg)-1])
+            elif(len(arg)==1):
+              subsen+= self.uebersetzung_thema(arg[len(arg)-1])
+            return phrase.replace("$",subsen)
+          
         if arg in self.dict_konzept_phrase.dict.keys():
           ph = self.dict_konzept_phrase.dict[arg]
           phrase = phrase.replace("$", ph,1)
@@ -125,4 +153,3 @@ class NLG_DE(object):
     
       ausgabe = ausgabe.replace("\n",'\\n')    
       return ausgabe
-

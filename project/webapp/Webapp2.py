@@ -34,6 +34,7 @@ from project.webapp.liza.l import L
 from project.webapp.usergate.usergate import Usergate
 from flask.helpers import url_for
 from builtins import isinstance
+from project.lehre.javaparsing.parser import parse,multiparse
 
 async_mode = None
 
@@ -55,49 +56,71 @@ usergate = Usergate()
 
 logins = {} #ip -> [name, password]; None falls nicht eingeloggt
 sprache = {} #ip -> sprache e ["de","en"]
+currentroute = {} #ip -> route
+pretest_ergebnisse = {} #loginname -> []
 print("webapp ready!")
 
-@app.route('/editor')
-def render_indexEditor():
-    return render_template('test.html', async_mode=socketio.async_mode) 
 
 @app.route('/synja')
 def render_indexSynja():
-    #if(request.remote_addr not in logins.keys()):
-    #  return render_template('indexGate.html', async_mode=socketio.async_mode) 
-    return render_template('indexSynja2.html', async_mode=socketio.async_mode) 
-    
+    currentroute[request.remote_addr] = "render_indexSynja"
+    if(request.remote_addr not in logins.keys()):
+      if(request.remote_addr in sprache and sprache[request.remote_addr] == "en"): return render_template('en/indexGate.html', async_mode=socketio.async_mode) 
+      else: return render_template('de/indexGate.html', async_mode=socketio.async_mode) 
+    else:
+      if(request.remote_addr in sprache and sprache[request.remote_addr] == "en"):return render_template('en/indexSynja2.html', async_mode=socketio.async_mode) 
+      else: return render_template('de/indexSynja2.html', async_mode=socketio.async_mode) 
+      
 @app.route('/liza')
 def render_indexLiza():
-    return render_template('indexLiza.html', async_mode=socketio.async_mode)  
-
+    currentroute[request.remote_addr] = "render_indexLiza"
+    if(request.remote_addr in sprache and sprache[request.remote_addr] == "de"): return render_template('en/indexLiza.html', async_mode=socketio.async_mode)  
+    return render_template('de/indexLiza.html', async_mode=socketio.async_mode)  
+  
 @app.route('/usergate')
 def render_indexGate():
-    return render_template('indexGate.html', async_mode=socketio.async_mode)  
-
+    currentroute[request.remote_addr] = "render_indexGate"
+    if(request.remote_addr in sprache and sprache[request.remote_addr] == "en"): return render_template('en/indexGate.html', async_mode=socketio.async_mode)  
+    else: return render_template('de/indexGate.html', async_mode=socketio.async_mode)  
+    
 @app.route('/')
 def render_main():
-    return render_template('main.html', async_mode=socketio.async_mode)
-
+    currentroute[request.remote_addr] = "render_main"
+    print(currentroute[request.remote_addr] )
+    if(request.remote_addr in sprache and sprache[request.remote_addr] == "en"): return render_template('en/main.html', async_mode=socketio.async_mode)
+    else: return render_template('de/main.html', async_mode=socketio.async_mode)  
+  
 @app.route('/about')
 def render_about():
-    return render_template('about-us.html', async_mode=socketio.async_mode)
-  
+    currentroute[request.remote_addr] = "render_about"
+    if(request.remote_addr in sprache and sprache[request.remote_addr] == "en"): return render_template('en/about-us.html', async_mode=socketio.async_mode)
+    else: return render_template('de/about-us.html', async_mode=socketio.async_mode)
+    
 @app.route('/how-to-use')
 def render_howtouse():
-    return render_template('how-to-use.html', async_mode=socketio.async_mode)
-  
+    currentroute[request.remote_addr] = "render_howtouse"
+    if(request.remote_addr in sprache and sprache[request.remote_addr] == "en"): return render_template('en/how-to-use.html', async_mode=socketio.async_mode)
+    else: return render_template('de/how-to-use.html', async_mode=socketio.async_mode)
+    
 @app.route('/pretest')
 def render_pretest():
+    currentroute[request.remote_addr] = "render_pretest"
     if(request.remote_addr not in logins.keys()):
-      return render_template('indexGate.html', async_mode=socketio.async_mode)
-    return render_template('indexExperimentPretest.html', async_mode=socketio.async_mode)  
-  
+      if(request.remote_addr in sprache and sprache[request.remote_addr] == "en"): return render_template('en/indexGate.html', async_mode=socketio.async_mode)
+      else: return render_template('de/indexGate.html', async_mode=socketio.async_mode)
+    else:
+      if(request.remote_addr in sprache and sprache[request.remote_addr] == "en"): return render_template('en/indexExperimentPretest.html', async_mode=socketio.async_mode)  
+      else: return render_template('de/indexExperimentPretest.html', async_mode=socketio.async_mode)  
+
 @app.route('/posttest')
-def posttest():
+def render_posttest():
+    currentroute[request.remote_addr] = "render_posttest"
     if(request.remote_addr not in logins.keys()):
-      return render_template('indexGate.html', async_mode=socketio.async_mode)
-    return render_template('indexExperimentPosttest.html', async_mode=socketio.async_mode)  
+      if(request.remote_addr in sprache and sprache[request.remote_addr] == "en"): return render_template('en/indexExperimentPosttest.html', async_mode=socketio.async_mode)
+      else: return render_template('de/indexExperimentPosttest.html', async_mode=socketio.async_mode)
+    else:
+      if(request.remote_addr in sprache and sprache[request.remote_addr] == "en"): return render_template('en/indexExperimentPosttest.html', async_mode=socketio.async_mode)  
+      else: return render_template('de/indexExperimentPosttest.html', async_mode=socketio.async_mode)  
 
 def background_threadSynjaLiza():
     count = 0
@@ -255,48 +278,70 @@ def logout_synja():
       for synja in synjas:
         if synja.id == request.sid:
           synja.save()
+
+@socketio.on('posttest', namespace='/synja')
+def synja_to_posttest():
+  if(request.remote_addr in logins.keys()):
+    emit('redirect', {'url': url_for('render_posttest')}) 
+    for synja in synjas:
+      if synja.id == request.sid:
+        synja.save()         
+          
           
 @socketio.on('btn_de', namespace='/synja')
 def change_lang_de_synja():
+  print("TEST77")
+  sprache[request.remote_addr] = "de"
   for synja in synjas:
     if synja.id == request.sid:
       #print("WA de: "+message['data']+" from ["+str(synja.name)+"]")
       print("SPRACHE DEUTSCH")
       synja.sprache = "de"
+  print(currentroute[request.remote_addr])
+  emit('redirect', {'url': url_for(currentroute[request.remote_addr])}) 
       
 @socketio.on('btn_en', namespace='/synja')
 def change_lang_en_synja():
+  print("TEST77")
+  sprache[request.remote_addr] = "en"
   for synja in synjas:
     if synja.id == request.sid:
       #print("WA de: "+message['data']+" from ["+str(synja.name)+"]")
       print("SPRACHE ENGLISCH")
       synja.sprache = "en"
+  print(currentroute[request.remote_addr])
+  emit('redirect', {'url': url_for(currentroute[request.remote_addr])}) 
       
 @socketio.on('connect', namespace='/synja')
 def connect_synja():
-    #if(request.remote_addr not in logins.keys()):
-    #  emit('redirect', {'url': url_for('render_indexGate')})
-    #  return
-     
+    if(request.remote_addr not in logins.keys() or request.remote_addr not in pretest_ergebnisse):
+      emit('redirect', {'url': url_for('render_indexGate')})
+      return
+    
     if(request.sid not in connections):
       connections.append(request.sid)
       #print("New connection: " + request.sid)
     
     name = "NO_ACCOUNT"
-    #name = logins[request.remote_addr]
+  
     #print("WA neuer Nutzer: "+str(name)+" "+request.remote_addr)
     
     nr = len(synjas)+1    
     Synja_ = Synja(request.sid, nr, name)
-    if(str(name) in synja_newusers): Synja_.lehrmanager.neuernutzer = True
+    Synja_.lehrmanager.neuernutzer = True
+    if(request.remote_addr in logins):
+      name = logins[request.remote_addr]
+      Synja_.name = name
+      Synja_.lehrmanager.schuelermodell.name = name
+      Synja_.lehrmanager.schuelermodell.eintragen_pretest(pretest_ergebnisse[request.remote_addr])
     thread_list.append(Synja_)
     synjas.append(Synja_)
     Synja_.start()
     global thread
     with thread_lock:
-        if thread is None:
-            emit('hinweis',{}, room=request.sid)
-            thread = socketio.start_background_task(target=background_threadSynjaLiza)
+      if thread is None:
+        emit('hinweis',{}, room=request.sid)
+        thread = socketio.start_background_task(target=background_threadSynjaLiza)
     #emit('my_response', {'data': 'Connected\n', 'count': 0})         
         
 @socketio.on('disconnect', namespace='/synja')
@@ -345,10 +390,10 @@ def login_usergate(message):
       
       bool = usergate.checkLogin(message['name'], message['password'])
       if(bool == True):
-        socketio.emit('login_nachricht',{'data': "Login sucessful! Redirecting to Synja Pedagogical Agent."},namespace='/usergate', room=request.sid)
+        socketio.emit('login_nachricht',{'data': "Login sucessful! Redirecting to Pretest."},namespace='/usergate', room=request.sid)
 
         logins[request.remote_addr] = message['name']
-        emit('redirect', {'url': url_for('render_indexSynja')})
+        emit('redirect', {'url': url_for('render_pretest')})
       else:
         socketio.emit('login_nachricht',{'data': "Username or password are wrong! Please try again."},namespace='/usergate', room=request.sid)
 
@@ -368,7 +413,7 @@ def create_usergate(message):
         socketio.emit('create_nachricht',{'data': "New account created!"}, namespace='/usergate', room=request.sid)
         synja_newusers.append(message['name'])
         logins[request.remote_addr] = message['name']
-        emit('redirect', {'url': url_for('render_indexSynja')})
+        emit('redirect', {'url': url_for('render_pretest')})
       else:
         socketio.emit('create_nachricht',{'data': "Username is already in use, please use another one."},namespace='/usergate', room=request.sid)
  
@@ -378,8 +423,117 @@ def enter_usergate(message):
     #emit('enter_RCV',{'name': 'You: '+message['name'], 'count': session['receive_count']}, room=request.sid)  
     logins[request.remote_addr] = "NO_ACCOUNT"
     socketio.emit('enter_nachricht',{'data': "You will be redirected to Synja ... "}, namespace='/usergate', room=request.sid)
-    emit('redirect', {'url': url_for('render_indexSynja')})
-      
+    emit('redirect', {'url': url_for('render_pretest')})
+  
+  
+
+@socketio.on('preres', namespace='/pretest')
+def pretest_results(message):
+  ergebnisse = berechne_ergebnisse_test(message)
+  pretest_ergebnisse[request.remote_addr] = ergebnisse
+  print(str(ergebnisse))
+  emit('redirect', {'url': url_for('render_indexSynja')})
+  
+@socketio.on('postres', namespace='/posttest')
+def posttest_results(message):
+  ergebnisse = berechne_ergebnisse_test(message)
+  loginname = logins[request.remote_addr]
+  for synja in synjas:
+    if synja.name == loginname:
+      synja.lehrmanager.schuelermodell.eintragen_posttest(ergebnisse)
+  emit('redirect', {'url': url_for('render_main')})
+  
+def berechne_ergebnisse_test(message):  
+  ergebnisse = {}
+  ergebnisse["programm_structure"] = []
+  ergebnisse["basics"] = []
+  ergebnisse["arrays"] = []
+  ergebnisse["operators"] = []
+  ergebnisse["statements"] = []
+  ergebnisse["controll_structures"] = []
+  ergebnisse["methods"] = []
+  ergebnisse["classes"] = [] 
+  
+  if(parse(message["aufg1"],"programm_structure_main")[0] == True):ergebnisse["programm_structure"].append(1)
+  else: ergebnisse["programm_structure"].append(0)
+  if(parse(message["aufg2"],"programm_structure_import")[0] == True):ergebnisse["programm_structure"].append(1)
+  else: ergebnisse["programm_structure"].append(0)
+  if(parse(message["aufg3"],"integer_literals")[0] == True):ergebnisse["basics"].append(1)
+  else: 
+    print(parse(message["aufg3"],"integer_literals"))
+    ergebnisse["basics"].append(0)
+  if(parse(message["aufg4"],"variable_definition")[0] == True):ergebnisse["basics"].append(1)
+  else: 
+    print(parse(message["aufg4"],"variable_definition"))
+    ergebnisse["basics"].append(0) 
+  if(parse(message["aufg5"],"array_definition")[0] == True):ergebnisse["arrays"].append(1)
+  else: ergebnisse["arrays"].append(0)
+  if(multiparse(message["aufg6"],["array_declaration","array_access"])[0] == True):ergebnisse["arrays"].append(1)
+  else: ergebnisse["arrays"].append(0) 
+  if(parse(message["aufg7"],"arithmetic_operators")[0] == True):ergebnisse["operators"].append(1)
+  else: ergebnisse["operators"].append(0)
+  if(multiparse(message["aufg8"],["variable_definition","variable_reassignment"])[0] == True):ergebnisse["operators"].append(1)
+  else: ergebnisse["operators"].append(0)
+  if(parse(message["aufg9"],"code_blocks")[0] == True):ergebnisse["statements"].append(1)
+  else: ergebnisse["statements"].append(0)
+  if(parse(message["aufg10"],"if")[0] == True):ergebnisse["controll_structures"].append(1)
+  else: ergebnisse["controll_structures"].append(0)
+  if(parse(message["aufg11"],"while")[0] == True):ergebnisse["controll_structures"].append(1)
+  else: ergebnisse["controll_structures"].append(0)
+  if(parse(message["aufg12"],"method_definition")[0] == True):ergebnisse["methods"].append(1)
+  else: ergebnisse["methods"].append(0)
+  if(parse(message["aufg13"],"access_modifiers")[0] == True):ergebnisse["classes"].append(1)
+  else: ergebnisse["classes"].append(0)
+  return ergebnisse
+
+    
+@socketio.on('preres2', namespace='/pretest')
+def pretest_results2(message):
+  login = logins[request.remote_addr][0]
+  ergebnisse = {}
+  ergebnisse["programm_structure"] = []
+  ergebnisse["basics"] = []
+  ergebnisse["arrays"] = []
+  ergebnisse["operators"] = []
+  ergebnisse["statements"] = []
+  ergebnisse["controll_structures"] = []
+  ergebnisse["methods"] = []
+  ergebnisse["classes"] = []
+
+  if(message["aufg1"] == "public"):ergebnisse["programm_structure"].append(1)
+  else: ergebnisse["programm_structure"].append(0)
+  if(message["aufg2"] == "."):ergebnisse["programm_structure"].append(1)
+  else: ergebnisse["programm_structure"].append(0)
+  if(message["aufg3"] == "char" or message["aufg3"] == "short" or message["aufg3"] == "long" or message["aufg3"] == "byte" or message["aufg3"] == "int" or message["aufg3"] == "float" or message["aufg3"] == "double"):ergebnisse["basics"].append(1)
+  else: ergebnisse["basics"].append(0)
+  if(message["aufg4"] == "float"):ergebnisse["basics"].append(1)
+  else: ergebnisse["basics"].append(0) 
+  if(message["aufg5"] == "new int[3]"):ergebnisse["arrays"].append(1)
+  else: ergebnisse["arrays"].append(0)
+  if(message["aufg6"] == "[1]"):ergebnisse["arrays"].append(1)
+  else: ergebnisse["arrays"].append(0) 
+  if(message["aufg7"] == "++i"):ergebnisse["operators"].append(1)
+  else: ergebnisse["operators"].append(0)
+  if(message["aufg8"] == "/=" or message["aufg8"] == "*=" or message["aufg8"] == "-="  or message["aufg8"] == "+=" or message["aufg8"] == "<<" or message["aufg8"] == ">>" or message["aufg8"] == ">>>"):ergebnisse["operators"].append(1)
+  else: ergebnisse["operators"].append(0)
+  if(message["aufg9"] == "}"):ergebnisse["statements"].append(1)
+  else: ergebnisse["statements"].append(0)
+  if(message["aufg10"] == "switch"):ergebnisse["controll_structures"].append(1)
+  else: ergebnisse["controll_structures"].append(0)
+  if(message["aufg11"] == "true" or message["aufg11"] == "false"):ergebnisse["controll_structures"].append(1)
+  else: ergebnisse["controll_structures"].append(0)
+  if(message["aufg12"] == "return sum"):ergebnisse["methods"].append(1)
+  else: ergebnisse["methods"].append(0)
+  if(message["aufg13"] == "sum(Ar)"):ergebnisse["methods"].append(1)
+  else: ergebnisse["methods"].append(0)
+  if(message["aufg14"] == "public"):ergebnisse["classes"].append(1)
+  else: ergebnisse["classes"].append(0)
+  if(message["aufg15"] == "a.name"):ergebnisse["classes"].append(1)
+  else: ergebnisse["classes"].append(0)
+  pretest_ergebnisse[request.remote_addr] = ergebnisse
+  print(str(ergebnisse))
+  emit('redirect', {'url': url_for('render_indexSynja')})
+
         
 '''      
 LIZACODE
@@ -484,4 +638,5 @@ def disconnect_liza():
   
 if __name__ == '__main__':
   #s = serve(app, host='127.0.0.1', port=80)
-  socketio.run(app, host='0.0.0.0', port=80)
+  socketio.run(app, host='127.0.0.1', port=83)
+ 

@@ -462,6 +462,7 @@ class Lehrmanager:
     self.dialogausgaben.append("dialog")
     self.schuelermodell.speichern()
     self.expected_entry = "dialog"
+    self.dialogausgaben.append(["empfehlung_naechsterThemenblock",self.schuelermodell.sorted_lessonlist])
     self.dialogausgaben.append("frage_naechsterThemenblock")
     self.emotion = "neutral"
     #if(len(self.schuelermodell.bekannteLessons)>0):self.dialogausgaben.append(["schueler_wissen",self.enumaration(self.schuelermodell.bekannteLessons).replace('_',' ')])
@@ -813,7 +814,6 @@ class Lehrmanager:
       #print(self.testblockaufglist)
     
     if(self.punkte_test < 3):  
-      print("test777: "+str(self.punkte_test))
       if(self.zustand_test == "start"):
         #print(self.testblockaufgct)
         self.gen_next_tb_aufg()
@@ -893,7 +893,7 @@ class Lehrmanager:
           self.emotion = "neutral"
           return
     elif(self.punkte_test >= 3):
-      print("ENDE")
+      #print("ENDE")
       self.testblockaufglist = []
       self.testblockaufgabe = None
       self.expected_entry = "dialog"
@@ -1021,6 +1021,7 @@ class Lehrmanager:
     if(self.punkte_test >= self.min_punkte_bestehen):
       #print("Test1")
       self.dialogausgaben.append("Testergebnis_erfolgreich")
+      self.dialogausgaben.append(["empfehlung_naechsterThemenblock",self.schuelermodell.sorted_lessonlist])
       self.dialogausgaben.append("frage_naechsterThemenblock")
       self.emotion = "freude"
       #if(len(self.schuelermodell.bekannteLessons)>0):self.dialogausgaben.append(["schueler_wissen",self.enumaration(self.schuelermodell.bekannteLessons).replace('_',' ')])

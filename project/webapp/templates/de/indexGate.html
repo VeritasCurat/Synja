@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>User Gate to Synja Pedagogical Agent</title>
+    <title>User Gate für den Pädagogischen Agenten Synja</title>
     <script type="text/javascript" src="//code.jquery.com/jquery-1.4.2.min.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.5/socket.io.min.js"></script>
     <script type="text/javascript" charset="utf-8">
@@ -64,10 +64,8 @@
             // variety of ways
             $('form#login').submit(function(event) {
 
-                var btnSubscribe = document.getElementById("btnSubmitSubscribe");
+                //var btnSubscribe = document.getElementById("btnSubmitSubscribe");
 
-
-                
             	socket.emit('login', {name: $('#login_username').val(), password:$('#login_password').val()});
                 $('form#login').trigger("reset");
                 return false;
@@ -110,8 +108,6 @@
                 $('#ping-pong').text(Math.round(10 * sum / ping_pong_times.length) / 10);
             });
             
-            
-          
             $('form#join').submit(function(event) {
                 socket.emit('join', {room: $('#join_room').val()});
                 return false;
@@ -182,7 +178,7 @@ h1, h2, h3, h4 {
 <body>
 <div class="header">
 <p style="padding: 30px">
-contact details:<br>Dr. Nguyen-Thinh Le (<a href="mailto:lenguyen@hu-berlin.de">lenguyen@hu-berlin.de</a>)<br>Johannes Grobelski (<a href="grobelsj@informatik.hu-berlin.de">grobelsj@informatik.hu-berlin.de</a>)
+Kontakt:<br>Dr. Nguyen-Thinh Le (<a href="mailto:lenguyen@hu-berlin.de">lenguyen@hu-berlin.de</a>)<br>Johannes Grobelski (<a href="grobelsj@informatik.hu-berlin.de">grobelsj@informatik.hu-berlin.de</a>)
 </p>
 </div>
 
@@ -190,12 +186,9 @@ contact details:<br>Dr. Nguyen-Thinh Le (<a href="mailto:lenguyen@hu-berlin.de">
 <img src="/static/logo.jpg" style="float: right;" />
 
 <div class="container">
-<h1 style="padding-top: 100px;">Login to Synja Pedagogical Agent</h1>
-<p>Please log in to access Synja. Just use your Username and Password. <br> Or create a new account by setting your username, password and emailadress.</p>
+<h1 style="padding-top: 100px;">Login für den Pädagogischen Agenten Synja</h1>
+<p>Bitte melde dich an um Synja zu nutzen.<br> Falls du noch kein Benutzerkonto hast erstelle einen neues Benutzerkonto weiter unten.<br>Der Account wird genutzt, damit dein Fortschritt gespeichert werden kann.<br>Keine nutzerbezogenen Daten werden gespeichert und keine Daten werden an dritte weitergegeben.</p>
 <font color="red">
-<div style="width: 100%; margin-left:auto; margin-right:auto; overflow-y: auto;">
-	<p><b>Please consider participating in my experiment for my Bachelor thesis. It only takes a few minutes.<br>More Information (link) TODO</b></p>
-</div>
 </font>
 
 <!---    <p>Async mode is: <b>{{ async_mode }}</b></p>-->
@@ -207,30 +200,24 @@ contact details:<br>Dr. Nguyen-Thinh Le (<a href="mailto:lenguyen@hu-berlin.de">
         <input type="submit" value="login" id="login">        
     </form>
     
-    <h2>Create a new account</h2>
+    <h2>Erstelle einen neuen Nutzernamen:</h2>
     <form id="create" method="POST" action='#'>
         <input type="text" name="create_username" id="create_username" placeholder="username">
         <input type="text" name="create_password" id="create_password" placeholder="password">
         <input type="submit" value="create Acount" id="create Acount"> 
 	</form>
 
-    <h2>Enter without account</h2>
-    <form id="enter" method="POST" action='#'>
-        <input type="submit" value="Enter without login" id="Enter without login"> 
-        <p>(This means your progress is not saved and you can not enjoy the full user experience!)</p>
-    </form>
-
 	<h1 style="padding-top: 0px;"></h1>
 	<!---    <p>Async mode is: <b>{{ async_mode }}</b></p>-->
     <div class="nachrichtentext">
    	 <div id="nachricht"></div>
     </div>
-<p>Average ping/pong latency: <b><span id="ping-pong"></span>ms</b></p>
+<p>Durchschnittlicher ping: <b><span id="ping-pong"></span>ms</b></p>
 
 </div>
 
 <div class="footer">
-<a href="http://141.20.25.58/">Back to Mainpage</a>
+<a href="http://141.20.25.58/">Zurück zur Hauptseite</a>
 </div>
 
 

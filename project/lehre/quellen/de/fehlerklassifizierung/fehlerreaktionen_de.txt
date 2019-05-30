@@ -201,7 +201,7 @@ lesson: controll_structures
 "do_while":::"do_while_continue":::"continue"
 "do_while":::"do_while_wrong_semicolon":::"do_while"
 "switch":::"switch_no_keyword":::"switch"
-"switch":::"switch_round_brackets_not_matching":::"switch"
+"switch":::"switch_round_brackets_not_matching":::"variable_definition switch"
 "switch":::"switch_curly_brackets_not_matching":::"switch"
 "switch":::"switch_non_variable":::"variable_definition"
 "switch":::"switch_wrong_default":::"switch"

@@ -2,8 +2,11 @@
 <html>
 <head>
 <title>Synja & Liza</title>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.5/socket.io.min.js"></script>
 </head>
-
+<script type="text/javascript" src="//code.jquery.com/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.5/socket.io.min.js"></script>
 <style>
 .header {
   background-color: lightgrey;
@@ -55,8 +58,20 @@ $color: #e2cef9;
 <div class="header">
 <p style="padding: 30px">
 contact details:<br>Dr. Nguyen-Thinh Le (<a href="mailto:lenguyen@hu-berlin.de">lenguyen@hu-berlin.de</a>)<br>Johannes Grobelski (<a href="grobelsj@informatik.hu-berlin.de">grobelsj@informatik.hu-berlin.de</a>)
-</p>
+<div>
+        <div class="btn_en" style = "padding-top: 15px;padding-right: 10px;float: right"> 
+            <form id="btn_en" method="POST" action='#'>
+                        <input type="submit" value="english" id="btn_en"> 
+            </form>
+        </div>
+        <div class="btn_de" style = "padding-top: 15px;padding-right: 10px;float: right"> 
+            <form id="btn_de" method="POST" action='#'>
+                        <input type="submit" value="deutsch" id="btn_de"> 
+            </form>
+        </div>
+    </div>
 </div>
+</p>
 
 <img src="/static/logo.jpg" style="float: right;" />
 
@@ -92,4 +107,17 @@ contact details:<br>Dr. Nguyen-Thinh Le (<a href="mailto:lenguyen@hu-berlin.de">
 
 
 </body>
+<script>
+	$('form#btn_de').submit(function(event) {
+        socket.emit('btn_de');
+        return false;
+    });
+
+    $('form#btn_en').submit(function(event) {
+        socket.emit('btn_en');
+        return false;
+    });
+
+            
+</script>
 </html> 

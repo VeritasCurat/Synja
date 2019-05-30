@@ -56,7 +56,7 @@ lesson: basics
 "variable_definition_initialization":::"variable_definition_initialization_contructor_parameter_mismatch_len":::"Dies ist keine gültige Variablendefinition und -initialisierung. Dies stimmt nicht mit der Anzahl der im Konstruktor verwendeten Parameter überein: <b>$</b>."
 "variable_definition_initialization":::"variable_definition_initialization_wrong_structure":::"Dies ist kein gültiges Gebäude für eine Variablendefinition und -initialisierung: <b>$</b>."
 "variable_definition":::"variable_definition_wrong_structure":::"Dies ist nicht die richtige Struktur für eine Variablendefinition: $"
-"variable_definition":::"variable_definition_non_identifier":::"Dies ist keine gültige Variablendefinition. Dies ist keine gültige Kennung: <b>$</b>."
+"variable_definition":::"variable_definition_non_identifier":::"Dies ist keine gültige Variablendefinition. Dies ist kein gültiger Bezeichner: <b>$</b>."
 "variable_definition":::"variable_definition_name_double":::"Dies ist keine gültige Variablendefinition. Dieser Variablenname wurde bereits beansprucht: <b>$</b>."
 "variable_definition":::"variable_definition_wrong_semicolon":::"Dies ist keine gültige Variablendefinition. Dies endet nicht mit einem Semikolon: <b>$</b>."
 "variable_definition":::"variable_definition_non_type":::"Dies ist keine gültige Variablendefinition. Dies muss einen bekannten Typ haben: <b>$</b>."
