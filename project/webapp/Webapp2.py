@@ -13,30 +13,33 @@ Webapp fuer Synja und Liza
 import os
 import sys
 
-import threading
-import time
+
 #import gevent
 #from engineio.async_drivers import eventlet
+import datetime
+from flask.helpers import url_for
+from builtins import isinstance
+from threading import Lock
 
+
+print("imported utils")
 
 path2 = os.path.realpath(__file__)[:-26]
 print(path2)
 sys.path.append(path2)
 
-from threading import Lock
 from flask import Flask, render_template, session, request
 from project.webapp.flask_socketio import SocketIO, emit, join_room, leave_room, close_room, rooms, disconnect
 from project.webapp.SynjaWeb2 import Synja
-import datetime
-
+from project.webapp.verlauf import eintragen_load
 from project.webapp.liza.l import L
 
 from project.webapp.usergate.usergate import Usergate
-from flask.helpers import url_for
-from builtins import isinstance
 from project.lehre.javaparsing.parser import parse,multiparse
 
 async_mode = None
+
+
 
 app = Flask(__name__) #, static_url_path="/static"
 app.config['SECRET_KEY'] = 'asde24oyx58ci6ad3skgr91ua2wp3oasd'
@@ -124,12 +127,20 @@ def render_posttest():
 
 def background_threadSynjaLiza():
     count = 0
+    eintragen_load()
+
+    loadtimer = 0
     while True:
       count += 1
       #socketio.emit('my_response',
       #              {'data': 'Server generated event', 'count': count},
       #              namespace='/synja', room = connections[0])
       socketio.sleep(0.01)
+      loadtimer += 1
+      if(loadtimer > 1000):
+        eintragen_load()
+        loadtimer = 0
+        
       for synja in synjas:       
         #
         try:    
@@ -169,6 +180,7 @@ def background_threadSynjaLiza():
           socketio.emit('underline_checkS', {}, namespace='/synja', room=synja.id)
           
           count += 1
+          
           
           #synja.stop_timer()
 
@@ -352,6 +364,11 @@ def disconnect_synja():
         print("set to stop")
         synja.running = False
         synja.running = False
+        try:
+          synjas.remove(synja)
+          synja = None
+        except:
+          1+1
         
     
 @socketio.on('my_ping', namespace='/synja')
@@ -638,5 +655,5 @@ def disconnect_liza():
   
 if __name__ == '__main__':
   #s = serve(app, host='127.0.0.1', port=80)
-  socketio.run(app, host='127.0.0.1', port=83)
+  socketio.run(app, host='0.0.0.0', port=81)
  

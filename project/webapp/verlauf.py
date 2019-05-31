@@ -5,6 +5,7 @@ Created on 06.05.2019
 '''
 import os
 import sys
+#import psutil
 sys.path.append(os.path.abspath('../lehre'))
 
 
@@ -15,6 +16,18 @@ import csv
 from time import gmtime, strftime
 verzeichnispfad = os.path.realpath(__file__)
 
+def eintragen_load():
+  '''
+  cpu = psutil.cpu_percent()
+  mem = psutil.virtual_memory()
+  timestamp = strftime("%Y-%m-%d %H:%M:%S", gmtime())
+  path = os.path.join(os.path.dirname(verzeichnispfad), 'other', 'systemload.csv')
+  print(str(cpu)+" "+str(mem))
+  with open(path,'a+') as myfile:
+    wr = csv.writer(myfile, quoting=csv.QUOTE_ALL)
+    wr.writerow([timestamp,cpu,mem])
+  '''
+  
 class Verlauf(object):
     '''
     classdocs
@@ -27,7 +40,10 @@ class Verlauf(object):
     def __init__(self, expertenmodellEN, expertenmodellDE):
       self.ep_en = expertenmodellEN
       self.ep_de = expertenmodellDE
-
+     
+    
+      
+      
     def eintragen(self, sprache, id, lesson, konzeptname, art, version, antworttext, bewertung):
       if(sprache == "en"):aufgabenstellung = self.ep_en.zugriffLehreinheit(lesson, konzeptname, art, version)
       elif(sprache == "de"):aufgabenstellung = self.ep_de.zugriffLehreinheit(lesson, konzeptname, art, version)
