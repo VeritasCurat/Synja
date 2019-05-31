@@ -1,10 +1,13 @@
-from project.webapp.liza.domain import Domain as domain
+import sys,os
+sys.path.append(os.path.abspath('../webapp/liza'))
+
+#from domain import Domain as domain #@Unresolvedimport
 from rasa_nlu.training_data import load_data
-from rasa_nlu.config import RasaNLUModelConfig
+#from rasa_nlu.config import RasaNLUModelConfig
 from rasa_nlu.components import ComponentBuilder
 from rasa_nlu.model import Trainer
 from rasa_nlu import config
-from rasa_nlu.model import Metadata, Interpreter
+from rasa_nlu.model import Interpreter#Metadata, 
 import random
 
 class Parsing:

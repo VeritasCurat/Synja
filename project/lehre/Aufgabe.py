@@ -7,7 +7,7 @@ import os
 import sys
 
 sys.path.append(os.path.abspath('.'))
-from javaparsing.parser import * #@Unresolvedimport
+from javaparsing.javaparser import * #@Unresolvedimport
 
 class Underline_Task(object):
     konzept = ""

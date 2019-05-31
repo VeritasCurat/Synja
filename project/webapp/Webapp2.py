@@ -13,34 +13,28 @@ Webapp fuer Synja und Liza
 import os
 import sys
 
-
 #import gevent
 #from engineio.async_drivers import eventlet
 import datetime
 from flask.helpers import url_for
 from builtins import isinstance
 from threading import Lock
-
-
-print("imported utils")
-
-path2 = os.path.realpath(__file__)[:-26]
-print(path2)
-sys.path.append(path2)
-
 from flask import Flask, render_template, session, request
-from project.webapp.flask_socketio import SocketIO, emit, join_room, leave_room, close_room, rooms, disconnect
-from project.webapp.SynjaWeb2 import Synja
-from project.webapp.verlauf import eintragen_load
-from project.webapp.liza.l import L
+from flask_socketio import SocketIO, emit, join_room, leave_room, close_room, rooms, disconnect
+print("libs ready!")
 
-from project.webapp.usergate.usergate import Usergate
-from project.lehre.javaparsing.parser import parse,multiparse
+
+sys.path.append(os.path.abspath('../lehre/javaparsing'))
+sys.path.append(os.path.abspath('.'))
+
+from javaparser import parse,multiparse  #@Unresolvedimport
+from SynjaWeb2 import Synja  #@Unresolvedimport
+from verlauf import eintragen_load  #@Unresolvedimport
+from liza.l import L  #@Unresolvedimport
+from usergate.usergate import Usergate  #@Unresolvedimport
+print("natives ready!")
 
 async_mode = None
-
-
-
 app = Flask(__name__) #, static_url_path="/static"
 app.config['SECRET_KEY'] = 'asde24oyx58ci6ad3skgr91ua2wp3oasd'
 socketio = SocketIO(app, async_mode=async_mode) #, async_mode=async_mode

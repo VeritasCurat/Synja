@@ -1,12 +1,16 @@
 import threading
-from project.webapp.liza.ui import UI
 import time
-from project.webapp.liza.domain import Domain
-from project.webapp.liza.phrasebase import Phrasebase
-from project.webapp.liza.evaluation import Evaluation
 import sys
-from project.webapp.liza.parsing import Parsing
+import os 
 import warnings
+
+sys.path.append(os.path.abspath('../webapp/liza'))
+
+from ui import UI  #@Unresolvedimport
+from domain import Domain  #@Unresolvedimport
+from phrasebase import Phrasebase  #@Unresolvedimport
+from evaluation import Evaluation  #@Unresolvedimport
+from parsing import Parsing #@Unresolvedimport
 from random import randint
 
 class L(threading.Thread):

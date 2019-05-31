@@ -7,11 +7,11 @@ lesson: basics
 "literals":::"Lass uns ein paar richtige Literale schreiben.":::{""test""::""name""::""var""}
 "integer_literals":::"Lass uns ein paar richtige Integerliterale schreiben.":::{"0b0101"::"12"::"032532"::"0xAA"}
 "floating-point_literals":::"Lass uns ein paar richtige Gleitkommazahlliterale schreiben.":::{"1.0F"::"1.0D"::".1"}
-"character_literals":::"Lass uns ein paar richtige character-Literale schreiben.”:::{“’c’”::”’1’”::”’\n’”}
+"character_literals":::"Lass uns ein paar richtige character-Literale schreiben.â€�:::{â€œâ€™câ€™â€�::â€�â€™1â€™â€�::â€�â€™\nâ€™â€�}
 "string_literals":::"Lass uns ein paar richtige Stringliterale schreiben.":::{""String""::"12A"::"happy"}
 "boolean_literals":::"Lass uns ein paar richtige bool'sche Literale schreiben.":::{"true"::"false"}
 "null_literal":::"Lass uns den richtigen leeren Wert schreiben.":::{"null"}
-"keywords":::"Lass uns ein paar richtige Schlüsselwörter schreiben.”:::{“char"::"for"::"abstract"::"static"::"return"}
+"keywords":::"Lass uns ein paar richtige SchlÃ¼sselwÃ¶rter schreiben.â€�:::{â€œchar"::"for"::"abstract"::"static"::"return"}
 "identifiers":::"Lass uns ein paar richtige Bezeichner schreiben.":::{""id""::"_var"::"id1"}
 "types":::"Lass uns ein paar richtige Typen schreiben.":::{"float"::"int"::"String"::"boolean"}
 "variable_definition":::"Lass uns eine Stringvariable mit dem Namen y erstellen.":::"String y;":::{"String"::"y"::";"}
@@ -37,7 +37,7 @@ lesson: operators
 "bitwise_operators":::"Lass uns den bitshift Operator << auf die Variable var anwenden.":::"var=var<<1;":::{"var"::"="::"var"::"<<"::"1"::";"}
 "assignment_operators":::"Lass uns ", World!" auf die Stringvariable a = "Hello" mithilfe des += Operators aufkonkatenieren.":::"a +=", World!";":::{"a"::"+="::"", World!""::";"}
 lesson: statements
-"expressions":::"Lass uns einen Ausdruck entwickeln, welcher die Variable var auf den Faktor 2 vergrößert, indem sie um eine Position nach links bitweise verschoben wird. Lass uns dann 3 darauf addieren.":::"(var<<1) + 3":::{"("::"var"::"<<"::"1"::")"::"+"::"3"}
+"expressions":::"Lass uns einen Ausdruck entwickeln, welcher die Variable var auf den Faktor 2 vergrÃ¶ÃŸert, indem sie um eine Position nach links bitweise verschoben wird. Lass uns dann 3 darauf addieren.":::"(var<<1) + 3":::{"("::"var"::"<<"::"1"::")"::"+"::"3"}
 "statements":::"Lass uns eine Variable deklarieren.":::"int a = ++b;":::{"int"::" a"::"="++"::"b"::";"}
 "code_blocks":::"Lass uns einen leeren Codeblock schreiben.":::"{}":::{"{"::"}"}
 lesson: controll_structures
@@ -52,8 +52,8 @@ lesson: controll_structures
 "continue":::"Lass uns eine continue-Anweisung schreiben.":::"for(;;) {continue;}":::{"continue"::";"}
 lesson: methods
 "method_definition":::"Lass uns eine Methode definieren.":::"void cube(int  a){return  a* a* a;}":::{"void"::"cube"::"("::"int  a":")"::"{"::"return"::" a* a* a"::";"::"}"}
-"method_modifiers":::"Lass uns eine static Methode definieren, die ein Wort in eine Abkürzung umwandelt.":::"public static String abbreviation(String[] words){String abr = ""; for(String w: words){abr+=w.toCharArray()[0]+".";} return abr;}":::{"public"::"static"::"String"::"abbreviation"::"("::"String[] words"::")"::"{"::"String abr="";"::"for(String w: words){abr+=w.toCharArray()[0]+".";}::"return abr;"+"}"}
-"method_access":::"Lass uns eine public static Methode definieren, die eine Variabe word zurückgibt.":::"public static String turn(String word) {String ret = ""; for(char w: word.toCharArray()){ret=w+ret;} return ret;}":::{"public"::"static"::"String"::"turn"::"("::"String word"::")"::{"::"String ret = "";"::"for(char w: word.toCharArray()){ret=w+ret;}"::"return ret;"::"}"}
+"method_modifiers":::"Lass uns eine static Methode definieren, die ein Wort in eine AbkÃ¼rzung umwandelt.":::"public static String abbreviation(String[] words){String abr = ""; for(String w: words){abr+=w.toCharArray()[0]+".";} return abr;}":::{"public"::"static"::"String"::"abbreviation"::"("::"String[] words"::")"::"{"::"String abr="";"::"for(String w: words){abr+=w.toCharArray()[0]+".";}::"return abr;"+"}"}
+"method_access":::"Lass uns eine public static Methode definieren, die eine Variabe word zurÃ¼ckgibt.":::"public static String turn(String word) {String ret = ""; for(char w: word.toCharArray()){ret=w+ret;} return ret;}":::{"public"::"static"::"String"::"turn"::"("::"String word"::")"::{"::"String ret = "";"::"for(char w: word.toCharArray()){ret=w+ret;}"::"return ret;"::"}"}
 lesson: classes
 "class_definition":::"Lass uns definieren die Klasse B definieren.":::"class B{}:::{"class"::"B"::"{"::"}"}
 "inheritance":::"Lass uns definieren die Klasse B als Kindklasse von A definieren.":::"class B extends A{}":::{"class"::" B "::"extends"::" A "::"{"::"}"}
@@ -62,4 +62,4 @@ lesson: classes
 "class_fields":::"Lass uns eine Klasse B definieren, welche eine String variable besitzt.":::"class C{String name;}":::{"class"::"B::"{"::"String name;"::"}"}
 "object_declaration":::"Lass uns ein Objekt der Klasse Vector(class Vector{int  a[] = new int[2];}) definieren.":::"Vector v = new Vector();":::{"Vector"::" v"::"="::"new"::" Vector"::"()"::";"}
 "member_access_variables":::"Die Klasse Person besitzt die Variable name. Nun wurde ein Objekt Tom dieser Klasse erstellt. Lass uns die Variable des Objekts Tom umdefinieren.":::"class Person{public String name;}\npublic class Test{\n	public static void main(String[]  a){\n		Person Tom = new Person();\n		Tom.name = "Tom";\n	}}":::{"Tom"::"."::"name"::=""Tom""::";"}
-"member_access_methods":::"Die Klasse Person besitzt die Methode get_name. Nun wurde ein Objekt Tom dieser Klasse erstellt. Lass uns über das Objekt Tom auf die Methode zugreifen.":::"class Person{public String name; public String get_name(){return this.name;}}\npublic class Test{\n	public static void main(String[]  a){\n		Person Tom = new Person();\n		Tom.name = "Tom";\n		Tom.get_name();\n	}}":::{"Tom"::"."::"get_name()"::";"}
+"member_access_methods":::"Die Klasse Person besitzt die Methode get_name. Nun wurde ein Objekt Tom dieser Klasse erstellt. Lass uns Ã¼ber das Objekt Tom auf die Methode zugreifen.":::"class Person{public String name; public String get_name(){return this.name;}}\npublic class Test{\n	public static void main(String[]  a){\n		Person Tom = new Person();\n		Tom.name = "Tom";\n		Tom.get_name();\n	}}":::{"Tom"::"."::"get_name()"::";"}

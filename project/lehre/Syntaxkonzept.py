@@ -14,7 +14,7 @@ sys.path.append(os.path.abspath('../lehre'))
 
 from Nutzer import Nutzer #@Unresolvedimport
 from Lueckentext import Lueckentext #@Unresolvedimport
-from javaparsing.parser import parse #@Unresolvedimport
+from javaparsing.javaparser import parse #@Unresolvedimport
 
 class Syntaxkonzept(object):
     name = ""

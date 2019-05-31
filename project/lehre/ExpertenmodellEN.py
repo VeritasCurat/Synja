@@ -17,8 +17,8 @@ from Lueckentext import Lueckentext #@Unresolvedimport
 from MultipleChoice import MultipleChoice #@Unresolvedimport
 from Aufgabe import Aufgabe #@Unresolvedimport
 from Enaktiv import Enaktiv #@Unresolvedimport
-from javaparsing.parser import parse #@Unresolvedimport
-from javaparsing.parser import allreturns  #@Unresolvedimport
+from javaparsing.javaparser import parse #@Unresolvedimport
+from javaparsing.javaparser import allreturns  #@Unresolvedimport
 from Example import Example #@Unresolvedimport
 
 import re
