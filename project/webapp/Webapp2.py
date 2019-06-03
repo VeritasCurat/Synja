@@ -58,6 +58,15 @@ pretest_ergebnisse = {} #loginname -> []
 print("webapp ready!")
 
 
+@app.route('/testsynja')
+def render_indextestSynja():
+    currentroute[request.remote_addr] = "render_indextestSynja"
+    if(request.remote_addr in sprache and sprache[request.remote_addr] == "en"):
+      return render_template('en/indexSynja2.html', async_mode=socketio.async_mode) 
+    else:
+      return render_template('de/indexSynja2.html', async_mode=socketio.async_mode) 
+
+
 @app.route('/synja')
 def render_indexSynja():
     currentroute[request.remote_addr] = "render_indexSynja"
@@ -317,13 +326,18 @@ def change_lang_en_synja():
       synja.sprache = "en"
   print(currentroute[request.remote_addr])
   emit('redirect', {'url': url_for(currentroute[request.remote_addr])}) 
-      
+  
+@socketio.on('connect', namespace='/testsynja')
+def connect_testsynja():
+  print("TEST7777")
+  exit(0)
+           
 @socketio.on('connect', namespace='/synja')
 def connect_synja():
     if(request.remote_addr not in logins.keys() or request.remote_addr not in pretest_ergebnisse):
       emit('redirect', {'url': url_for('render_indexGate')})
       return
-    
+
     if(request.sid not in connections):
       connections.append(request.sid)
       #print("New connection: " + request.sid)

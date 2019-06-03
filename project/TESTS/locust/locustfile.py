@@ -2,6 +2,7 @@
 Created on 31.05.2019
 
 @author: Johannes
+command: $ locust -f locustfile.py --host=141.20.25.57
 '''
 from locust import HttpLocust, TaskSet, task
 from flask_socketio import SocketIO, emit, join_room, leave_room, close_room, rooms, disconnect
@@ -27,7 +28,8 @@ class UserBehavior(TaskSet):
     
 
     def enter_synja(self):
-        #self.client.post("/testsynja", {})
+        self.client.post("/testsynja", {})
+        '''
         lehre1 = "TESTLEHRE"
         count1 = random.randint(0,100)
         room1 = random.randint(10000,20000)
@@ -38,7 +40,8 @@ class UserBehavior(TaskSet):
         message2 = randomString(100)
         count2 = random.randint(0,100)
         emit('dialogEINGABE',{'data': '<b>'+name2+'</b>: \n'+message2, 'count': count2})
-        
+        '''
+      
     @task(2)
     def index(self):
         self.client.get("/")
