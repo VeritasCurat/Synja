@@ -604,7 +604,6 @@ class Lehrmanager:
       if(intent == "nein" or intent == "weiss_nicht"):
         self.enaktiv_schritt=-1       
         self.expected_entry = "dialog"
-        self.dialogausgaben.append("wechsel_erklaerung")
         self.emotion = "neutral"
         self.zustand_test="start"
         self.zustand = "frage_Konzeptverstanden"      
@@ -650,7 +649,6 @@ class Lehrmanager:
       self.testphase_konzept("")
     elif(intent == "nein" or intent=="weiss_nicht"):
       self.expected_entry = "dialog"
-      self.dialogausgaben.append("wechsel_erklaerung")
       self.zustand = "wechsel_erklaerung"
       self.emotion = "neutral"
       self.wechsel_erklaerung()
@@ -673,6 +671,7 @@ class Lehrmanager:
       self.emotion = "neutral"
       return
    
+    self.dialogausgaben.append("wechsel_erklaerung")
     self.art_counter = (self.art_counter + 1)
     self.art = self.artregister[self.art_counter]
        
@@ -769,7 +768,6 @@ class Lehrmanager:
     if(self.zustand_test == "berichtigung"):
       if(intent == "ja" or intent == "verstanden"):      
         #self.lehrausgabe = None
-        self.dialogausgaben.append("wechsel_erklaerung")
         self.emotion = "neutral"
         self.wechsel_erklaerung()
       elif(bewertung == "unschluessig"):
@@ -989,7 +987,6 @@ class Lehrmanager:
         self.FK_konzept = self.FK_lesson = self.FK_reaktion_lesson = self.FK_reaktion_konzept = self.zustand_fk = ""
         self.zustand_fk="anfang"
         self.fehlerart=""
-        self.dialogausgaben.append("wechsel_erklaerung")
         self.wechsel_erklaerung()     
       elif(intent == "fehlerhaft"):
         if(self.fehlerbeschreibung!="" and self.FK_lesson!="" and self.FK_konzept!="" and self.FK_reaktion_lesson!="" and self.FK_reaktion_konzept!=""):

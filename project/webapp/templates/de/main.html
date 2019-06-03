@@ -58,22 +58,7 @@ $color: #e2cef9;
 <div class="header">
 <p style="padding: 30px">
 Kontakte:<br>Dr. Nguyen-Thinh Le (<a href="mailto:lenguyen@hu-berlin.de">lenguyen@hu-berlin.de</a>)<br>Johannes Grobelski (<a href="grobelsj@informatik.hu-berlin.de">grobelsj@informatik.hu-berlin.de</a>)
-<!-->
-<div>
-	
-        <div class="btn_en" style = "padding-top: 15px;padding-right: 10px;float: right"> 
-            <form id="btn_en" method="POST" action='#'>
-                        <input type="submit" value="english" id="btn_en"> 
-            </form>
-        </div>
-        <div class="btn_de" style = "padding-top: 15px;padding-right: 10px;float: right"> 
-            <form id="btn_de" method="POST" action='#'>
-                        <input type="submit" value="deutsch" id="btn_de"> 
-            </form>
-        </div>
-    </div>
-</div>
-</!-->
+
 </p>
 
 <img src="/static/logo.jpg" style="float: right;" />
@@ -87,15 +72,15 @@ Kontakte:<br>Dr. Nguyen-Thinh Le (<a href="mailto:lenguyen@hu-berlin.de">lenguye
 		<h3><a>Synja Pedagogical Agent</a></h3>
 		<p>
 			<p>Ein Pädagogischer Agent um die Syntax von Java zu lernen. Entwickelt von Johannes Grobelski.</p>
-			<a href = "/synja"><img src="/static/preview_synja.png" style="float: left;" alt="Example" width="400" border ="2"/></a>
+			<a href = "/synja"><img src="/static/preview_synja.png" style="float: left;" alt="Synja" width="400" border ="2"/></a>
 		</p>
 		
 	</div>
 	<div class="inner">
 		<h3><a>Liza Chatbot</a></h3>
 		<p>
-			<p>Ein Chatbot um Fähigkeiten für menschlichen Vernunft weiterzuentwickeln. Entwickelt von Laura Wartschinski.</p>
-			<a href = "/liza"><img src="/static/preview_liza.png" style="float: left;" alt="Example" width="400" border ="2"/></a>
+			<p>Ein Chatbot um Fähigkeiten für vernunftbasiertes Denken weiterzuentwickeln. Entwickelt von Laura Wartschinski.</p>
+			<a href = "/liza"><img src="/static/preview_liza.png" style="float: left;" alt="Liza" width="400" border ="2"/></a>
 		</p>
 	</div>
 
@@ -112,18 +97,6 @@ Kontakte:<br>Dr. Nguyen-Thinh Le (<a href="mailto:lenguyen@hu-berlin.de">lenguye
 
 </body>
 
-<script>
-			$('form#btn_de').submit(function(event) {
-                socket.emit('btn_de');
-                return false;
-            });
 
-            $('form#btn_en').submit(function(event) {
-                socket.emit('btn_en');
-                return false;
-            });
-
-            
-</script>
 
 </html> 

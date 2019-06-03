@@ -4,7 +4,7 @@ lesson: programm_structure
 "programm_structure_import":::"import_no_keyword":::"Ihre Importanmeldung muss das Schlüsselwort" import "enthalten."
 "programm_structure_import":::"import_wrong_semicolon":::"Die Importdeklaration muss mit einem Semikolon enden."
 "programm_structure_import":::"import_error_wildcard":::"Wenn die Importdeklaration einen Platzhalter enthält, kann dieser nur am Ende stehen und es kann nur einen geben."
-"programm_structure_import":::"import_wrong_structure":::"Sie sollten die Importdeklaration folgendermaßen schreiben: das Schlüsselwort" import ", dann einen Pfad zu den Importdaten und dann ein Semikolon."
+"programm_structure_import":::"import_wrong_structure":::"Sie sollten die Importdeklaration folgendermaßen schreiben: das Schlüsselwort "import", dann einen Pfad zu den Importdaten und dann ein Semikolon."
 "programm_structure_import":::"import_identifier":::"Bitte verwenden Sie einen oder mehrere gültige Bezeichner. Sagen wir zu Beginn, dies sind nur Namen (eine Folge von Buchstaben)."
 "programm_structure_packages":::"package_no_keyword":::"Verwenden Sie das Schlüsselwort" package "für eine Paketdeklaration."
 "programm_structure_packages":::"package_wrong_semicolon":::"Beenden Sie Ihre Paketdeklaration mit einem Semikolon."

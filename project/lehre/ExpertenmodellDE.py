@@ -327,7 +327,7 @@ class ExpertenmodellDE(object):
           tb_name = split[1][1:-1]
           tb_name = tb_name.replace('\r', '')  
           if(tb_name not in self.lessons.keys()):
-            print("unbekannter Themenblock mc: "+tb_name+"!")
+            print("unbekannter Themenblock aufg: "+tb_name+"!")
             print(str(self.lessons.keys()))
             file.close()                     
             exit(-1)
@@ -377,7 +377,7 @@ class ExpertenmodellDE(object):
           tb_name = split[1][1:-1]
           tb_name = tb_name.replace('\r', '')  
           if(tb_name not in self.lessons.keys()):
-            print("unbekannter Themenblock mc: "+tb_name+"!")
+            print("unbekannter Themenblock enak: "+tb_name+"!")
             print(str(self.lessons.keys()))
             file.close()                     
             exit(-1)

@@ -28,9 +28,9 @@
   keine_eingabe_lehre = "Du kannst über das Textfeld unten antworten. Es ist gelb markiert."
 
 #lehrmanager
-  keine_Erklaerungen_WE = "Entschuldigung, ich kenne keinen anderen Weg, um dir das zu erklären. Möchtest du dieses Thema überspringen? Wenn nicht, werde ich dir ein altes Beispiel präsentieren."
-  keine_Erklaerungen_OLD = "Entschuldigung, ich kenne keinen anderen Weg, um dir das zu erklären. Möchtest du dieses Thema überspringen? Wenn nicht, werde ich dir eine alte Erklärung zeigen."
-  keine_WE = "Entschuldigung, ich kenne keine andere Möglichkeit, dir dies zu erklären. Möchtest du dieses Beispiel überspringen und mit dem Test fortfahren? Andernfalls zeige ich ein altes Beispiel."
+  keine_Erklaerungen_WE = "Entschuldigung, ich kenne keinen anderen Weg, um dir das zu erklären. Möchtest du dieses Thema überspringen? Antworte mit nein, um eine alte Erklärung zu sehen."
+  keine_Erklaerungen_OLD = "Entschuldigung, ich kenne keinen anderen Weg, um dir das zu erklären. Möchtest du dieses Thema überspringen? Antworte mit nein, um eine alte Erklärung zu sehen."
+  keine_WE = "Entschuldigung, ich kenne keine andere Möglichkeit, dir dies zu erklären. Möchtest du dieses Beispiel überspringen und mit dem Test fortfahren? Antworte mit nein, um eine alte Erklärung zu sehen."
   frage_WEverstanden = "Verstehst du dieses Beispiel?"
   frage_WEverstanden = "Verstehst du das?"
   worked_example = "Ich zeige dir ein Beispiel für das Konzept $."
@@ -64,9 +64,10 @@
   freude_wiedersehen = "Ich freue mich, dich wiederzusehen, $."
   freude_wiedersehen = "Es ist schön, dich wiederzusehen, $."
   freude_wiedersehen = "Willkommen zurück, $!"
-  einleitung = "Ich bin hier, um dir die Syntax von Java beizubringen."
-  einleitung = "Mein Ziel ist es, dir Java-Syntax beizubringen."
-  einleitung = "Lass mich dir Java-Syntax beibringen."
+  einleitung = "Ich bin hier, um dir die Syntax von Java beizubringen. Beachte aber, dass dies kein vollständiger Javakurs ist. "
+  einleitung = "Mein Ziel ist es, dir Java-Syntax beizubringen.  Beachte aber, dass dies kein vollständiger Javakurs ist. Ich werde also einige, weniger wichtige Themen nicht behandeln."
+  einleitung = "Lass mich dir Java-Syntax beibringen. Beachte aber, dass dies kein vollständiger Javakurs ist. Ich werde dir allerdings das wichtigste beibringen!"
+  einleitung = "Mein Ziel ist es, dir Java-Syntax beizubringen. Beachte aber, dass dies kein vollständiger Javakurs ist. Ich werde also einige, weniger wichtige Themen nicht lehren."
   
   
   frage_naechsterThemenblock = "Bitte wähle die nächste Lektion aus. Du kannst wählen zwischen: "Programmstruktur", "Grundlagen", "Arrays", "Operatoren", "Anweisungen", "Kontrollstrukturen", "Methoden" und "Klassen"."
@@ -101,7 +102,7 @@
   ui = "Die Benutzeroberfläche (was auf dem Monitor angezeigt wird) ist in drei Teile unterteilt. Im ersten Teil wird unser Dialog angezeigt (oben links). Darunter kannst du mir eine Nachricht senden, indem du in das Textfeld etwas eingibst und auf den Submit-Button drückst. Wenn du zwischen Englisch und Deutsch wechseln willst, kannst du das tun, indem du auf den Knopf oben rechts drückst."
   dialog = "Ich kann einfache Sätze verstehen, die sich auf das Thema beziehen, und einfache Fragen zum Programm beantworten."
   dialog = "Ich kann nur einfache Sätze verstehen."
-  empfehlung_naechsterThemenblock = "Ich habe die Ergebnisse aus dem Pretest ausgewertet. Ich würde dich bitte folgende Lessons in dieser Reihenfolge zu lernen: <b>$</b>."
+  empfehlung_naechsterThemenblock = "Ich habe die Ergebnisse aus dem Pretest ausgewertet. Ich würde dich bitte, die folgenden Themenblöcke in dieser Reihenfolge zu lernen: <b>$</b>."
 #intro themenbloecke
   programm_structure = "Die Struktur eines Java-Programms folgt einigen Grundregeln. Sie enthält eine Paketdeklaration, Imports und eine Klasse mit demselben Namen wie die Java-Datei. In der Klasse befindet sich eine sogenannte Main-methode, die den Code enthält, den du ausführen möchtest."
   basics = "In einer einfachen Sichtweise besteht das Java-Programm aus Daten, die in Behältern gespeichert sind, welche als Variablen bezeichnet werden (z.B. eine Zeichenfolge zum Speichern eines Namens), und Anweisungen, die bestimmte Aufgaben ausführen (z.B. zwei Zeichenfolgen verbinden).
@@ -157,18 +158,18 @@
   testphase_themenblock_nicht_genug = "Es tut mir leid, aber du musst die Tests für mindestens 50% der Konzepte bestehen, um diesen Test zu versuchen."
   testphase_themenblock_nicht_genug_wdhl = "Möchtest du diesen Block wiederholen oder ein anderes Konzept lernen?"
 #enaktiv
-  enaktiv_introduction_schritte = "Ok. Versuchen wir folgendes: wir schreiben Stück für Stück ein $."
-  enaktiv_introduction_beispiele = "Ok. Schauen wir uns einige Beispiele für $ an."
+  enaktiv_introduction_schritte = "Ok. Versuchen wir folgendes: wir schreiben Stück für Stück ein Beispiel für das Konzept $."
+  enaktiv_introduction_beispiele = "Ok. Schauen wir uns einige Beispiele für das Konzept $ an."
   enaktiv_anfang = "$"
   enaktiv_schritt = "Bitte gib  '$' ein."
   enaktiv_schritt = "Bitte in Teaching Input hinzufügen: <b>$</b>".
-  enaktiv_schritt = "Erweitere dies nun in Teaching Input: <b>$</b>".
+  enaktiv_schritt = "Füge dies nun hinzu (Eingabe in Teaching Input): <b>$</b>".
   enaktiv_beispiel = "Hier ist ein Beispiel. Bitte schreibe es in Teaching Input: <b>$</b>".
   enaktiv_beispiel = "Schauen dir dieses Beispiel an. Schreiben es in Teaching Input: <b>$</b>".
   enaktiv_erweiterung = "Zusammengesetzt sieht es so aus: <b>$</b>".
   enaktiv_erweiterung = "So sieht es aus: <b>$</b>".
-  enaktiv_ende = "Schön, das war's. Du hast ein $ geschrieben."
-  enaktiv_ende = "Cool, du hast ein $ geschrieben."
+  enaktiv_ende = "Schön, das war's. Du hast ein Beispiel für das Konzept $ geschrieben."
+  enaktiv_ende = "Toll, du hast ein Beispiel für das Konzept $ geschrieben."
 
 #fehlerklassifizierung
   hinweis = "$"

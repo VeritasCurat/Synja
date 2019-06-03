@@ -5,7 +5,7 @@ Created on 06.05.2019
 '''
 import os
 import sys
-#import psutil
+import psutil
 sys.path.append(os.path.abspath('../lehre'))
 
 
@@ -17,7 +17,6 @@ from time import gmtime, strftime
 verzeichnispfad = os.path.realpath(__file__)
 
 def eintragen_load():
-  '''
   cpu = psutil.cpu_percent()
   mem = psutil.virtual_memory()
   timestamp = strftime("%Y-%m-%d %H:%M:%S", gmtime())
@@ -26,7 +25,7 @@ def eintragen_load():
   with open(path,'a+') as myfile:
     wr = csv.writer(myfile, quoting=csv.QUOTE_ALL)
     wr.writerow([timestamp,cpu,mem])
-  '''
+  
   
 class Verlauf(object):
     '''
