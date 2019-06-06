@@ -6,9 +6,13 @@ command: $ locust -f locustfile.py --host=141.20.25.57
 '''
 from locust import HttpLocust, TaskSet, task
 from flask_socketio import SocketIO, emit, join_room, leave_room, close_room, rooms, disconnect
+from socketIO_client import SocketIO, LoggingNamespace
 
 import random
 import string
+import socketio
+import json
+
 
 def randomString(stringLength=10):
     """Generate a random string of fixed length """
@@ -34,13 +38,20 @@ class UserBehavior(TaskSet):
         count1 = random.randint(0,100)
         room1 = random.randint(10000,20000)
         #self.client.post("/testsynja",{'data': lehre1, 'count': count1})
-        emit('lehrTASK',{'data': lehre1, 'count': count1},namespace='/synja', room = room1)
         
-        name2 = "john_doe_"+str(random.randint(0,10000))
-        message2 = randomString(100)
-        count2 = random.randint(0,100)
-        emit('dialogEINGABE',{'data': '<b>'+name2+'</b>: \n'+message2, 'count': count2})
+        data = {}
+        data[""] = "bla"
+        j  = json.dumps(data)
+        socketIO.emit('lehreingabe', j)
         '''
+      
+        socketIO = SocketIO('141.20.25.57', 80, LoggingNamespace)
+      
+        randomstring = randomString()
+        data = {'data': randomstring}
+        j  = json.dumps(data)
+                        
+        socketIO.emit('dialogEINGABE',j)
       
     @task(2)
     def index(self):
@@ -54,3 +65,8 @@ class WebsiteUser(HttpLocust):
     task_set = UserBehavior
     min_wait = 5000
     max_wait = 9000
+   
+   
+
+
+    

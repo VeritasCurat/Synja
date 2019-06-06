@@ -1,30 +1,23 @@
 '''
 Created on 22.01.2019
-
 @author: Johannes
 '''
 
 import os
 import sys
+import csv
 from time import gmtime, strftime
 
 sys.path.append(os.path.abspath('../lehre'))
 sys.path.append(os.path.abspath('../webapp'))
-import csv
 
-
-
-
-from Nutzer import Nutzer #@Unresolvedimport
 from Syntaxkonzept import Syntaxkonzept #@Unresolvedimport
 verzeichnispfad = os.path.realpath(os.path.abspath('../webapp'))
 
 
 class Schuelermodell(object):
     verzeichnispfad = os.path.realpath(__file__)
-    '''
-    Beschreibt, was der Schueler schon gesehen hat.
-    '''
+    '''Beschreibt, was der Schueler schon gesehen hat.'''
     aktuellerThemenblock =  -1 #aktuelle Lesson (z.B. programm structure)
     aktuellesKonzept = -1 #aktuelles Konzept IN Lesson
     
@@ -63,71 +56,7 @@ class Schuelermodell(object):
         return True
       else: return False
      
-    #sortiert liste von lessons nach anzahl der punkte im pretest
-    def lessonlist_pretest(self):
-      liste = []
-      for thema in self.PreLessonPunkte.keys():
-        liste.append(thema)
-      #bubsort
-      unsorted = True
-      while(unsorted):
-        unsorted = False
-        for i in range(len(liste)-1):
-          a = self.PreLessonPunkte[liste[i]]
-          b = self.PreLessonPunkte[liste[i+1]]
-          if((a[0] / a[1]) > (b[0] / b[1])):
-            e = liste[i]
-            liste[i] = liste[i+1]
-            liste[i+1] = e
-            unsorted = True
-            #print(str(liste))
-      self.sorted_lessonlist = []
-      self.sorted_lessonlist = liste
-        
-    def prelessonpunkte_eintragen(self,lesson,punkte,gesamtpunkte):
-      self.PreLessonPunkte[lesson] = [punkte,gesamtpunkte]
-      
-    def postlessonpunkte_eintragen(self,lesson,punkte,gesamtpunkte):
-      self.PostLessonPunkte[lesson] = [punkte,gesamtpunkte]
     
-    def eintragen_pretest(self,ergebnisse):
-      #TODO: in csv datei eintragen
-      path = os.path.join(os.path.dirname(verzeichnispfad),'experiment', 'pretest.csv')
-      timestamp = strftime("%Y-%m-%d %H:%M:%S", gmtime())
-
-      
-      with open(path,'a+') as myfile:
-        wr = csv.writer(myfile, quoting=csv.QUOTE_ALL)
-        wr.writerow([timestamp,self.name,ergebnisse])
-        
-      keylist = list(ergebnisse.keys())
-
-      for i in range(len(ergebnisse.keys())): 
-        sum = 0
-        for e in ergebnisse[keylist[i]]:
-          sum += e
-        self.prelessonpunkte_eintragen(keylist[i],int(sum),int(len(ergebnisse[keylist[i]])))
-      #print(str(self.PreLessonPunkte))
-      self.lessonlist_pretest()
-      
-    def eintragen_posttest(self,ergebnisse):
-      #TODO: in csv datei eintragen
-      path = os.path.join(os.path.dirname(verzeichnispfad),'experiment', 'posttest.csv')
-      timestamp = strftime("%Y-%m-%d %H:%M:%S", gmtime())
-
-      
-      with open(path,'a+') as myfile:
-        wr = csv.writer(myfile, quoting=csv.QUOTE_ALL)
-        wr.writerow([timestamp,self.name,ergebnisse])
-        
-      keylist = list(ergebnisse.keys())
-
-      for i in range(len(ergebnisse.keys())): 
-        sum = 0
-        for e in ergebnisse[keylist[i]]:
-          sum += e
-        self.postlessonpunkte_eintragen(keylist[i],int(sum),int(len(ergebnisse[keylist[i]])))
-      #print(str(self.PostLessonPunkte))
       
     def __init__(self, lessonliste, lessoninhalte, name):
         #print("neuer Nutzer SM: "+str(name))
@@ -140,23 +69,6 @@ class Schuelermodell(object):
           
         self.lessonliste = lessonliste
         self.lessoninhalte = lessoninhalte    
-          
-        for thema in self.lessonliste:
-          self.PreLessonPunkte[thema] = self.PostLessonPunkte[thema] = 0
-          for syntaxkonzept in self.lessoninhalte[thema]:
-          
-            '''  
-            self.themenliste.append(Syntaxkonzept(syntaxkonzept).name)
-            
-            self.bekannteMC[Syntaxkonzept(syntaxkonzept).name] = []
-            self.bekannteLT[Syntaxkonzept(syntaxkonzept).name] = []
-            self.bekannteErklaerungen[Syntaxkonzept(syntaxkonzept).name] = []
-            
-            self.alleErklaerungen[Syntaxkonzept(syntaxkonzept).name] = [range(0,len(Syntaxkonzept(syntaxkonzept).darstellung_symbolisch))]
-            self.alleLT[Syntaxkonzept(syntaxkonzept).name] = [range(0,len(Syntaxkonzept(syntaxkonzept).test_lt))]
-            self.alleMC[Syntaxkonzept(syntaxkonzept).name] = [range(0,len(Syntaxkonzept(syntaxkonzept).test_mc))]
-            ''' 
-            
             
     def naechsteErklaerung(self, konzept):  
       for erklaerung in self.alleErklaerungen:
@@ -183,7 +95,7 @@ class Schuelermodell(object):
         self.speichern()
         
     def setName(self, Name):
-      self.name = Name
+      self.name = str(Name)
       self.laden()
       
     def neuenNutzerEintragen(self, name): 
@@ -259,8 +171,6 @@ class Schuelermodell(object):
       self.darstellungsart_effizienz['enaktiv'] = 0
       self.darstellungsart_effizienz['worked_example'] = 0
       
-
-
       if(neuernutzer == True):self.neuenNutzerEintragen(self.name)
       file.close()                     
       return

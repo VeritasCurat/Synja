@@ -102,7 +102,7 @@ class NLG_DE(object):
     
     def generate_args(self, phrase, arg):
       p = phrase
-      print(phrase+" "+str(arg))
+      #print(phrase+" "+str(arg))
 
       if(phrase in  self.genbase.dict.keys()):
         phrase = random.choice( self.genbase.dict[phrase])

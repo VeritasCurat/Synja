@@ -12,7 +12,6 @@ import os
 sys.path.append(os.path.abspath('../webapp'))
 sys.path.append(os.path.abspath('../lehre'))
 
-from Nutzer import Nutzer #@Unresolvedimport
 from Lueckentext import Lueckentext #@Unresolvedimport
 from javaparsing.javaparser import parse #@Unresolvedimport
 

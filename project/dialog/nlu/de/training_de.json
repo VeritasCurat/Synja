@@ -163,6 +163,7 @@
 
     
       {  "text": "ja", "intent": "ja", "entities": [] }, 
+      {  "text": "absolut", "intent": "ja", "entities": [] }, 
       {  "text": "ja, ich akzeptiere", "intent": "ja", "entities": [] }, 
       {  "text": "ja, das ist richtig", "intent": "ja", "entities": [] }, 
       {  "text": "ja, ich denke das ist richtig", "intent": "ja", "entities": [] }, 

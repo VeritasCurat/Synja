@@ -12,6 +12,7 @@ Webapp fuer Synja und Liza
 '''
 import os
 import sys
+import time
 
 #import gevent
 #from engineio.async_drivers import eventlet
@@ -144,6 +145,25 @@ def background_threadSynjaLiza():
       for synja in synjas:       
         #
         try:    
+          #nichtgenutzte synjas loeschen (nach 20 minuten)
+          #print(str(int(round(time.time())) - synja.lastmessagetime))
+          if(synja.lastmessagetime != None and synja.lastmessagetime != 0 and (int(round(time.time())) - synja.lastmessagetime) > 1200):
+            try:
+              #emit('redirect', {'url': url_for('render_main')})  
+              #print("test7771")
+              if(synja.sprache=="de"):socketio.emit('dialogEINGABE',{'data':  '<p align="left"><b>Synja</b>: \n'+str("Du hast zu lange nicht mehr reagiert. Auf Wiedersehen! Bitte lade die Seite neu.")+'</p>', 'count': count},namespace='/synja', room = synja.id)
+              else: socketio.emit('dialogEINGABE',{'data':  '<p align="left"><b>Synja</b>: \n'+str("You haven't reacted for too long. Good bye! Please reload the page.")+'</p>', 'count': count},namespace='/synja', room = synja.id)
+
+              synjas.remove(synja)
+              synja = None
+              #print("test7772")
+              continue
+            except Exception as ex:
+              template = "An exception of type {0} occurred. Arguments:\n{1!r}"
+              message = template.format(type(ex).__name__, ex.args)
+              print(message)
+              print("BOOOM!")
+           
           #synja.start_timer()
             
           synja.nutzer_auf_inputfeld_hinweisen()
@@ -160,7 +180,7 @@ def background_threadSynjaLiza():
             #print("WA EMIT: "+output+" from ["+synja.name+"]")
             if(not isinstance(output,list)):   
               zeitpunkt = datetime.datetime.now().strftime('%H:%M:%S')         
-              socketio.emit('dialogEINGABE',{'data':  '<p align="left"><b>Synja</b>: \n'+output+'</p>', 'count': count},namespace='/synja', room = synja.id)
+              socketio.emit('dialogEINGABE',{'data':  '<p align="left"><b>Synja</b>: \n'+str(output)+'</p>', 'count': count},namespace='/synja', room = synja.id)
               emotion = synja.lehrmanager.emotion
               socketio.emit('change_synja',{'data': emotion, 'count': count},namespace='/synja', room = synja.id)
              
@@ -207,9 +227,11 @@ def dialogeingabe_synja(message):
     for synja in synjas:
         if synja.id == request.sid:
           if(synja.name != "NO_ACCOUNT"): name = synja.name
-    emit('dialogEINGABE',{'data': '<b>'+name+'</b>: \n'+message['data'], 'count': session['receive_count']})
-    #print("You: "+message['data'])
-    #print("received \""  + message['data'] + "\" from " + request.sid)
+    emit('dialogEINGABE',{'data': '<b>'+str(name)+'</b>: \n'+str(message['data']), 'count': str(session['receive_count'])})
+    print("----------------------------------------------------------------------------------------------------------------------------------------")
+    print("You: "+message['data'])
+    print("received \""  + message['data'] + "\" from " + request.sid)
+    print("----------------------------------------------------------------------------------------------------------------------------------------")
     if (len(message['data']) > 0):
       for synja in synjas:
         if synja.id == request.sid:
@@ -220,7 +242,7 @@ def dialogeingabe_synja(message):
 @socketio.on('lehreingabe', namespace='/synja')
 def lehrausgabe_synja(message):
     session['receive_count'] = session.get('receive_count', 0) + 1
-    emit('dialogEINGABE',{'data': 'You: \"'+message['data'] + '\"', 'count': session['receive_count']})
+    emit('dialogEINGABE',{'data': 'You: \"'+str(message['data']) + '\"', 'count': str(session['receive_count'])})
     #print("received \""  + message['data'] + "\" from " + request.sid)
     if (len(message['data']) > 0):
       for synja in synjas:
@@ -334,17 +356,17 @@ def connect_synja():
       connections.append(request.sid)
       #print("New connection: " + request.sid)
     
-    name = "NO_ACCOUNT"
+    NNNNName = str("NO_ACCOUNT")
   
     #print("WA neuer Nutzer: "+str(name)+" "+request.remote_addr)
     
     nr = len(synjas)+1    
-    Synja_ = Synja(request.sid, nr, name)
+    Synja_ = Synja(request.sid, nr, NNNNName)
     Synja_.lehrmanager.neuernutzer = True
     if(request.remote_addr in logins):
-      name = logins[request.remote_addr]
-      Synja_.name = name
-      Synja_.lehrmanager.schuelermodell.name = name
+      #name = logins[request.remote_addr]
+      Synja_.name = NNNNName
+      Synja_.lehrmanager.schuelermodell.name = NNNNName
       #      Synja_.lehrmanager.schuelermodell.eintragen_pretest(pretest_ergebnisse[request.remote_addr])
     thread_list.append(Synja_)
     synjas.append(Synja_)
@@ -655,5 +677,5 @@ def disconnect_liza():
   
 if __name__ == '__main__':
   #s = serve(app, host='127.0.0.1', port=80)
-  socketio.run(app, host='0.0.0.0', port=8080)
+  socketio.run(app, host='0.0.0.0', port=80)
  

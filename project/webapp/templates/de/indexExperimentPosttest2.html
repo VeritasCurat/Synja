@@ -1,0 +1,271 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Synja Pedagogical Agent: Test</title>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.5/socket.io.min.js"></script>
+    
+
+<style>
+body {
+    font-family: sans-serif;
+}
+h1, h2, h3, h4 {
+    color: #001056;
+}
+
+
+.containerPing {
+  width: 100%;
+}
+
+.containerLinks {
+  height: 200px;
+    width: 100%;
+    border: 2px solid black;
+    padding: 5px;
+    display: flex; 
+    flex-direction: column-reverse;
+}
+
+.footer {
+  background-color: lightgrey;
+    height: 50px; 
+    width: 100%;
+
+    -moz-box-shadow:10px 10px 5px #000000;
+    -webkit-box-shadow:10px 10px 5px #000000;
+    box-shadow:10px 10px 5px #000000;
+}    
+
+.aufgabenlog {
+    height: 400px;
+    width: 100%;
+    
+    overflow-y: auto;
+    border: 2px solid black;
+    padding: 5px;
+    display: flex; 
+    flex-direction: column-reverse;
+    overflow-y: auto;
+
+
+
+    -moz-box-shadow:10px 10px 5px #000000;
+    -webkit-box-shadow:10px 10px 5px #000000;
+    box-shadow:10px 10px 5px #000000;
+}
+
+.dropshadow {
+    -moz-box-shadow:10px 10px 5px #000000;
+    -webkit-box-shadow:10px 10px 5px #000000;
+    box-shadow:10px 10px 5px #000000;
+}
+
+</style>
+</head>
+
+
+<body>
+<div class="footer">
+<h1 style="padding-top: 8px; padding-left: 10px">Pretest</h1>
+
+
+</div>
+
+
+
+
+
+<div style="width: 90%; float:right; height:0px; margin:10px">
+
+	<div class="containerLehre">
+		<h1 style="padding-top: 0px;"></h1>
+		<p>Bitte löse folgende Aufgaben.</p>
+		<!---    <p>Async mode is: <b>gevent</b></p>-->
+       
+
+        
+        <form id="aufgaben" method="POST" action='#'>
+            <h2>Aufgabe 1</h2>
+            <p>Was musst du hinzufügen um die package-deklaration zu vervollständigen?</p>
+            <p>package src<input type="text" name="a1" id="a1" placeholder=""></p>
+        
+            <h2>Aufgabe 2</h2>
+            <p>Von welchem Typ ist dieses Literal: 'c'?</p>
+            <p><input type="text" name="a2" id="a2" placeholder=""></p>
+
+            <h2>Aufgabe 3</h2>
+            <p>Was musst du hinzufügen um die Definition der Variable zu vervollständigen?</p>
+            <p><input type="text" name="a3" id="a3" placeholder=""> h = "hello";</p>
+
+            <h2>Aufgabe 4</h2>
+            <p>Greife auf das zweite Element des eindimensionalen Arrays g zu.</p>
+            <p>System.out.println(g<input type="text" name="a4" id="a4" placeholder="">);</p>
+
+            <h2>Aufgabe 5</h2>
+            <p>Definiere ein zwei-dimensionales Array.</p>
+            <p>int<input type="text" name="a5" id="a5" placeholder=""> K;</p>
+           
+            <h2>Aufgabe 6</h2>
+            <p>Nutze einen bitweisen Operator << um den Wert der int Variable f zu vervierfachen.</p>
+            <p>f = f(<input type="text" name="a6" id="a6" placeholder="">2;</p>
+
+            <h2>Aufgabe 7</h2>
+            <p>Welchen Zuweisungoperator kannst du nutzen um den Wert der integer-variable a auf 0 zu verändern?</p>
+            <p>int a = 1; System.out.println(a<input type="text" name="a7" id="a7" placeholder="">1);</p>
+
+            <h2>Aufgabe 8</h2>
+            <p>Quadriere die Zahl a mithilfe des *= Operators.</p>
+            <p>a *= <input type="text" name="a8" id="a8" placeholder="">2);</p>
+
+            <h2>Aufgabe 9</h2>
+            <p>Vervollständige die Anweisung.</p>
+            <p>a = 2<input type="text" name="a9" id="a9" placeholder=""></p>
+            
+            <h2>Aufgabe 10</h2>
+            <p>Welches Schlüsselwort musst du eingeben um den Code syntaktisch korrekt zu machen?</p>
+            <p>int array[]; <input type="text" name="a10" id="a10" placeholder="">(int e: array){}</p>
+
+            <h2>Aufgabe 11</h2>
+            <p>Lasse die while Schleife abbrechen, wenn die Variable a gerade ist.</p>
+            <p>while(true){a*=3; if(a%2==0)<input type="text" name="a11" id="a11" placeholder="">}</p>
+           
+            <h2>Aufgabe 12</h2>
+            <p>Definiere die Methode timesthree, welche eine Zahl verdreifacht und diese zurückgibt.</p>
+            <p>public int <input type="text" name="a12" id="a12" placeholder="">(int a) {return a = a*3;}</p>
+
+            <h2>Aufgabe 13</h2>
+            <p>Definiere eine Methode die mithilfe der Klasse aufgerufen wird.</p>
+            <p>public <input type="text" name="a13" id="a13" placeholder=""> void test{}</p>
+
+            <h2>Aufgabe 14</h2>
+            <p>Definiere eine statische Klasse.</p>
+            <p><input type="text" name="a14" id="a14" placeholder=""> class A{}</p>
+
+            <h2>Aufgabe 15</h2>
+            <p>Definiere eine Kindklasse der Klasse B.</p>
+            <p>class A <input type="text" name="a15" id="a15" placeholder="">B{}</p>
+
+            <h3>Klicke hier um die Lösung abzuschicken:</h3>
+            <input type="submit" value="Aufgaben lösen" id="aufgaben_loesen">        
+        </form>
+
+	    
+	</div>
+	
+</div>
+
+</body>
+
+
+
+<script type="text/javascript" charset="utf-8">
+
+        $(document).ready(function() {
+            // Use a "/test" namespace.
+            // An application can open a connection on multiple namespaces, and
+            // Socket.IO will multiplex all those connections on a single
+            // physical channel. If you don't care about multiple channels, you
+            // can set the namespace to an empty string.
+            namespace = '/pretest';
+
+            // Connect to the Socket.IO server.
+            // The connection URL has the following format:
+            //     http[s]://<domain>:<port>[/<namespace>]
+            var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port + namespace);
+
+            //Redirects to this site
+            socket.on('redirect', function (data) {
+    			window.location = data.url;
+			});
+	          
+ 			socket.on('response_ew', function(msg) {
+ 				var testDiv = $("#aufgabenlog");
+ 				var domElement = testDiv[0];
+
+ 				testDiv.replaceWith('<div id="aufgabenlog"></div>');
+ 				newtext = msg.data
+ 				newtext = newtext.replace(/(?:\r\n|\r|\n)/g, '<br>');
+		   	 	
+                $('#aufgabenlog').append('<p><font size="+1">' + $('</p></font>').html(newtext).html());
+            });
+
+
+            //Function sending a "ping" to the server.
+            var ping_pong_times = [];
+            var start_time;
+            window.setInterval(function() {
+                start_time = (new Date).getTime();
+                socket.emit('my_ping');
+            }, 1000);
+
+            /*Handler for the "pong" message (as answer for the ping message of the client). 
+            Calculates an average over the 50 last ping_pong*/
+            socket.on('my_pong', function() {
+                var latency = (new Date).getTime() - start_time;
+                ping_pong_times.push(latency);
+                ping_pong_times = ping_pong_times.slice(-50); // keep last 50 samples
+                var sum = 0;
+                for (var i = 0; i < ping_pong_times.length; i++)
+                    sum += ping_pong_times[i];
+                $('#ping-pong').text(Math.round(sum / ping_pong_times.length));
+            });
+
+            // Handlers for the different forms in the page.
+            // These accept data from the user and send it to the server in a
+            // variety of ways
+            $('form#logout').submit(function(event) {
+                socket.emit('logout');
+                return false;
+            });
+
+            $('form#aufgaben').submit(function(event) {
+                socket.emit('preres', {aufg1: $('#a1').val(), aufg2: $('#a2').val(),  
+                aufg3: $('#a3').val(), aufg4:$('#a4').val(), aufg5:$('#a5').val(), 
+                aufg6: $('#a6').val(), aufg7:$('#a7').val(), aufg8:$('#a8').val(), 
+                aufg9: $('#a9').val(), aufg10: $('#a10').val(), aufg11: $('#a11').val(), 
+                aufg12:$('#a12').val(), aufg13:$('#a13').val(), aufg14:$('#a14').val(), 
+                aufg15:$('#a15').val()
+                /**/});
+                return false;
+            });
+            
+            
+            $('form#aufgabenlog').submit(function(event) {
+                socket.emit('aufgabeeingabe', {data: $('#emit_eingabe').val()});
+                $('form#aufgabenlog').trigger("reset");
+				$('class#aufgabenlog').trigger("reset");
+               
+                return false;
+            });
+                  
+            
+            $('form#broadcast').submit(function(event) {
+                socket.emit('my_broadcast_event', {data: $('#broadcast_data').val()});
+                return false;
+            });
+            $('form#join').submit(function(event) {
+                socket.emit('join', {room: $('#join_room').val()});
+                return false;
+            });
+            $('form#leave').submit(function(event) {
+                socket.emit('leave', {room: $('#leave_room').val()});
+                return false;
+            });
+            $('form#send_room').submit(function(event) {
+                socket.emit('my_room_event', {room: $('#room_name').val(), data: $('#room_data').val()});
+                return false;
+            });
+            $('form#close').submit(function(event) {
+                socket.emit('close_room', {room: $('#close_room').val()});
+                return false;
+            });
+            $('form#disconnect').submit(function(event) {
+                socket.emit('disconnect_request');
+                return false;
+            });
+        });
+    </script>
+
+</html>

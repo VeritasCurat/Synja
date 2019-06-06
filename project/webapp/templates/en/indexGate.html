@@ -80,10 +80,6 @@
                 return false;
             });
 
-            $('form#enter').submit(function(event) {
-                socket.emit('enter_withoutlogin', {name: ""});
-                return false;
-            });
 
             
           
@@ -194,7 +190,6 @@ contact details:<br>Dr. Nguyen-Thinh Le (<a href="mailto:lenguyen@hu-berlin.de">
 <p>Please log in to access Synja. Just use your Username and Password. <br> Or create a new account by setting your username, password and emailadress.</p>
 <font color="red">
 <div style="width: 100%; margin-left:auto; margin-right:auto; overflow-y: auto;">
-	<p><b>Please consider participating in my experiment for my Bachelor thesis. It only takes a few minutes.<br>More Information (link) TODO</b></p>
 </div>
 </font>
 
@@ -213,13 +208,6 @@ contact details:<br>Dr. Nguyen-Thinh Le (<a href="mailto:lenguyen@hu-berlin.de">
         <input type="text" name="create_password" id="create_password" placeholder="password">
         <input type="submit" value="create Acount" id="create Acount"> 
 	</form>
-
-    <h2>Enter without account</h2>
-    <form id="enter" method="POST" action='#'>
-        <input type="submit" value="Enter without login" id="Enter without login"> 
-        <p>(This means your progress is not saved and you can not enjoy the full user experience!)</p>
-    </form>
-
 	<h1 style="padding-top: 0px;"></h1>
 	<!---    <p>Async mode is: <b>{{ async_mode }}</b></p>-->
     <div class="nachrichtentext">

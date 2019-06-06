@@ -11,9 +11,6 @@ class TimeoutExpired(Exception):
 
 
 class UI:	
-    
-  
-  
   def __init__(self,nr):
     self.sendqueue =  queue.Queue()
     self.recvqueue =  queue.Queue()    
@@ -61,6 +58,7 @@ class UI:
     remain = phrase
     #print(phrase)
     while (len(remain) >0):
+        print("LIzA RE: "+str(remain))
         output = ""
         end = 1
         while((output.count('. ')+output.count('!')) < 2 and end < len(remain)):

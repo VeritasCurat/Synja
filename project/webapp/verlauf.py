@@ -7,24 +7,25 @@ import os
 import sys
 import psutil
 sys.path.append(os.path.abspath('../lehre'))
-
-
+sys.path.append(os.path.abspath('.'))
 from ExpertenmodellEN import ExpertenmodellEN  #@Unresolvedimport
 from ExpertenmodellDE import ExpertenmodellDE  #@Unresolvedimport
+
 import os
 import csv
 from time import gmtime, strftime
 verzeichnispfad = os.path.realpath(__file__)
 
-def eintragen_load():
+def eintragen_load(synjanr):
   cpu = psutil.cpu_percent()
   mem = psutil.virtual_memory()
+  nrsynja = str(synjanr)+" Synjas"
   timestamp = strftime("%Y-%m-%d %H:%M:%S", gmtime())
   path = os.path.join(os.path.dirname(verzeichnispfad), 'other', 'systemload.csv')
-  print(str(cpu)+" "+str(mem))
+  #print(str(cpu)+" "+str(mem))
   with open(path,'a+') as myfile:
     wr = csv.writer(myfile, quoting=csv.QUOTE_ALL)
-    wr.writerow([timestamp,cpu,mem])
+    wr.writerow([timestamp,cpu,mem,nrsynja])
   
   
 class Verlauf(object):

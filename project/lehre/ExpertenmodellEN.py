@@ -85,7 +85,6 @@ class Themenblock(object):
     
     
 class ExpertenmodellEN(object):
-   
     sprache = ""
     lessons = {} #dict: name -> themenblock
     
@@ -624,10 +623,10 @@ class ExpertenmodellEN(object):
 
 
 
+'''
+
 ep = ExpertenmodellEN()
 print(ep.bewerten("basics", "comments", "coding", 0, "//a"))
-
-'''
 print(ep.zugriffHinweis("basics", "comments", "wrong_structure"))
 print(str(ep.lessoninhalte.keys()))
 print(ep.zugriffEnaktiv("basics", "literals", 0))

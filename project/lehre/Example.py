@@ -14,3 +14,5 @@ class Example(object):
     self.name = name
     self.problemstellung = problemstellung
     self.loesung = loesung
+    
+    

@@ -1,7 +1,7 @@
 #emotionsreaktion
   dank = "Hey, danke dir!"
   dank = "Ich danke dir."
-  dank = "Oh wow, danke dir!"
+  dank = "Danke dir!"
   dank = "Danke, das bedeutet mir wirklich viel!"
   dank = "Danke, das war sehr freundlich."
   freude = "Ich bin glücklich :)."
@@ -99,10 +99,10 @@
   teaching = "So möchte ich dich unterrichten: Der Kurs ist in Themenblöcke unterteilt, welche wiederum in kleinere Einheiten - Syntaxkonzepte - unterteilt sind. Ich werde eins nach dem anderen erklären und dann dein Wissen testen. Wenn du meine Erklärung nicht verstehst, kann ich mich auf eine andere Art ausdrücken. Am Ende einer Lektion steht ein Test an (3 Aufgaben)."
   teaching = "So möchte ich dich lehren: Ich erkläre ein Konzept und teste dann dein Wissen. Ich kann jedes Thema auf unterschiedliche Weise erklären. Wenn du also eine Erklärung nicht verstehst, frage einfach nach einer anderen Erklärung."
   ui = "Die Benutzeroberfläche besteht aus drei Teilen: der Ebene zur Darstellung des pädagogischen Agenten (rechts, mitte), der Eingabeebene und der Dialogebene. Auf der Dialogebene wird unsere Konversation angezeigt. Auf der Eingabeebene(unten) kannst du in Bezug auf den Dialog (links) oder in Bezug auf eine Aufgabenstellung antworten (rechts). Auf der Ebene des pädagogischen Agenten (rechts, mitte) kannst du mich sehen ... . Wenn du zwischen Englisch und Deutsch wechseln willst, kannst du das tun, indem du auf den Knopf oben rechts drückst."
-  ui = "Die Benutzeroberfläche (was auf dem Monitor angezeigt wird) ist in drei Teile unterteilt. Im ersten Teil wird unser Dialog angezeigt (oben links). Darunter kannst du mir eine Nachricht senden, indem du in das Textfeld etwas eingibst und auf den Submit-Button drückst. Wenn du zwischen Englisch und Deutsch wechseln willst, kannst du das tun, indem du auf den Knopf oben rechts drückst."
+  ui = "Die Benutzeroberfläche (was auf dem Monitor angezeigt wird) ist in drei Teile unterteilt. Im ersten Teil wird unser Dialog angezeigt (oben links). Darunter kannst du mir eine Nachricht senden, indem du in das Textfeld etwas eingibst und auf den Send-Button drückst. Wenn du zwischen Englisch und Deutsch wechseln willst, kannst du das tun, indem du auf den Knopf oben rechts drückst."
   dialog = "Ich kann einfache Sätze verstehen, die sich auf das Thema beziehen, und einfache Fragen zum Programm beantworten."
   dialog = "Ich kann nur einfache Sätze verstehen."
-  empfehlung_naechsterThemenblock = "Ich habe die Ergebnisse aus dem Pretest ausgewertet. Ich würde dich bitte, die folgenden Themenblöcke in dieser Reihenfolge zu lernen: <b>$</b>."
+  empfehlung_naechsterThemenblock = "Ich habe die Ergebnisse aus dem Pretest ausgewertet. Ich würde dich bitten, die folgenden Themenblöcke in dieser Reihenfolge zu lernen: <b>$</b>."
 #intro themenbloecke
   programm_structure = "Die Struktur eines Java-Programms folgt einigen Grundregeln. Sie enthält eine Paketdeklaration, Imports und eine Klasse mit demselben Namen wie die Java-Datei. In der Klasse befindet sich eine sogenannte Main-methode, die den Code enthält, den du ausführen möchtest."
   basics = "In einer einfachen Sichtweise besteht das Java-Programm aus Daten, die in Behältern gespeichert sind, welche als Variablen bezeichnet werden (z.B. eine Zeichenfolge zum Speichern eines Namens), und Anweisungen, die bestimmte Aufgaben ausführen (z.B. zwei Zeichenfolgen verbinden).

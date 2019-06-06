@@ -467,10 +467,7 @@ class ExpertenmodellDE(object):
             exit(-1)
       file.close()                     
       return
-   
-
-
-        #einlesen example_eng.json
+      #einlesen example_eng.json
         
     def zugriffLehreinheit(self, lesson, konzept, art, version):    
       #print(str("EM: "+lesson+": "+konzept+": "+art+": "+str(version)))
@@ -542,7 +539,7 @@ class ExpertenmodellDE(object):
       return erweiterung
     
     def zugriffEnaktiv(self, lesson, konzept, schritt): 
-      print(str(schritt)+" "+str(len(self.lessons[lesson].syntaxkonzepte[konzept].enaktiv[0].schritte_beispiele)))
+      #print(str(schritt)+" "+str(len(self.lessons[lesson].syntaxkonzepte[konzept].enaktiv[0].schritte_beispiele)))
       if(schritt == -1):
         return self.lessons[lesson].syntaxkonzepte[konzept].enaktiv[0].aufgabenstellung
       elif(schritt < len(self.lessons[lesson].syntaxkonzepte[konzept].enaktiv[0].schritte_beispiele)):
@@ -556,17 +553,16 @@ class ExpertenmodellDE(object):
       if(fehlerart in self.fehlerhinweise.keys()):
         ausgabetext = self.fehlerhinweise[fehlerart]
       else: 
-        print("EM: zugriffHinweis: unbekannte Format!")
+        #print("EM: zugriffHinweis: unbekannte Format!")
         exit(-1)
         
       #fixes
       ausgabetext = ausgabetext.replace('\\n', '\n')
-      print("AUSGABETEXT: "+ausgabetext)
+      #print("AUSGABETEXT: "+ausgabetext)
       return ausgabetext
     
     def zugriffFKantwort(self, lesson, konzept, fehlerbeschreibung):    
-      print(str("EM: "+lesson+": "+konzept+": "+str(fehlerbeschreibung)))
-
+      #print(str("EM: "+lesson+": "+konzept+": "+str(fehlerbeschreibung)))
       if(fehlerbeschreibung in self.fehlerbeschreibungen.keys()):
         ausgabetext = self.fehlerbeschreibungen[fehlerbeschreibung]
       else: 

@@ -187,8 +187,3 @@ class NLU_DE(object):
         return String 
     return ""#self.ner.name_extraction(String)  
   
- 
- 
- 
-nlu = NLU_DE()
-print(nlu.parse("hinweis"))

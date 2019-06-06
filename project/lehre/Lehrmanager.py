@@ -98,7 +98,7 @@ class Lehrmanager:
   name = ""
   #art (symbolisch, ikonisch, enaktiv, example) und version in der der Lehrinhalt praesentiert wird
   art = ""
-  artregister = ["symbolisch", "ikonisch", "worked_example","enaktiv"]
+  artregister = ["ikonisch", "symbolisch", "worked_example","enaktiv"]
   art_counter = 0
   
   version = 0
@@ -462,7 +462,7 @@ class Lehrmanager:
     self.dialogausgaben.append("dialog")
     self.schuelermodell.speichern()
     self.expected_entry = "dialog"
-    self.dialogausgaben.append(["empfehlung_naechsterThemenblock",self.schuelermodell.sorted_lessonlist])
+    #self.dialogausgaben.append(["empfehlung_naechsterThemenblock",self.schuelermodell.sorted_lessonlist])
     self.dialogausgaben.append("frage_naechsterThemenblock")
     self.emotion = "neutral"
     #if(len(self.schuelermodell.bekannteLessons)>0):self.dialogausgaben.append(["schueler_wissen",self.enumaration(self.schuelermodell.bekannteLessons).replace('_',' ')])

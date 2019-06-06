@@ -147,11 +147,19 @@ background-color: grey;
                         <input type="submit" value="deutsch" id="btn_de"> 
             </form>
         </div>
+
+<!---synja nutzt nun keinen usergate und keinen pretest bzw. posttest mehr
         <div class="logout" style = "padding-top: 15px;padding-right: 10px;float: right"> 
             <form id="logout" method="POST" action='#'>
                         <input type="submit" value="logout" id="logout"> 
             </form>
         </div>
+         <div class="posttest" style = "padding-top: 15px;padding-right: 10px;float: right"> 
+            <form id="posttest" method="POST" action='#'>
+                        <input type="submit" value="posttest" id="posttest"> 
+            </form>
+        </div>
+--->
 </div>
     </div>
 </div>
@@ -231,7 +239,7 @@ background-color: grey;
             // Socket.IO will multiplex all those connections on a single
             // physical channel. If you don't care about multiple channels, you
             // can set the namespace to an empty string.
-            namespace = '/synja';
+            namespace = '/synja_en';
 
             // Connect to the Socket.IO server.
             // The connection URL has the following format:

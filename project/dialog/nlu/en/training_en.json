@@ -66,6 +66,7 @@
 
 
       {  "text": "please give me a hint", "intent": "hinweis", "entities": [] },
+      {  "text": "hint", "intent": "hinweis", "entities": [] },
       {  "text": "give me a hint", "intent": "hinweis", "entities": [] },
       {  "text": "i want a hint", "intent": "hinweis", "entities": [] },
       {  "text": "i need a hint", "intent": "hinweis", "entities": [] },
@@ -145,6 +146,7 @@
 
       
       {  "text": "hi there", "intent": "gruss", "entities": [] }, 
+      {  "text": "hello", "intent": "gruss", "entities": [] }, 
       {  "text": "hello synja", "intent": "gruss", "entities": [] },  
       {  "text": "hi synja it is very nice to meet you", "intent": "gruss", "entities": [] }, 
       {  "text": "nice to meet you", "intent": "gruss", "entities": [] },  
