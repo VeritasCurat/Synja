@@ -2491,10 +2491,43 @@ Which types of comments does Java support?
 3. Comments for Variables
 4. executable Comments
 ","1","fehlerfrei"
-"0","2019-06-06 07:16:18","Please choose the right answer(s) by typing in the number(s) of the answer(s) into user input:
+"0","2019-06-06 12:13:24","Please choose the right answer(s) by typing in the number(s) of the answer(s) into user input:
 Which types of comments does Java support?
 1. One-line Comments
 2. Java-Docs
 3. Comments for Variables
 4. executable Comments
-","1","fehlerfrei"
+","1","fehlerfrei"
+"<built-in function id>","2019-06-06 12:16:58","Bitte schreibe eine Main-Methode.","public static void main(String a[]){}","fehlerfrei"
+"<built-in function id>","2019-06-06 12:17:46","Bitte schreibe einen Importdeklaration.","import a;","fehlerfrei"
+"<built-in function id>","2019-06-06 12:18:26","Bitte schreibe eine Paketdeklaration.","package a;","fehlerfrei"
+"<built-in function id>","2019-06-06 12:18:31","Vervollständige diese Paketdeklaration.
+Please fill the gap by typing the answer in Teaching Input:
+package myapplication___mylibrary;",".","fehlerfrei"
+"<built-in function id>","2019-06-06 12:18:35","Please choose the right answer(s) by typing in the number(s) of the answer(s) into user input:
+Wo werden Imports deklariert?
+1. Oben im Java-Programm.
+2. Unten im Java-Programm.
+3. Eine Zeile vor der ersten Verwendung.
+4. Sie können überall geschrieben werden .
+","2","fehlerhaft"
+"<built-in function id>","2019-06-06 12:18:54","Was bewirkt eine Importdeklaration?
+Please fill the gap by typing the answer in Teaching Input:
+Sie ordnet einen Pfad einen einfachen___ zu, damit Importobjekte von ihm verwendet werden können.","namen","fehlerfrei"
+"<built-in function id>","2019-06-06 12:19:00","Was ist der Rückgabewert der main-Methode?
+Please fill the gap by typing the answer in Teaching Input:
+public static___ main (String a []) {}","void","fehlerfrei"
+"0","2019-06-06 12:28:47","Please choose the right answer(s) by typing in the number(s) of the answer(s) into user input:
+Which types of comments does Java support?
+1. One-line Comments
+2. Java-Docs
+3. Comments for Variables
+4. executable Comments
+","1","fehlerfrei"
+"0","2019-06-06 12:32:26","Please choose the right answer(s) by typing in the number(s) of the answer(s) into user input:
+Which types of comments does Java support?
+1. One-line Comments
+2. Java-Docs
+3. Comments for Variables
+4. executable Comments
+","1","fehlerfrei"

@@ -1024,8 +1024,8 @@ class Lehrmanager:
       #if(len(self.schuelermodell.bekannteLessons)>0):self.dialogausgaben.append(["schueler_wissen",self.enumaration(self.schuelermodell.bekannteLessons).replace('_',' ')])
       
       self.zustand = "frage_naechsterThemenblock"
-      self.schuelermodell.lessonAlsGelerntEintragen(self.lesson)
-      self.schuelermodell.speichern()
+      #self.schuelermodell.lessonAlsGelerntEintragen(self.lesson)
+      #self.schuelermodell.speichern()
       #self.lehrausgabe = None
       self.punkte_test = self.iterationen_test = 0
       return

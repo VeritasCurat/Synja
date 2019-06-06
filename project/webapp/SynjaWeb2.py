@@ -70,7 +70,7 @@ class Synja(threading.Thread):
   recvqueueLehre =  None  
   coding = False
    
-  lastmessages = [] #display the last 10 messages 
+  #lastmessages = [] #display the last 10 messages 
   text = ""
   sleeptime = 0
   
@@ -246,7 +246,8 @@ class Synja(threading.Thread):
         if(entity != ""): eingabe_intent="naechsterThemenblock"
         
       #print("SL input: "+inputDialog+" intent: "+eingabe_intent+" entity: "+entity)        
-      self.lehrmanager.schritt(eingabe_intent,entity)    
+      self.lehrmanager.schritt(eingabe_intent,entity) 
+      print("LM: "+str(len(self.lehrmanager.dialogausgaben)))   
 
       if("bye" in self.lehrmanager.dialogausgaben):
         print("VERABSCHIEDUNG")
@@ -341,11 +342,12 @@ class Synja(threading.Thread):
     self.name = str(name)
     self.id = id
     self.nr = nr
+    self.msgcounter = 0
     
     self.lasttimeout = 0
     self.timed = False
     self.running = True
-    self.input = False
+    self.input = 0
 
     if(self.sprache == "en"):self.lehrmanager=Lehrmanager(name, expertenmodell_en.lessoninhalte, expertenmodell_en.anzahl_erklaerungen, expertenmodell_en.anzahlAufg, expertenmodell_en.anzahlWE, expertenmodell_en.anzahl_lt, expertenmodell_en.anzahl_mc,expertenmodell_en.en_schritt_dict,expertenmodell_en.enaktiv_artdict)
     elif(self.sprache == "de"):self.lehrmanager=Lehrmanager(name, expertenmodell_de.lessoninhalte, expertenmodell_de.anzahl_erklaerungen, expertenmodell_de.anzahlAufg, expertenmodell_de.anzahlWE, expertenmodell_de.anzahl_lt, expertenmodell_de.anzahl_mc,expertenmodell_de.en_schritt_dict,expertenmodell_de.enaktiv_artdict)
@@ -370,6 +372,8 @@ class Synja(threading.Thread):
       
   #fuegt nutzereingaben die vom Dialog input kommen in queue ein      
   def addDialogNutzer(self, input):
+    self.sendqueueDialog = queue.Queue()
+    
     self.no_resp_time = 20
     self.highlight_input_element = ""
     self.lastmessagetime = int(round(time.time()))
@@ -385,7 +389,7 @@ class Synja(threading.Thread):
         return
     
     #print("SW: aDN: "+input+"["+self.name+"]")
-    self.recvqueueDialog.put(input)
+    self.recvqueueDialog.put(input)#+" "+str(self.msgcounter))
     self.text+="You: "+input+'\n'
 
   #fuegt nutzereingaben die vom Teaching input kommen in queue ein
@@ -421,22 +425,25 @@ class Synja(threading.Thread):
     boese =  '"'+'\n'   
     if(boese in ausgabe):ausgabe = ausgabe.replace(boese,"") 
        
+    '''
     if(len(str(ausgabe)) > 150):
       time.sleep(3)
     else:
       time.sleep(1)   
-      
-    if(isinstance(ausgabe, list)):self.sendqueueDialog.put(ausgabe)
-    else: self.sendqueueDialog.put(ausgabe)
+    '''  
+    self.msgcounter += 1
+    if(isinstance(ausgabe, list)):self.sendqueueDialog.put(ausgabe)#+" "+str(self.msgcounter))
+    else: self.sendqueueDialog.put(ausgabe)#+" "+str(self.msgcounter))
     
     
   #fuegt lehrausgaben von synja in eingabequeue ein, die konvertierungen geschehen in schritt()
   def addLehreSynja(self, phrase):
+    '''
     if(len(str(phrase)) > 150):
       time.sleep(3)
     else:
       time.sleep(1) 
-      
+    '''  
     self.lastmessagetime = int(round(time.time()))
     self.no_resp_time = 20
     self.highlight_input_element = ""
@@ -448,26 +455,31 @@ class Synja(threading.Thread):
   def listen_timeout(self, timeout):
     end = time.time() + timeout
     while(self.running):
-      if (self.input):
-          if(self.sendqueueDialog.empty() == False): return None
-          a = None
-          b = None
-          if(self.recvqueueDialog.empty() == False): 
-            a = self.recvqueueDialog.get()
-            #print("Dialog: "+str(a))
-          if(self.recvqueueLehre.empty() == False): 
-            b = self.recvqueueLehre.get()
-            #print("Lehre: "+str(b))
-          return [a,b] 
-      else:
-        #print (str(time.time()) + " " + str(end))
+      #if(self.input > 0):
+        #print("listen ... "+str(self.input))
+        self.input=0
+        if(self.sendqueueDialog.empty() == False and self.recvqueueLehre.empty() == False): return None
+        a = None
+        b = None
+        if(self.recvqueueDialog.empty() == False): 
+          a = self.recvqueueDialog.get()
+          #print("Dialog: "+str(a))
+        if(self.recvqueueLehre.empty() == False): 
+          b = self.recvqueueLehre.get()
+          #print("Lehre: "+str(b))
+        return [a,b] 
+        '''
+        else:
+          #print (str(time.time()) + " " + str(end))
+        '''
         if time.time() >= end:
-          return ""
+          return [None,None]
           #print ("returning \"\"")
         else:
           time.sleep(0.5)
           continue
-        
+        '''
+        '''
   def listenLong(self):
 #    print("listenlong") 
     answer = self.listen_timeout(60)
@@ -481,8 +493,10 @@ class Synja(threading.Thread):
   #getter fuer sendqueueDialog
   def getDialogSynja(self):
     time.sleep(self.sleeptime)
+    #print("queue laenge: "+str(self.sendqueueDialog.maxsize)+" "+str(self.id))
     ausgabe = self.sendqueueDialog.get()
     self.sleeptime = len(str(ausgabe)) / writeV
+    
     return ausgabe
    
   #hilfsfunktion fuer responsiveness
@@ -525,7 +539,6 @@ class Synja(threading.Thread):
         if(self.sprache == "de"):phrase = nlg_de.generate(s)
         elif(self.sprache == "en"):phrase = nlg_en.generate(s)
         
-      print(phrase)
       self.addDialogSynja(phrase)   
    
   #ermoeglicht reaktion auf ausbleiben von nutzerreaktion 

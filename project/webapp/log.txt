@@ -1,0 +1,1003 @@
+libs ready!
+Fitting 2 folds for each of 6 candidates, totalling 12 fits
+Fitting 2 folds for each of 6 candidates, totalling 12 fits
+Fitting 2 folds for each of 6 candidates, totalling 12 fits
+natives ready!
+webapp ready!
+de
+synja 1 connected
+Client disconnected 8adc6edea22d436aaba8231ac595ac77
+set to stop
+en
+synja 1 connected
+Client disconnected 805d8a095d0746a1b28187bfcc53a245
+set to stop
+de
+synja 1 connected
+WA de: hallo from [NO_ACCOUNT]
+1
+nlu: eingabe: "hallo", intent: "gruss", with confidence 100%
+LM: 6
+Client disconnected eb8fcad389f4472caa515d4f759c598f
+set to stop
+de
+synja 1 connected
+de
+synja 2 connected
+de
+synja 3 connected
+WA de: Hi from [NO_ACCOUNT]
+1
+WA de: Hi from [NO_ACCOUNT]
+1
+nlu: eingabe: "hi", intent: "gruss", with confidence 100%
+LM: 6
+nlu: eingabe: "hi", intent: "gruss", with confidence 100%
+LM: 6
+WA de: hi from [NO_ACCOUNT]
+1
+WA de: Klassen from [NO_ACCOUNT]
+1
+WA de: Grundlagen from [NO_ACCOUNT]
+1
+nlu: eingabe: "grundlagen", intent: "gruss", with confidence 0.48176750332499774
+LM: 5
+nlu: eingabe: "hi", intent: "gruss", with confidence 100%
+LM: 6
+nlu: eingabe: "klassen", intent: "nein", with confidence 0.6109946327647077
+LM: 5
+WA de: ja from [NO_ACCOUNT]
+1
+nlu: eingabe: "ja", intent: "ja", with confidence 100%
+LM: 4
+WA de: ja from [NO_ACCOUNT]
+1
+nlu: eingabe: "ja", intent: "ja", with confidence 100%
+LM: 4
+de
+synja 4 connected
+de
+synja 5 connected
+de
+synja 6 connected
+WA de: Programmstruktur from [NO_ACCOUNT]
+1
+nlu: eingabe: "programmstruktur", intent: "gruss", with confidence 0.6368305803589756
+LM: 4
+de
+synja 7 connected
+de
+synja 8 connected
+de
+synja 9 connected
+WA de: Hi from [NO_ACCOUNT]
+1
+de
+synja 10 connected
+nlu: eingabe: "hi", intent: "gruss", with confidence 100%
+LM: 6
+de
+synja 11 connected
+de
+synja 12 connected
+de
+synja 13 connected
+WA de: Anweisungen from [NO_ACCOUNT]
+1
+WA de: Hi from [NO_ACCOUNT]
+1
+de
+synja 14 connected
+nlu: eingabe: "hi", intent: "gruss", with confidence 100%
+LM: 6
+nlu: eingabe: "anweisungen", intent: "nein", with confidence 0.2077913616212565
+LM: 4
+de
+synja 15 connected
+WA de: ja from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+1
+nlu: eingabe: "ja", intent: "ja", with confidence 100%
+LM: 4
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 3
+WA de: nein from [NO_ACCOUNT]
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+1
+WA de: Hi from [NO_ACCOUNT]
+1
+WA de: ja from [NO_ACCOUNT]
+1
+de
+synja 16 connected
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 3
+WA de: Hi from [NO_ACCOUNT]
+1
+WA de: Kontrollstrukturen from [NO_ACCOUNT]
+1
+LM: 4
+de
+synja 17 connected
+nlu: eingabe: "ja", intent: "ja", with confidence 100%
+LM: 4
+nlu: eingabe: "hi", intent: "gruss", with confidence 100%
+LM: 6
+nlu: eingabe: "hi", intent: "gruss", with confidence 100%
+LM: 6
+de
+synja 18 connected
+WA de: ja from [NO_ACCOUNT]
+1
+nlu: eingabe: "ja", intent: "ja", with confidence 100%
+LM: 4
+WA de: Hi from [NO_ACCOUNT]
+1
+nlu: eingabe: "hi", intent: "gruss", with confidence 100%
+LM: 6
+WA de: Hi from [NO_ACCOUNT]
+1
+nlu: eingabe: "hi", intent: "gruss", with confidence 100%
+LM: 6
+de
+synja 19 connected
+de
+synja 20 connected
+WA de: Hi from [NO_ACCOUNT]
+1
+WA de: Hi from [NO_ACCOUNT]
+1
+WA de: Hi from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+1
+WA de: nein from [NO_ACCOUNT]
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+1
+nlu: eingabe: "hi", intent: "gruss", with confidence 100%
+LM: 6
+WA de: Hi from [NO_ACCOUNT]
+1
+nlu: eingabe: "hi", intent: "gruss", with confidence 100%
+LM: 6
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 3
+WA de: Hi from [NO_ACCOUNT]
+1
+nlu: eingabe: "hi", intent: "gruss", with confidence 100%
+LM: 6
+WA de: Arrays from [NO_ACCOUNT]
+1
+WA de: Hi from [NO_ACCOUNT]
+1
+nlu: eingabe: "hi", intent: "gruss", with confidence 100%
+LM: 6
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 3
+nlu: eingabe: "hi", intent: "gruss", with confidence 100%
+LM: 6
+LM: 4
+WA de: Hi from [NO_ACCOUNT]
+1
+nlu: eingabe: "hi", intent: "gruss", with confidence 100%
+LM: 6
+WA de: Hi from [NO_ACCOUNT]
+1
+nlu: eingabe: "hi", intent: "gruss", with confidence 100%
+LM: 6
+de
+synja 21 connected
+WA de: nein from [NO_ACCOUNT]
+1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+WA de: Hi from [NO_ACCOUNT]
+1
+nlu: eingabe: "hi", intent: "gruss", with confidence 100%
+LM: 6
+WA de: Hi from [NO_ACCOUNT]
+1
+WA de: Klassen from [NO_ACCOUNT]
+1
+nlu: eingabe: "klassen", intent: "nein", with confidence 0.6109946327647077
+LM: 5
+nlu: eingabe: "hi", intent: "gruss", with confidence 100%
+LM: 6
+nlu: eingabe: "hi", intent: "gruss", with confidence 100%
+LM: 6
+WA de: Hi from [NO_ACCOUNT]
+1
+nlu: eingabe: "hi", intent: "gruss", with confidence 100%
+LM: 6
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: Operatoren from [NO_ACCOUNT]
+1
+WA de: Programmstruktur from [NO_ACCOUNT]
+1
+WA de: Hi from [NO_ACCOUNT]
+1
+WA de: Anweisungen from [NO_ACCOUNT]
+1
+WA de: ja from [NO_ACCOUNT]
+1
+nlu: eingabe: "programmstruktur", intent: "gruss", with confidence 0.6368305803589756
+LM: 4
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+WA de: Anweisungen from [NO_ACCOUNT]
+1
+WA de: ja from [NO_ACCOUNT]
+1
+LM: 4
+phrase: "operators" nicht in nlg vorhanden!
+WA de: Kontrollstrukturen from [NO_ACCOUNT]
+1
+nlu: eingabe: "hi", intent: "gruss", with confidence 100%
+LM: 6
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: Programmstruktur from [NO_ACCOUNT]
+1
+WA de: Methoden from [NO_ACCOUNT]
+1
+WA de: Kontrollstrukturen from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: Operatoren from [NO_ACCOUNT]
+1
+nlu: eingabe: "programmstruktur", intent: "gruss", with confidence 0.6368305803589756
+LM: 4
+WA de: Anweisungen from [NO_ACCOUNT]
+1
+nlu: eingabe: "anweisungen", intent: "nein", with confidence 0.2077913616212565
+LM: 4
+LM: 4
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+LM: 4
+nlu: eingabe: "ja", intent: "ja", with confidence 100%
+LM: 4
+nlu: eingabe: "anweisungen", intent: "nein", with confidence 0.2077913616212565
+LM: 4
+WA de: ja from [NO_ACCOUNT]
+1
+WA de: Kontrollstrukturen from [NO_ACCOUNT]
+1
+nlu: eingabe: "ja", intent: "ja", with confidence 100%
+LM: 4
+nlu: eingabe: "methoden", intent: "nein", with confidence 0.4950627865906381
+LM: 4
+WA de: ja from [NO_ACCOUNT]
+1
+LM: 4
+phrase: "operators" nicht in nlg vorhanden!
+LM: 4
+WA de: ja from [NO_ACCOUNT]
+1
+WA de: ja from [NO_ACCOUNT]
+1
+WA de: Kontrollstrukturen from [NO_ACCOUNT]
+1
+nlu: eingabe: "anweisungen", intent: "nein", with confidence 0.2077913616212565
+LM: 4
+WA de: Grundlagen from [NO_ACCOUNT]
+1
+WA de: ja from [NO_ACCOUNT]
+1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+WA de: ja from [NO_ACCOUNT]
+1
+nlu: eingabe: "ja", intent: "ja", with confidence 100%
+LM: 4
+nlu: eingabe: "ja", intent: "ja", with confidence 100%
+LM: 4
+nlu: eingabe: "ja", intent: "ja", with confidence 100%
+LM: 4
+WA de: ja from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+nlu: eingabe: "ja", intent: "ja", with confidence 100%
+LM: 4
+WA de: ja from [NO_ACCOUNT]
+1
+nlu: eingabe: "ja", intent: "ja", with confidence 100%
+LM: 4
+nlu: eingabe: "ja", intent: "ja", with confidence 100%
+LM: 4
+WA de: ja from [NO_ACCOUNT]
+1
+LM: 4
+nlu: eingabe: "grundlagen", intent: "gruss", with confidence 0.48176750332499774
+LM: 5
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+WA de: Operatoren from [NO_ACCOUNT]
+1
+nlu: eingabe: "ja", intent: "ja", with confidence 100%
+LM: 4
+programm_structure_main
+programm_structure_main
+LM: 4
+phrase: "operators" nicht in nlg vorhanden!
+WA de: ja from [NO_ACCOUNT]
+1
+nlu: eingabe: "ja", intent: "ja", with confidence 100%
+LM: 4
+WA de: ja from [NO_ACCOUNT]
+1
+WA de: ja from [NO_ACCOUNT]
+1
+nlu: eingabe: "ja", intent: "ja", with confidence 100%
+LM: 4
+nlu: eingabe: "ja", intent: "ja", with confidence 100%
+LM: 4
+WA de: nein from [NO_ACCOUNT]
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+1
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: ja from [NO_ACCOUNT]
+1
+WA de: ja from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 3
+WA de: nein from [NO_ACCOUNT]
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+1
+WA de: nein from [NO_ACCOUNT]
+2
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 3
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+nlu: eingabe: "ja", intent: "ja", with confidence 100%
+LM: 4
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+WA de: nein from [NO_ACCOUNT]
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+1
+WA de: nein from [NO_ACCOUNT]
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+1
+WA de: nein from [NO_ACCOUNT]
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 3
+WA de: nein from [NO_ACCOUNT]
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 3
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 3
+WA de: nein from [NO_ACCOUNT]
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 3
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 3
+WA de: nein from [NO_ACCOUNT]
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+1
+WA de: nein from [NO_ACCOUNT]
+2
+WA de: nein from [NO_ACCOUNT]
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+1
+WA de: nein from [NO_ACCOUNT]
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 3
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 3
+WA de: nein from [NO_ACCOUNT]
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 3
+WA de: nein from [NO_ACCOUNT]
+3
+WA de: nein from [NO_ACCOUNT]
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+1
+WA de: nein from [NO_ACCOUNT]
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 1
+WA de: nein from [NO_ACCOUNT]
+1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 3
+WA de: nein from [NO_ACCOUNT]
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+1
+WA de: nein from [NO_ACCOUNT]
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+1
+WA de: nein from [NO_ACCOUNT]
+2
+WA de: nein from [NO_ACCOUNT]
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+1
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+WA de: nein from [NO_ACCOUNT]
+1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: ja from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+3
+WA de: nein from [NO_ACCOUNT]
+1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 3
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 3
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 3
+nlu: eingabe: "ja", intent: "ja", with confidence 100%
+LM: 3
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+WA de: nein from [NO_ACCOUNT]
+1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+WA de: ja from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+4
+nlu: eingabe: "ja", intent: "ja", with confidence 100%
+LM: 3
+WA de: ja from [NO_ACCOUNT]
+1
+nlu: eingabe: "ja", intent: "ja", with confidence 100%
+LM: 3
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: ja from [NO_ACCOUNT]
+1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+4
+WA de: nein from [NO_ACCOUNT]
+3
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+WA de: nein from [NO_ACCOUNT]
+1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+nlu: eingabe: "ja", intent: "ja", with confidence 100%
+LM: 3
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 3
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+5
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 3
+WA de: nein from [NO_ACCOUNT]
+1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 3
+WA de: nein from [NO_ACCOUNT]
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+1
+WA de: nein from [NO_ACCOUNT]
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 1
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 1
+WA de: nein from [NO_ACCOUNT]
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 1
+WA de: nein from [NO_ACCOUNT]
+4
+WA de: nein from [NO_ACCOUNT]
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+1
+WA de: nein from [NO_ACCOUNT]
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+1
+WA de: ja from [NO_ACCOUNT]
+1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 3
+WA de: nein from [NO_ACCOUNT]
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+1
+WA de: nein from [NO_ACCOUNT]
+1
+nlu: eingabe: "ja", intent: "ja", with confidence 100%
+LM: 4
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+WA de: nein from [NO_ACCOUNT]
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+1
+WA de: nein from [NO_ACCOUNT]
+5
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+1
+WA de: nein from [NO_ACCOUNT]
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+1
+WA de: nein from [NO_ACCOUNT]
+1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+WA de: ja from [NO_ACCOUNT]
+6
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 1
+WA de: nein from [NO_ACCOUNT]
+1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+WA de: ja from [NO_ACCOUNT]
+1
+WA de: ja from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+nlu: eingabe: "ja", intent: "ja", with confidence 100%
+LM: 3
+WA de: ja from [NO_ACCOUNT]
+1
+nlu: eingabe: "ja", intent: "ja", with confidence 100%
+LM: 3
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+WA de: ja from [NO_ACCOUNT]
+1
+WA de: ja from [NO_ACCOUNT]
+1
+WA de: ja from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+5
+nlu: eingabe: "ja", intent: "ja", with confidence 100%
+LM: 3
+nlu: eingabe: "ja", intent: "ja", with confidence 100%
+LM: 3
+WA de: nein from [NO_ACCOUNT]
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+1
+WA de: nein from [NO_ACCOUNT]
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+1
+nlu: eingabe: "ja", intent: "ja", with confidence 100%
+LM: 3
+WA de: ja from [NO_ACCOUNT]
+6
+WA de: ja from [NO_ACCOUNT]
+1
+nlu: eingabe: "ja", intent: "ja", with confidence 100%
+LM: 3
+WA de: ja from [NO_ACCOUNT]
+1
+WA de: ja from [NO_ACCOUNT]
+1
+WA de: ja from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+1
+nlu: eingabe: "ja", intent: "ja", with confidence 100%
+LM: 3
+WA de: nein from [NO_ACCOUNT]
+7
+nlu: eingabe: "ja", intent: "ja", with confidence 100%
+LM: 3
+WA de: nein from [NO_ACCOUNT]
+1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+nlu: eingabe: "ja", intent: "ja", with confidence 100%
+LM: 3
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+nlu: eingabe: "ja", intent: "ja", with confidence 100%
+LM: 3
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 3
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 3
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 3
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 3
+WA de: ja from [NO_ACCOUNT]
+6
+WA de: nein from [NO_ACCOUNT]
+1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 3
+WA de: ja from [NO_ACCOUNT]
+1
+WA de: ja from [NO_ACCOUNT]
+1
+nlu: eingabe: "ja", intent: "ja", with confidence 100%
+LM: 3
+nlu: eingabe: "ja", intent: "ja", with confidence 100%
+LM: 3
+WA de: ja from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+7
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+1
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+1
+WA de: nein from [NO_ACCOUNT]
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+1
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+8
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 3
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 3
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 3
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 3
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 3
+nlu: eingabe: "ja", intent: "ja", with confidence 100%
+LM: 3
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 1
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+WA de: nein from [NO_ACCOUNT]
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 1
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+7
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 3
+WA de: nein from [NO_ACCOUNT]
+1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+WA de: ja from [NO_ACCOUNT]
+1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+WA de: ja from [NO_ACCOUNT]
+1
+WA de: ja from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+8
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+9
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 3
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 3
+nlu: eingabe: "ja", intent: "ja", with confidence 100%
+LM: 3
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+nlu: eingabe: "ja", intent: "ja", with confidence 100%
+LM: 3
+nlu: eingabe: "ja", intent: "ja", with confidence 100%
+LM: 3
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+WA de: ja from [NO_ACCOUNT]
+1
+nlu: eingabe: "ja", intent: "ja", with confidence 100%
+LM: 3
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+10
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+9
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+8
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 3
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 3
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 3
+WA de: nein from [NO_ACCOUNT]
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+1
+WA de: nein from [NO_ACCOUNT]
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 1
+WA de: nein from [NO_ACCOUNT]
+1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 3
+programm_structure_import
+programm_structure_import
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 1
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: ja from [NO_ACCOUNT]
+11
+WA de: nein from [NO_ACCOUNT]
+1
+WA de: nein from [NO_ACCOUNT]
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+1
+nlu: eingabe: "nein", intent: "nein", with confidence 100%
+LM: 4

@@ -1,0 +1,933 @@
+{
+  "rasa_nlu_data": {
+    "common_examples": [
+      {
+        "intent": "kompliment",
+        "text": "das macht spaß!"
+      },
+      {
+        "intent": "kompliment",
+        "text": "wow, das macht spaß!"
+      },
+      {
+        "intent": "kompliment",
+        "text": "das ist cool"
+      },
+      {
+        "intent": "kompliment",
+        "text": "synja du bist cool"
+      },
+      {
+        "intent": "kompliment",
+        "text": "synja, ich mag dich wirklich"
+      },
+      {
+        "intent": "kompliment",
+        "text": "das ist krass, synja."
+      },
+      {
+        "intent": "kompliment",
+        "text": "das ist so toll!"
+      },
+      {
+        "intent": "kompliment",
+        "text": "wow, synja, das macht so viel spaß"
+      },
+      {
+        "intent": "kompliment",
+        "text": "wow ich verstehe. dank dir!"
+      },
+      {
+        "intent": "kompliment",
+        "text": "hey, das ist richtig gut!"
+      },
+      {
+        "intent": "kompliment",
+        "text": "ich verstehe es endlich! dank dir synja."
+      },
+      {
+        "intent": "kompliment",
+        "text": "du bist ein tolles programm!"
+      },
+      {
+        "intent": "kompliment",
+        "text": "ich mag das"
+      },
+      {
+        "intent": "kompliment",
+        "text": "ich liebe dich, synja!"
+      },
+      {
+        "intent": "kompliment",
+        "text": "ja, das ist toll!"
+      },
+      {
+        "intent": "kompliment",
+        "text": "ich bin glücklich"
+      },
+      {
+        "intent": "kompliment",
+        "text": "ich bin so glücklich"
+      },
+      {
+        "intent": "kompliment",
+        "text": "ich mag das wirklich"
+      },
+      {
+        "intent": "kompliment",
+        "text": "ich liebe das so doll"
+      },
+      {
+        "intent": "kompliment",
+        "text": "man, das ist richtig gut"
+      },
+      {
+        "intent": "kompliment",
+        "text": "synja, du bist eine tolle lehrerin"
+      },
+      {
+        "intent": "kompliment",
+        "text": "synja, du bist die beste!"
+      },
+      {
+        "intent": "dank",
+        "text": "danke, das ist nett"
+      },
+      {
+        "intent": "dank",
+        "text": "danke dir, ich bin froh"
+      },
+      {
+        "intent": "dank",
+        "text": "danke dir"
+      },
+      {
+        "intent": "dank",
+        "text": "danke dir, das ist toll"
+      },
+      {
+        "intent": "dank",
+        "text": "danke"
+      },
+      {
+        "intent": "dank",
+        "text": "danke synja, du rockst!"
+      },
+      {
+        "intent": "dank",
+        "text": "du bist die beste!"
+      },
+      {
+        "intent": "dank",
+        "text": "ich bin glücklich und dankbar"
+      },
+      {
+        "intent": "dank",
+        "text": "danke dir, mich hat das wirklich von den füßen gehauen"
+      },
+      {
+        "intent": "dank",
+        "text": "mein herz lacht immer noch"
+      },
+      {
+        "intent": "dank",
+        "text": "manchmal meinen die kleinen sachen am meisten"
+      },
+      {
+        "intent": "dank",
+        "text": "du hast mir den tag versüßt."
+      },
+      {
+        "intent": "kompliment",
+        "text": "ich habe keine worte mehr, danke."
+      },
+      {
+        "intent": "dank",
+        "text": "ich kann nichts mehr sagen, außer danke!"
+      },
+      {
+        "intent": "dank",
+        "text": "mein herz hört nicht auf dir zu danken!"
+      },
+      {
+        "intent": "dank",
+        "text": "danke dir! du bist ein segen"
+      },
+      {
+        "intent": "dank",
+        "text": "danke dir, das du mein engel bist!"
+      },
+      {
+        "intent": "frustration",
+        "text": "oh nein, ich bin verloren!"
+      },
+      {
+        "intent": "frustration",
+        "text": "ich weiß nicht mehr weiter!"
+      },
+      {
+        "intent": "frustration",
+        "text": "ach, weiß auch garnicht!"
+      },
+      {
+        "intent": "frustration",
+        "text": "ich bin so schlecht!"
+      },
+      {
+        "intent": "frustration",
+        "text": "warum ist das so schwierig"
+      },
+      {
+        "intent": "frustration",
+        "text": "das ist unfassbar schwierig"
+      },
+      {
+        "intent": "frustration",
+        "text": "ich weiß garnichts!"
+      },
+      {
+        "intent": "frustration",
+        "text": "man, das ist so doof"
+      },
+      {
+        "intent": "frustration",
+        "text": "oh nein, das ist wieder so schwierig"
+      },
+      {
+        "intent": "frustration",
+        "text": "ich bin richtig schlecht darin"
+      },
+      {
+        "intent": "frustration",
+        "text": "ich bin entäuscht"
+      },
+      {
+        "intent": "frustration",
+        "text": "das ist wirklich entäuschend"
+      },
+      {
+        "intent": "frustration",
+        "text": "oh nein, was soll ich nur tun"
+      },
+      {
+        "intent": "frustration",
+        "text": "warum ist das so unfassbar schwierig"
+      },
+      {
+        "intent": "frustration",
+        "text": "und wieder weiß ich nicht was ich tun soll"
+      },
+      {
+        "intent": "frustration",
+        "text": "man, ich bin verloren"
+      },
+      {
+        "intent": "frustration",
+        "text": "man, das ist so schwierig"
+      },
+      {
+        "intent": "hinweis",
+        "text": "bitte gib mir einen hinweis, synja "
+      },
+      {
+        "intent": "hinweis",
+        "text": "gib mir einen hinweis"
+      },
+      {
+        "intent": "hinweis",
+        "text": "ich brauche einen hinweis"
+      },
+      {
+        "intent": "hinweis",
+        "text": "ich brauche jetzt wirklich einen hinweis"
+      },
+      {
+        "intent": "hinweis",
+        "text": "synja, ich denke ich brauche einen hinweis"
+      },
+      {
+        "intent": "hinweis",
+        "text": "synja, gib mir bitte einen hinweis"
+      },
+      {
+        "intent": "hinweis",
+        "text": "ein tipp wäre toll"
+      },
+      {
+        "intent": "hinweis",
+        "text": "ich würde es lieben einen hinweis zu bekommen"
+      },
+      {
+        "intent": "hinweis",
+        "text": "Synja, könntest du mir einen hinweis geben?"
+      },
+      {
+        "intent": "hinweis",
+        "text": "wie wärs mit einem hinweis?"
+      },
+      {
+        "intent": "hinweis",
+        "text": "diese aufgabe ist so schwierig. gibts du mir einen hinweis?"
+      },
+      {
+        "intent": "hinweis",
+        "text": "ein hinweis wäre mir willkommen"
+      },
+      {
+        "intent": "hinweis",
+        "text": "könntest du mir vielleicht einen hinweis geben?"
+      },
+      {
+        "intent": "hinweis",
+        "text": "synja, bitte gibt mir einen tipp"
+      },
+      {
+        "intent": "hinweis",
+        "text": "synja, ich könnte wirklich einen tipp gebrauchen"
+      },
+      {
+        "intent": "hinweis",
+        "text": "ja, einen hinweis wäre das richtige"
+      },
+      {
+        "intent": "hinweis",
+        "text": "bitte, gib mir einen hinweis"
+      },
+      {
+        "intent": "hinweis",
+        "text": "ich könnte wirklich einen tipp gebrauchen können, synja"
+      },
+      {
+        "intent": "hinweis",
+        "text": "hey, einen tipp würde ich wirklich begrüßen"
+      },
+      {
+        "intent": "hinweis",
+        "text": "ja, ein hinweis wäre toll!"
+      },
+      {
+        "intent": "hinweis",
+        "text": "genau, einen hinweis brauche ich"
+      },
+      {
+        "intent": "unschluessig",
+        "text": "was soll ich tun?"
+      },
+      {
+        "intent": "unschluessig",
+        "text": "ich weiß nicht was ich tun soll"
+      },
+      {
+        "intent": "unschluessig",
+        "text": "synja, was soll ich nur tun"
+      },
+      {
+        "intent": "unschluessig",
+        "text": "was habe ich nun zu tun"
+      },
+      {
+        "intent": "unschluessig",
+        "text": "was soll ich jetzt machen"
+      },
+      {
+        "intent": "unschluessig",
+        "text": "was soll ich machen"
+      },
+      {
+        "intent": "unschluessig",
+        "text": "was kann ich tun"
+      },
+      {
+        "intent": "verstanden",
+        "text": "ich weiß"
+      },
+      {
+        "intent": "verstanden",
+        "text": "ich verstehe es"
+      },
+      {
+        "intent": "verstanden",
+        "text": "ich kapiere es"
+      },
+      {
+        "intent": "verstanden",
+        "text": "ich verstehe die idee"
+      },
+      {
+        "intent": "verstanden",
+        "text": "ich denke ich verstehe das"
+      },
+      {
+        "intent": "verstanden",
+        "text": "ich verstehe import"
+      },
+      {
+        "intent": "verstanden",
+        "text": "ich verstehe das konzept"
+      },
+      {
+        "intent": "verstanden",
+        "text": "klar"
+      },
+      {
+        "intent": "verstanden",
+        "text": "das ist mir klar"
+      },
+      {
+        "intent": "verstanden",
+        "text": "ich sehe jetzt, dass das richtig ist"
+      },
+      {
+        "intent": "verstanden",
+        "text": "ich weiß das, synja"
+      },
+      {
+        "intent": "verstanden",
+        "text": "jetzt verstehe ich das, synja"
+      },
+      {
+        "intent": "verstanden",
+        "text": "nun ist mir das klar"
+      },
+      {
+        "intent": "verstanden",
+        "text": "ich denke ich verstehe das konzept"
+      },
+      {
+        "intent": "verstanden",
+        "text": "ich denke ich habe das verstanden"
+      },
+      {
+        "intent": "verstanden",
+        "text": "das wars, ich verstehe es"
+      },
+      {
+        "intent": "weiss_nicht",
+        "text": "ich verstehe das nicht"
+      },
+      {
+        "intent": "weiss_nicht",
+        "text": "das verstehe ich nicht"
+      },
+      {
+        "intent": "weiss_nicht",
+        "text": "ich kapiere das einfach nicht"
+      },
+      {
+        "intent": "weiss_nicht",
+        "text": "ich sehe das einfach nicht"
+      },
+      {
+        "intent": "weiss_nicht",
+        "text": "ich habe das konzept nicht verstanden"
+      },
+      {
+        "intent": "weiss_nicht",
+        "text": "ich habe das problem, dass ich nicht verstehe"
+      },
+      {
+        "intent": "weiss_nicht",
+        "text": "das verwirrt micht"
+      },
+      {
+        "intent": "weiss_nicht",
+        "text": "das ist schwierig zu verstehen"
+      },
+      {
+        "intent": "weiss_nicht",
+        "text": "was ist das?"
+      },
+      {
+        "intent": "weiss_nicht",
+        "text": "ich weiß nicht was ich tun soll"
+      },
+      {
+        "intent": "weiss_nicht",
+        "text": "ich habs vergessen"
+      },
+      {
+        "intent": "weiss_nicht",
+        "text": "ich kann mich nicht erinnern"
+      },
+      {
+        "intent": "weiss_nicht",
+        "text": "ich weiß einfach nicht"
+      },
+      {
+        "intent": "weiss_nicht",
+        "text": "ich kann micht nicht mehr darin erinnern"
+      },
+      {
+        "intent": "weiss_nicht",
+        "text": "synja, was ist das?"
+      },
+      {
+        "intent": "weiss_nicht",
+        "text": "was soll das heißen?"
+      },
+      {
+        "intent": "tell_joke",
+        "text": "Bitte erzähl mir einen Witz."
+      },
+      {
+        "intent": "tell_joke",
+        "text": "Kannst du mir einen tipp geben"
+      },
+      {
+        "intent": "tell_joke",
+        "text": "Synja, erzähl mir einen witz."
+      },
+      {
+        "intent": "tell_joke",
+        "text": "Wie wärs mit einem Witz?"
+      },
+      {
+        "intent": "tell_joke",
+        "text": "Synja, kannst du mir einen witz erzählen?"
+      },
+      {
+        "intent": "tell_joke",
+        "text": "Synja, könntest du mir bitte einen witz erzählen?"
+      },
+      {
+        "intent": "tell_joke",
+        "text": "Synja, kennst du witze?"
+      },
+      {
+        "intent": "tell_joke",
+        "text": "Ich bin so gelangweilt, bitte erzähl mir einen witz?"
+      },
+      {
+        "intent": "gruss",
+        "text": "hallo"
+      },
+      {
+        "intent": "gruss",
+        "text": "hallo synja"
+      },
+      {
+        "intent": "gruss",
+        "text": "hallo synja, ich freue mich dich zu kennenzulernen"
+      },
+      {
+        "intent": "gruss",
+        "text": "schön dich zu treffen"
+      },
+      {
+        "intent": "gruss",
+        "text": "hi"
+      },
+      {
+        "intent": "gruss",
+        "text": "guten morgen"
+      },
+      {
+        "intent": "gruss",
+        "text": "grüße"
+      },
+      {
+        "intent": "gruss",
+        "text": "grüße, synja"
+      },
+      {
+        "intent": "gruss",
+        "text": "hey"
+      },
+      {
+        "intent": "gruss",
+        "text": "hey, wie gehts dir"
+      },
+      {
+        "intent": "gruss",
+        "text": "hi was ist los?"
+      },
+      {
+        "intent": "gruss",
+        "text": "wie fühlst du dich?"
+      },
+      {
+        "intent": "gruss",
+        "text": "was ist los"
+      },
+      {
+        "intent": "gruss",
+        "text": "hi synja"
+      },
+      {
+        "intent": "gruss",
+        "text": "hey synja"
+      },
+      {
+        "intent": "gruss",
+        "text": "guten tag"
+      },
+      {
+        "intent": "gruss",
+        "text": "oh hallo, synja"
+      },
+      {
+        "intent": "ja",
+        "text": "ja"
+      },
+      {
+        "intent": "ja",
+        "text": "absolut"
+      },
+      {
+        "intent": "ja",
+        "text": "ja, ich akzeptiere"
+      },
+      {
+        "intent": "ja",
+        "text": "ja, das ist richtig"
+      },
+      {
+        "intent": "ja",
+        "text": "ja, ich denke das ist richtig"
+      },
+      {
+        "intent": "ja",
+        "text": "ja klar"
+      },
+      {
+        "intent": "ja",
+        "text": "ich würde ja sagen"
+      },
+      {
+        "intent": "ja",
+        "text": "ja lass es uns tun"
+      },
+      {
+        "intent": "ja",
+        "text": "lass es uns tun"
+      },
+      {
+        "intent": "ja",
+        "text": "ich würde das mögen"
+      },
+      {
+        "intent": "ja",
+        "text": "ich möchte das"
+      },
+      {
+        "intent": "ja",
+        "text": "ich möchte die "
+      },
+      {
+        "intent": "ja",
+        "text": "ich denke ja"
+      },
+      {
+        "intent": "ja",
+        "text": "ich akzeptiere"
+      },
+      {
+        "intent": "ja",
+        "text": "ja mache ich"
+      },
+      {
+        "intent": "ja",
+        "text": "klar"
+      },
+      {
+        "intent": "ja",
+        "text": "na los"
+      },
+      {
+        "intent": "ja",
+        "text": "das ist richtig"
+      },
+      {
+        "intent": "ja",
+        "text": "klar"
+      },
+      {
+        "intent": "ja",
+        "text": "ich denke ja"
+      },
+      {
+        "intent": "ja",
+        "text": "auf jeden fall"
+      },
+      {
+        "intent": "ja",
+        "text": "oh ja"
+      },
+      {
+        "intent": "ja",
+        "text": "ich würde das denken"
+      },
+      {
+        "intent": "ja",
+        "text": "das funktioniert"
+      },
+      {
+        "intent": "nein",
+        "text": "nein"
+      },
+      {
+        "intent": "nein",
+        "text": "nein synja"
+      },
+      {
+        "intent": "nein",
+        "text": "nein, das ist falsch"
+      },
+      {
+        "intent": "nein",
+        "text": "nein, nicht jetzt"
+      },
+      {
+        "intent": "nein",
+        "text": "nein, ich denke nicht"
+      },
+      {
+        "intent": "nein",
+        "text": "falsch"
+      },
+      {
+        "intent": "nein",
+        "text": "das ist falsch"
+      },
+      {
+        "intent": "nein",
+        "text": "ich werde das nicht tun"
+      },
+      {
+        "intent": "nein",
+        "text": "abgelehnt"
+      },
+      {
+        "intent": "nein",
+        "text": "nicht jetzt"
+      },
+      {
+        "intent": "nein",
+        "text": "das ist falsch"
+      },
+      {
+        "intent": "nein",
+        "text": "falsch"
+      },
+      {
+        "intent": "nein",
+        "text": "das funktioniert nicht"
+      },
+      {
+        "intent": "nein",
+        "text": "das wird nicht funktionieren"
+      },
+      {
+        "intent": "nein",
+        "text": "ich denke nicht dass das funktioniert"
+      },
+      {
+        "intent": "nein",
+        "text": "ich möchte nicht"
+      },
+      {
+        "intent": "nein",
+        "text": "ich möchte das nicht"
+      },
+      {
+        "intent": "nein",
+        "text": "ich denke das ist falsch"
+      },
+      {
+        "intent": "nein",
+        "text": "ich denke das ist nicht richtig"
+      },
+      {
+        "intent": "nein",
+        "text": "ich würde das gerne ablehnen"
+      },
+      {
+        "intent": "nein",
+        "text": "ich würde das ablehnen"
+      },
+      {
+        "intent": "no",
+        "text": "ich kann nicht"
+      },
+      {
+        "intent": "no",
+        "text": "ich kann nicht, synja"
+      },
+      {
+        "intent": "no",
+        "text": "ich kann das nicht tun"
+      },
+      {
+        "intent": "no",
+        "text": "synja, ich kann das nicht tun"
+      },
+      {
+        "intent": "no",
+        "text": "ich kann das leider nicht lösen"
+      },
+      {
+        "intent": "no",
+        "text": "ich kann die lösung nicht ermitteln"
+      },
+      {
+        "intent": "QTeaching",
+        "text": "was ist syntax"
+      },
+      {
+        "intent": "QTeaching",
+        "text": "was ist ein pedagogical agent?"
+      },
+      {
+        "intent": "konzept",
+        "text": "was soll das alles"
+      },
+      {
+        "intent": "QTeaching",
+        "text": "wie kannst du micht lehren"
+      },
+      {
+        "intent": "QTeaching",
+        "text": "was kannst du mir beibringen, synja?"
+      },
+      {
+        "intent": "QTeaching",
+        "text": "wie funktioniert die lehre, synja?"
+      },
+      {
+        "intent": "QTeaching",
+        "text": "wie kannst du mir helfen"
+      },
+      {
+        "intent": "QTeaching",
+        "text": "was kann ich lehren"
+      },
+      {
+        "intent": "QTeaching",
+        "text": "synja, wie kannst du mir helfen"
+      },
+      {
+        "intent": "QTeaching",
+        "text": "was soll das?"
+      },
+      {
+        "intent": "QTeaching",
+        "text": "was soll das alles?"
+      },
+      {
+        "intent": "QTeaching",
+        "text": "was macht dieses programm"
+      },
+      {
+        "intent": "QTeaching",
+        "text": "wer bist du"
+      },
+      {
+        "intent": "QTeaching",
+        "text": "wie funktioniert die lehre"
+      },
+      {
+        "intent": "QTeaching",
+        "text": "wie kannst du mich lehren"
+      },
+      {
+        "intent": "QTeaching",
+        "text": "was kannst du mir beibringen"
+      },
+      {
+        "intent": "QTeaching",
+        "text": "welche themen kann ich lernen"
+      },
+      {
+        "intent": "QDialog",
+        "text": "was sind deine intentionen?"
+      },
+      {
+        "intent": "QUI",
+        "text": "wie funktioniert die ui"
+      },
+      {
+        "intent": "QUI",
+        "text": "wo kann ich eingeben"
+      },
+      {
+        "intent": "QUI",
+        "text": "wo soll ich klicken"
+      },
+      {
+        "intent": "QUI",
+        "text": "wo wird das dargestellt"
+      },
+      {
+        "intent": "QUI",
+        "text": "was soll ich antworten"
+      },
+      {
+        "intent": "QUI",
+        "text": "was kann ich sagen"
+      },
+      {
+        "intent": "QUI",
+        "text": "wie kannst du mich verstehen?"
+      },
+      {
+        "intent": "QUI",
+        "text": "kannst du mich hören"
+      },
+      {
+        "intent": "QUI",
+        "text": "wie ist dieser dialog möglich"
+      },
+      {
+        "intent": "QUI",
+        "text": "wie kannst du mich verstehen?"
+      },
+      {
+        "intent": "QDialog",
+        "text": "kannst du mich verstehen?"
+      },
+      {
+        "intent": "QDialog",
+        "text": "wie kannst du verstehen was ich schreibe?"
+      },
+      {
+        "intent": "QDialog",
+        "text": "was kann ich sagen?"
+      },
+      {
+        "intent": "QDialog",
+        "text": "was kann ich jetzt schreiben?"
+      },
+      {
+        "intent": "QDialog",
+        "text": "warum sagst du das?"
+      },
+      {
+        "intent": "QDialog",
+        "text": "warum sprichst du so?"
+      },
+      {
+        "intent": "QDialog",
+        "text": "wie kann ich mit dir sprechen?"
+      },
+      {
+        "intent": "konzept",
+        "text": "ich verstehe garnichts"
+      },
+      {
+        "intent": "konzept",
+        "text": "ich verstehe das konzept nicht"
+      },
+      {
+        "intent": "konzept",
+        "text": "was ist eine variable?"
+      },
+      {
+        "intent": "konzept",
+        "text": "was sind kontrollstrukturen?"
+      }
+    ],
+    "regex_features": [],
+    "lookup_tables": [],
+    "entity_synonyms": []
+  }
+}
