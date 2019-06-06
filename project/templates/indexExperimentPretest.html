@@ -1,0 +1,203 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Synja Pedagogical Agent: Test</title>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.5/socket.io.min.js"></script>
+    
+
+<style>
+body {
+    font-family: sans-serif;
+}
+h1, h2, h3, h4 {
+    color: #001056;
+}
+
+
+.containerPing {
+  width: 100%;
+}
+
+.containerLinks {
+  height: 200px;
+    width: 100%;
+    border: 2px solid black;
+    padding: 5px;
+    display: flex; 
+    flex-direction: column-reverse;
+}
+
+.footer {
+  background-color: lightgrey;
+    height: 50px; 
+    width: 100%;
+
+    -moz-box-shadow:10px 10px 5px #000000;
+    -webkit-box-shadow:10px 10px 5px #000000;
+    box-shadow:10px 10px 5px #000000;
+}    
+
+.aufgabenlog {
+    height: 400px;
+    width: 100%;
+    
+    overflow-y: auto;
+    border: 2px solid black;
+    padding: 5px;
+    display: flex; 
+    flex-direction: column-reverse;
+    overflow-y: auto;
+
+
+
+    -moz-box-shadow:10px 10px 5px #000000;
+    -webkit-box-shadow:10px 10px 5px #000000;
+    box-shadow:10px 10px 5px #000000;
+}
+
+.dropshadow {
+    -moz-box-shadow:10px 10px 5px #000000;
+    -webkit-box-shadow:10px 10px 5px #000000;
+    box-shadow:10px 10px 5px #000000;
+}
+
+</style>
+</head>
+
+
+<body>
+<div class="footer">
+<p>  average ping: <b><span id="ping-pong"></span> ms</b></p>
+<form id="logout" method="POST" action='#'; form style = "width: -100px; float: right">
+			<input type="submit" value="logout" id="logout"> 
+</form>
+</div>
+
+
+
+
+<div style="width: 90%; float:right; height:0px; margin:10px">
+
+	<div class="containerLehre">
+		<h1 style="padding-top: 0px;"></h1>
+		<p>Please solve these Tasks.</p>
+		<!---    <p>Async mode is: <b>gevent</b></p>-->
+	    <div class="aufgabenlog">
+	   	 <div id="aufgabenlog"></div>
+	    </div>		
+	    <h2>Answer:</h2>
+	    
+	    <form id="aufgabenlog" method="POST" action='#' form = "width: 100%" >
+			<input type="text" name="emit_eingabe" id="emit_eingabe" placeholder="Input" style="width: 90%" class = "dropshadow" style="height: 100px">
+		    <input type="submit" value="Send" id="send_eingabe" class = "dropshadow">  <!--class="BUTTON_WOJ"-->
+	    </form>
+	</div>
+	
+</div>
+
+</body>
+
+<script type="text/javascript">
+
+
+</script>
+
+<script type="text/javascript" charset="utf-8">
+
+        $(document).ready(function() {
+            // Use a "/test" namespace.
+            // An application can open a connection on multiple namespaces, and
+            // Socket.IO will multiplex all those connections on a single
+            // physical channel. If you don't care about multiple channels, you
+            // can set the namespace to an empty string.
+            namespace = '/pretest';
+
+            // Connect to the Socket.IO server.
+            // The connection URL has the following format:
+            //     http[s]://<domain>:<port>[/<namespace>]
+            var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port + namespace);
+
+            //Redirects to this site
+            socket.on('redirect', function (data) {
+    			window.location = data.url;
+			});
+	          
+ 			socket.on('response_ew', function(msg) {
+ 				var testDiv = $("#aufgabenlog");
+ 				var domElement = testDiv[0];
+
+ 				testDiv.replaceWith('<div id="aufgabenlog"></div>');
+ 				newtext = msg.data
+ 				newtext = newtext.replace(/(?:\r\n|\r|\n)/g, '<br>');
+		   	 	
+                $('#aufgabenlog').append('<p><font size="+1">' + $('</p></font>').html(newtext).html());
+            });
+
+
+            //Function sending a "ping" to the server.
+            var ping_pong_times = [];
+            var start_time;
+            window.setInterval(function() {
+                start_time = (new Date).getTime();
+                socket.emit('my_ping');
+            }, 1000);
+
+            /*Handler for the "pong" message (as answer for the ping message of the client). 
+            Calculates an average over the 50 last ping_pong*/
+            socket.on('my_pong', function() {
+                var latency = (new Date).getTime() - start_time;
+                ping_pong_times.push(latency);
+                ping_pong_times = ping_pong_times.slice(-50); // keep last 50 samples
+                var sum = 0;
+                for (var i = 0; i < ping_pong_times.length; i++)
+                    sum += ping_pong_times[i];
+                $('#ping-pong').text(Math.round(sum / ping_pong_times.length));
+            });
+
+            // Handlers for the different forms in the page.
+            // These accept data from the user and send it to the server in a
+            // variety of ways
+            $('form#logout').submit(function(event) {
+                socket.emit('logout');
+                return false;
+            });
+            
+            
+            $('form#aufgabenlog').submit(function(event) {
+                socket.emit('aufgabeeingabe', {data: $('#emit_eingabe').val()});
+                $('form#aufgabenlog').trigger("reset");
+				$('class#aufgabenlog').trigger("reset");
+               
+                return false;
+            });
+                  
+            
+            $('form#broadcast').submit(function(event) {
+                socket.emit('my_broadcast_event', {data: $('#broadcast_data').val()});
+                return false;
+            });
+            $('form#join').submit(function(event) {
+                socket.emit('join', {room: $('#join_room').val()});
+                return false;
+            });
+            $('form#leave').submit(function(event) {
+                socket.emit('leave', {room: $('#leave_room').val()});
+                return false;
+            });
+            $('form#send_room').submit(function(event) {
+                socket.emit('my_room_event', {room: $('#room_name').val(), data: $('#room_data').val()});
+                return false;
+            });
+            $('form#close').submit(function(event) {
+                socket.emit('close_room', {room: $('#close_room').val()});
+                return false;
+            });
+            $('form#disconnect').submit(function(event) {
+                socket.emit('disconnect_request');
+                return false;
+            });
+        });
+    </script>
+
+</html>
