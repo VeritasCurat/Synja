@@ -1,0 +1,407 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Synja Pedagogical Agent</title>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.5/socket.io.min.js"></script>
+    
+
+<style>
+body {
+    font-family: sans-serif;
+}
+h1, h2, h3, h4 {
+    color: #001056;
+}
+
+
+.containerPing {
+  width: 500px;
+}
+
+.containerLinks {
+  height: 200px;
+  width: 500px;
+  border: 2px solid black;
+  padding: 5px;
+  display: flex; 
+  flex-direction: column-reverse;
+}
+
+.footer {
+  background-color: lightgrey;
+  height: 50px; 
+  width:100%;
+
+  -moz-box-shadow:10px 10px 5px #000000;
+  -webkit-box-shadow:10px 10px 5px #000000;
+  box-shadow:10px 10px 5px #000000;
+}    
+
+.bild {
+    height: 400px;
+    width: 250px;
+    overflow-y: auto;
+    border: 2px solid black;
+    padding: 5px;
+    display: flex; 
+    flex-direction: column-reverse;
+    overflow-y: auto;
+
+    -moz-box-shadow:10px 10px 5px #000000;
+    -webkit-box-shadow:10px 10px 5px #000000;
+    box-shadow:10px 10px 5px #000000;
+}
+
+.dropshadow {
+    -moz-box-shadow:10px 10px 5px #000000;
+    -webkit-box-shadow:10px 10px 5px #000000;
+    box-shadow:10px 10px 5px #000000;
+}
+
+
+.containerausgabetext {
+    height: 400px;
+  	width:  calc(100% - 380px);
+    border: 2px solid black;
+    padding: 5px;
+   
+    flex-direction: column-reverse;
+    overflow-y: scroll;
+
+    -moz-box-shadow:10px 10px 5px #000000;
+    -webkit-box-shadow:10px 10px 5px #000000;
+    box-shadow:10px 10px 5px #000000;
+}
+
+.wrapper{
+	height: 700px;
+    width: 100%;
+
+}
+
+
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+width: 12px;
+height: 12px;
+}
+
+::-webkit-scrollbar-track {
+box-shadow: inset 0 0 10px grey;
+border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+border-radius: 10px;
+background: grey; 
+box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+
+::-webkit-scrollbar-thumb:hover {
+background: #7bac10;
+}
+
+.scroll-color-light {
+  scrollbar-color: light;
+}
+</style>
+</head>
+<body>
+
+
+
+
+
+</style>
+</head>
+
+
+<body>
+
+<div class="footer">
+	<div class = "ping" style = "padding-left: 20px; float: left" >	
+		<p>  average ping: <b><span id="ping-pong"></span> ms</b></p>
+	</div>
+	<div class="logout" style = "padding-right: 20px; padding-top: 15px; float: right">	
+		<form id="logout" method="POST" action='#'>
+					<input type="submit" value="logout" id="logout"> 
+		</form>
+	</div>
+</div>
+
+<div class="wrapper">
+	<div style="width: 300px; float:right; height:0px; margin:10px">
+		<div>
+			<h1 style="padding-right: 20px;">Synja</h1>		<p></p>
+	
+			<!---    <p>Async mode is: <b>gevent</b></p>-->
+		    <div class="bild" style="padding-right: 0px";>
+		   	 <div id="bild">
+		   	 	<img src="static/synja/Synja_neutral.svg">
+		   	 </div>
+		    </div>		
+		</div>
+		
+	</div>
+	
+	<h1 style="padding-top: 30px;">Dialog</h1>
+	<div class="containerausgabetext">
+		
+		<!---    <p>Async mode is: <b>gevent</b></p>-->
+		    <div class="ausgabetext" style="width: 100%">
+		   	 <div id="dialoglog">
+		   	</div>
+		    </div>
+	</div>
+	<div id="input_dialog" style="float:left; width: 50%; margin-top: 50px;">     
+		<h2>Dialog Input:</h2>
+	    <form id="dialog" method="POST" action='#'>
+	        <input style="font-size:15px; width: 85%" type="text" name="emit_dialog" id="emit_dialog" placeholder="Dialog Input" class = "dropshadow">
+	        <input type="submit" value="Send" id="send_dialog" class = "dropshadow" style="width: 10%; font-size:15px;">  
+	    </form>
+	</div>
+	
+	<div id="input_lehre" style="float:right; width: 50%; margin-top: 50px;">   
+	    <h2>Teaching Input:</h2>
+	    <form id="lehre" method="POST" action='#'>
+	        <input style="font-size:15px; width: 85%" type="text" name="emit_lehre" id="emit_lehre" placeholder="Teaching Input"  class = "dropshadow">
+	        <input type="submit" value="Send" id="send_lehre" class = "dropshadow" style="width: 10%; font-size:15px;">
+	    </form>  
+	</div>		
+</div>
+
+
+</body>
+
+<script type="text/javascript">
+
+
+</script>
+
+<script type="text/javascript" charset="utf-8">
+		var uinput = "";
+
+		function select(){
+			var selObj = window.getSelection();
+			uinput = String(selObj);
+
+
+			alert(selObj);
+
+			$('#dialoglog').append('<br>' + $('<div/>').text(uinput).html());
+			// do stuff with the range
+		}
+
+        $(document).ready(function() {
+            // Use a "/test" namespace.
+            // An application can open a connection on multiple namespaces, and
+            // Socket.IO will multiplex all those connections on a single
+            // physical channel. If you don't care about multiple channels, you
+            // can set the namespace to an empty string.
+            namespace = '/synja';
+
+            // Connect to the Socket.IO server.
+            // The connection URL has the following format:
+            //     http[s]://<domain>:<port>[/<namespace>]
+            var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port + namespace);
+
+            // Event handler for new connections.
+            // The callback function is invoked when a connection with the
+            // server is established.
+	        // socket.on('connect', function(data) {
+	
+	        // });
+            
+            
+            
+            //Redirects to this site
+            socket.on('redirect', function (data) {
+    			window.location = data.url;
+			});
+			
+			socket.on('underline_checkS', function(msg) {
+				if(uinput != ""){
+					alert(uinput);
+                	socket.emit('underlinedText', {data: uinput});
+					uinput = ""
+				}
+			});
+
+            /* Event handlers for the data send by the server  */
+
+            socket.on('dialogEINGABE', function(msg) {
+            	newtext = msg.data
+ 				newtext = newtext.replace(/(?:\r\n|\r|\n)/g, '<br>');
+ 				newtext = newtext.replace(/Synja:/g, '<b>Synja:</b>');
+ 				newtext = newtext.replace(/You:/g, '<b>You:</b>');
+ 				
+ 				var letters =  newtext.split("");
+ 				var arrayLength = letters.length;
+ 			   
+				$('#dialoglog').append('<p><font size="+1">' + $('</p></font>').html(newtext).html());
+            });
+
+            socket.on('highlight_dialog_input', function(msg) {
+                var div = document.getElementById( 'emit_dialog' );
+                div.style.backgroundColor = "yellow"
+                var div2 = document.getElementById( 'emit_lehre' );
+                div2.style.backgroundColor = "white"
+            });
+
+            socket.on('highlight_lehre_input', function(msg) {
+                var div = document.getElementById( 'emit_dialog' );
+                div.style.backgroundColor = "white"
+                var div2 = document.getElementById( 'emit_lehre' );
+                div2.style.backgroundColor = "yellow"
+            });
+
+            socket.on('highlight_no_input', function(msg) {
+                var div = document.getElementById( 'emit_dialog' );
+                div.style.backgroundColor = "white"
+                var div2 = document.getElementById( 'emit_lehre' );
+                div2.style.backgroundColor = "white"
+            });
+
+            
+			socket.on('change_synja', function(msg) {
+        		var testDiv = $("#bild");
+ 				var domElement = testDiv[0];
+ 			
+ 				testDiv.replaceWith('<div id="bild"></div>');
+ 			   
+ 				var image = document.createElement("img");
+				image.src = "static/synja/Synja_"+msg.data+".svg";
+				image.width = "240"
+			 	image.heigth = "400"
+
+			 	var testDiv = document.getElementById("bild");
+        		testDiv.appendChild(image);
+        	})
+            
+        	socket.on('lehrEINGABE_BILD', function(msg) {
+ 				
+        		var testDiv = $("#dialoglog");
+ 				var domElement = testDiv[0];
+    			domElement.nodeValue = "START ";
+ 			
+ 				//testDiv.replaceWith('<div id="dialoglog"></div>');
+ 			   
+ 				var image = document.createElement("img");
+				image.src = "static/"+msg.data;
+
+                imgname = "static/"+msg.data;
+ 				
+                var testDiv = document.getElementById("dialoglog");
+
+                imgtag = "<img src=\""+imgname+"\" width=\"600px\">"
+                //alert(imgtag)
+
+				$('#dialoglog').append('<p style="border:2px solid blue;"><font size="+1 color="blue"">' + $('</p></font>').html(imgtag).html());
+        		
+                //testDiv.appendChild(image);
+ 				
+        	});
+
+ 			socket.on('lehrEINGABE', function(msg) {
+ 				newtext = msg.data
+ 				newtext = newtext.replace(/(?:\r\n|\r|\n)/g, '<br>');
+ 				newtext = newtext.replace(/Synja:/g, '<b>Synja:</b>');
+ 				newtext = newtext.replace(/You:/g, '<b>You:</b>');
+ 				 				
+ 				var letters =  newtext.split("");
+ 				var arrayLength = letters.length;
+ 			   
+				$('#dialoglog').append('<p style="border:2px groove blue; padding: 10px"><font size="+1" color="blue">' + $('</p></font>').html(newtext).html());
+            });
+
+            socket.on('lehrTASK', function(msg) {
+                newtext = msg.data
+                newtext = "Synja: "+newtext
+                newtext = newtext.replace(/(?:\r\n|\r|\n)/g, '<br>');
+                newtext = newtext.replace(/Synja:/g, '<b>Synja:</b>');
+                newtext = newtext.replace(/You:/g, '<b>You:</b>');
+                                
+                var letters =  newtext.split("");
+                var arrayLength = letters.length;
+               
+                $('#dialoglog').append('<p><font size="+1" color="blue">' + $('</p></font>').html(newtext).html());
+            });
+
+
+            //Function sending a "ping" to the server.
+            var ping_pong_times = [];
+            var start_time;
+            window.setInterval(function() {
+                start_time = (new Date).getTime();
+                socket.emit('my_ping');
+            }, 1000);
+
+            /*Handler for the "pong" message (as answer for the ping message of the client). 
+            Calculates an average over the 50 last ping_pong*/
+            socket.on('my_pong', function() {
+                var latency = (new Date).getTime() - start_time;
+                ping_pong_times.push(latency);
+                ping_pong_times = ping_pong_times.slice(-50); // keep last 50 samples
+                var sum = 0;
+                for (var i = 0; i < ping_pong_times.length; i++)
+                    sum += ping_pong_times[i];
+                $('#ping-pong').text(Math.round(sum / ping_pong_times.length));
+            });
+
+            // Handlers for the different forms in the page.
+            // These accept data from the user and send it to the server in a
+            // variety of ways
+            $('form#logout').submit(function(event) {
+                socket.emit('logout');
+                return false;
+            });
+            
+           
+             $('form#lehre').submit(function(event) {
+                socket.emit('lehreingabe', {data: $('#emit_lehre').val()});
+
+                $('form#lehre ').trigger("reset");
+               	//$('class#ausgabetext').trigger("reset");
+                
+                return false;
+             });
+             
+             $('form#dialog').submit(function(event) {
+                 socket.emit('dialogeingabe', {data: $('#emit_dialog').val()});
+                 $('form#dialog ').trigger("reset");
+                 //$('class#ausgabetext').trigger("reset");
+                 
+                 return false;
+              });
+            
+            
+            $('form#broadcast').submit(function(event) {
+                socket.emit('my_broadcast_event', {data: $('#broadcast_data').val()});
+                return false;
+            });
+            $('form#join').submit(function(event) {
+                socket.emit('join', {room: $('#join_room').val()});
+                return false;
+            });
+            $('form#leave').submit(function(event) {
+                socket.emit('leave', {room: $('#leave_room').val()});
+                return false;
+            });
+            $('form#send_room').submit(function(event) {
+                socket.emit('my_room_event', {room: $('#room_name').val(), data: $('#room_data').val()});
+                return false;
+            });
+            $('form#close').submit(function(event) {
+                socket.emit('close_room', {room: $('#close_room').val()});
+                return false;
+            });
+            $('form#disconnect').submit(function(event) {
+                socket.emit('disconnect_request');
+                return false;
+            });
+        });
+    </script>
+
+</html>
