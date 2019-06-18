@@ -1,6 +1,6 @@
 lesson: programm_structure
 "programm_structure_main":::"Bitte schreibe eine Main-Methode.":::"$parse programm_structure_main"
-"programm_structure_import":::"Bitte schreibe einen Importdeklaration.":::"$parse programm_structure_import"
+"programm_structure_import":::"Bitte schreibe eine Importdeklaration.":::"$parse programm_structure_import"
 "programm_structure_packages":::"Bitte schreibe eine Paketdeklaration.":::"$parse programm_structure_packages"
 lesson: basics
 "comments":::"Bitte schreibe einen Kommentar.":::"$parse comments"

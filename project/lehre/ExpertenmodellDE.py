@@ -503,7 +503,7 @@ class ExpertenmodellDE(object):
         ausgabe = self.lessons[lesson].syntaxkonzepte[konzept].test_lt[version]         
         ausgabetext = ""   
         if(ausgabe.aufgabenstellung != ""):ausgabetext += ausgabe.aufgabenstellung + "\n"
-        ausgabetext += "Please fill the gap by typing the answer in Teaching Input:\n"
+        ausgabetext += "Bitte gebe als Loesung, die Zahl(en) der Loesung(en) in das Aufgabeneingabefeld ein:\n"
         ausgabetext += ausgabe.aufgabe
       elif(art=="underline_task"):
         ausgabe = self.lessons[lesson].syntaxkonzepte[konzept].underline_aufgaben[version]         

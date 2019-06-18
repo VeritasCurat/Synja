@@ -122,6 +122,9 @@
 #test  
   test = "Now you can prove to me that you understood the concept. Please solve the following test above."
   freude_antwort = "Great, you got it."
+  eigenstaendigBeispiel = "You have seen an example. For the solution of the task, I would ask you to think of an example. "
+  eigenstaendigBeispiel = "Please do not use the example, but consider an example of your own."
+  eigenstaendigBeispiel = "It would be great if you thought about the example yourself. Then I can help you better if you don't quite understand ... "
   freude_antwort = "Cool, you solved it :)."
   freude_antwort = "Very nice, you solved it :)."
   freude_antwort = "Hey that's great, you got it."

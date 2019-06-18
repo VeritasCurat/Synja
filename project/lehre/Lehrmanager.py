@@ -125,6 +125,7 @@ class Lehrmanager:
   FK_konzept = ""
   FK_reaktion_lesson = ""
   FK_reaktion_konzept = ""
+  FK_erklaerungrunter = False
   FK_erklaerungspfad = []
   
   emotion = "neutral"
@@ -644,6 +645,7 @@ class Lehrmanager:
       self.expected_entry = "dialog"
       self.dialogausgaben.append("freude_verstanden")
       self.dialogausgaben.append("testphase_konzept")
+      self.dialogausgaben.append("eigenstaendigBeispiel")
       self.zustand = "testphase_konzept"
       self.zustand_test = "start"
       self.testphase_konzept("")
@@ -756,12 +758,14 @@ class Lehrmanager:
       elif(bewertung == "hinweis"):
         self.dialogausgaben.append(Lehrausgabe(self.lesson, self.konzept, "symbolisch", self.version))
         self.dialogausgaben.append("testphase_konzept")
+        self.dialogausgaben.append("eigenstaendigBeispiel")
         self.dialogausgaben.append(Lehrausgabe(self.lesson, self.konzept, self.art, self.version))
         self.highlight = True
         self.emotion = "neutral"
         self.zustand = "testphase_konzept"
       else: 
         self.dialogausgaben.append("testphase_konzept")
+        self.dialogausgaben.append("eigenstaendigBeispiel")
         self.emotion = "neutral"
         self.zustand = "testphase_konzept"
       return
@@ -777,6 +781,7 @@ class Lehrmanager:
         self.dialogausgaben.append("richtigeAntwort")
         self.emotion = "neutral"
       else:
+        self.expected_entry = "dialog"
         self.dialogausgaben.append("richtigeAntwort")
         self.emotion = "neutral"
   
@@ -855,7 +860,7 @@ class Lehrmanager:
           #print("TB: NAE IT"+str(self.iterationen_test)+" von "+str(self.durchlaeufe_test))
           self.dialogausgaben.append("entaeuschung_antwort")
           self.dialogausgaben.append("richtigeAntwort")
-          self.expected_entry = "lehre"
+          self.expected_entry = "dialog"
           self.dialogausgaben.append(Lehrausgabe(self.lesson, self.konzept, self.art+"_answer", self.version))
           self.emotion = "neutral"
           self.zustand_test = "start"
@@ -865,7 +870,7 @@ class Lehrmanager:
           #print("TB: NAE IT"+str(self.iterationen_test)+" von "+str(self.durchlaeufe_test))
           self.dialogausgaben.append("entaeuschung_antwort")
           self.dialogausgaben.append("richtigeAntwort")
-          self.expected_entry = "lehre"
+          self.expected_entry = "dialog"
           self.dialogausgaben.append(Lehrausgabe(self.lesson, self.konzept, self.art+"_answer", self.version))
           self.emotion = "neutral"
           self.zustand_test = "start"
@@ -879,6 +884,7 @@ class Lehrmanager:
         elif(bewertung == "hinweis"):
           self.dialogausgaben.append(Lehrausgabe(self.lesson, self.konzept, "symbolisch", self.version))
           self.dialogausgaben.append("testphase_konzept")
+          self.dialogausgaben.append("eigenstaendigBeispiel")
           self.dialogausgaben.append(Lehrausgabe(self.lesson, self.konzept, self.art, self.version))
           self.highlight = True
           self.emotion = "neutral"
@@ -908,6 +914,7 @@ class Lehrmanager:
     #pa fragt nach konzept; verwendet der schueler bestimmte schluesselworter in erklaerung, kennt er das Konzept => fluechtigkeitsfehler => test
     #sonst: Missverstaednis oder NIchtwissen (schwierig zu erkennen) => wechsel_erklaerung
     #print("LM FK: zustand: "+self.zustand_fk+", intent: "+intent+", fehlerart: "+str(self.fehlerart)+", lesson:"+str(self.FK_reaktion_lesson)+", konzept:"+str(self.FK_reaktion_konzept))
+    print("FK: "+str(self.zustand_fk)+" "+str(intent))
     if(self.zustand_fk == "anfang"):
       if(self.fehlerbeschreibung!="" and self.FK_lesson!="" and self.FK_konzept!="" and self.FK_reaktion_lesson!="" and self.FK_reaktion_konzept!=""):
         self.expected_entry = "lehre"
@@ -926,10 +933,13 @@ class Lehrmanager:
       #print("FK: KF: "+intent)
       if(intent == "weiss_nicht" or intent == "nein" or intent == "hinweis"):
         self.zustand_fk = "frage_hinweis_verstanden"
-        self.expected_entry = "dialog"
+        #self.expected_entry = "dialog"
         self.dialogausgaben.append(Hinweis(self.FK_lesson, self.FK_konzept, self.fehlerart))
         self.dialogausgaben.append("frage_hinweis_verstanden")
         self.emotion = "neutral"
+        
+        self.FK_lesson = self.FK_reaktion_lesson
+        self.FK_konzept = self.FK_reaktion_konzept  
         #self.dialogausgaben.append(Fehlerantwort(self.lesson, self.konzept, "no_idea"))
       elif(intent == "fehlerhaft"):
         #print("LM: FK: BERICHTIGUNG")
@@ -954,9 +964,17 @@ class Lehrmanager:
         self.dialogausgaben.append("berichtigung_verstanden")
         
         self.FK_konzept = self.FK_lesson = self.FK_reaktion_lesson = self.FK_reaktion_konzept = self.zustand_fk = ""
-        self.expected_entry = "dialog"
-        self.dialogausgaben.append(["frage_verstanden",self.konzept])
-        self.zustand = "frage_Konzeptverstanden"
+        
+        #init naechstes Konzept
+        self.zustand_test = "start"
+        self.dialogausgaben.append("freude_antwort")
+        self.emotion = "freude"
+        #self.lehrausgabe = None
+        self.verstandeneKonzepteLesson += 1
+        self.schuelermodell.darstellungsart_effizienz[self.artregister[self.art_counter]] +=1
+        self.anpassen_dart_reihenfolge()
+        self.initialisieren_naechstesKonzept("")
+        
       elif(intent == "unschluessig"):
         self.art = "coding"
         self.expected_entry = "lehre"
@@ -1004,12 +1022,17 @@ class Lehrmanager:
         else: print("Fehler LM: FK: frage_hinweis_verstanden")
       elif(intent == "fehlerfrei"):
         self.expected_entry = "dialog"
-        self.dialogausgaben.append("berichtigung_verstanden")
-        
+        self.dialogausgaben.append("berichtigung_verstanden") 
         self.FK_konzept = self.FK_lesson = self.FK_reaktion_lesson = self.FK_reaktion_konzept = self.zustand_fk = ""
         self.expected_entry = "dialog"
         self.dialogausgaben.append(["frage_verstanden",self.konzept])
         self.zustand = "frage_Konzeptverstanden"
+      else: 
+        self.zustand_fk = "frage_hinweis_verstanden"
+        self.expected_entry = "dialog"
+        self.dialogausgaben.append(Hinweis(self.FK_lesson, self.FK_konzept, self.fehlerart))
+        self.dialogausgaben.append("frage_hinweis_verstanden")
+        self.emotion = "neutral"
     return ""
             
   def auswertungTest(self):
@@ -1018,7 +1041,7 @@ class Lehrmanager:
     if(self.punkte_test >= self.min_punkte_bestehen):
       #print("Test1")
       self.dialogausgaben.append("Testergebnis_erfolgreich")
-      self.dialogausgaben.append(["empfehlung_naechsterThemenblock",self.schuelermodell.sorted_lessonlist])
+      #self.dialogausgaben.append(["empfehlung_naechsterThemenblock",self.schuelermodell.sorted_lessonlist])
       self.dialogausgaben.append("frage_naechsterThemenblock")
       self.emotion = "freude"
       #if(len(self.schuelermodell.bekannteLessons)>0):self.dialogausgaben.append(["schueler_wissen",self.enumaration(self.schuelermodell.bekannteLessons).replace('_',' ')])

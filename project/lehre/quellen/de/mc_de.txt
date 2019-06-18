@@ -1,7 +1,7 @@
 lesson: programm_structure
 "programm_structure_main":::"Wo befindet sich der Einstiegspunkt in einer Java-App?":::{"In Zeile 1."::"In der Hauptmethode."::"In der Klassendeklaration."::"Bei der Eingabemethode."}:::{2}
 "programm_structure_import":::"Wo werden Imports deklariert?":::{"Oben im Java-Programm."::"Unten im Java-Programm."::"Eine Zeile vor der ersten Verwendung."::"Sie können überall geschrieben werden ."}:::{1}
-"programm_structure_packages":::"Wie sieht eine Paketdeklaration aus?":::{"package anwendungsname, Bibliotheksname"::"package bibliotheksname.Anwendungsname"::"package anwendungsname.Bibliotheksname"::"PACKAGE anwendungsname.Bibliotheksname"}:::{2}
+"programm_structure_packages":::"Wie sieht eine Paketdeklaration aus?":::{"package anwendungsname, Bibliotheksname;"::"package bibliotheksname.Anwendungsname;"::"package anwendungsname.Bibliotheksname;"::"PACKAGE anwendungsname.Bibliotheksname;"}:::{2}
 "programm_structure_packages":::"Wie viele package-Deklarationen kann eine syntaktisch zulässige Java-Datei enthalten?":::{"Keine Paketdeklaration"::"Eine Paketdeklaration"::"Zwei package-Deklarationen"::"Mehr als das zwei package-Deklarationen"}:::{1;2}
 lesson: basics
 "comments":::"Welche Arten von Kommentaren unterstützt Java?":::{"Einzeilige Kommentare"::"Java-Docs"::"Kommentare für Variablen"::"ausführbare Kommentare"}:::{1;2}

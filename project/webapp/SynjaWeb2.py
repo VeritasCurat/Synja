@@ -163,7 +163,7 @@ class Synja(threading.Thread):
       else: 
         if(self.sprache == "en"):bewertung = expertenmodell_en.bewerten(lesson, konzeptname, art, version, antworttext)
         elif(self.sprache == "de"):bewertung = expertenmodell_de.bewerten(lesson, konzeptname, art, version, antworttext)
-        self.verlauf.eintragen(self.sprache, id, lesson, konzeptname, art, version, antworttext, bewertung)
+        self.verlauf.eintragen(self.sprache, self.name, lesson, konzeptname, art, version, antworttext, bewertung)
       #print("bewertung: "+str(bewertung))
       
 

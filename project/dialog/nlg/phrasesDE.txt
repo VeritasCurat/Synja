@@ -118,6 +118,9 @@
   test = "Jetzt kannst du mir beweisen, dass du das Konzept verstanden haben. Bitte löse den folgenden Test."
   test = "Bitte löse diesen Test."
   test = "Ich denke es ist Zeit dein Wissen zu testen."
+  eigenstaendigBeispiel = "Du hast ein Beispiel zur gesehen. Für die Lösung der Aufgabe würde ich dich bitten dir ein Beispiel auszudenken."
+  eigenstaendigBeispiel = "Bitte nutze nicht das Beispiel, sondern überlege dir ein eigenes Beispiel."
+  eigenstaendigBeispiel = "Es wäre toll, wenn du dir das Beispiel selbst überlegst. Dann kann ich dir besser helfen, wenn du es doch nicht ganz verstanden hast ..."
   freude_antwort = "Großartig, du hast es verstanden."
   freude_antwort = "Super, du hast es gelöst :)."
   freude_antwort = "Sehr schön, du hast es gelöst :)."
@@ -181,7 +184,7 @@
 
   freude_verstanden = "Schön, dass du das verstanden hast."
   freude_verstanden = "Cool, du hast es verstanden."
-  freude_verstanden = "Wow, ich bin froh, dass du das Konzept verstanden hast."
+  freude_verstanden = "Hey, ich bin froh, dass du das Konzept verstanden hast."
   freude_verstanden = "Es ist so schön, dass du es verstanden hast."
   freude_verstanden = "Ich bin froh, dass du das Konzept verstanden hast."
 
@@ -200,7 +203,7 @@
   frage_berichtigung_verstanden = "So kannst du deinen Fehler korrigieren."
   berichtigung_verstanden = "Anscheinend hast du die Korrektur verstanden."
   berichtigung_verstanden = "Ich glaube, du hast die Korrektur verstanden."
-  berichtigung_verstanden = "Schön, dass du das Konzept verstanden haben."
+  berichtigung_verstanden = "Ich denke, dass du das Konzept verstanden haben."
   kompetenzfrage = "Kannst du das lösen?"
   kompetenzfrage = "Kannst du diese Aufgabe lösen?"
   kompetenzfrage = "Kannst du eine Lösung für diese Aufgabe finden?"
